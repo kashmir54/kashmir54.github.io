@@ -1,0 +1,16 @@
+theme: jekyll-theme-hacker
+title: Kashmir54 
+author: Kashmir54
+
+repository: kashmir54/kashmir54_page
+collections:
+  walkthroughs:
+    output: true
+  ctfs:
+    output: true
+    
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
