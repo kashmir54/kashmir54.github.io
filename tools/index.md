@@ -12,4 +12,4 @@ Here I will share some of the great tools I'm finding during this journey.
 
 Bat is a shell "plugin" to highlight and beautify your cat command to files. 
 
-[Check it out here!]((/misc/tools/bat/))
+[Check it out here!](/tools/bat/)
