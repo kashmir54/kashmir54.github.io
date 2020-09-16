@@ -16,4 +16,4 @@ TBD
 
 ## Misc
 
-[Tools](/misc/tools)
+[Tools](/tools)
