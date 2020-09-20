@@ -16,14 +16,3 @@ defaults:
       path: ""
     values:
       layout: default
-
-#Others
-markdown: kramdown
-
-# Syntax highlighting
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    #default_lang: python
-    css_class   : 'syntax'

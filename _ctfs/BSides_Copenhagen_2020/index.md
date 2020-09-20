@@ -76,7 +76,7 @@ aw man, aw geez, my grandpa rick is passed out from all the drinking again, wher
 Checking out the HTML we can see again the /debug comment, so lets check it out:
 
 {% highlight python %}
-```
+
 from flask import Flask, Response, request, render_template, request
 from random import choice, randint
 from string import lowercase
@@ -119,7 +119,7 @@ def debug():
 
 if __name__ == '__main__':
 	app.run('0.0.0.0', port=1337)
-```
+
 {% endhighlight %}
 
 
