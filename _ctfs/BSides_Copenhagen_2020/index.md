@@ -8,7 +8,7 @@ description: "BSides Copenhagen 2020 - Writeup."
 ---
 
 <p align="left">
-  <img src="/images/writeups/BSides Copenhagen 2020/1_logo.png" width="100"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/1_logo.png" width="150"/>
 </p>
 
 This is a small CTF hosted on HackTheBox. Check out the [conference website](https://2020.bsideskbh.dk/ctf/).
@@ -133,7 +133,7 @@ if __name__ == '__main__':
 We can see a _exec(recipe, garage)_ funcion, and it will asign to the 'ingredient' variable (what ever name we want) the result of 'measurement' (whatever we want). So we will place a name on 'ingredient' and **open('flag').read()** on the 'measurement' parameter. I'm using burp repeater for making the POST request with the parameters:
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Web/baby interdimensional internet/2_post.png" width="650"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Web/baby interdimensional internet/2_post.png" width="700"/>
 </p>
 
 ``` flag: HTB{n3v3r_trust1ng_us3r_1nput_ag41n_1n_my_l1f3} ```
@@ -142,6 +142,33 @@ We can see a _exec(recipe, garage)_ funcion, and it will asign to the 'ingredien
 
 Let's find out [this](https://stackoverflow.com/questions/5741187/sql-injection-that-gets-around-mysql-real-escape-string/12118602#12118602):
 
+{% highlight php%}
+<?php require 'config.php';
+
+class db extends Connection {
+    public function query($sql) {
+        $args = func_get_args();
+        unset($args[0]);
+        return parent::query(vsprintf($sql, $args));
+    }
+}
+
+function sanitize($d, $s) {
+    if (preg_match_all('/'. implode('|', array(
+        'in', 'or', 'and', 'set', 'file',
+    )). '/i', $s, $matches)) die(var_dump($matches[0]));
+    return mysqli_real_escape_string($d->conn(), $s);
+}
+
+$db = new db();
+
+if (isset($_POST['pass'])) {
+    $pass = sanitize($db, $_POST['pass']);
+    $db->query("SELECT * FROM users WHERE password=('$pass') AND username=('%s')", 'admin');
+} else {
+    die(highlight_file(__FILE__,1));
+} 
+{% endhighlight %}
 ```
 mysql_query('SET NAMES gbk');
 \xbf\x27 O/**/R 1=1 /*

@@ -13,3 +13,4 @@ description: Walkthroughs.
 - [Admirer]() when machine retires.
 - [Tabby]() when machine retires.
 - [SneakyMailer]() when machine retires.
+- [Passage]() when machine retires.
