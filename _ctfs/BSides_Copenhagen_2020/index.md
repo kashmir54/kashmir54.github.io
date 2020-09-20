@@ -7,6 +7,10 @@ image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
 description: "BSides Copenhagen 2020 - Writeup."
 ---
 
+<p align="left">
+  <img src="/images/writeups/BSides Copenhagen 2020/1_logo.png" width="400"/>
+</p>
+
 This is a small CTF hosted on HackTheBox. Check out the [conference website](https://2020.bsideskbh.dk/ctf/).
 
 # Web
