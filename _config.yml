@@ -1,12 +1,15 @@
 theme: jekyll-theme-hacker
 title: Kashmir54 
 author: Kashmir54
+highlighter: rouge
 
 repository: kashmir54/kashmir54_page
 collections:
   walkthroughs:
     output: true
   ctfs:
+    output: true
+  tools:
     output: true
     
 defaults:

@@ -21,7 +21,7 @@ We can see a coment with /debug, lets check that path:
 
 It shows this code: 
 
-```
+{% highlight python %}
 from flask import Flask, Response, render_template, request, render_template_string
 
 app = Flask(__name__)
@@ -46,7 +46,7 @@ def debug():
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=1337)
-```
+{% endhighlight %}
 
 We can see that it's formatting the variable name, which is a user input, without sanitizing it. We can go ahead and [exploit SSTI](https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee) further [reading about bypasses](https://0day.work/jinja2-template-injection-filter-bypasses/):
 
@@ -79,7 +79,7 @@ aw man, aw geez, my grandpa rick is passed out from all the drinking again, wher
 
 Checking out the HTML we can see again the /debug comment, so lets check it out:
 
-```
+{% highlight python %}
 from flask import Flask, Response, request, render_template, request
 from random import choice, randint
 from string import lowercase
@@ -122,7 +122,7 @@ def debug():
 
 if __name__ == '__main__':
 	app.run('0.0.0.0', port=1337)
-```
+{% endhighlight %}
 
 We can see a _exec(recipe, garage)_ funcion, and it will asign to the 'ingredient' variable (what ever name we want) the result of 'measurement' (whatever we want). So we will place a name on 'ingredient' and **open('flag').read()** on the 'measurement' parameter. I'm using burp repeater for making the POST request with the parameters:
 
