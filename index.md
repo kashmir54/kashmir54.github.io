@@ -17,4 +17,4 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 
 ## Misc
 
-[Tools](/tools)
+[Tools](/misc/tools)
