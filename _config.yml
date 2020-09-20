@@ -26,4 +26,4 @@ kramdown:
   input: GFM
   syntax_highlighter_opts:
     default_lang: python
-    css_class   : 'syntax'
+    css_class   : 'syntax.css'
