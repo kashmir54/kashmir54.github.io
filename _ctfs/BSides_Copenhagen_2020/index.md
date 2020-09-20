@@ -6,7 +6,9 @@ hasComments: true
 image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
 description: "BSides Copenhagen 2020 - Writeup."
 ---
-<br/><br/>
+
+This is a small CTF hosted on HackTheBox. Check out the [conference website](https://2020.bsideskbh.dk/ctf/).
+
 # Web
 
 ## BonechewerCon
@@ -47,6 +49,7 @@ def debug():
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=1337)
 {% endhighlight %}
+
 
 We can see that it's formatting the variable name, which is a user input, without sanitizing it. We can go ahead and [exploit SSTI](https://medium.com/@nyomanpradipta120/ssti-in-flask-jinja2-20b068fdaeee) further [reading about bypasses](https://0day.work/jinja2-template-injection-filter-bypasses/):
 
@@ -229,7 +232,7 @@ We can see 4 sequences, some are the phone holding ring, and one of those (the f
 Now select the fragment you want to analyze and hit _Analyze_, then hit _Play Streams_ now you will see the transmission, play it and you will hear the flag:
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/Clang/3_flag.png" width="500"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/Clang/3_flag.png" width="650"/>
 </p>
 
 ``` flag: HTB{3242459345} ```
