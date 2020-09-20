@@ -6,7 +6,7 @@ hasComments: true
 image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
 description: "BSides Copenhagen 2020 - Writeup."
 ---
-
+<br/><br/>
 # Web
 
 ## BonechewerCon
@@ -16,7 +16,7 @@ The devil himself is enticing us to commit some SSTI feng shui, would you be int
 We can see a coment with /debug, lets check that path:
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Web/BonechewerCon/1_debug.png" width="500"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Web/BonechewerCon/1_debug.png" width="600"/>
 </p>
 
 It shows this code: 
@@ -59,12 +59,12 @@ As shown, we can exploit that vulnerability, so lets get the flag with the input
 There we go:
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Web/BonechewerCon/4_flag.png" width="500"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Web/BonechewerCon/4_flag.png" width="600"/>
 </p>
 
 ``` flag: HTB{r3s3rv4t1on_t0_h311_1s_a11_s3t} ```
 
-
+<br/>
 ## baby interdimensional internet
 
 aw man, aw geez, my grandpa rick is passed out from all the drinking again, where is a calculator when you need one, aw geez
@@ -126,11 +126,11 @@ if __name__ == '__main__':
 We can see a _exec(recipe, garage)_ funcion, and it will asign to the 'ingredient' variable (what ever name we want) the result of 'measurement' (whatever we want). So we will place a name on 'ingredient' and **open('flag').read()** on the 'measurement' parameter. I'm using burp repeater for making the POST request with the parameters:
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Web/baby interdimensional internet/2_post.png" width="500"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Web/baby interdimensional internet/2_post.png" width="650"/>
 </p>
 
 ``` flag: HTB{n3v3r_trust1ng_us3r_1nput_ag41n_1n_my_l1f3} ```
-
+<br/>
 ## babysql
 
 Let's find out [this](https://stackoverflow.com/questions/5741187/sql-injection-that-gets-around-mysql-real-escape-string/12118602#12118602):
@@ -153,8 +153,7 @@ $db->query("SELECT * FROM users WHERE password=('$pass') AND username=('%s')", '
 
 I couldn't get it.
 ```
-
-
+<br/><br/>
 
 # Crypto
 
@@ -206,7 +205,7 @@ STR : b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 
 ``` flag: HTB{b16_e_5m4ll_d_3qu4l5_w31n3r_4774ck} ```
 
-
+<br/><br/>
 # Forensic
 
 ## Clang 
@@ -234,4 +233,6 @@ Now select the fragment you want to analyze and hit _Analyze_, then hit _Play St
 </p>
 
 ``` flag: HTB{3242459345} ```
+
+Thank for reading!
 
