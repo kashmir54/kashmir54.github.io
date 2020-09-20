@@ -11,19 +11,21 @@ description: Tools - Bat.
 [Bat](https://github.com/sharkdp/bat) is a great tool for syntax highlighting and git integration on your shell. It can be used like cat for file display on the shell and I find it very usefull in order to show text files with non-printable characters, colored reports or to quick error checks thanks to the line number display:
 
 <p align="center">
-  <img src="/images/misc/tools/bat/1_linpeas.png" width="500"/>
+  <img src="/images/misc/tools/bat/1_linpeas.png" width="600"/>
 </p>
+
 
 Some python3 highlight:
 
+
 <p align="center">
-  <img src="/images/misc/tools/bat/1_highlight.png" width="500"/>
+  <img src="/images/misc/tools/bat/1_highlight.png" width="600"/>
 </p>
 
 And also it supports integration with other commands like man, find, tail...
 
 <p align="center">
-  <img src="/images/misc/tools/bat/1_man.png" width="500"/>
+  <img src="/images/misc/tools/bat/1_man.png" width="600"/>
 </p>
 
 

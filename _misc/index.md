@@ -1,10 +1,12 @@
 ---
-title: "Tools"
-categories: [tools]
+title: "Misc"
+categories: [misc]
 date: 2020-09-16
 hasComments: true
-description: Tools.
+description: Misc.
 ---
+
+# Tools
 
 Here I will share some of the great tools I'm finding during this journey.
 
@@ -12,4 +14,4 @@ Here I will share some of the great tools I'm finding during this journey.
 
 Bat is a shell "plugin" to highlight and beautify your cat command to files. 
 
-[Check it out here!]((/misc/tools/bat/))
+[Check it out here!](/misc/tools/bat/)
