@@ -214,7 +214,7 @@ STR : b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00
 We got a pcap file with RTP protocol... 
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/clang/1_rtp.png" width="500"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/Clang/1_rtp.png" width="500"/>
 </p>
 
 Let's try to retrieve any streaming in the packets with Wireshark tools:
@@ -224,13 +224,13 @@ _Telephony > RTP > RTP Streams_
 We can see 4 sequences, some are the phone holding ring, and one of those (the first one) what a sequence with the flag. Here we are opening the menu:
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/clang/2_tele.png" width="500"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/Clang/2_tele.png" width="500"/>
 </p>
 
 Now select the fragment you want to analyze and hit _Analyze_, then hit _Play Streams_ now you will see the transmission, play it and you will hear the flag:
 
 <p align="center">
-  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/clang/3_flag.png" width="500"/>
+  <img src="/images/writeups/BSides Copenhagen 2020/Forensics/Clang/3_flag.png" width="500"/>
 </p>
 
 ``` flag: HTB{3242459345} ```
