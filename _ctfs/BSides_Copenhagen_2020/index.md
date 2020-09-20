@@ -56,7 +56,7 @@ We can see that it's formatting the variable name, which is a user input, withou
 
 As shown, we can exploit that vulnerability, so lets get the flag with the input:
 
-```{{config['SECRET_KEY']}}```
+``` {{config['SECRET_KEY']}} ```
 
 There we go:
 
@@ -64,7 +64,7 @@ There we go:
   <img src="/images/writeups/BSides Copenhagen 2020/Web/BonechewerCon/4_flag.png" width="500"/>
 </p>
 
-```flag: HTB{r3s3rv4t1on_t0_h311_1s_a11_s3t}```
+``` flag: HTB{r3s3rv4t1on_t0_h311_1s_a11_s3t} ```
 
 
 ## baby interdimensional internet
@@ -128,15 +128,13 @@ We can see a _exec(recipe, garage)_ funcion, and it will asign to the 'ingredien
   <img src="/images/writeups/BSides Copenhagen 2020/Web/baby interdimensional internet/2_post.png" width="500"/>
 </p>
 
-```flag: HTB{n3v3r_trust1ng_us3r_1nput_ag41n_1n_my_l1f3}```
+``` flag: HTB{n3v3r_trust1ng_us3r_1nput_ag41n_1n_my_l1f3} ```
 
 ## babysql
 
 Let's find out [this](https://stackoverflow.com/questions/5741187/sql-injection-that-gets-around-mysql-real-escape-string/12118602#12118602):
 
 ```
-
-
 mysql_query('SET NAMES gbk');
 \xbf\x27 O/**/R 1=1 /*
 
@@ -153,7 +151,6 @@ $db->query("SELECT * FROM users WHERE password=('$pass') AND username=('%s')", '
 1 UNION SELECT * FROM users u -- -
 
 I couldn't get it.
-
 ```
 
 
@@ -206,7 +203,7 @@ INT (little endian) : 2254657426366212341152311312804421513992910329525695539888
 STR : b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00HTB{b16_e_5m4ll_d_3qu4l5_w31n3r_4774ck}'
 ```
 
-```flag: HTB{b16_e_5m4ll_d_3qu4l5_w31n3r_4774ck}```
+``` flag: HTB{b16_e_5m4ll_d_3qu4l5_w31n3r_4774ck} ```
 
 
 # Forensic
@@ -235,5 +232,5 @@ Now select the fragment you want to analyze and hit _Analyze_, then hit _Play St
   <img src="/images/writeups/BSides Copenhagen 2020/Forensics/clang/3_flag.png" width="500"/>
 </p>
 
-```flag: HTB{3242459345}```
+``` flag: HTB{3242459345} ```
 
