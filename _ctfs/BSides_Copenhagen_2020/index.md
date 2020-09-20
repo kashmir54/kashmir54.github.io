@@ -56,7 +56,7 @@ We can see that it's formatting the variable name, which is a user input, withou
 
 As shown, we can exploit that vulnerability, so lets get the flag with the input:
 
-``` {{config['SECRET_KEY']}} ```
+_{{config['SECRET_KEY']}}_
 
 There we go:
 
