@@ -54,11 +54,9 @@ We can see that it's formatting the variable name, which is a user input, withou
   <img src="/images/writeups/BSides Copenhagen 2020/Web/BonechewerCon/3_exploit.png" width="500"/>
 </p>
 
-As shown, we can exploit that vulnerability, so lets get the flag with the input:
+As shown, we can exploit that vulnerability, so lets get the flag with the input (remove the points):
 
-```
-{{config['SECRET_KEY']}}
-```
+```{.{config['SECRET_KEY']}.}```
 
 There we go:
 
