@@ -1,0 +1,49 @@
+Plantext packet 1:
+'''
+Report Day 47:
+    Mainframe: Secure
+    Main Control Unit: Secure
+    Internal Network: Secure
+    Cryptographic Protocols: Secure
+    
+'''
+
+Plantext packet 2:
+'''
+Report Day 48:
+    Mainframe: Secure
+    Main Control Unit: Secure
+    Internal Network: Secure
+    Cryptographic Protocols: Secure
+    
+'''    
+
+Plantext packet 3:
+'''
+Report Day 49:
+    Mainframe: Secure
+    Main Control Unit: Secure
+    Internal Network: Secure
+    Cryptographic Protocols: Secure
+    
+'''
+
+Plantext packet 4:
+'''
+Report Day 50:
+    Mainframe: Secure
+    Main Control Unit: Secure
+    Internal Network: Secure
+    Cryptographic Protocols: Secure
+    
+''' 
+
+Plantext packet 5:
+'''
+Report Day 51:
+    Mainframe: Secure
+    Main Control Unit: Secure
+    Internal Network: Secure
+    Cryptographic Protocols: Insecure
+    
+'''    
