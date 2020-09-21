@@ -5,8 +5,9 @@ date: 2020-08-26
 description: "CTF - Writeups"
 ---
 
-## CTF - Writeups:
+Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for having me, specially to [RazviOverflow](https://ctftime.org/user/72894), he is a reverse machine. Check out his [website](https://razvioverflow.github.io/)! 
 
+## CTF - Writeups:
 
 - [NeverLAN CTF 2020]() (08/02/2020) To be published
 - [UTCTF 2020]() (07/03/2020) To be published
