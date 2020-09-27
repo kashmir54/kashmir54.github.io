@@ -10,7 +10,7 @@ description: Walkthroughs.
 <script src="https://www.hackthebox.eu/badge/365669"></script>
 
 - [Traceback](/walkthroughs/hackthebox/traceback)
-- [Admirer]() when machine retires.
+- [Admirer](/walkthroughs/hackthebox/admirer)
 - [Tabby]() when machine retires.
 - [SneakyMailer]() when machine retires.
 - [Passage]() when machine retires.
