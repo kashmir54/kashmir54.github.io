@@ -133,7 +133,7 @@ https://hidden-journey-18965.herokuapp.com/
 Flag Format HACSEC{...}
 
 
-{% highlight JavaScript %}
+{% highlight javascript %}
 document.cookie = "username=dev";
 	
 function myfunc() {
