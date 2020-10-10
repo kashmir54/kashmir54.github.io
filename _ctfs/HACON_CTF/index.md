@@ -13,7 +13,16 @@ description: CTF - HACON_CTF
   <img src="/images/writeups/HACON_CTF/1_logo.png" width="100"/>
 </p>
 
-I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/team/109689) and get some challenges:
+I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges:
+
+- [EAsy WEb](#easy-web)
+- [Robo Returns]
+- [MISC 2]
+- [MISC 3]
+- [Sn0w M4N]
+- [BEEP]
+- [Wizard]
+- [the_matrix]
 
 <p align="left">
   <img src="/images/writeups/HACON_CTF/2_rank.png" width="600"/>
