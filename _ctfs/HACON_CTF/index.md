@@ -16,13 +16,13 @@ description: CTF - HACON_CTF
 I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges:
 
 - [EAsy WEb](#easy-web)
-- [Robo Returns]
-- [MISC 2]
-- [MISC 3]
-- [Sn0w M4N]
-- [BEEP]
-- [Wizard]
-- [the_matrix]
+- [Robo Returns](#robo-returns)
+- [MISC 2](#misc-2)
+- [MISC 3](#misc-3)
+- [Sn0w M4N](sn0w-m4n)
+- [BEEP](#beep)
+- [Wizard](#wizard)
+- [the_matrix](#the_matrix)
 
 <p align="left">
   <img src="/images/writeups/HACON_CTF/2_rank.png" width="600"/>
