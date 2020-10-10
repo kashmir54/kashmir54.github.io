@@ -16,3 +16,4 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 - [NahamCon CTF 2020]() (12/06/2020) To be published
 - [TJCTF 2020]() (22/06/2020) To be published
 - [BSides Copenhagen 2020](/ctfs/BSides_Copenhagen_2020) (19/09/2020)
+- [HACON_CTF](/ctfs/HACON_CTF) (25/09/2020)
