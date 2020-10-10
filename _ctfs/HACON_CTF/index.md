@@ -31,7 +31,7 @@ And you have the flag!!
 
 https://murmuring-caverns-26740.herokuapp.com/
 
-Flag Format: HACSEC{...}
+Flag Format HACSEC{...}
 -----------
 
 By visiting the website we can check a login form. If we submit it empty it shows a hint:
@@ -89,7 +89,7 @@ You are a CBI agent and you have to find the name..
 
 http://web.hac-security.com/
 
-Flag Format: HACSEC{...}
+Flag Format HACSEC{...}
 -----------
 
 We have an Amazon like website...?
@@ -127,7 +127,7 @@ Check out for errors
 
 https://hidden-journey-18965.herokuapp.com/
 
-Flag Format: HACSEC{...}
+Flag Format HACSEC{...}
 -----------
 
 {% highlight JavaScript %}
@@ -198,7 +198,7 @@ I didn't get anything in a certain time, so I skipped, I will come back to it.
 
 What is the port used by IPPS ?
 
-Flag Format: HACSEC{portnumber}
+Flag Format HACSEC{portnumber}
 -----------
 
 ``` flag: HACSEC{631}```
@@ -212,7 +212,7 @@ Flag Format: HACSEC{portnumber}
 
 Very Easy .....Basic skills and you got it.
 
-Flag Format: HACSEC{string}
+Flag Format HACSEC{string}
 -----------
 
 We had a zip file, I used these commands:
@@ -240,7 +240,7 @@ flag907:HACSEC{Flag is not here}
 
 Zips and Your skills , easy enough ....huh!
 
-Flag Format: HACSEC{string}
+Flag Format HACSEC{string}
 -----------
 
 Commands:
@@ -267,8 +267,8 @@ Who doesnt        love to build
               a snow man during
               winter.
 
-Flag Format: HACSEC{strings}
-Note: Words are separated by underscore()
+Flag Format HACSEC{strings}
+Note Words are separated by underscore()
 -----------
 
 We can find out some whitespace stego on the txt file:
@@ -292,8 +292,8 @@ HACSEC{s7eg_5n0W_F7W}
 
 Whats that noise, does it sound familiar?
 
-Flag Format: HACSEC{string}
-Note: Words separated by underscore()
+Flag Format HACSEC{string}
+Note Words separated by underscore()
 -----------
 
 It's a wav audio, so we will use a tool called morse2ascii:
@@ -320,8 +320,8 @@ Check the hint to get it right with the underscores: 1st 2 words are a single wo
 Wizard has the magical powers to bring people from the dead.
 They use a very special spell, figure it out.
 
-Flag Format: HACSEC{strings}
-Note: Words are separated by underscore()
+Flag Format HACSEC{strings}
+Note Words are separated by underscore()
 -----------
 
 First we can see a png file that cannot be read. We can see that there is something going on with the magic numbers:
