@@ -10,13 +10,13 @@ description: CTF - HACON_CTF
 # HACON_CTF
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/1_logo.png" width="300"/>
+  <img src="/images/writeups/HACON_CTF/1_logo.png" width="300"/>
 </p>
 
 I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/team/109689) and get some challenges:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/2_rank.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/2_rank.png" width="500"/>
 </p>
 
 Let's get into it!
@@ -32,14 +32,12 @@ And you have the flag!!
 https://murmuring-caverns-26740.herokuapp.com/
 
 Flag Format: HACSEC{...}
-
-Author: devPlayer55221
 -----------
 
 By visiting the website we can check a login form. If we submit it empty it shows a hint:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Web/easy_web/1_web.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Web/easy_web/1_web.png" width="500"/>
 </p>
 
 ```
@@ -75,7 +73,7 @@ syntsvyr -> ROT13 -> flagfile
 Ok... Visiting _https://murmuring-caverns-26740.herokuapp.com/flagfile_ it shows a text. I search for the start of the flag (HACSEC) and find it in the same color as the background:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Web/easy_web/2_flag.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Web/easy_web/2_flag.png" width="500"/>
 </p>
 
 ```flag: HACSEC{Y0u_g0T_I7}```
@@ -92,14 +90,12 @@ You are a CBI agent and you have to find the name..
 http://web.hac-security.com/
 
 Flag Format: HACSEC{...}
-
-Author: N154R6
 -----------
 
 We have an Amazon like website...?
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Web/robo_returns/1_web.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Web/robo_returns/1_web.png" width="500"/>
 </p>
 
 I found a comment with this but it's not base64...
@@ -132,11 +128,9 @@ Check out for errors
 https://hidden-journey-18965.herokuapp.com/
 
 Flag Format: HACSEC{...}
-
-Author: devPlayer55221
 -----------
 
-```
+{% highlight JavaScript %}
 document.cookie = "username=dev";
 	
 function myfunc() {
@@ -191,7 +185,7 @@ function myfunc() {
 			})
 	})	
 }	
-```
+{% endhighlight %}
 
 I didn't get anything in a certain time, so I skipped, I will come back to it.
 
@@ -205,8 +199,6 @@ I didn't get anything in a certain time, so I skipped, I will come back to it.
 What is the port used by IPPS ?
 
 Flag Format: HACSEC{portnumber}
-
-Author: 3cl1pS3
 -----------
 
 ``` flag: HACSEC{631}```
@@ -221,8 +213,6 @@ Author: 3cl1pS3
 Very Easy .....Basic skills and you got it.
 
 Flag Format: HACSEC{string}
-
-Author: Bl4ckc34sEr
 -----------
 
 We had a zip file, I used these commands:
@@ -251,8 +241,6 @@ flag907:HACSEC{Flag is not here}
 Zips and Your skills , easy enough ....huh!
 
 Flag Format: HACSEC{string}
-
-Author: Bl4ckc34sEr
 -----------
 
 Commands:
@@ -281,14 +269,12 @@ Who doesnt        love to build
 
 Flag Format: HACSEC{strings}
 Note: Words are separated by underscore()
-
-Author: AN0NIT
 -----------
 
 We can find out some whitespace stego on the txt file:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/snow_man/1_stego.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/snow_man/1_stego.png" width="500"/>
 </p>
 
 We can use a tool called [stegsnow](http://manpages.ubuntu.com/manpages/bionic/man1/stegsnow.1.html):
@@ -308,8 +294,6 @@ Whats that noise, does it sound familiar?
 
 Flag Format: HACSEC{string}
 Note: Words separated by underscore()
-
-Author: AN0NIT
 -----------
 
 It's a wav audio, so we will use a tool called morse2ascii:
@@ -322,7 +306,7 @@ morse2ascii -m audio.wav
 Now we can introduce it into the [CyberChef](https://gchq.github.io/CyberChef/) website and get the flag:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/beep/1_flag.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/beep/1_flag.png" width="500"/>
 </p>
 
 Check the hint to get it right with the underscores: 1st 2 words are a single word ;P
@@ -338,8 +322,6 @@ They use a very special spell, figure it out.
 
 Flag Format: HACSEC{strings}
 Note: Words are separated by underscore()
-
-Author: AN0NIT
 -----------
 
 First we can see a png file that cannot be read. We can see that there is something going on with the magic numbers:
@@ -363,13 +345,13 @@ hexedit wizard.png
 ```
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/wizard/2_hexedit.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/wizard/2_hexedit.png" width="500"/>
 </p>
 
 And now check the flag in the image:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/wizard/3_flag.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/wizard/3_flag.png" width="500"/>
 </p>
 
 ``` flag: HACSEC{w1Z4rD_u53_M4giC_byT3S} ```
@@ -380,7 +362,7 @@ And now check the flag in the image:
 We got an image:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/the_matrix/the_matrix.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/the_matrix/the_matrix.png" width="500"/>
 </p>
 -----------
 
@@ -411,13 +393,13 @@ Archive:  world.zip
 A pcap file showed up, let's take a look on Wireshark:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/the_matrix/1_wire.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/the_matrix/1_wire.png" width="500"/>
 </p>
 
 An HTTP POST is sent and we can see this data:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/the_matrix/2_ana.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/the_matrix/2_ana.png" width="500"/>
 </p>
 
 ```
@@ -427,7 +409,7 @@ An HTTP POST is sent and we can see this data:
 The last part seems like rot. Not 13 but I check other values until reaching 34:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/the_matrix/3_rot.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/the_matrix/3_rot.png" width="500"/>
 </p>
 
 ```
@@ -437,7 +419,7 @@ TmljZSBvbmUgTmVvIGhlcmUncyB5b3VyIGZsYWcgSEFDe3kwdWFyZXRoZWNoMHNlbjBuZX0(put equa
 Let's go what it says, but an equal could be some base64. Before putting the equal I could see the message and the flag:
 
 <p align="center">
-  <img src="/images/ctf/HACON_CTF/Forensic/the_matrix/4_flag.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Forensic/the_matrix/4_flag.png" width="500"/>
 </p>
 
 ```flag: HAC{y0uarethech0sen0ne}```
