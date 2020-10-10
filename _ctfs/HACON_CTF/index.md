@@ -32,7 +32,7 @@ And you have the flag!!
 https://murmuring-caverns-26740.herokuapp.com/
 
 Flag Format HACSEC{...}
------------
+
 
 By visiting the website we can check a login form. If we submit it empty it shows a hint:
 
@@ -90,7 +90,7 @@ You are a CBI agent and you have to find the name..
 http://web.hac-security.com/
 
 Flag Format HACSEC{...}
------------
+
 
 We have an Amazon like website...?
 
@@ -128,7 +128,7 @@ Check out for errors
 https://hidden-journey-18965.herokuapp.com/
 
 Flag Format HACSEC{...}
------------
+
 
 {% highlight JavaScript %}
 document.cookie = "username=dev";
@@ -199,7 +199,7 @@ I didn't get anything in a certain time, so I skipped, I will come back to it.
 What is the port used by IPPS ?
 
 Flag Format HACSEC{portnumber}
------------
+
 
 ``` flag: HACSEC{631}```
 
@@ -213,7 +213,7 @@ Flag Format HACSEC{portnumber}
 Very Easy .....Basic skills and you got it.
 
 Flag Format HACSEC{string}
------------
+
 
 We had a zip file, I used these commands:
 
@@ -241,7 +241,7 @@ flag907:HACSEC{Flag is not here}
 Zips and Your skills , easy enough ....huh!
 
 Flag Format HACSEC{string}
------------
+
 
 Commands:
 
@@ -269,7 +269,7 @@ Who doesnt        love to build
 
 Flag Format HACSEC{strings}
 Note Words are separated by underscore()
------------
+
 
 We can find out some whitespace stego on the txt file:
 
@@ -294,7 +294,7 @@ Whats that noise, does it sound familiar?
 
 Flag Format HACSEC{string}
 Note Words separated by underscore()
------------
+
 
 It's a wav audio, so we will use a tool called morse2ascii:
 
@@ -322,7 +322,7 @@ They use a very special spell, figure it out.
 
 Flag Format HACSEC{strings}
 Note Words are separated by underscore()
------------
+
 
 First we can see a png file that cannot be read. We can see that there is something going on with the magic numbers:
 
@@ -364,7 +364,7 @@ We got an image:
 <p align="center">
   <img src="/images/writeups/HACON_CTF/Forensic/the_matrix/the_matrix.png" width="500"/>
 </p>
------------
+
 
 Let's analyze it with binwalk:
 
