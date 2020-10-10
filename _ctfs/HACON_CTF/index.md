@@ -10,13 +10,13 @@ description: CTF - HACON_CTF
 # HACON_CTF
 
 <p align="center">
-  <img src="/images/writeups/HACON_CTF/1_logo.png" width="300"/>
+  <img src="/images/writeups/HACON_CTF/1_logo.png" width="200"/>
 </p>
 
 I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/team/109689) and get some challenges:
 
 <p align="center">
-  <img src="/images/writeups/HACON_CTF/2_rank.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/2_rank.png" width="550"/>
 </p>
 
 Let's get into it!
