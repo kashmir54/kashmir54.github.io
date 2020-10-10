@@ -25,7 +25,7 @@ Let's get into it!
 
 # Web
 
-### EAsy WEb
+## EAsy WEb
 70
 
 Go on, step by step,
@@ -81,7 +81,7 @@ Ok... Visiting _https://murmuring-caverns-26740.herokuapp.com/flagfile_ it shows
 ```flag: HACSEC{Y0u_g0T_I7}```
 
 
-### Robo Returns
+## Robo Returns
 75
 
 A spy of China has been arrested from India yesterday..
@@ -122,7 +122,7 @@ We can check out the name **johnwick**
 ``` flag: HACSEC{johnwick} ```
 
 
-### D4m4ged C4lc
+## D4m4ged C4lc
 80
 
 This calculator does more than javascript operation
@@ -196,7 +196,7 @@ I didn't get anything in a certain time, so I skipped, I will come back to it.
 
 # Network
 
-### BAsic
+## BAsic
 50
 
 What is the port used by IPPS ?
@@ -210,7 +210,7 @@ Flag Format HACSEC{portnumber}
 
 # Misc
 
-### MISC 2
+## MISC 2
 50
 
 Very Easy .....Basic skills and you got it.
@@ -239,7 +239,7 @@ flag907:HACSEC{Flag is not here}
 ``` flag: HACSEC{z1ppppitnice}```
 
 
-### MISC 3
+## MISC 3
 75
 
 Zips and Your skills , easy enough ....huh!
@@ -265,7 +265,7 @@ HACSEC{Z1ppv2}
 
 # Forensic
 
-### Sn0w M4N
+## Sn0w M4N
 50
 
 Who doesnt        love to build
@@ -292,7 +292,7 @@ HACSEC{s7eg_5n0W_F7W}
 ``` flag: HACSEC{s7eg_5n0W_F7W}```
 
 
-### BEEP
+## BEEP
 75
 
 Whats that noise, does it sound familiar?
@@ -319,7 +319,7 @@ Check the hint to get it right with the underscores: 1st 2 words are a single wo
 ``` flag: HACSEC{M0RS3C0D3_1S_W4Y_T0O_CONV3N7ION4L} ```
 
 
-### Wizard
+## Wizard
 75
 
 Wizard has the magical powers to bring people from the dead.
@@ -362,7 +362,7 @@ And now check the flag in the image:
 ``` flag: HACSEC{w1Z4rD_u53_M4giC_byT3S} ```
 
 
-### the_matrix
+## the_matrix
 
 We got an image:
 
