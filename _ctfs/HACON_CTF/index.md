@@ -9,17 +9,18 @@ description: CTF - HACON_CTF
 
 # HACON_CTF
 
-<p align="center">
-  <img src="/images/writeups/HACON_CTF/1_logo.png" width="200"/>
+<p align="left">
+  <img src="/images/writeups/HACON_CTF/1_logo.png" width="100"/>
 </p>
 
 I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/team/109689) and get some challenges:
 
-<p align="center">
-  <img src="/images/writeups/HACON_CTF/2_rank.png" width="550"/>
+<p align="left">
+  <img src="/images/writeups/HACON_CTF/2_rank.png" width="600"/>
 </p>
 
 Let's get into it!
+---
 
 # Web
 
@@ -37,7 +38,7 @@ Flag Format HACSEC{...}
 By visiting the website we can check a login form. If we submit it empty it shows a hint:
 
 <p align="center">
-  <img src="/images/writeups/HACON_CTF/Web/easy_web/1_web.png" width="500"/>
+  <img src="/images/writeups/HACON_CTF/Web/easy_web/1_web.png" width="600"/>
 </p>
 
 ```
@@ -78,6 +79,8 @@ Ok... Visiting _https://murmuring-caverns-26740.herokuapp.com/flagfile_ it shows
 
 ```flag: HACSEC{Y0u_g0T_I7}```
 
+
+
 ## Robo Returns
 75
 
@@ -117,6 +120,7 @@ Disallow:*
 We can check out the name **johnwick**
 
 ``` flag: HACSEC{johnwick} ```
+
 
 
 ## D4m4ged C4lc
