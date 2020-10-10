@@ -19,7 +19,7 @@ I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/tea
 - [Robo Returns](#robo-returns)
 - [MISC 2](#misc-2)
 - [MISC 3](#misc-3)
-- [Sn0w M4N](sn0w-m4n)
+- [Sn0w M4N](#sn0w-m4n)
 - [BEEP](#beep)
 - [Wizard](#wizard)
 - [the_matrix](#the_matrix)
