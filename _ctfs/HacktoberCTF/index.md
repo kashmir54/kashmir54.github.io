@@ -17,20 +17,24 @@ I have participated in this CTF for team [ISwearIGoogledIt](https://ctftime.org/
 
 Web:
 - [What Lies in the Shadows](#what-lies-in-the-shadows)
+
 OSINT:
 - [Creeping 1](#creeping-1)
 - [Creeping 2](#creeping-2)
 - [Creeping 3](#creeping-3)
 - [Creeping 4](#creeping-4)
 - [Past Attacks](#past-attacks)
+
 Steganography:
 - [Blasphemy](#blasphemy)
 - [Start Digging](#sstart-digging)
+
 Crypto:
 - [Hail Caesar!](#hail-caesar)
 - [Down the Wrong Path](#down-the-wrong-path)
 - [Cover Your Bases](#cover-your-bases)
 - [Bone to Pick](#bone-to-pick)
+
 Forensic:
 - [Captured Memories](#captured-memories)
 - [AmCaching In](#amcaching-in)
@@ -39,12 +43,15 @@ Forensic:
 - [Hell Spawn 1](#hell-spawn-1)
 - [Hell Spawn 2](#hell-spawn-2)
 - [Commands](#commands)
+
 Bonus:
 - [Public Service](#public-service)
+
 Traffic Analisys:
 - [Remotely Administrated Evil](#remotely-administrated-evil)
 - [Evil Corp’s Child](#evil-corps-child)
 - [An Evil Christmas Carol](#an-evil-christmas-carol)
+
 SQL:
 - [Past Demons](#past-demons)
 - [Address Book](#address-book)
@@ -55,6 +62,7 @@ SQL:
 - [90s Kids](#90s-kids)
 - [Jigsaw](#jigsaw)
 - [Student Body](#student-body)
+
 Programming:
 - [Message in an Array](#message-in-an-array)
 - [Trick or Treat](#trick-or-treat)
