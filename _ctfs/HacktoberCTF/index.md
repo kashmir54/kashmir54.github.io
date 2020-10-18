@@ -33,9 +33,10 @@ syyntax web
 
 Based on ghosttown discussions, DEADFACE has a secret website they tell their new recruits about. Somewhere on that site is a hidden flag that we need you to grab. Submit the flag as flag{flag_text}.
 
-I checked out spookyboi profile and found this [thread](https://www.ghosttown.xyz/t/trick-or-treat-smell-my-feet/52/5) then it talks about this [pastebin](https://pastebin.com/vbQZ7xwL)
+I checked out spookyboi profile and found this [thread](https://www.ghosttown.xyz/t/trick-or-treat-smell-my-feet/52/5) then it talks about this [pastebin](https://pastebin.com/vbQZ7xwL).
 
 ```323epprcunnvtibo6no7libdxopwcaqgorho6slmpos7fimetb4zskad```
+
 
 56 length and those alphanumeric... Seems like an .onion domain, head over to TOR Browser:
 
