@@ -50,7 +50,7 @@ Looking around the website we see nothing, went to the DevConsole and checked th
   <img src="/images/writeups/HacktoberCTF/Web/2_js.png" width="500"/>
 </p>
 
-```flag: flag{w3lcome_t0_d34df4ce} ```
+``` flag: flag{w3lcome_t0_d34df4ce} ```
 
 ---
 
@@ -67,16 +67,16 @@ What company does Ali Tevlin work for? Submit the flag in this format: flag{Litt
 In this challenge we can see the name Ali Tevlin, one or the organizers of the CTF. 
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/OSINT/Creeping/1_hack.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/OSINT/Creeping/1_hack.png" width="600"/>
 </p>
 
 We will check out [Sherlock](https://github.com/sherlock-project/sherlock) tool for username _alitevlin_, in the meantime, we went to Google where appeared some ontributions from that username on GhostTown forum. At the time I get into this forums, sherlock show up that the username was found on Facebook.
 
-<p align="left">
+<p align="center">
   <img src="/images/writeups/HacktoberCTF/OSINT/Creeping/2_google.png" width="500"/>
 </p>
 
-<p align="right">
+<p align="center">
   <img src="/images/writeups/HacktoberCTF/OSINT/Creeping/3_sher.png" width="500"/>
 </p>
 
@@ -86,7 +86,7 @@ On Facebook we can see the company he is working for.
   <img src="/images/writeups/HacktoberCTF/OSINT/Creeping/4_facebook.png" width="500"/>
 </p>
 
-```flag: flag{F. Kreuger Financial} ```
+``` flag: flag{F. Kreuger Financial} ```
 
 
 
@@ -100,7 +100,7 @@ Submit the flag in the following format: flag{Chief Executive Officer}
 
 From the previous Facebook screenshot, we can see his position at the company:
 
-```flag: flag{Senior Acquisitions Supervisor} ```
+``` flag: flag{Senior Acquisitions Supervisor} ```
 
 
 
@@ -118,7 +118,7 @@ On his facebook we can check his first post were the birthdate can be spotted:
   <img src="/images/writeups/HacktoberCTF/OSINT/Creeping3/1_date.png" width="500"/>
 </p>
 
-```flag: flag{17 jun 1973} ```
+``` flag: flag{17 jun 1973} ```
 
 
 
@@ -133,7 +133,7 @@ Example: flag{Albany, NY}
 We can see this [statue](https://www.facebook.com/photo/?fbid=126468515816065&set=a.126468555816061) and with google lens we can see that its the mothman statue. It is close to the Mothman Museum.
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/OSINT/Creeping4/1_museum.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/OSINT/Creeping4/1_museum.png" width="300"/>
 </p>
 
 ``` flag{Point Pleasant, WV} ```
@@ -242,7 +242,7 @@ kali@kali:~/Desktop/CTFs/HacktoberCTF/Stego/StartDigging/_steg06.jpg.extracted$ 
 The one named 1CC3B showed the following:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/OSINT/StartDigging/1_flag.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/Stego/StartDigging/1_flag.png" width="400"/>
 </p>
 
 ``` flag: flag{buried_s3cr3ts} ```
@@ -344,13 +344,13 @@ _9j_4AAQSkZJRgABAQEAeAB4AAD_4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD_2wBD
 It can be like base64, lets go to [CyberChef](https://gchq.github.io/CyberChef/) and we can see like an image magic bytes:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/Crypto/BoneToPick/1_base64.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/Crypto/BoneToPick/1_base64.png" width="600"/>
 </p>
 
 Let's render it:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/Crypto/BoneToPick/index.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/Crypto/BoneToPick/index.jpeg" width="400"/>
 </p>
 
 ``` flag: flag{angrybones} ```
@@ -423,7 +423,7 @@ Link to file
 We will use [AmcacheParser](https://github.com/EricZimmerman/AmcacheParser) on Windows 10. We get the exe file from [here](https://ericzimmerman.github.io/#!index.md).
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/Forensic/AmCachingIn/1_ps.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/Forensic/AmCachingIn/1_ps.png" width="650"/>
 </p>
 
 ```
@@ -679,7 +679,7 @@ kali@kali:~/Desktop/CTFs/HacktoberCTF/Forensic/CapturedMemories$ md5sum executab
 We go to [VirusTotal](https://www.virustotal.com/gui/file/096740ce1bc9fa14ab07c16efd21fd946b7e966dbc1fe66ce02f5860911c865e/community) and we can check a community comment with the flag:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/Forensic/CapturedMemories/1_comment.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/Forensic/CapturedMemories/1_comment.png" width="700"/>
 </p>
 
 ``` flag: flag{h4cktober_ctf_2020_nc} ```
@@ -706,7 +706,7 @@ Download file
 On wireshark we can check out the HTTP GET request:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/TrafficAnalysis/RemotelyAdministratedEvil/1_name.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/TrafficAnalysis/RemotelyAdministratedEvil/1_name.png" width="600"/>
 </p>
 
 ``` flag: flag{solut.exe} ```
@@ -754,7 +754,7 @@ Link to file - Password: hacktober
 We can check on the analysis the dll downloaded and the IP used to make the request:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/TrafficAnalysis/BoneToPick/1_export.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/TrafficAnalysis/Evil/1_export.png" width="500"/>
 </p>
 
 ``` flag: flag{205.185.125.104} ```
@@ -776,11 +776,11 @@ Download file
 I'm going easy on this. Used [sqlitebrowser](https://github.com/sqlitebrowser/sqlitebrowser/releases/tag/v3.11.0-beta3) for windows, checked the tables and see that spookyboi was UID = 8. Then went to the passwords table and retrieve the password:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/SQL/BoneToPick/1_users.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/SQL/PastDemons/1_users.png" width="500"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/SQL/BoneToPick/2_pass.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/SQL/PastDemons/2_pass.png" width="500"/>
 </p>
 
 We got like an MD5 hash. Head to [crackstation](https://crackstation.net/) and retrieve the password:
@@ -1053,9 +1053,7 @@ Submit the username as the flag.
 
 Use the file from Address Book.
 
-I just got all the last names and applied the following regex:
-
-_ [KRI]{2}.[A-Z]{3}[E-N]_
+I just got all the last names and applied the following regex: _[KRI]{2}.[A-Z]{3}[E-N]_
 
 And found KRYSIAK:
 
