@@ -1,0 +1,23 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Fri Oct 16 12:29:40 2020
+Invocation: foremost -i steg01.png 
+Output directory: /home/kali/Desktop/CTFs/HacktoberCTF/Stego/Ghost/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: steg01.png
+Start: Fri Oct 16 12:29:40 2020
+Length: 646 KB (662026 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.png 	     646 KB 	          0 	  (944 x 1584)
+Finish: Fri Oct 16 12:29:40 2020
+
+1 FILES EXTRACTED
+	
+png:= 1
+------------------------------------------------------------------
+
+Foremost finished at Fri Oct 16 12:29:40 2020
