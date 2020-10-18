@@ -10,7 +10,7 @@ description: CTF - HacktoberCTF
 # HacktoberCTF 2020
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/1_logo.png" width="300"/>
+  <img src="/images/writeups/HacktoberCTF/1_logo.png" width="700"/>
 </p>
 
 I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges:
@@ -458,7 +458,7 @@ Download file
 Get some Nirsoft tool like [win prefetch view](http://www.nirsoft.net/utils/win_prefetch_view.html), set it on our desktop and set the folder to the one downloaded:
 
 <p align="center">
-  <img src="/images/writeups/HacktoberCTF/Forensic/PrefetchPerfection/1_folder.png" width="500"/>
+  <img src="/images/writeups/HacktoberCTF/Forensic/PrefetchPerfection/1_path.png" width="500"/>
 </p>
 
 Checking the last run date on the details:
