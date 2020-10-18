@@ -13,7 +13,52 @@ description: CTF - HacktoberCTF
   <img src="/images/writeups/HacktoberCTF/1_logo.png" width="700"/>
 </p>
 
-I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges:
+I have participated in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and solve some challenges:
+
+Web:
+- [What Lies in the Shadows](#what-lies-in-the-shadows)
+OSINT:
+- [Creeping 1](#creeping-1)
+- [Creeping 2](#creeping-2)
+- [Creeping 3](#creeping-3)
+- [Creeping 4](#creeping-4)
+- [Past Attacks](#past-attacks)
+Steganography:
+- [Blasphemy](#blasphemy)
+- [Start Digging](#sstart-digging)
+Crypto:
+- [Hail Caesar!](#hail-caesar)
+- [Down the Wrong Path](#down-the-wrong-path)
+- [Cover Your Bases](#cover-your-bases)
+- [Bone to Pick](#bone-to-pick)
+Forensic:
+- [Captured Memories](#captured-memories)
+- [AmCaching In](#amcaching-in)
+- [Prefetch Perfection](#prefetch-perfection)
+- [Evil Twin](#evil-twin)
+- [Hell Spawn 1](#hell-spawn-1)
+- [Hell Spawn 2](#hell-spawn-2)
+- [Commands](#commands)
+Bonus:
+- [Public Service](#public-service)
+Traffic Analisys:
+- [Remotely Administrated Evil](#remotely-administrated-evil)
+- [Evil Corp’s Child](#evil-corps-child)
+- [An Evil Christmas Carol](#an-evil-christmas-carol)
+SQL:
+- [Past Demons](#past-demons)
+- [Address Book](#address-book)
+- [Body Count](#body-count)
+- [Null and Void](#null-and-void)
+- [Calisota](#calisota)
+- [Fall Classes](#fall-classes)
+- [90s Kids](#90s-kids)
+- [Jigsaw](#jigsaw)
+- [Student Body](#student-body)
+Programming:
+- [Message in an Array](#message-in-an-array)
+- [Trick or Treat](#trick-or-treat)
+
 
 <p align="center">
   <img src="/images/writeups/HacktoberCTF/2_rank.png" width="500"/>

@@ -9,8 +9,8 @@ description: CTF - HACON_CTF
 
 # HACON_CTF
 
-<p align="left">
-  <img src="/images/writeups/HACON_CTF/1_logo.png" width="100"/>
+<p align="center">
+  <img src="/images/writeups/HACON_CTF/1_logo.png" width="400"/>
 </p>
 
 I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges:
@@ -24,8 +24,8 @@ I participate in this CTF for my team [ISwearIGoogledIt](https://ctftime.org/tea
 - [Wizard](#wizard)
 - [the_matrix](#the_matrix)
 
-<p align="left">
-  <img src="/images/writeups/HACON_CTF/2_rank.png" width="600"/>
+<p align="center">
+  <img src="/images/writeups/HACON_CTF/2_rank.png" width="650"/>
 </p>
 
 Let's get into it!
