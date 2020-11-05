@@ -176,7 +176,7 @@ I looked in google de _WiCCPICC Profile_ and [checked](https://www.google.com/se
 ```
 
 <p align="center">
-  <img src="/images/writeups/NACTF/Turnips2/file" width="500"/>
+  <img src="/images/writeups/NACTF/Forensic/Turnips2/file" width="500"/>
 </p>
 
 ``` nactf{th3_turn1p5_ar3_tak17g_0v35_skf9} ```
