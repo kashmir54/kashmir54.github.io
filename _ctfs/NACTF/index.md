@@ -34,7 +34,7 @@ Kylie is obsessed with gummies. With her collection of miscellaneous gummy bears
 A simple _zsteg -a_ will retrieve the flag:
 
 <p align="center">
-  <img src="/images/writeups/NACTF/Forensic/1_flag.png" width="500"/>
+  <img src="/images/writeups/NACTF/Forensic/Gummies/1_flag.png" width="500"/>
 </p>
 
 ``` nactf{5t3gan0graphy_rul35!} ```
@@ -140,7 +140,7 @@ web:    aluigi.org
 This time I couldn't get the morse right with the _morse2ascii_, so let's head over to [Morsecode](https://morsecode.world/international/decoder/audio-decoder-adaptive.html):
 
 <p align="center">
-  <img src="/images/writeups/NACTF/SecretMessage/1_flag.png" width="500"/>
+  <img src="/images/writeups/NACTF/Forensic/SecretMessage/1_flag.png" width="500"/>
 </p>
 
 ``` nactf{QU33N_0F_L4NGU4G3S} ```
@@ -204,7 +204,7 @@ https://login.challenges.nactf.com/
 Let's try some SQL Injections:
 
 <p align="center">
-  <img src="/images/writeups/NACTF/Web/1_sql.png" width="500"/>
+  <img src="/images/writeups/NACTF/Web/Login/1_sql.png" width="500"/>
 </p>
 
 ``` nactf{sQllllllll_1m5qpr8x} ```
@@ -343,11 +343,11 @@ Dr. J created a fast pseudorandom number generator (prng) to randomly assign pai
 
 Beginner foothold: The server script uses the following line:
 
-```
+
 {% highlight python %}
 random.seed(round(time.time() / 100, 5))
 {% endhighlight %}
-```
+
 
 The random library will generate numbers from that seed. Imagine that you use the number _1_ instead of the time as seed. You will get the same random numbers in the same order for different executions. That is why they are called pseudo-random, because they aren't real random numbers. [Read more](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/).
 
@@ -401,3 +401,64 @@ b"What? You must have psychic powers... Well here's your flag: \nnactf{ch000nky_
 
 ``` nactf{ch000nky_turn1ps_1674973} ```
 
+
+## Error 1
+350
+
+Pranay has decided that the previous error detection scheme is a little bit too inefficient... While eating his delicious HAM-filled Italian Sub at lunch, he came up with a new idea. Fortunately, he has also invested in a less noisy communication channel.
+
+
+Worked on Hamming Code. I went deep into the basics in order to refresh the very basics. I end up using the following script and [this lib](https://github.com/dominiccarrano/hamming):
+
+
+{% highlight python %}
+from hamming import decode as dec
+from bitarray import bitarray
+data_str = '010011011010011010100011011001111110111101000101010011110111010101110110100110001100000111011101100100101111011010110001010011001110011010101111010111111010111010110111010111110110100110011011001101101101011101000111101000110100001010110100100001110110011110111011111101111000001100100011011010010111101100100100000011001101000001001010100000100111001011111101'
+def chunks(l, n):
+    # For item i in a range that is a length of l,
+    for i in range(0, len(l), n):
+        # Create an index range for l of n items:
+        yield l[i:i+n]
+
+#Divide in chunks of 15 bits
+chunk_list = list(chunks(data_str, 15))
+print(chunk_list)
+final_data = bitarray()
+
+# 16 bit chunk:
+
+# X 0 1 0
+# 0 1 1 0
+# 1 1 1 1 
+# 0 0 1 1 
+
+
+for item in chunk_list:
+
+  item = list(item)
+  print(item)
+  #This is key. The library gets 16 bit chunks, there is one misses, the first one. We calculate
+  #if it's 0 or 1. We know that there is AT LEAST ONE ERROR. Therefore, we set this bit the other way around.
+  if item.count('1') % 2 == 0:
+    item.insert(0,'1')
+  else:
+    item.insert(0,'0')
+  print(item)
+  print('--------')
+  data = bitarray(''.join(item))
+  print(data)
+  print(dec(data))
+  final_data.extend(dec(data))
+
+print(final_data)
+{% endhighlight %}
+
+
+I obtained the following bitarray, I introduced it into [CyberChef](https://gchq.github.io/CyberChef/) and got the flag:
+
+```
+011011100110000101100011011101000110011001111011011010000110000101101101011011010011000101101110011001110101111101100011011011110110010000110011011100110101111100110101001101000011011001101101011101100011001101110001001110010110000100110000011101000110010101111101
+```
+
+``` nactf{hamm1ng_cod3s_546mv3q9a0te} ```
