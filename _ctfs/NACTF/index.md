@@ -495,7 +495,7 @@ POP position 13 from the chunk and insert it at position 7:
 
 
 {% highlight python %}
-```
+
 from hamming import decode as dec
 from bitarray import bitarray
 import time
@@ -566,6 +566,6 @@ for item in chunk_list:
 msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
 n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
 print(n)
-```
+
 {% endhighligh %}
 
