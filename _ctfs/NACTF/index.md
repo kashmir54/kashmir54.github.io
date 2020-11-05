@@ -473,7 +473,9 @@ Kayla decided she wants to use the previous error detection scheme for cryptogra
 Worked on permutations and ways to check which permutation is the right one. What I mean is, the parity bits have been permutated, they are normally located at positions [1,2,4,8], but since this implementation only uses 15 bits, they are found at positions i-1 = [0,1,3,7]. In this challenge, they picked those positions and place it at any of the other 15 positions. The foothold is to **find the right permutation**. We generate all permutations of 4 length arrays with the possible 15 positions:
 
 {% highlight python %}
+
 itertools.permutations(iterable, r=4)
+
 {% endhighligh %}
 
 For each permutation (aka. "the secret key" on the challenge description) we will pick the bits from the positions and correctly place the into their original positions in this challenge: [0,1,3,7]. For example, we have the following permutation key: (5, 7, 8, 13). The workflow is:
