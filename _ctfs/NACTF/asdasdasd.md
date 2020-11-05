@@ -1,4 +1,18 @@
 
+
+To sum up:
+
+Positions (5, 7, 8, 13) to (0, 1, 3, 7):
+'011010100100111' -> '000011011110011'
+
+Once we change the chunk, we introduce it into the library and try to solve the error using hamming code. REMEMBER, this lib uses 16 bit chunks, we need to insert the remaining parity bit at position 0!!
+
+We compare the output with the expected first letter, in this case the one of the flag 'n'.
+
+This workflow is implemented on the following script along with the usage of previous hamming lib:
+
+
+
 {% highlight python %}
 ```
 from hamming import decode as dec
