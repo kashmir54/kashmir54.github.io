@@ -305,3 +305,33 @@ q: 19145471103565027335990409
 ```
 
 Now use this script developed over other CTFs:
+
+{% highlight python %}
+#!/usr/bin/env python3
+
+import codecs
+
+e = 65537
+n = 196284284267878746604991616360941270430332504451383
+d = 57761855232773998001493320508606360547602423576737 
+
+msg = 97938185189891786003246616098659465874822119719049
+flag = []
+
+hexa = str(hex(pow(msg,d,n)))[2:]
+print(hexa)
+
+flag = codecs.decode(hexa, 'hex').decode('utf-8')
+print(flag)
+{% endhighlight %}
+
+
+We can retrieve the flag:
+
+```
+kali@kali:~/Desktop/CTFs/NACTF/Crypto/RSA$ python3 text.py 
+6e616374667b736e33616b795f6331706833727d0a
+nactf{sn3aky_c1ph3r}
+```
+
+``` nactf{sn3aky_c1ph3r} ```
