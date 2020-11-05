@@ -306,7 +306,7 @@ q: 19145471103565027335990409
 
 Now use this script developed over other CTFs:
 
-
+```
 {% highlight python %}
 #!/usr/bin/env python3
 
@@ -325,7 +325,7 @@ print(hexa)
 flag = codecs.decode(hexa, 'hex').decode('utf-8')
 print(flag)
 {% endhighlight %}
-
+```
 
 We can retrieve the flag:
 
@@ -354,6 +354,7 @@ The random library will generate numbers from that seed. Imagine that you use th
 
 For this one I try to find the same seed as the server. For this task I picked various seeds within a given timeframe. I set this timeframe with my machine time and 2 offsets, -100000 and +100000. The following script will find the correct seed by comparing the first generated number. When found, we go ahead and send the following two numbers:
 
+```
 {% highlight python %}
 import random, time
 from pwn import *
@@ -385,6 +386,7 @@ print(r.recv())
 r.send("{}\n".format(magic_number_2))
 print(r.recv())
 {% endhighlight %}
+```
 
 ```
 kali@kali:~/Desktop/CTFs/NACTF/Crypto/RandomNumberGenerator$ python3 test.py 
@@ -409,6 +411,7 @@ Pranay has decided that the previous error detection scheme is a little bit too 
 
 Worked on Hamming Code. I went deep into the basics in order to refresh the very basics. I end up using the following script and [this lib](https://github.com/dominiccarrano/hamming):
 
+```
 {% highlight python %}
 from hamming import decode as dec
 from bitarray import bitarray
@@ -450,6 +453,7 @@ for item in chunk_list:
 
 print(final_data)
 {% endhighlight %}
+```
 
 I obtained the following bitarray, I introduced it into [CyberChef](https://gchq.github.io/CyberChef/) and got the flag:
 
@@ -500,6 +504,7 @@ We compare the output with the expected first letter, in this case the one of th
 
 This workflow is implemented on the following script along with the usage of previous hamming lib:
 
+```
 {% highlight python %}
 
 from hamming import decode as dec
@@ -588,6 +593,7 @@ n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
 print(n)
 
 {% endhighligh %}
+```
 
 After execution we can get out flag :D
 
@@ -631,8 +637,11 @@ The problem is like [bubble sort algorithm](https://www.toptal.com/developers/so
 
 This algorithm can be used in the next challenge, only change the option in the send line:
 
-{% highlight python %} r.send("1\n") {% endhighlight %}
+{% highlight python %} 
+r.send("1\n") 
+{% endhighlight %}
 
+```
 {% highlight python %}
 
 from pwn import *
@@ -694,6 +703,7 @@ while True:
     stage += 1
 
 {% endhighlight %}
+```
 
 Execute it and retrieve the flag:
 
@@ -708,7 +718,9 @@ nc challenges.ctfd.io 30267
 
 Use previous algorithm and change the option in the send line:
 
-{% highlight python %} r.send("2\n") {% endhighlight %}
+{% highlight python %} 
+r.send("2\n") 
+{% endhighlight %}
 
 ``` nactf{d0n7_w0rry_p34_h4ppy_f27ae283dd72cb62f685} ```
 
@@ -727,6 +739,7 @@ The same as before, but now we fix the positions at 1 and 0, adding the conveyor
 
 When position 0 is better than 1, swap, else, move conveyor. The exception case is if position 0 is the final element and the position 1 is the fisrt element, in this case, we move the conveyor.
 
+```
 {% highlight python %}
 from pwn import *
 import re
@@ -798,7 +811,7 @@ while True:
     r.send("{}\n".format(sequence))
     stage += 1
 {% endhighlight %}
-
+```
 
 ``` nactf{1t_t4k35_tw0_t0_m4n90_8a51c7b47fbe227} ```
 
