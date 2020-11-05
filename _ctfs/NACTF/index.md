@@ -308,7 +308,6 @@ Now use this script developed over other CTFs:
 
 {% highlight python %}
 #!/usr/bin/env python3
-
 import codecs
 
 e = 65537
@@ -335,3 +334,70 @@ nactf{sn3aky_c1ph3r}
 ```
 
 ``` nactf{sn3aky_c1ph3r} ```
+
+
+##  Random Number Generator
+250
+
+Dr. J created a fast pseudorandom number generator (prng) to randomly assign pairs for the upcoming group test. Austin really wants to know the pairs ahead of time... can you help him and predict the next output of Dr. J's prng?
+
+Beginner foothold: The server script uses the following line:
+
+```
+{% highlight python %}
+random.seed(round(time.time() / 100, 5))
+{% endhighlight %}
+```
+
+The random library will generate numbers from that seed. Imagine that you use the number _1_ instead of the time as seed. You will get the same random numbers in the same order for different executions. That is why they are called pseudo-random, because they aren't real random numbers. [Read more](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/).
+
+For this one I try to find the same seed as the server. For this task I picked various seeds within a given timeframe. I set this timeframe with my machine time and 2 offsets, -100000 and +100000. The following script will find the correct seed by comparing the first generated number. When found, we go ahead and send the following two numbers:
+
+
+{% highlight python %}
+import random, time
+from pwn import *
+
+magic_number_1, magic_number_2 = 0, 0
+r = remote('challenges.ctfd.io', 30264)
+
+print(r.recv())
+r.send("r\n")
+number = int(r.recv()[:-2])
+print(number)
+print("-----------")
+
+#Cover a wide frame of time, checking wether I found the correct seed or not:
+for i in range(-100000,100000):
+
+  random.seed(round(time.time() / 100 + i/100000, 5))
+  number_2 = random.randint(1, 100000000)
+
+  if number_2 == number:
+    print(str(number_2), i)
+    magic_number_1 = random.randint(1, 100000000)
+    magic_number_2 = random.randint(1, 100000000)
+
+r.send("g\n")
+print(r.recv())
+r.send("{}\n".format(magic_number_1))
+print(r.recv())
+r.send("{}\n".format(magic_number_2))
+print(r.recv())
+{% endhighlight %}
+
+
+```
+kali@kali:~/Desktop/CTFs/NACTF/Crypto/RandomNumberGenerator$ python3 test.py 
+[+] Opening connection to challenges.ctfd.io on port 30264: Done
+b"Welcome to Dr. J's Random Number Generator!\n[r] Print a new random number\n[g] Guess the next two random numbers and receive the flag!\n[q] Quit\n\n> "
+31242721
+-----------
+31242721 399
+b'Guess the next two random numbers for a flag!\nGood luck!\nEnter your first guess:\n> '
+b"Wow, lucky guess... You won't be able to guess right a second time\nEnter your second guess:\n> "
+b"What? You must have psychic powers... Well here's your flag: \nnactf{ch000nky_turn1ps_1674973}\n"
+```
+
+``` nactf{ch000nky_turn1ps_1674973} ```
+
