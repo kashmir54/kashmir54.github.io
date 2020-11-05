@@ -618,15 +618,15 @@ Give instructions in the form of numbers separated by spaces. Entering the numbe
 
 Avocado, Brocolli, Eggplant, Daikon Radish, Carrot
 
-    (swap 3 and 4)
+(swap 3 and 4)
 
 Avocado, Brocolli, Eggplant, Carrot, Daikon Radish
 
-    (swap 2 and 3)
+(swap 2 and 3)
 
 Avocado, Brocolli, Carrot, Eggplant, Daikon Radish
 
-    (swap 3 and 4)
+(swap 3 and 4)
 
 Avocado, Brocolli, Carrot, Daikon Radish, Eggplant
 
@@ -635,10 +635,7 @@ The problem is like [bubble sort algorithm](https://www.toptal.com/developers/so
 
 This algorithm can be used in the next challenge, only change the option in the send line:
 
-{% highlight python %} 
-r.send("1\n") 
-{% endhighlight %}
-
+{% highlight python %} r.send("1\n") {% endhighlight %}
 
 {% highlight python %}
 
@@ -716,9 +713,7 @@ nc challenges.ctfd.io 30267
 
 Use previous algorithm and change the option in the send line:
 
-{% highlight python %} 
-r.send("2\n") 
-{% endhighlight %}
+{% highlight python %} r.send("2\n") {% endhighlight %}
 
 
 ``` nactf{d0n7_w0rry_p34_h4ppy_f27ae283dd72cb62f685} ```
@@ -749,21 +744,21 @@ def bubbleSort(arr, sorted_arr):
     n = len(arr) 
     sequence = []
     bot, top = min(sorted_arr), max(sorted_arr)
-# While the array is not sorted...
+    # While the array is not sorted...
     while arr != sorted_arr: 
-# Exceptional case
+        # Exceptional case
         if arr[0] == top and arr[1] == bot:
-# Move conveyor-belt
+            # Move conveyor-belt
             first = arr.pop(0)
             arr.append(first)
             sequence.append('c')
             continue
-# Swap elements if 0 is greater than 1
+        # Swap elements if 0 is greater than 1
         if arr[0] > arr[1]: 
             sequence.append('s')
             arr[0], arr[1] = arr[1], arr[0] 
         else:
-# Move conveyor-belt    
+            # Move conveyor-belt    
             first = arr.pop(0)
             arr.append(first)
             sequence.append('c')
@@ -776,7 +771,7 @@ def get_sequence(current_list):
     unordered = current_list.split(', ')
     sorted_list = sorted(unordered)
 
-# Set objectives and arrays
+    # Set objectives and arrays
     for desired_index, item in enumerate(sorted_list):
         current_index = unordered.index(item)
         unordered[current_index] = desired_index
