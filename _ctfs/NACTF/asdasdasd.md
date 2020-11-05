@@ -1,4 +1,21 @@
 
+For each permutation (aka. "the secret key" on the challenge description) we will pick the bits from the positions and correctly place the into their original positions in this challenge: [0,1,3,7]. For example, we have the following permutation key: (5, 7, 8, 13). The workflow is:
+
+```
+bit_chunk = '011010100100111'
+
+POP position 5 from the chunk and insert it at position 0:
+'01101**0**100100111' -> '**0**01101100100111'
+
+POP position 7 from the chunk and insert it at position 1:
+'0011011**0**0100111' -> '0**0**0110110100111'
+
+POP position 8 from the chunk and insert it at position 3:
+'00011011**0**100111' -> '000**0**11011100111'
+
+POP position 13 from the chunk and insert it at position 7:
+'000011011100**1**11' -> '0000110**1**1110011'
+```
 
 To sum up:
 
