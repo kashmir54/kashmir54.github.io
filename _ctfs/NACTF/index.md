@@ -477,16 +477,11 @@ itertools.permutations(iterable, r=4)
 ```
 
 
-
 {% highlight python %}
-
 from hamming import decode as dec
 from bitarray import bitarray
 import time
 import binascii
 import itertools
-
-data_str = '0110101001001110100100111100101101'
-
 {% endhighligh %}
 
