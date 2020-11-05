@@ -474,11 +474,4 @@ Worked on permutations and ways to check which permutation is the right one. Wha
 We generate all permutations of 4 length arrays with the possible 15 positions:
 
 
-{% highlight python %}
-
-import time
-import binascii
-import itertools
-
-{% endhighligh %}
 
