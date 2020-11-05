@@ -474,4 +474,46 @@ Worked on permutations and ways to check which permutation is the right one. Wha
 We generate all permutations of 4 length arrays with the possible 15 positions:
 
 
+{% highlight python %}
+from hamming import decode as dec
+from bitarray import bitarray
+data_str = '010011011010011010100011011001111110111101000101010011110111010101110110100110001100000111011101100100101111011010110001010011001110011010101111010111111010111010110111010111110110100110011011001101101101011101000111101000110100001010110100100001110110011110111011111101111000001100100011011010010111101100100100000011001101000001001010100000100111001011111101'
+def chunks(l, n):
+    # For item i in a range that is a length of l,
+    for i in range(0, len(l), n):
+        # Create an index range for l of n items:
+        yield l[i:i+n]
+
+# Divide in chunks of 15 bits
+chunk_list = list(chunks(data_str, 15))
+print(chunk_list)
+final_data = bitarray()
+
+# 16 bit chunk:
+
+# X 0 1 0
+# 0 1 1 0
+# 1 1 1 1 
+# 0 0 1 1 
+
+
+for item in chunk_list:
+
+  item = list(item)
+  print(item)
+  #This is key. The library gets 16 bit chunks, there is one misses, the first one. We calculate
+  #if it's 0 or 1. We know that there is AT LEAST ONE ERROR. Therefore, we set this bit the other way around.
+  if item.count('1') % 2 == 0:
+    item.insert(0,'1')
+  else:
+    item.insert(0,'0')
+  print(item)
+  print('--------')
+  data = bitarray(''.join(item))
+  print(data)
+  print(dec(data))
+  final_data.extend(dec(data))
+
+print(final_data)
+{% endhighlight %}
 
