@@ -1,17 +1,6 @@
-To sum up:
-
-Positions (5, 7, 8, 13) to (0, 1, 3, 7):
-'011010100100111' -> '000011011110011'
-
-Once we change the chunk, we introduce it into the library and try to solve the error using hamming code. REMEMBER, this lib uses 16 bit chunks, we need to insert the remaining parity bit at position 0!!
-
-We compare the output with the expected first letter, in this case the one of the flag 'n'.
-
-This workflow is implemented on the following script along with the usage of previous hamming lib:
-
 
 {% highlight python %}
-
+```
 from hamming import decode as dec
 from bitarray import bitarray
 import time
@@ -20,7 +9,7 @@ import itertools
 
 data_str = '011010100100111010010011110010110110110010010010011100001111101101101000110100110000010011100010001001110000110111100100110111111110101000101011011010000111100001000111001110010111001101011100011101111011100111111000101001110000011101011110010111111110001101110000011010010011101010010110101010001000011100101110100000101110000010110010100010101111010110001101001100001000101100100011111000100001110001100110001110101011010001111001111001101001110000110000111011001000010110001001010111111010101100010011011001110110111001100111101001001100110100100110001000101010111011101010110000111001011100111001'
 
-# For dividing in chunks
+#For dividing in chunks
 def chunks(l, n):
   for i in range(0, len(l), n):
     yield l[i:i+n]
@@ -31,7 +20,7 @@ def text_from_bits(bits, encoding='utf-8', errors='surrogatepass'):
   return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode(encoding, errors) or '\0'
 
 
-# Pick the bits from the combination and insert them into the right position for parity bits
+#Pick the bits from the combination and insert them into the right position for parity bits
 def swap(bits, comb):
   for i, j in zip([0,1,3,7], [0,1,2,3]):
     ex = bits.pop(comb[j])
@@ -39,7 +28,7 @@ def swap(bits, comb):
   return bits
 
 
-# Divide in chunks of 15 bits
+#Divide in chunks of 15 bits
 chunk_list = list(chunks(data_str, 15))
 secret_key = []
 
@@ -48,7 +37,7 @@ iterable = [x for x in range(0,14)]
 combinations = list(itertools.permutations(iterable, r=4))
 print('Total permutations: ', len(list(combinations)))
 
-# Try all permutations that could lead into the right first two bytes
+#Try all permutations that could lead into the right first two bytes
 for combination in combinations:
 
   final_data = bitarray()
@@ -79,8 +68,8 @@ for combination in combinations:
     secret_key = combination
     break
 
-# The we could find 2 combinations, but only the first showed a reasonable flag.
-# We stop when find the first permutation with the previous break instruction.
+#The we could find 2 combinations, but only the first showed a reasonable flag.
+#We stop when find the first permutation with the previous break instruction.
 
 # Now that we know the permutations, retrieve the flag
 final_data = bitarray()
@@ -98,7 +87,7 @@ for item in chunk_list:
 msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
 n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
 print(n)
-
+```
 {% endhighligh %}
 
 
@@ -112,12 +101,13 @@ Combination =  (5, 7, 8, 13)
 nactf{err0r_c0rr3cti0n_w1th_th3_c0rr3ct_f1le_q73xer7k9}
 ```
 
+``` nactf{err0r_c0rr3cti0n_w1th_th3_c0rr3ct_f1le_q73xer7k9} ```
+
 ---
 
 # General
 
-##  Dr. 
-J's Vegetable Factory #1 🥕
+##  Dr. J's Vegetable Factory #1 🥕
 50
 
 After years of collecting plush vegetable toys, Dr. J decided to take on his true passion: starting a vegetable factory. Dr. J is incredibly organized, so he likes all of his vegetables to be in the proper order. In fact, he built a robot "Turnipinator-1000" to alphabetize his vegetables for him! Unfortunately, Dr. J doesn't know what instructions to give Turnipinator-1000. Can you help him out? 🥬🥕🌽🍆🥦🥒🥑🍄
@@ -145,11 +135,9 @@ The problem is like [bubble sort algorithm](https://www.toptal.com/developers/so
 
 This algorithm can be used in the next challenge, only change the option in the send line:
 
-```
-
+{% highlight python %} 
 r.send("1\n") 
-
-```
+{% endhighlight %}
 
 
 {% highlight python %}
@@ -228,11 +216,9 @@ nc challenges.ctfd.io 30267
 
 Use previous algorithm and change the option in the send line:
 
-```
-
+{% highlight python %} 
 r.send("2\n") 
-
-```
+{% endhighlight %}
 
 
 ``` nactf{d0n7_w0rry_p34_h4ppy_f27ae283dd72cb62f685} ```
@@ -263,21 +249,21 @@ def bubbleSort(arr, sorted_arr):
     n = len(arr) 
     sequence = []
     bot, top = min(sorted_arr), max(sorted_arr)
-    # While the array is not sorted...
+# While the array is not sorted...
     while arr != sorted_arr: 
-        # Exceptional case
+# Exceptional case
         if arr[0] == top and arr[1] == bot:
-            # Move conveyor-belt
+# Move conveyor-belt
             first = arr.pop(0)
             arr.append(first)
             sequence.append('c')
             continue
-        # Swap elements if 0 is greater than 1
+# Swap elements if 0 is greater than 1
         if arr[0] > arr[1]: 
             sequence.append('s')
             arr[0], arr[1] = arr[1], arr[0] 
         else:
-            # Move conveyor-belt    
+# Move conveyor-belt    
             first = arr.pop(0)
             arr.append(first)
             sequence.append('c')
