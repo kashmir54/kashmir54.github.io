@@ -3,7 +3,7 @@ title: "CTF - NACTF2020"
 categories: [ctf]
 date: 2020-10-16
 hasComments: true
-image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
+image: /images/writeups/NACTF/1_logo.jpeg
 description: CTF - NACTF
 ---
 
