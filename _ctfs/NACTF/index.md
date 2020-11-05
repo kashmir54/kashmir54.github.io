@@ -495,3 +495,131 @@ POP position 13 from the chunk and insert it at position 7:
 
 
 
+bit_chunk = '011010100100111'
+
+POP position 5 from the chunk and insert it at position 0:
+'01101**0**100100111' -> '**0**01101100100111'
+
+POP position 7 from the chunk and insert it at position 1:
+'0011011**0**0100111' -> '0**0**0110110100111'
+
+POP position 8 from the chunk and insert it at position 3:
+'00011011**0**100111' -> '000**0**11011100111'
+
+POP position 13 from the chunk and insert it at position 7:
+'000011011100**1**11' -> '0000110**1**1110011'
+
+
+To sum up:
+
+Positions (5, 7, 8, 13) to (0, 1, 3, 7):
+'011010100100111' -> '000011011110011'
+
+Once we change the chunk, we introduce it into the library and try to solve the error using hamming code. REMEMBER, this lib uses 16 bit chunks, we need to insert the remaining parity bit at position 0!!
+
+We compare the output with the expected first letter, in this case the one of the flag 'n'.
+
+This workflow is implemented on the following script along with the usage of previous hamming lib:
+
+
+{% highlight python %}
+
+from hamming import decode as dec
+from bitarray import bitarray
+import time
+import binascii
+import itertools
+
+data_str = '011010100100111010010011110010110110110010010010011100001111101101101000110100110000010011100010001001110000110111100100110111111110101000101011011010000111100001000111001110010111001101011100011101111011100111111000101001110000011101011110010111111110001101110000011010010011101010010110101010001000011100101110100000101110000010110010100010101111010110001101001100001000101100100011111000100001110001100110001110101011010001111001111001101001110000110000111011001000010110001001010111111010101100010011011001110110111001100111101001001100110100100110001000101010111011101010110000111001011100111001'
+
+#For dividing in chunks
+def chunks(l, n):
+  for i in range(0, len(l), n):
+    yield l[i:i+n]
+
+
+def text_from_bits(bits, encoding='utf-8', errors='surrogatepass'):
+  n = int(bits, 2)
+  return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode(encoding, errors) or '\0'
+
+
+#Pick the bits from the combination and insert them into the right position for parity bits
+def swap(bits, comb):
+  for i, j in zip([0,1,3,7], [0,1,2,3]):
+    ex = bits.pop(comb[j])
+    bits.insert(i, ex)
+  return bits
+
+
+#Divide in chunks of 15 bits
+chunk_list = list(chunks(data_str, 15))
+secret_key = []
+
+# Get all permutations of length 4 with the 15 posible positions:
+iterable = [x for x in range(0,14)]
+combinations = list(itertools.permutations(iterable, r=4))
+print('Total permutations: ', len(list(combinations)))
+
+#Try all permutations that could lead into the right first two bytes
+for combination in combinations:
+
+  final_data = bitarray()
+
+  for item in chunk_list[:6]:
+
+    item = swap(list(item), combination)
+    
+    '''
+    Add the first parity bit so the lib can get the 16 bits needed. 
+    We know there is one wrong, therefore we will apply it the other way around.
+    '''
+    if item.count('1') % 2 == 0:
+      item.insert(0,'1')
+    else:
+      item.insert(0,'0')
+
+    data = bitarray(''.join(item))
+    '''
+    Get the result from fixing error:
+    '''
+    final_data.extend(dec(data))
+
+  msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
+  if msg[:48] == '011011100110000101100011011101000110011001111011':
+    print(msg[:48], '= 011011100110000101100011011101000110011001111011')
+    print('Combination = ', combination)
+    secret_key = combination
+    break
+
+#The we could find 2 combinations, but only the first showed a reasonable flag.
+#We stop when find the first permutation with the previous break instruction.
+
+# Now that we know the permutations, retrieve the flag
+final_data = bitarray()
+
+for item in chunk_list:
+  item = swap(list(item), secret_key)
+  
+  if item.count('1') % 2 == 0:
+    item.insert(0,'1')
+  else:
+    item.insert(0,'0')
+  data = bitarray(''.join(item))
+  final_data.extend(dec(data))
+
+msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
+n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
+print(n)
+
+{% endhighligh %}
+
+
+After execution we can get out flag :D
+
+```
+kali@kali:~/Desktop/CTFs/NACTF/Crypto/Error2/hamming$ python3 script.py 
+Total permutations:  24024
+011011100110000101100011011101000110011001111011 = 011011100110000101100011011101000110011001111011
+Combination =  (5, 7, 8, 13)
+nactf{err0r_c0rr3cti0n_w1th_th3_c0rr3ct_f1le_q73xer7k9}
+```
