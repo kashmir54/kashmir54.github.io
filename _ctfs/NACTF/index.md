@@ -523,7 +523,7 @@ This workflow is implemented on the following script along with the usage of pre
 
 
 {% highlight python %}
-
+```
 from hamming import decode as dec
 from bitarray import bitarray
 import time
@@ -610,7 +610,7 @@ for item in chunk_list:
 msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
 n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
 print(n)
-
+```
 {% endhighligh %}
 
 
@@ -623,3 +623,5 @@ Total permutations:  24024
 Combination =  (5, 7, 8, 13)
 nactf{err0r_c0rr3cti0n_w1th_th3_c0rr3ct_f1le_q73xer7k9}
 ```
+
+``` nactf{err0r_c0rr3cti0n_w1th_th3_c0rr3ct_f1le_q73xer7k9} ```
