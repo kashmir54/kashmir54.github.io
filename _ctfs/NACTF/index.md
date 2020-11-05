@@ -478,7 +478,7 @@ itertools.permutations(iterable, r=4)
 
 For each permutation (aka. "the secret key" on the challenge description) we will pick the bits from the positions and correctly place the into their original positions in this challenge: [0,1,3,7]. For example, we have the following permutation key: (5, 7, 8, 13). The workflow is:
 
-
+```
 bit_chunk = '011010100100111'
 
 POP position 5 from the chunk and insert it at position 0:
@@ -492,7 +492,7 @@ POP position 8 from the chunk and insert it at position 3:
 
 POP position 13 from the chunk and insert it at position 7:
 '000011011100**1**11' -> '0000110**1**1110011'
-
+```
 
 {% highlight python %}
 
@@ -527,45 +527,6 @@ iterable = [x for x in range(0,14)]
 combinations = list(itertools.permutations(iterable, r=4))
 print('Total permutations: ', len(list(combinations)))
 
-for combination in combinations:
-
-  final_data = bitarray()
-
-  for item in chunk_list[:6]:
-
-    item = swap(list(item), combination)
-    
-    if item.count('1') % 2 == 0:
-      item.insert(0,'1')
-    else:
-      item.insert(0,'0')
-
-    data = bitarray(''.join(item))
-
-    final_data.extend(dec(data))
-
-  msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
-  if msg[:48] == '011011100110000101100011011101000110011001111011':
-    print(msg[:48], '= 011011100110000101100011011101000110011001111011')
-    print('Combination = ', combination)
-    secret_key = combination
-    break
-
-final_data = bitarray()
-
-for item in chunk_list:
-  item = swap(list(item), secret_key)
-  
-  if item.count('1') % 2 == 0:
-    item.insert(0,'1')
-  else:
-    item.insert(0,'0')
-  data = bitarray(''.join(item))
-  final_data.extend(dec(data))
-
-msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
-n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
-print(n)
 
 {% endhighligh %}
 
