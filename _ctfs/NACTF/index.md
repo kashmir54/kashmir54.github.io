@@ -346,9 +346,11 @@ Dr. J created a fast pseudorandom number generator (prng) to randomly assign pai
 
 Beginner foothold: The server script uses the following line:
 
+```
 {% highlight python %}
 random.seed(round(time.time() / 100, 5))
 {% endhighlight %}
+```
 
 The random library will generate numbers from that seed. Imagine that you use the number _1_ instead of the time as seed. You will get the same random numbers in the same order for different executions. That is why they are called pseudo-random, because they aren't real random numbers. [Read more](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/).
 
@@ -470,11 +472,11 @@ I obtained the following bitarray, I introduced it into [CyberChef](https://gchq
 Kayla decided she wants to use the previous error detection scheme for cryptography! After computing the normal error bits, she switched them around according to a secret key.
 
 Worked on permutations and ways to check which permutation is the right one. What I mean is, the parity bits have been permutated, they are normally located at positions [1,2,4,8], but since this implementation only uses 15 bits, they are found at positions i-1 = [0,1,3,7]. In this challenge, they picked those positions and place it at any of the other 15 positions. The foothold is to **find the right permutation**. We generate all permutations of 4 length arrays with the possible 15 positions:
-
+```
 {% highlight python %}
 itertools.permutations(iterable, r=4)
 {% endhighligh %}
-
+```
 For each permutation (aka. "the secret key" on the challenge description) we will pick the bits from the positions and correctly place the into their original positions in this challenge: [0,1,3,7]. For example, we have the following permutation key: (5, 7, 8, 13). The workflow is:
 
 
@@ -636,10 +638,11 @@ Avocado, Brocolli, Carrot, Daikon Radish, Eggplant
 The problem is like [bubble sort algorithm](https://www.toptal.com/developers/sorting-algorithms). The following algorithm retrieves the information from the server, gets the list, sortit alphabet-wise and gets the positions of each sorted element. Then on the original unsorted list we place the position it has to reach. Then the bubble sort algorithm does the trick, and each position change it does is collected into a list. Then the list is the input for the challenge.
 
 This algorithm can be used in the next challenge, only change the option in the send line:
-
+```
 {% highlight python %} 
 r.send("1\n") 
 {% endhighlight %}
+```
 
 ```
 {% highlight python %}
@@ -717,10 +720,11 @@ Dr. J expanded his vegetable factory! Now he's got hundreds of vegetables. Same 
 nc challenges.ctfd.io 30267
 
 Use previous algorithm and change the option in the send line:
-
+```
 {% highlight python %} 
 r.send("2\n") 
 {% endhighlight %}
+```
 
 ``` nactf{d0n7_w0rry_p34_h4ppy_f27ae283dd72cb62f685} ```
 
