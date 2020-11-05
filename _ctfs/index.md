@@ -18,4 +18,4 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 - [BSides Copenhagen 2020](/ctfs/BSides_Copenhagen_2020) (19/09/2020)
 - [HACON_CTF](/ctfs/HACON_CTF) (25/09/2020)
 - [HacktoberCTF](/ctfs/HacktoberCTF) (16/10/2020)
-- [NACTF2020](/ctfs/NACTF2020) (30/10/2020)
+- [NACTF 2020](/ctfs/NACTF) (30/10/2020)
