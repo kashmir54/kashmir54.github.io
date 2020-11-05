@@ -504,29 +504,5 @@ import itertools
 
 data_str = '0110101001001110100100111100101101'
 
-def chunks(l, n):
-  for i in range(0, len(l), n):
-    yield l[i:i+n]
-
-
-def text_from_bits(bits, encoding='utf-8', errors='surrogatepass'):
-  n = int(bits, 2)
-  return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode(encoding, errors)
-
-
-def swap(bits, comb):
-  for i, j in zip([0,1,3,7], [0,1,2,3]):
-    ex = bits.pop(comb[j])
-    bits.insert(i, ex)
-  return bits
-
-chunk_list = list(chunks(data_str, 15))
-secret_key = []
-
-iterable = [x for x in range(0,14)]
-combinations = list(itertools.permutations(iterable, r=4))
-print('Total permutations: ', len(list(combinations)))
-
-
 {% endhighligh %}
 
