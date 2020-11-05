@@ -476,3 +476,12 @@ Worked on permutations and ways to check which permutation is the right one. Wha
 itertools.permutations(iterable, r=4)
 ```
 
+
+{% highlight python %}
+from hamming import decode
+from bitarray import bitarray
+import time
+import binascii
+import itertools
+{% endhighligh %}
+
