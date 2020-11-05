@@ -477,43 +477,89 @@ We generate all permutations of 4 length arrays with the possible 15 positions:
 {% highlight python %}
 from hamming import decode as dec
 from bitarray import bitarray
-data_str = '010011011010011010100011011001111110111101000101010011110111010101110110100110001100000111011101100100101111011010110001010011001110011010101111010111111010111010110111010111110110100110011011001101101101011101000111101000110100001010110100100001110110011110111011111101111000001100100011011010010111101100100100000011001101000001001010100000100111001011111101'
-def chunks(l, n):
-    # For item i in a range that is a length of l,
-    for i in range(0, len(l), n):
-        # Create an index range for l of n items:
-        yield l[i:i+n]
+import time
+import binascii
+import itertools
 
-# Divide in chunks of 15 bits
+data_str = '011010100100111010010011110010110110110010010010011100001111101101101000110100110000010011100010001001110000110111100100110111111110101000101011011010000111100001000111001110010111001101011100011101111011100111111000101001110000011101011110010111111110001101110000011010010011101010010110101010001000011100101110100000101110000010110010100010101111010110001101001100001000101100100011111000100001110001100110001110101011010001111001111001101001110000110000111011001000010110001001010111111010101100010011011001110110111001100111101001001100110100100110001000101010111011101010110000111001011100111001'
+
+#For dividing in chunks
+def chunks(l, n):
+  for i in range(0, len(l), n):
+    yield l[i:i+n]
+
+
+def text_from_bits(bits, encoding='utf-8', errors='surrogatepass'):
+  n = int(bits, 2)
+  return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode(encoding, errors) or '\0'
+
+
+#Pick the bits from the combination and insert them into the right position for parity bits
+def swap(bits, comb):
+  for i, j in zip([0,1,3,7], [0,1,2,3]):
+    ex = bits.pop(comb[j])
+    bits.insert(i, ex)
+  return bits
+
+
+#Divide in chunks of 15 bits
 chunk_list = list(chunks(data_str, 15))
-print(chunk_list)
+secret_key = []
+
+# Get all permutations of length 4 with the 15 posible positions:
+iterable = [x for x in range(0,14)]
+combinations = list(itertools.permutations(iterable, r=4))
+print('Total permutations: ', len(list(combinations)))
+
+#Try all permutations that could lead into the right first two bytes
+for combination in combinations:
+
+  final_data = bitarray()
+
+  for item in chunk_list[:6]:
+
+    item = swap(list(item), combination)
+    
+    '''
+    Add the first parity bit so the lib can get the 16 bits needed. 
+    We know there is one wrong, therefore we will apply it the other way around.
+    '''
+    if item.count('1') % 2 == 0:
+      item.insert(0,'1')
+    else:
+      item.insert(0,'0')
+
+    data = bitarray(''.join(item))
+    '''
+    Get the result from fixing error:
+    '''
+    final_data.extend(dec(data))
+
+  msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
+  if msg[:48] == '011011100110000101100011011101000110011001111011':
+    print(msg[:48], '= 011011100110000101100011011101000110011001111011')
+    print('Combination = ', combination)
+    secret_key = combination
+    break
+
+#The we could find 2 combinations, but only the first showed a reasonable flag.
+#We stop when find the first permutation with the previous break instruction.
+
+# Now that we know the permutations, retrieve the flag
 final_data = bitarray()
 
-# 16 bit chunk:
-
-# X 0 1 0
-# 0 1 1 0
-# 1 1 1 1 
-# 0 0 1 1 
-
-
 for item in chunk_list:
-
-  item = list(item)
-  print(item)
-  #This is key. The library gets 16 bit chunks, there is one misses, the first one. We calculate
-  #if it's 0 or 1. We know that there is AT LEAST ONE ERROR. Therefore, we set this bit the other way around.
+  item = swap(list(item), secret_key)
+  
   if item.count('1') % 2 == 0:
     item.insert(0,'1')
   else:
     item.insert(0,'0')
-  print(item)
-  print('--------')
   data = bitarray(''.join(item))
-  print(data)
-  print(dec(data))
   final_data.extend(dec(data))
 
-print(final_data)
+msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
+n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
+print(n)
 {% endhighlight %}
 
