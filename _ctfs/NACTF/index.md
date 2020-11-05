@@ -471,11 +471,11 @@ I obtained the following bitarray, I introduced it into [CyberChef](https://gchq
 Kayla decided she wants to use the previous error detection scheme for cryptography! After computing the normal error bits, she switched them around according to a secret key.
 
 Worked on permutations and ways to check which permutation is the right one. What I mean is, the parity bits have been permutated, they are normally located at positions [1,2,4,8], but since this implementation only uses 15 bits, they are found at positions i-1 = [0,1,3,7]. In this challenge, they picked those positions and place it at any of the other 15 positions. The foothold is to **find the right permutation**. We generate all permutations of 4 length arrays with the possible 15 positions:
-```
+
 {% highlight python %}
 itertools.permutations(iterable, r=4)
 {% endhighligh %}
-```
+
 For each permutation (aka. "the secret key" on the challenge description) we will pick the bits from the positions and correctly place the into their original positions in this challenge: [0,1,3,7]. For example, we have the following permutation key: (5, 7, 8, 13). The workflow is:
 
 
@@ -516,25 +516,23 @@ import itertools
 
 data_str = '011010100100111010010011110010110110110010010010011100001111101101101000110100110000010011100010001001110000110111100100110111111110101000101011011010000111100001000111001110010111001101011100011101111011100111111000101001110000011101011110010111111110001101110000011010010011101010010110101010001000011100101110100000101110000010110010100010101111010110001101001100001000101100100011111000100001110001100110001110101011010001111001111001101001110000110000111011001000010110001001010111111010101100010011011001110110111001100111101001001100110100100110001000101010111011101010110000111001011100111001'
 
+#For dividing in chunks
 def chunks(l, n):
-    # For item i in a range that is a length of l,
-    for i in range(0, len(l), n):
-        # Create an index range for l of n items:
-        yield l[i:i+n]
+  for i in range(0, len(l), n):
+    yield l[i:i+n]
 
 
 def text_from_bits(bits, encoding='utf-8', errors='surrogatepass'):
-    n = int(bits, 2)
-    return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode(encoding, errors) or '\0'
+  n = int(bits, 2)
+  return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode(encoding, errors) or '\0'
 
 
+#Pick the bits from the combination and insert them into the right position for parity bits
 def swap(bits, comb):
-  #Pick the bits from the combination and insert them into the right position for parity bits
   for i, j in zip([0,1,3,7], [0,1,2,3]):
     ex = bits.pop(comb[j])
     bits.insert(i, ex)
   return bits
-
 
 
 #Divide in chunks of 15 bits
@@ -555,15 +553,19 @@ for combination in combinations:
 
     item = swap(list(item), combination)
     
-    #Add the first parity bit so the lib can get the 16 bits needed. 
-    #We know there is one wrong, therefore we will apply it the other way around.
+    '''
+    Add the first parity bit so the lib can get the 16 bits needed. 
+    We know there is one wrong, therefore we will apply it the other way around.
+    '''
     if item.count('1') % 2 == 0:
       item.insert(0,'1')
     else:
       item.insert(0,'0')
 
     data = bitarray(''.join(item))
-    #Get the result from fixing error:
+    '''
+    Get the result from fixing error:
+    '''
     final_data.extend(dec(data))
 
   msg = ''.join(final_data.decode({'1':bitarray('1'), '0':bitarray('0')}))
@@ -571,10 +573,10 @@ for combination in combinations:
     print(msg[:48], '= 011011100110000101100011011101000110011001111011')
     print('Combination = ', combination)
     secret_key = combination
-    #The we could find 2 combinations, but only the first showed a reasonable flag.
-    #We stop when find the first permutation
     break
 
+#The we could find 2 combinations, but only the first showed a reasonable flag.
+#We stop when find the first permutation with the previous break instruction.
 
 # Now that we know the permutations, retrieve the flag
 final_data = bitarray()
@@ -594,7 +596,7 @@ n = text_from_bits(msg, encoding='utf-8', errors='surrogatepass')
 print(n)
 
 {% endhighligh %}
-```
+
 
 After execution we can get out flag :D
 
@@ -752,21 +754,21 @@ def bubbleSort(arr, sorted_arr):
     n = len(arr) 
     sequence = []
     bot, top = min(sorted_arr), max(sorted_arr)
-    #While the array is not sorted...
+# While the array is not sorted...
     while arr != sorted_arr: 
-        #Exceptional case
+# Exceptional case
         if arr[0] == top and arr[1] == bot:
-            # Move conveyor-belt
+# Move conveyor-belt
             first = arr.pop(0)
             arr.append(first)
             sequence.append('c')
             continue
-        #Swap elements if 0 is greater than 1
+# Swap elements if 0 is greater than 1
         if arr[0] > arr[1]: 
             sequence.append('s')
             arr[0], arr[1] = arr[1], arr[0] 
         else:
-        # Move conveyor-belt    
+# Move conveyor-belt    
             first = arr.pop(0)
             arr.append(first)
             sequence.append('c')
@@ -779,15 +781,13 @@ def get_sequence(current_list):
     unordered = current_list.split(', ')
     sorted_list = sorted(unordered)
 
-    #Set objectives and arrays
+# Set objectives and arrays
     for desired_index, item in enumerate(sorted_list):
         current_index = unordered.index(item)
         unordered[current_index] = desired_index
     sorted_numbers = sorted(unordered)
     sequence = bubbleSort(unordered, sorted_numbers) 
-    #print('Sequence: ', ' '.join(sequence))
     return ' '.join(sequence)
-
 
 
 r = remote('challenges.ctfd.io', 30267)
