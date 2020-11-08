@@ -1,8 +1,8 @@
 ---
 title: "HTB - Tabby"
 categories: [box]
-date: 2020-09-03
-hasComments: true
+date: 2020-11-08
+comments: true
 image: /images/walkthroughs/hackthebox/tabby/1_tabby_logo.webp
 description: HTB - Tabby walkthrough.
 ---
@@ -138,13 +138,13 @@ Check the source code of the website and there it is:
   <img src="/images/walkthroughs/hackthebox/tabby/4_tomcat_pass.png" width="500"/>
 </p>
 
-```
+{% highlight xml %}
 <role rolename="admin-gui">
 	<role rolename="manager-script">
 	   <user username="tomcat" password="$3cureP4s5w0rd123!" roles="admin-gui,manager-script"></user>
 	</role>
 </role>
-```
+{% endhighlight %}
 
 Now go back to the Apache Tomcat website and hit the host-manager webapp:
 
