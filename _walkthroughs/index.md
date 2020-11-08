@@ -11,7 +11,7 @@ description: Walkthroughs.
 
 - [Traceback](/walkthroughs/hackthebox/traceback)
 - [Admirer](/walkthroughs/hackthebox/admirer)
-- [Blunder]() when machine retires.
-- [Tabby]() when machine retires.
+- [Blunder]() 
+- [Tabby](/walkthroughs/hackthebox/tabby) 
 - [SneakyMailer]() when machine retires.
 - [Passage]() when machine retires.
