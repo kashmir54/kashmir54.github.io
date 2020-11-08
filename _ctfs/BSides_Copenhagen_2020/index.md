@@ -2,8 +2,8 @@
 title: "BSides Copenhagen 2020 - Writeup"
 categories: [box]
 date: 2020-09-03
-hasComments: true
-image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
+comments: true
+image: /images/writeups/BSides Copenhagen 2020/1_logo.png
 description: "BSides Copenhagen 2020 - Writeup."
 ---
 

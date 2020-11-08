@@ -2,7 +2,7 @@
 title: "HTB - Admirer"
 categories: [box]
 date: 2020-09-03
-hasComments: true
+comments: true
 image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
 description: HTB - Admirer walkthrough.
 ---

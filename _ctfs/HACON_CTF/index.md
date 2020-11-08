@@ -2,8 +2,8 @@
 title: "CTF - HACON_CTF"
 categories: [ctf]
 date: 2020-09-03
-hasComments: true
-image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
+comments: true
+image: /images/writeups/HACON_CTF/1_logo.png
 description: CTF - HACON_CTF
 ---
 

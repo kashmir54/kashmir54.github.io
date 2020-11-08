@@ -2,7 +2,7 @@
 title: "CTF - NACTF2020"
 categories: [ctf]
 date: 2020-10-16
-hasComments: true
+comments: true
 image: /images/writeups/NACTF/1_logo.jpeg
 description: CTF - NACTF
 ---

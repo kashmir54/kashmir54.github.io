@@ -2,7 +2,7 @@
 title: "HTB - Traceback"
 categories: [box]
 date: 2020-08-26
-hasComments: true
+comments: true
 image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
 description: HTB - Traceback walkthrough.
 ---

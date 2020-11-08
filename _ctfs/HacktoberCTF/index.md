@@ -2,8 +2,8 @@
 title: "CTF - HacktoberCTF"
 categories: [ctf]
 date: 2020-10-16
-hasComments: true
-image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
+comments: true
+image: /images/writeups/HacktoberCTF/1_logo.png
 description: CTF - HacktoberCTF
 ---
 
