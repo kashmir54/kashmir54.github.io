@@ -20,3 +20,4 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 - [HacktoberCTF](/ctfs/HacktoberCTF) (16/10/2020)
 - [NACTF 2020](/ctfs/NACTF) (30/10/2020)
 - [TetCTF 2021](/ctfs/TetCTF2021) (3/01/2021)
+- [Brixel CTF 2021](/ctfs/Brixel) (3/01/2021)
