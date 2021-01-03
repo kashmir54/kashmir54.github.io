@@ -1,0 +1,21 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Sat Dec 26 15:41:49 2020
+Invocation: foremost ctfbg.svg 
+Output directory: /home/kali/Desktop/CTFs/Brixel/Internet/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: ctfbg.svg
+Start: Sat Dec 26 15:41:49 2020
+Length: 264 KB (270518 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+Finish: Sat Dec 26 15:41:49 2020
+
+0 FILES EXTRACTED
+	
+------------------------------------------------------------------
+
+Foremost finished at Sat Dec 26 15:41:49 2020

