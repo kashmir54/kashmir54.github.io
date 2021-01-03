@@ -193,26 +193,27 @@ We can find another login and a verify function with the following code:
 
 {% highlight javascript %}
 
-function verify() {
-	password = document.getElementById("the_password").value;
-	split = 6;
-	if (password.substring(0, split) == 'brixel') 
-	{
-		if (password.substring(split*6, split*7) == '180790') 
+	function verify() {
+		password = document.getElementById("the_password").value;
+		split = 6;
+		if (password.substring(0, split) == 'brixel') 
 		{
-			if (password.substring(split, split*2) == 'CTF{st') 
+			if (password.substring(split*6, split*7) == '180790') 
 			{
-				if (password.substring(split*4, split*5) == '5cr1pt') 
+				if (password.substring(split, split*2) == 'CTF{st') 
 				{
-					if (password.substring(split*3, split*4) == 'd_j4v4') 
+					if (password.substring(split*4, split*5) == '5cr1pt') 
 					{
-						if (password.substring(split*5, split*6) == '_h3r3.') 
+						if (password.substring(split*3, split*4) == 'd_j4v4') 
 						{
-							if (password.substring(split*2, split*3) == '1ll_b4') 
+							if (password.substring(split*5, split*6) == '_h3r3.') 
 							{
-								if (password.substring(split*7, split*8) == '54270}') 
+								if (password.substring(split*2, split*3) == '1ll_b4') 
 								{
-									alert("Password Verified")
+									if (password.substring(split*7, split*8) == '54270}') 
+									{
+										alert("Password Verified")
+									}
 								}
 							}
 						}
@@ -220,12 +221,11 @@ function verify() {
 				}
 			}
 		}
+		else 
+		{
+		alert("Incorrect password");
+		}
 	}
-	else 
-	{
-	alert("Incorrect password");
-	}
-}
 
 { % endhighlight % }
 
@@ -294,11 +294,9 @@ Whow, another one! You're good! So I told my buddy how you managed to get the pa
 
 We have a similar code, but in this time the password is 'encoded':
 
-{% highlight javascript %}
-
+```
 if(password == atob(readTextFile("password.txt")))
-
-{ % endhighlight % }
+```
 
 The atob() function is used in JS to decode base64. As the previous login, it retrieves the base64 code from the password.txt file. Go to the URL, retrieve the base64 and then I used [CyberChef](https://gchq.github.io/CyberChef) to decode:
 
@@ -444,11 +442,11 @@ You are definitely on the right track here... but what are you trying to accompl
 
 At this time I tried to do literally what the chall says and I write into the index.html the original content of the website encoded:
 
-{% highlight html%}
+```
 
 <html><head><title>DadJokes, your source of lame dad jokes</title></head><body><div align="center"><h1>DadJokes</h1><hr><img src="images/banner.png" alt="dadjokes"><br><br><a href="jokes/read.php">Read dad jokes</a><br><br><a href="jokes/submit.php">submit your own jokes</a></div></body></html>
 
-{% endhighlight %}
+```
 
 
 ```
@@ -964,27 +962,27 @@ On the github we found the code of the Auth webpage:
 
 {% highlight php %}
 
-<?php
-if(!isset($_POST['username']))
-{
-	die("Eat shit and die...");
-}
-if($_POST['username'] == "johnny" && $_POST['password'] == removed for security reasons)
-{
-	$_SESSION["loggedin"] = "true";
-	include("flag.php");
-	die();
-}else{
-	echo "<form method=\"POST\" action=\"" . $_SERVER['PHP_SELF'] . "\">\n";
-	echo "<table align=\"center\">\n";
-	echo "	<tr><td>Username:&nbsp;<td><input type=\"text\" name=\"username\"></tr>\n";
-	echo "	<tr><td>Password:&nbsp;<td><input type=\"password\" name=\"password\"></tr>\n";
-	echo "	<tr><td colspan=2 align=\"right\"><input type=\"submit\" name=\"submit\" value=\"log in\"></tr>\n";
-	echo "</table>\n";
-	echo "</form>\n";
-	die();
-}
-?>
+	<?php
+	if(!isset($_POST['username']))
+	{
+		die("Eat shit and die...");
+	}
+	if($_POST['username'] == "johnny" && $_POST['password'] == removed for security reasons)
+	{
+		$_SESSION["loggedin"] = "true";
+		include("flag.php");
+		die();
+	}else{
+		echo "<form method=\"POST\" action=\"" . $_SERVER['PHP_SELF'] . "\">\n";
+		echo "<table align=\"center\">\n";
+		echo "	<tr><td>Username:&nbsp;<td><input type=\"text\" name=\"username\"></tr>\n";
+		echo "	<tr><td>Password:&nbsp;<td><input type=\"password\" name=\"password\"></tr>\n";
+		echo "	<tr><td colspan=2 align=\"right\"><input type=\"submit\" name=\"submit\" value=\"log in\"></tr>\n";
+		echo "</table>\n";
+		echo "</form>\n";
+		die();
+	}
+	?>
 
 {% endhighlight %}
 
@@ -1489,18 +1487,18 @@ We implemented the pseudocode in python and solve the challenge
 
 {% highlight python %}
 
-x = 1
-y = 1
-prev_ans = 1
+	x = 1
+	y = 1
+	prev_ans = 1
 
-while x != 526:
-	ans = x*y+prev_ans+3
-	print('{} = {} * {} + {} + 3'.format(ans, x, y, prev_ans))
-	x += 1
-	y += 1
-	prev_ans = ans
+	while x != 526:
+		ans = x*y+prev_ans+3
+		print('{} = {} * {} + {} + 3'.format(ans, x, y, prev_ans))
+		x += 1
+		y += 1
+		prev_ans = ans
 
-print(ans)
+	print(ans)
 
 {% endhighlight %}
 
