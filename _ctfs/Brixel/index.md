@@ -38,7 +38,8 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Flat earth](#flat-earth)
 - [Dadjokes](#dadjokes)
 - [Pathfinders 1](#pathfinders-1)
-- [Pathfinders 2](#pathfinders-2)s
+- [Pathfinders 2](#pathfinders-2)
+
 ---
 - [Crypto](#crypto)
 
@@ -49,6 +50,7 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Scheibe](#scheibe)
 - [flawed](#flawed)
 - [Dont be salty](#dont-be-salty)
+
 ---
 - [OSINT](#osint)
 
@@ -67,18 +69,21 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Visit Limburg 2](#visit-Limburg-2)
 - [Visit Limburg 3](#visit-Limburg-3)
 - [Bird call](#bird-call)
+
 ---
 - [Forensic](#forensic)
 
 - [A message from space](#a-message-from-space)
 - [Lottery ticket](#lottery-ticket)
 - [Lost Evidence](#lost-evidence)
+
 ---
 - [Programming](#programming)
 
 - [Keep walking](#keep-walking)
 - [A song](#a-song)
 - [An arduino project](#an-arduino-project)
+
 ---
 - [Old Tech](#old-tech)
 
