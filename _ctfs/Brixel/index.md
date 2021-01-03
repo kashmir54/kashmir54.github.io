@@ -1,28 +1,28 @@
 ---
 title: "CTF - Brixel CTF 2020"
 categories: [ctf]
-date: 2020-10-16
+date: 2020-12-27
 comments: true
-image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
+image: /images/writeups/Brixel/brixel_logo.png
 description: CTF - BrixelCTF 2020
 ---
 
 # Brixel CTF 2020
 
 <p align="center">
-  <img src="/images/writeups/Brixel/brixel_logo.jpeg" width="300"/>
+  <img src="/images/writeups/Brixel/brixel_logo.png" width="300"/>
 </p>
 
 I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) with my mate [RazviOverflow](https://ctftime.org/user/72894) and finished the complete CTF for our first time! 
 
 <p align="center">
-  <img src="/images/writeups/Brixel/brixel_rank.png" width="500"/>
+  <img src="/images/writeups/Brixel/brixel_team.png" width="500"/>
 </p>
 
 
 This was an entry level CTF with challenges I really liked. This is the index:
 
-
+---
 - [Internet/Web](#internet)
 
 - [Easy](#easy)
@@ -38,9 +38,8 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Flat earth](#flat-earth)
 - [Dadjokes](#dadjokes)
 - [Pathfinders 1](#pathfinders-1)
-- [Pathfinders 2](#pathfinders-2)
-
-
+- [Pathfinders 2](#pathfinders-2)s
+---
 - [Crypto](#crypto)
 
 - [Sea code](#sea-code)
@@ -50,8 +49,7 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Scheibe](#scheibe)
 - [flawed](#flawed)
 - [Dont be salty](#dont-be-salty)
-
-
+---
 - [OSINT](#osint)
 
 - [A quick search](#a-quick-search)
@@ -69,22 +67,19 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Visit Limburg 2](#visit-Limburg-2)
 - [Visit Limburg 3](#visit-Limburg-3)
 - [Bird call](#bird-call)
-
-
+---
 - [Forensic](#forensic)
 
 - [A message from space](#a-message-from-space)
 - [Lottery ticket](#lottery-ticket)
 - [Lost Evidence](#lost-evidence)
-
-
+---
 - [Programming](#programming)
 
 - [Keep walking](#keep-walking)
 - [A song](#a-song)
 - [An arduino project](#an-arduino-project)
-
-
+---
 - [Old Tech](#old-tech)
 
 - [Goodbye old friend](#goodbye-old-friend)
@@ -387,7 +382,7 @@ Now we get into the login. admin:admin or admin:1234 didn't work, lets go for an
 With _' OR 1=1 --_ we got in and the webpage displayed the following text:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/Web/11_slqi.png" width="500"/>
+  <img src="/images/writeups/Brixel/Web/11_sqli.png" width="500"/>
 </p>
 
 ``` That should do the trick, the flag is brixelCTF{aroundtheglobe} ```
@@ -443,11 +438,11 @@ You are definitely on the right track here... but what are you trying to accompl
 
 At this time I tried to do literally what the chall says and I write into the index.html the original content of the website encoded:
 
-```
+{% highlight html %}
 
 <html><head><title>DadJokes, your source of lame dad jokes</title></head><body><div align="center"><h1>DadJokes</h1><hr><img src="images/banner.png" alt="dadjokes"><br><br><a href="jokes/read.php">Read dad jokes</a><br><br><a href="jokes/submit.php">submit your own jokes</a></div></body></html>
 
-```
+{% endhighlight %}
 
 
 ```
@@ -809,7 +804,7 @@ _https://www.instagram.com/johnnydorfmeister/_
 I got in a rabbit hole with the droste.zip file and the cacao image on one of the tweets... Then I found the instagram and check out all the images and finally, I found this one with the description:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/3_insta.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/3_insta.png" width="500"/>
 </p>
 
 According to the description, his favorite food is:
@@ -836,7 +831,7 @@ I can't seem to open this zipfile. I bet there's something interesting in it. ht
 Inside it has an image and a recursive zip:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/droste.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/droste.jpg" width="200"/>
 </p>
 
 Rabbit hole, just ignore the zip. I followed him on Twitter and his birth date showed up:
@@ -859,7 +854,7 @@ This flag is not in the usual format, you can enter it with or without the brixe
 This is part of a series, more challenges will be unlocked once you solve this one. While most challenges will be OSINT, some of them may not be.
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/3_hunt.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/3_hunt.png" width="500"/>
 </p>
 
 Oh... A tweet telling to delete a website and archive... [WaybackMachine](https://web.archive.org) time! The webpage to look for is **http://howitshould.be/test-page**
@@ -867,7 +862,7 @@ Oh... A tweet telling to delete a website and archive... [WaybackMachine](https:
 Looking into Jan 15th we found a screenshot on web archive with the message:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/3_way.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/3_way.png" width="500"/>
 </p>
 
 ``` Howdy! the flag is: w@yb@ck! ```
@@ -967,27 +962,27 @@ On the github we found the code of the Auth webpage:
 
 {% highlight php %}
 
-	<?php
-	if(!isset($_POST['username']))
-	{
-		die("Eat shit and die...");
-	}
-	if($_POST['username'] == "johnny" && $_POST['password'] == removed for security reasons)
-	{
-		$_SESSION["loggedin"] = "true";
-		include("flag.php");
-		die();
-	}else{
-		echo "<form method=\"POST\" action=\"" . $_SERVER['PHP_SELF'] . "\">\n";
-		echo "<table align=\"center\">\n";
-		echo "	<tr><td>Username:&nbsp;<td><input type=\"text\" name=\"username\"></tr>\n";
-		echo "	<tr><td>Password:&nbsp;<td><input type=\"password\" name=\"password\"></tr>\n";
-		echo "	<tr><td colspan=2 align=\"right\"><input type=\"submit\" name=\"submit\" value=\"log in\"></tr>\n";
-		echo "</table>\n";
-		echo "</form>\n";
-		die();
-	}
-	?>
+<?php
+if(!isset($_POST['username']))
+{
+	die("Eat shit and die...");
+}
+if($_POST['username'] == "johnny" && $_POST['password'] == removed for security reasons)
+{
+	$_SESSION["loggedin"] = "true";
+	include("flag.php");
+	die();
+}else{
+	echo "<form method=\"POST\" action=\"" . $_SERVER['PHP_SELF'] . "\">\n";
+	echo "<table align=\"center\">\n";
+	echo "	<tr><td>Username:&nbsp;<td><input type=\"text\" name=\"username\"></tr>\n";
+	echo "	<tr><td>Password:&nbsp;<td><input type=\"password\" name=\"password\"></tr>\n";
+	echo "	<tr><td colspan=2 align=\"right\"><input type=\"submit\" name=\"submit\" value=\"log in\"></tr>\n";
+	echo "</table>\n";
+	echo "</form>\n";
+	die();
+}
+?>
 
 {% endhighlight %}
 
@@ -1029,19 +1024,19 @@ Replace all spaces with underscores (\_) while entering the flag!
 We start by looking into the city and search for a police station, but nothing showed up, only two stations on the nearby cities. On Google,  I searched for "police station halen belgium" and results didn't look too promising.
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/6_gmaps.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/6_gmaps.png" width="500"/>
 </p>
 
 I decided to go for duckduckgo with no language preference and use the query "halen belgium politie" since politie is the name of the police there. I found an [interesting result](https://www.halen.be/politie-lrh) from the council website.
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/6_council.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/6_council.png" width="500"/>
 </p>
 
 There we could find interesting information about the station:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/6_info.jpg" width="800"/>
+  <img src="/images/writeups/Brixel/OSINT/6_info.png" width="800"/>
 </p>
 
 Halen district office
@@ -1054,7 +1049,7 @@ Halen district office
 Looking for it at the Google Street View, I supposed that the station will be blurred since it's forbidden to take photos of police buildings but this time Google has to improve their algorithm. We confirm that the result is the local police station:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/6_station.jpg" width="800"/>
+  <img src="/images/writeups/Brixel/OSINT/6_station.png" width="800"/>
 </p>
 
 Since we need to know their telecom provider and we currently know their phone number (011 93 89 80, international syntax: +32 11938980), we can look for the carrier at the Internet:
@@ -1258,7 +1253,7 @@ This flag is not in the usual format, you can enter it with or without the brixe
 For this chall I downloaded the file and used an app called BirdNET for Android. This app allows us to record sound, select a frame of the spectrogram and analyze it. The results shows a White stork species:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/8_birdcall.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/8_birdcall.jpeg" width="500"/>
 </p>
 
 
@@ -1285,7 +1280,7 @@ We got a recording.wav audio. Listening to that and the space hint, experience t
 
 
 <p align="center">
-  <img src="/images/writeups/Brixel/Forensic/1_sstv.jpg" width="500"/>
+  <img src="/images/writeups/Brixel/Forensic/1_sstv.png" width="500"/>
 </p>
 
 ``` brixelCTF{SP4C3L4B} ```
@@ -1312,7 +1307,7 @@ We have a ticket:
 Taking a closer look we can see that some numbers have noise around them and some other dont. Those with no noise are probably the photoshopped one since that noise is harder to reproduce.
 
 <p align="center">
-  <img src="/images/writeups/Brixel/Forensic/1_lot.png" width="500"/>
+  <img src="/images/writeups/Brixel/Forensic/2_lot.png" width="500"/>
 </p>
 
 
@@ -1484,26 +1479,24 @@ Example:
 
 ........................
 
-........................
-
 This flag is not in the usual format, you can enter it with or without the brixelCTF{flag} format
 
 We implemented the pseudocode in python and solve the challenge
 
 {% highlight python %}
 
-	x = 1
-	y = 1
-	prev_ans = 1
+x = 1
+y = 1
+prev_ans = 1
 
-	while x != 526:
-		ans = x*y+prev_ans+3
-		print('{} = {} * {} + {} + 3'.format(ans, x, y, prev_ans))
-		x += 1
-		y += 1
-		prev_ans = ans
+while x != 526:
+	ans = x*y+prev_ans+3
+	print('{} = {} * {} + {} + 3'.format(ans, x, y, prev_ans))
+	x += 1
+	y += 1
+	prev_ans = ans
 
-	print(ans)
+print(ans)
 
 {% endhighlight %}
 
@@ -1555,12 +1548,12 @@ They provide an arduino project. I have one, so... Hands on! I compile and uploa
 
 
 <p align="center">
-  <img src="/images/writeups/Brixel/Programming/5_cables.png" width="500"/>
+  <img src="/images/writeups/Brixel/Programming/5_cables.jpeg" width="500"/>
 </p>
 
 We can see a sequence showing up:
 
-<video width="394" height="700" controls>
+<video align="center" width="394" height="700" controls>
   <source src="/images/writeups/Brixel/Programming/5_video.mp4" type="video/mp4">
 </video>
 
@@ -1592,7 +1585,7 @@ We got a swf file. Using Internet explorer we can see an f on the left side. See
 In order to check the complete flash, I used [SWF File Player](http://www.swffileplayer.com/). I load the file and then expand the window to display the flag:
 
 <p align="center">
-  <img src="/images/writeups/brixel/Old/1_flash.png" width="500"/>
+  <img src="/images/writeups/Brixel/Old/1_flash.png" width="500"/>
 </p>
 
 ``` brixelCTF{n0_m0r3_5upp0rt} ```
@@ -1612,14 +1605,14 @@ In this chall I tried to figure out which technology was involved. I came to the
 I looked for a emulator of those computers and found that they need a file with .TAP or .TZX files in order to work properly. I found this program called [AudioTap](http://wav-prg.sourceforge.net/audiotap.html) which converts a WAV file into TAP file. 
 
 <p align="center">
-  <img src="/images/writeups/brixel/Old/4_audiotap.png" width="500"/>
+  <img src="/images/writeups/Brixel/Old/4_audiotap.png" width="500"/>
 </p>
 
 Then it was time to look for an emulator. The TAP file didn't work on Sinclair emulators so I also tried on C64 emulators, until I found one were it worked: [C64Emulator](https://c64emulator.111mb.de/index.php?site=pp_javascript&lang=en&group=c64).
 I uploaded the file and retrieve the flag:
 
 <p align="center">
-  <img src="/images/writeups/brixel/Old/4_tape.png" width="500"/>
+  <img src="/images/writeups/Brixel/Old/4_tape.png" width="500"/>
 </p>
 
 
