@@ -227,12 +227,13 @@ We can find another login and a verify function with the following code:
 		}
 	}
 
-{ % endhighlight % }
+{% endhighlight %}
 
 I reversed the code, just assembling the strings on the right side in the order of the splits:
 (0, split) -> (split, split\*2) -> (split\*3, split\*4)...
 
 ``` brixelCTF{st1ll_b4d_j4v45cr1pt_h3r3.18079054270} ```
+
 
 ##  login3
 5
@@ -274,7 +275,7 @@ function readTextFile(filePath)
 	return result;
 } 
 
-{ % endhighlight % }
+{% endhighlight %}
 
 _http://timesink.be/login3/username.txt_
 
@@ -519,6 +520,8 @@ We can retrieve the flag!
 
 ``` Great work! the flag is brixelCTF{outdated_php} ```
 
+
+
 ---
 
 # Crypto
@@ -707,6 +710,8 @@ hashcat -a 3 -m 10 chall.hash l?l?l?l?l? --show
 ```
 
 ``` brute ```
+
+
 
 ---
 
@@ -1566,8 +1571,6 @@ We can see a sequence showing up:
 Don't use the dots to define the flag...
 
 ``` 406798190332 ```
-
-
 
 
 ---
