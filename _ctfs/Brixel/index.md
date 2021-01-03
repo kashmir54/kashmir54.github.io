@@ -445,8 +445,11 @@ You are definitely on the right track here... but what are you trying to accompl
 At this time I tried to do literally what the chall says and I write into the index.html the original content of the website encoded:
 
 {% highlight html%}
+
 <html><head><title>DadJokes, your source of lame dad jokes</title></head><body><div align="center"><h1>DadJokes</h1><hr><img src="images/banner.png" alt="dadjokes"><br><br><a href="jokes/read.php">Read dad jokes</a><br><br><a href="jokes/submit.php">submit your own jokes</a></div></body></html>
+
 {% endhighlight %}
+
 
 ```
 http://timesink.be/dadjokes/jokes/submit.php?filename=../index.html&title=index.html&content=%0A%3Chtml%3E%3Ctitle%3EDadJokes%2C%20your%20source%20of%20lame%20dad%20jokes%3C%2Ftitle%3E%3Cbody%3E%3Cdiv%20align%3D%22center%22%3E%3Ch1%3EDadJokes%3C%2Fh1%3E%3Chr%3E%3Cimg%20src%3D%22images%2Fbanner.png%22%20alt%3D%22dadjokes%22%3E%3Cbr%3E%3Cbr%3E%3Ca%20href%3D%22jokes%2Fread.php%22%3ERead%20dad%20jokes%3C%2Fa%3E%3Cbr%3E%3Cbr%3E%3Ca%20href%3D%22jokes%2Fsubmit.php%22%3Esubmit%20your%20own%20jokes%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fhtml%3E&submit=true
@@ -1483,19 +1486,22 @@ Example:
 This flag is not in the usual format, you can enter it with or without the brixelCTF{flag} format
 
 We implemented the pseudocode in python and solve the challenge
+
 {% highlight python %}
-	x = 1
-	y = 1
-	prev_ans = 1
 
-	while x != 526:
-		ans = x*y+prev_ans+3
-		print('{} = {} * {} + {} + 3'.format(ans, x, y, prev_ans))
-		x += 1
-		y += 1
-		prev_ans = ans
+x = 1
+y = 1
+prev_ans = 1
 
-	print(ans)
+while x != 526:
+	ans = x*y+prev_ans+3
+	print('{} = {} * {} + {} + 3'.format(ans, x, y, prev_ans))
+	x += 1
+	y += 1
+	prev_ans = ans
+
+print(ans)
+
 {% endhighlight %}
 
 ```
