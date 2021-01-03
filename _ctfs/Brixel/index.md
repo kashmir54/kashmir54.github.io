@@ -193,27 +193,26 @@ We can find another login and a verify function with the following code:
 
 {% highlight javascript %}
 
-	function verify() {
-		password = document.getElementById("the_password").value;
-		split = 6;
-		if (password.substring(0, split) == 'brixel') 
+function verify() {
+	password = document.getElementById("the_password").value;
+	split = 6;
+	if (password.substring(0, split) == 'brixel') 
+	{
+		if (password.substring(split*6, split*7) == '180790') 
 		{
-			if (password.substring(split*6, split*7) == '180790') 
+			if (password.substring(split, split*2) == 'CTF{st') 
 			{
-				if (password.substring(split, split*2) == 'CTF{st') 
+				if (password.substring(split*4, split*5) == '5cr1pt') 
 				{
-					if (password.substring(split*4, split*5) == '5cr1pt') 
+					if (password.substring(split*3, split*4) == 'd_j4v4') 
 					{
-						if (password.substring(split*3, split*4) == 'd_j4v4') 
+						if (password.substring(split*5, split*6) == '_h3r3.') 
 						{
-							if (password.substring(split*5, split*6) == '_h3r3.') 
+							if (password.substring(split*2, split*3) == '1ll_b4') 
 							{
-								if (password.substring(split*2, split*3) == '1ll_b4') 
+								if (password.substring(split*7, split*8) == '54270}') 
 								{
-									if (password.substring(split*7, split*8) == '54270}') 
-									{
-										alert("Password Verified")
-									}
+									alert("Password Verified")
 								}
 							}
 						}
@@ -221,11 +220,12 @@ We can find another login and a verify function with the following code:
 				}
 			}
 		}
-		else 
-		{
-		alert("Incorrect password");
-		}
 	}
+	else 
+	{
+	alert("Incorrect password");
+	}
+}
 
 {% endhighlight %}
 
@@ -445,7 +445,22 @@ At this time I tried to do literally what the chall says and I write into the in
 
 {% highlight html %}
 
-<html><head><title>DadJokes, your source of lame dad jokes</title></head><body><div align="center"><h1>DadJokes</h1><hr><img src="images/banner.png" alt="dadjokes"><br><br><a href="jokes/read.php">Read dad jokes</a><br><br><a href="jokes/submit.php">submit your own jokes</a></div></body></html>
+<html>
+<head>
+	<title>DadJokes, your source of lame dad jokes</title>
+</head>
+<body>
+	<div align="center">
+		<h1>DadJokes</h1>
+		<hr>
+		<img src="images/banner.png" alt="dadjokes">
+		<br><br>
+		<a href="jokes/read.php">Read dad jokes</a>
+		<br><br>
+		<a href="jokes/submit.php">submit your own jokes</a>
+	</div>
+</body>
+</html>
 
 {% endhighlight %}
 
@@ -642,7 +657,7 @@ I found a [great tool](https://cryptii.com/pipes/enigma-machine) to decrypt this
 
 
 <p align="center">
-  <img src="/images/writeups/Brixel/Crypto/4_enigma.png" width="500"/>
+  <img src="/images/writeups/Brixel/Crypto/4_enigma.png" width="700"/>
 </p>
 
 derfl agist sauer kraut
@@ -1029,13 +1044,13 @@ Replace all spaces with underscores (\_) while entering the flag!
 We start by looking into the city and search for a police station, but nothing showed up, only two stations on the nearby cities. On Google,  I searched for "police station halen belgium" and results didn't look too promising.
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/6_gmaps.png" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/6_gmaps.png" width="700"/>
 </p>
 
 I decided to go for duckduckgo with no language preference and use the query "halen belgium politie" since politie is the name of the police there. I found an [interesting result](https://www.halen.be/politie-lrh) from the council website.
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/6_council.png" width="500"/>
+  <img src="/images/writeups/Brixel/OSINT/6_council.png" width="700"/>
 </p>
 
 There we could find interesting information about the station:
@@ -1147,7 +1162,7 @@ We locate the church in GMaps to start drawing the triangle. For this chall I ad
 Now to the fun part, finfing the two coal mine shafts. Those should be the ones which are the furthest appart from each other. I used [Mindat](https://www.mindat.org/) and Google Fu in order to find the shafts. I came across this [MiningHeritage](http://www.miningheritage.org/en/general/history-Limburg-coalmines) website which shows a map with the main coal concessions in Limburg:
 
 <p align="center">
-  <img src="/images/writeups/Brixel/OSINT/11_coal.png" width="800"/>
+  <img src="/images/writeups/Brixel/OSINT/11_coal.png" width="600"/>
 </p>
 
 Well, if we pick the furthest appart, we find the number 2 and 10-11. Number 2 corresponds to be-Mine. This one still has a shaft, so it is a candidate:
