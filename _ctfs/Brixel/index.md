@@ -13,7 +13,7 @@ description: CTF - BrixelCTF 2020
   <img src="/images/writeups/Brixel/brixel_logo.png" width="300"/>
 </p>
 
-I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) with my mate [RazviOverflow](https://ctftime.org/user/72894) and finished the complete CTF for our first time! 
+I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) with my mate [RazviOverflow](https://ctftime.org/user/72894) and finished the complete CTF for the first time! 
 
 <p align="center">
   <img src="/images/writeups/Brixel/brixel_team.png" width="500"/>
@@ -441,7 +441,7 @@ http://timesink.be/dadjokes/jokes/submit.php?filename=../index.html&title=asdf&c
 You are definitely on the right track here... but what are you trying to accomplish?
 ```
 
-At this time I tried to do literally what the chall says and I write into the index.html the original content of the website encoded:
+At this time I tried to do literally what the chall says and I write into the index.html the original content of the website encoded. I messed something on my payload, but [RazviOverflow](https://ctftime.org/user/72894) could make it to the flag with the following payload:
 
 {% highlight html %}
 

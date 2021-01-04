@@ -202,7 +202,7 @@ t: ('*'^'^')
 
 Concatenating that output leads into a 93 chars string, which will be refused by the length condition. We can merge adjacent XOR operations with the same number of operators and also use the \'\*\' as it is since is accepted by the regex. Knowing that, we end up with this expresion:
 
-If you use all XOR operations, encode the & symbol since the server will interpret it as a new parameter.
+If there is an & on your XOR operations, encode it (%26), since the server will interpret it as a new parameter. Thanks to [RazviOverflow](https://ctftime.org/user/72894) who was aware of that and led us into the flag:
 
 ```
 ('|||'^'...'^'213').('*~'^'^^').('^'^'.'^'|'^'%26').('|'^'.'^'2')
