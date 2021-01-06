@@ -276,7 +276,7 @@ Flag format: CTF{sha256}
 
 {% highlight json %}
 {
-	"nonce": "wpUq2dKfUzs=", 
+  "nonce": "wpUq2dKfUzs=", 
   "ciphertext": "oy5LG9jXkyS3xVVeCJ/mWhjxYDFMql0vu4CUryzziKc46PjrdEzqETLdnYU5TeM2ykJsu+16GjF2ZFi7DIJ7eMeU0g3j",
   "key": "Fidel_Alejandro_Castro_Ruz_Cuba!"
 }
