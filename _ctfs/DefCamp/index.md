@@ -196,7 +196,7 @@ Flag format: CTF{sha256}
 For this chall we have a pcap file with a set of TCP and UDP packets. We used Expert Information tool on Wireshark's Analisys tab and find out some HTTP taffic within the trace.
 
 <p align="center">
-  <img src="/images/writeups/DefCamp/Forensic/1_basic.jpg" width="600"/>
+  <img src="/images/writeups/DefCamp/Forensic/1_basic.png" width="600"/>
 </p>
 
 One of the requests is an HTTP GET, with a curious text on the 'important' parameter. Let's decode the URL using an [online URL decoder](https://meyerweb.com/eric/tools/dencoder/)
@@ -277,7 +277,7 @@ Flag format: CTF{sha256}
 {% highlight json %}
 {
 	"nonce": "wpUq2dKfUzs=", 
-	"ciphertext": "oy5LG9jXkyS3xVVeCJ/mWhjxYDFMql0vu4CUryzziKc46PjrdEzqETLdnYU5TeM2ykJsu+16GjF2ZFi7DIJ7eMeU0g3j",
+  "ciphertext": "oy5LG9jXkyS3xVVeCJ/mWhjxYDFMql0vu4CUryzziKc46PjrdEzqETLdnYU5TeM2ykJsu+16GjF2ZFi7DIJ7eMeU0g3j",
   "key": "Fidel_Alejandro_Castro_Ruz_Cuba!"
 }
 {% endhighlight %}
@@ -395,6 +395,7 @@ F: hchwxnsotuqrtbrdmbmg.png (123, 88, 69, 255)	(203, 195, 91, 255)
 ```
 
 I tried many things like looking for the RGB components to order the QRs, and many other methods that I cannot remember. 
-The final solution was to look for a comment using _exiftool_ command. This comment has the position for each QR code and that could give us the flag... Well, better to go over the simple steps first and don't stick to crazy ideas at the beginning!
+The final solution was to look for a comment using _exiftool_ command. This comment has the position for each QR code and that could give us the flag... 
+Well, better to go over the simple steps first and don't stick to crazy ideas at the beginning!
 
 That's all. Thanks for reading!!!
