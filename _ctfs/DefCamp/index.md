@@ -10,13 +10,13 @@ description: CTF - DefCamp 2020
 # DefCamp 2020
 
 <p align="center">
-  <img src="/images/writeups/DefCamp/1_logo.png" width="300"/>
+  <img src="/images/writeups/DefCamp/1_logo.png" width="220"/>
 </p>
 
 I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) with my mates [RazviOverflow](https://razvioverflow.github.io/) and [liti0s](https://litios.github.io/) got some challenges!
 
 <p align="center">
-  <img src="/images/writeups/DefCamp/2_rank.png" width="500"/>
+  <img src="/images/writeups/DefCamp/2_rank.png" width="700"/>
 </p>
 
 
@@ -196,7 +196,7 @@ Flag format: CTF{sha256}
 For this chall we have a pcap file with a set of TCP and UDP packets. We used Expert Information tool on Wireshark's Analisys tab and find out some HTTP taffic within the trace.
 
 <p align="center">
-  <img src="/images/writeups/DefCamp/Forenic/1_basic.jpg" width="500"/>
+  <img src="/images/writeups/DefCamp/Forensic/1_basic.jpg" width="600"/>
 </p>
 
 One of the requests is an HTTP GET, with a curious text on the 'important' parameter. Let's decode the URL using an [online URL decoder](https://meyerweb.com/eric/tools/dencoder/)
@@ -247,7 +247,7 @@ Check out the hint... since the flag starts with **ctf**, the first 3 chars at t
 We developed a little script to go over all the xored list and using the 3 char key 'ctf'. Since the list xored is much bigger than our key, we use itertools.cycle(key) to pad the remaining positions by repeating the key like the following image:
 
 <p align="center">
-  <img src="/images/writeups/DefCamp/Crypto/1_xor.jpg" width="500"/>
+  <img src="/images/writeups/DefCamp/Crypto/1_xor.png" width="500"/>
 </p>
 
 
@@ -274,12 +274,13 @@ Betaflash let’s go in Cuba and dance amigo !!
 
 Flag format: CTF{sha256}
 
-```
+{% highlight json %}
 {
 	"nonce": "wpUq2dKfUzs=", 
-	"ciphertext": "oy5LG9jXkyS3xVVeCJ/mWhjxYDFMql0vu4CUryzziKc46PjrdEzqETLdnYU5TeM2ykJsu+16GjF2ZFi7DIJ7eMeU0g3j", "key": "Fidel_Alejandro_Castro_Ruz_Cuba!"
+	"ciphertext": "oy5LG9jXkyS3xVVeCJ/mWhjxYDFMql0vu4CUryzziKc46PjrdEzqETLdnYU5TeM2ykJsu+16GjF2ZFi7DIJ7eMeU0g3j",
+  "key": "Fidel_Alejandro_Castro_Ruz_Cuba!"
 }
-```
+{% endhighlight %}
 
 Okey, after long time figuring out what cipher was used on this, we came to a conclusion that it has to be Salsa20 or Chacha20, first by the properties (the use a 12 bytes nonce and 32 bytes key) and also the chall statement, since salsa and chachacha are latin dance types. Both are stream ciphers.
 
