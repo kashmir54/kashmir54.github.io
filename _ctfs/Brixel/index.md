@@ -65,9 +65,9 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Manhunt8](#manhunt8)
 - [Manhunt9](#manhunt9)
 - [Physical pentest setup](#physical-pentest-setup)
-- [Visit Limburg 1](#visit-Limburg-1)
-- [Visit Limburg 2](#visit-Limburg-2)
-- [Visit Limburg 3](#visit-Limburg-3)
+- [Visit Limburg 1](#visit-limburg-1)
+- [Visit Limburg 2](#visit-limburg-2)
+- [Visit Limburg 3](#visit-limburg-3)
 - [Bird call](#bird-call)
 
 ---
