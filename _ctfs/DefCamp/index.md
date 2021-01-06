@@ -16,7 +16,7 @@ description: CTF - DefCamp 2020
 I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) with my mates [RazviOverflow](https://razvioverflow.github.io/) and [liti0s](https://litios.github.io/) got some challenges!
 
 <p align="center">
-  <img src="/images/writeups/DefCamp/2_rank.png" width="700"/>
+  <img src="/images/writeups/DefCamp/2_rank.png" width="800"/>
 </p>
 
 
