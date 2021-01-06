@@ -229,19 +229,19 @@ Flag format: CTF{sha256}
 
 A python file is provided:
 
-```
+
 {% highlight python %}
 
-xored = ['\x00', '\x00', '\x00', '\x18', 'C', '_', '\x05', 'E', 'V', 'T', 'F', 'U', 'R', 'B', '_', 'U', 'G', '_', 'V', '\x17', 'V', 'S', '@', '\x03', '[', 'C', '\x02', '\x07', 'C', 'Q', 'S', 'M', '\x02', 'P', 'M', '_', 'S', '\x12', 'V', '\x07', 'B', 'V', 'Q', '\x15', 'S', 'T', '\x11', '_', '\x05', 'A', 'P', '\x02', '\x17', 'R', 'Q', 'L', '\x04', 'P', 'E', 'W', 'P', 'L', '\x04', '\x07', '\x15', 'T', 'V', 'L', '\x1b']
-s1 = ""
-s2 = ""
-# ['\x00', '\x00', '\x00'] at start of xored is the best hint you get
-a_list = [chr(ord(a) ^ ord(b)) for a,b in zip(s1, s2)]
-print(a_list)
-print("".join(a_list))
+  xored = ['\x00', '\x00', '\x00', '\x18', 'C', '_', '\x05', 'E', 'V', 'T', 'F', 'U', 'R', 'B', '_', 'U', 'G', '_', 'V', '\x17', 'V', 'S', '@', '\x03', '[', 'C', '\x02', '\x07', 'C', 'Q', 'S', 'M', '\x02', 'P', 'M', '_', 'S', '\x12', 'V', '\x07', 'B', 'V', 'Q', '\x15', 'S', 'T', '\x11', '_', '\x05', 'A', 'P', '\x02', '\x17', 'R', 'Q', 'L', '\x04', 'P', 'E', 'W', 'P', 'L', '\x04', '\x07', '\x15', 'T', 'V', 'L', '\x1b']
+  s1 = ""
+  s2 = ""
+  # ['\x00', '\x00', '\x00'] at start of xored is the best hint you get
+  a_list = [chr(ord(a) ^ ord(b)) for a,b in zip(s1, s2)]
+  print(a_list)
+  print("".join(a_list))
 
 {% endhighligh %}
-```
+
 
 Check out the hint... since the flag starts with **ctf**, the first 3 chars at the xored list are 0, therefore, the key starts with 'ctf' and it could be the whole key. Why we know that? Remember XOR properties, when something is XORed with its own (for example c xor c) the result is 0.
 We developed a little script to go over all the xored list and using the 3 char key 'ctf'. Since the list xored is much bigger than our key, we use itertools.cycle(key) to pad the remaining positions by repeating the key like the following image:
@@ -250,17 +250,18 @@ We developed a little script to go over all the xored list and using the 3 char 
   <img src="/images/writeups/DefCamp/Crypto/1_xor.jpg" width="500"/>
 </p>
 
-```
-{% highlight python %}
-import itertools
 
-xored = ['\x00', '\x00', '\x00', '\x18', 'C', '_', '\x05', 'E', 'V', 'T', 'F', 'U', 'R', 'B', '_', 'U', 'G', '_', 'V', '\x17', 'V', 'S', '@', '\x03', '[', 'C', '\x02', '\x07', 'C', 'Q', 'S', 'M', '\x02', 'P', 'M', '_', 'S', '\x12', 'V', '\x07', 'B', 'V', 'Q', '\x15', 'S', 'T', '\x11', '_', '\x05', 'A', 'P', '\x02', '\x17', 'R', 'Q', 'L', '\x04', 'P', 'E', 'W', 'P', 'L', '\x04', '\x07', '\x15', 'T', 'V', 'L', '\x1b']
-key = 'ctf'
-flag = [chr(ord(a) ^ ord(b)) for a,b in zip(xored, itertools.cycle(key))]
-print("".join(flag))
+{% highlight python %}
+
+  import itertools
+
+  xored = ['\x00', '\x00', '\x00', '\x18', 'C', '_', '\x05', 'E', 'V', 'T', 'F', 'U', 'R', 'B', '_', 'U', 'G', '_', 'V', '\x17', 'V', 'S', '@', '\x03', '[', 'C', '\x02', '\x07', 'C', 'Q', 'S', 'M', '\x02', 'P', 'M', '_', 'S', '\x12', 'V', '\x07', 'B', 'V', 'Q', '\x15', 'S', 'T', '\x11', '_', '\x05', 'A', 'P', '\x02', '\x17', 'R', 'Q', 'L', '\x04', 'P', 'E', 'W', 'P', 'L', '\x04', '\x07', '\x15', 'T', 'V', 'L', '\x1b']
+  key = 'ctf'
+  flag = [chr(ord(a) ^ ord(b)) for a,b in zip(xored, itertools.cycle(key))]
+  print("".join(flag))
 
 {% endhighligh %}
-```
+
 
 By executing the script, we retrive the result with the flag
 
@@ -272,12 +273,13 @@ By executing the script, we retrive the result with the flag
 Betaflash let’s go in Cuba and dance amigo !!
 
 Flag format: CTF{sha256}
-{% highlight json %}
+
+```
 {
 	"nonce": "wpUq2dKfUzs=", 
 	"ciphertext": "oy5LG9jXkyS3xVVeCJ/mWhjxYDFMql0vu4CUryzziKc46PjrdEzqETLdnYU5TeM2ykJsu+16GjF2ZFi7DIJ7eMeU0g3j", "key": "Fidel_Alejandro_Castro_Ruz_Cuba!"
 }
-{% endhighlight %}
+```
 
 Okey, after long time figuring out what cipher was used on this, we came to a conclusion that it has to be Salsa20 or Chacha20, first by the properties (the use a 12 bytes nonce and 32 bytes key) and also the chall statement, since salsa and chachacha are latin dance types. Both are stream ciphers.
 
