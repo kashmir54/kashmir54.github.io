@@ -240,7 +240,7 @@ A python file is provided:
   print(a_list)
   print("".join(a_list))
 
-{% endhighligh %}
+{% endhighlight %}
 
 
 Check out the hint... since the flag starts with **ctf**, the first 3 chars at the xored list are 0, therefore, the key starts with 'ctf' and it could be the whole key. Why we know that? Remember XOR properties, when something is XORed with its own (for example c xor c) the result is 0.
@@ -260,7 +260,7 @@ We developed a little script to go over all the xored list and using the 3 char 
   flag = [chr(ord(a) ^ ord(b)) for a,b in zip(xored, itertools.cycle(key))]
   print("".join(flag))
 
-{% endhighligh %}
+{% endhighlight %}
 
 
 By executing the script, we retrive the result with the flag
@@ -305,7 +305,7 @@ cipher = ChaCha20.new(key=secret, nonce=b64decode(nonce))
 plaintext = cipher.decrypt(b64decode(ciphertext))
 print(f'Chacha20 \n{plaintext}')
 
-{% endhighligh%}
+{% endhighlight %}
 
 
 ```
