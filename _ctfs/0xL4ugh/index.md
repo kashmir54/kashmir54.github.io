@@ -36,7 +36,7 @@ I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/1
 
 ### Crypto
 
-- [Me & You!](#me-you)
+- [Me & You!](#me--you)
 - [Raheem Sterling Ahmed](#raheem-sterling-ahmed)
 - [Cyclops](#cyclops)
 
