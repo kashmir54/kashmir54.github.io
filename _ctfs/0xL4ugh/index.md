@@ -54,8 +54,6 @@ I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/1
 - [Noisy](#noisy)
 - [Gesture](#gesture)
 - [1990](#1990)
-- [mysqlimit](#mysqlimit)
-- [mysqlimit](#mysqlimit)
 
 
 ---
