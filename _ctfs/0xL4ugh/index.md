@@ -294,7 +294,11 @@ We get a pcap file. In it we can see a login.php request with some information w
 email=flag%400xl4ugh.com&password=3Cd7MMS7GmZMwxmRTfQwoXvxcDkGt8o4cFzwPUrg
 ```
 
-The password seems to be encoded on base58 as the Magic operation sais on CyberChef:
+The password seems to be encoded on base58 as the Magic operation suggests on CyberChef:
+
+<p align="center">
+  <img src="/images/writeups/0xL4ugh/Forensic/1_magic.png" width="80%"/>
+</p>
 
 ```
 3Cd7MMS7GmZMwxmRTfQwoXvxcDkGt8o4cFzwPUrg
