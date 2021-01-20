@@ -100,7 +100,7 @@ http://168.61.100.233/Cakes/
 We can see this web. A challenge called cake shop... Maybe it's something related with the cookies. In there, we can find a cookie with a certain value. If we take out that value and reload the website, our balance dissapears, so that value is related with the number 50000:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/1_web.png" width="50%"/>
+  <img src="/images/writeups/0xL4ugh/Web/1_web.png" width="80%"/>
 </p>
 
 If we decode _GUYDAMBQ_ with base32, we find the value 50000, so we will encode the number 1000000000 into base32 and place it on the cookie:
@@ -108,13 +108,13 @@ If we decode _GUYDAMBQ_ with base32, we find the value 50000, so we will encode 
 ``` GEYDAMBQGAYDAMBQGAYA==== ```
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/1_balance.png" width="50%"/>
+  <img src="/images/writeups/0xL4ugh/Web/1_balance.png" width="80%"/>
 </p>
 
 Reload the website and we found the flag by buying the flag:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/1_flag.png" width="50%"/>
+  <img src="/images/writeups/0xL4ugh/Web/1_flag.png" width="80%"/>
 </p>
 
 ``` 0xL4ugh{baSe_32_Cook!es_ArE_FuNny} ```
@@ -134,7 +134,7 @@ We got a website. In the comments it said that we can use admin:admin to enter t
 Enter the site:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/2_in.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/2_in.png" width="80%"/>
 </p>
 
 I checked if there is any XSS but I get 403 forbidden, so I went over burp to make some tests. Suddenly I found a hint:
@@ -155,11 +155,11 @@ name=Kash&title=A+test&mail=thisis%40email.com&gander=male&blogBody=<p id='flagH
 So the hint was correct and I got this:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/2_pre.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/2_pre.png" width="80%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/2_flag.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/2_flag.png" width="80%"/>
 </p>
 
 
@@ -184,13 +184,13 @@ The easy way is _sad_ as user-agent, then we get this:
 </p>
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/3_sad.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/3_sad.png" width="80%"/>
 </p>
 
 That thing about the sad user-agent didn't take me too long. So I started looking into the code and how we can exploit the server query they are using to get the user-agent. We can see at the form a parameter called url and a fixed value which in base64 is _echo $_SERVER['HTTP_USER_AGENT'];_ so we can try to pull all the content from the file with the following payload:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/3_form.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/3_form.png" width="80%"/>
 </p>
 
 ``` echo shell_exec('cat index.php'); -> ZWNobyBzaGVsbF9leGVjKCdjYXQgaW5kZXgucGhwJyk7Cg== ```
@@ -198,7 +198,7 @@ That thing about the sad user-agent didn't take me too long. So I started lookin
 Substitute it on the form, send the form and the flag will appear as it was part of the php file:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/3_flag.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/3_flag.png" width="80%"/>
 </p>
 
 ``` 0xL4ugh{S@dC0d3r_M3mbe3r_1n_0xL4ugh_&_sad_W0rld} ```
@@ -212,7 +212,7 @@ Some one Reports That We Use Function Could Lead to Evil Things But Our Devpolop
 http://138.91.58.10/Embedding/?username=shell_exec%28%27ls%27%29
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/4_shell.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/4_shell.png" width="70%"/>
 </p>
 
 We have 40 chars limit. Some of the failed tries were:
@@ -268,7 +268,7 @@ implode()
 With that payload, all the commented text won't be evaluated and the cat will be execute correctly:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/4_flag.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/4_flag.png" width="80%"/>
 </p>
 
 ``` 0xL4ugh{Z!90o_S@y_W3lC0m3} ```
@@ -306,19 +306,6 @@ base58
 
 ``` 0xL4ugh{W1R3SH4ARK_I5_N0I53Y} ```
 
-
-##  Woobs
-200
-
-I tried to login but i think i forgot my username so can u help me ?
--maybe this key can help u "d02a7960"
-link : https://www.mediafire.com/file/t050xu5yl9ypm94/Woobs.pcap.zip/file
-Authors : xElessaway & MM0X
-
-
-``` BQS?8F#ks-E+*g0AR]@k/oYV[G%kN3 ```
-
-
 ---
 
 # Crypto
@@ -341,7 +328,7 @@ We have the following text:
 Ummmm.... Seems like they are using some codification in ascii numbers since there are 2 and 3 chars long items. This chall is hard for people with different keyboard layout, however I use the ANSI layout and I could reach the conclusion that each symbol is in a number key so I translate it by introducing the numbers according to the symbols. 
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/key.jpeg" width="700"/>
+  <img src="/images/writeups/0xL4ugh/Crypto/key.jpeg" width="700"/>
 </p>
 
 Then I've got this:
