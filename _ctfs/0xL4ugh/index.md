@@ -185,7 +185,7 @@ The easy way is _sad_ as user-agent, then we get this:
   <img src="/images/writeups/0xL4ugh/Web/3_sad.png" width="80%"/>
 </p>
 
-That thing about the sad user-agent didn't take me too long. So I started looking into the code and how we can exploit the server query they are using to get the user-agent. We can see at the form a parameter called url and a fixed value which in base64 is _echo $_SERVER['HTTP_USER_AGENT'];_ so we can try to pull all the content from the file with the following payload:
+That thing about the sad user-agent didn't take me too far. So I started looking into the code and how we can exploit the server query they are using to get the user-agent. We can see at the form a parameter called url and a fixed value which in base64 is _echo $_SERVER['HTTP_USER_AGENT'];_ so we can try to pull all the content from the file with the following payload:
 
 <p align="center">
   <img src="/images/writeups/0xL4ugh/Web/3_form.png" width="80%"/>
