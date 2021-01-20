@@ -80,7 +80,7 @@ I started checking it's followers until I found this one [CanuSeeMe](https://twi
 I tried many simple combinations with its name, looked over other social media until I checked on [waybackmachine](https://web.archive.org), first on his twitter account and then on the pastebin and there it [was](https://web.archive.org/web/20210114142519/https://pastebin.com/hQrzTrMg):
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/OSINT/1_flag.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/OSINT/1_flag.png" width="70%"/>
 </p>
 
 ``` 0xL4ugh{S1MPl3_OsINt_Chall3nge} ```
