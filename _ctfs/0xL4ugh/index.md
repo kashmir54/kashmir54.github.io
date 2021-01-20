@@ -100,7 +100,7 @@ http://168.61.100.233/Cakes/
 We can see this web. A challenge called cake shop... Maybe it's something related with the cookies. In there, we can find a cookie with a certain value. If we take out that value and reload the website, our balance dissapears, so that value is related with the number 50000:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/1_web.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/1_web.png" width="50%"/>
 </p>
 
 If we decode _GUYDAMBQ_ with base32, we find the value 50000, so we will encode the number 1000000000 into base32 and place it on the cookie:
@@ -108,13 +108,13 @@ If we decode _GUYDAMBQ_ with base32, we find the value 50000, so we will encode 
 ``` GEYDAMBQGAYDAMBQGAYA==== ```
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/1_balance.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/1_balance.png" width="50%"/>
 </p>
 
 Reload the website and we found the flag by buying the flag:
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/Web/1_flag.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/Web/1_flag.png" width="50%"/>
 </p>
 
 ``` 0xL4ugh{baSe_32_Cook!es_ArE_FuNny} ```
