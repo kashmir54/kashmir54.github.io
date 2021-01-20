@@ -10,13 +10,13 @@ description: CTF - 0xL4ugh 2021
 # 0xL4ugh 2021
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/logo.png" width="300"/>
+  <img src="/images/writeups/0xL4ugh/logo.png" width="65%"/>
 </p>
 
 I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges!
 
 <p align="center">
-  <img src="/images/writeups/0xL4ugh/rank.png" width="500"/>
+  <img src="/images/writeups/0xL4ugh/rank.png" width="75%"/>
 </p>
 
 ### OSINT
