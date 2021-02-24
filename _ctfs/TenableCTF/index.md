@@ -10,16 +10,20 @@ description: CTF - TenableCTF 2021
 # TenableCTF 2021
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/logo.png" width="300"/>
+  <img src="/images/writeups/TenableCTF/logo.png" width="20%"/>
 </p>
+
 
 I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges!
 
+
 <p align="center">
-  <img src="/images/writeups/TenableCTF/rank.png" width="500"/>
+  <img src="/images/writeups/TenableCTF/rank.png" width="70%"/>
 </p>
 
 ---
+
+Challenge index:
 
 ### OSINT
 
@@ -107,7 +111,7 @@ We can use one of the templated to speed up the attack.
 We can use [URL Encoder](https://www.urlencoder.org/) and Burp to repeat the attack:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Web/XXE/1_flag.png" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Web/XXE/1_flag.png" width="60%"/>
 </p>
 
 ```
@@ -197,6 +201,8 @@ It seems like hex, so quick check on CyberChef build up an image with the flag:
   <img src="/images/writeups/TenableCTF/Web/Follow/1_flag.png" width="50%"/>
 </p>
 
+``` flag{automation_is_handy} ```
+
 ---
 
 # Misc
@@ -213,7 +219,7 @@ We got a broken QR, a quick Paint and some redundancy on the QR code maybe will 
 </p>
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Misc/BrokenQR/flag.jpeg" width="40%"/>
+  <img src="/images/writeups/TenableCTF/Misc/BrokenQR/flag.jpeg" width="30%"/>
 </p>
 
 ``` flag{d4mn_it_w0nt_sc4n} ```
@@ -269,7 +275,7 @@ Can you help him solve this case?
 We got an image:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Stego/Shield/shield.png" width="40%"/>
+  <img src="/images/writeups/TenableCTF/Stego/Shield/shield.png" width="30%"/>
 </p>
 
 By using binwalk we retrieve another image:
@@ -277,7 +283,7 @@ By using binwalk we retrieve another image:
 ``` binwalk -M --dd=.* shield.png ```
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Stego/Shield/monk.png" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Stego/Shield/monk.png" width="70%"/>
 </p>
 
 Seems like Cisternian numbers. Let's use [dcode](https://www.dcode.fr/cistercian-numbers) to retrieve the numbers. Remember that to introduce the input on dcode website, we have to start from the bottom left corner to bottom right, then top left and finally top right.
@@ -353,7 +359,7 @@ We can barely see the flag. Watch out, you might get blind looking for the flag.
 
 There seems to be this weird extraterrestrial communication broadcast in our discord. Can you help us decode it?
 
-Seems like SSTV signal. Redirect the output from the audio into a virtual sound card and use RX SSTV program to decode it. It seems like it's cut out and I found no way to get the original resolution. With Scotie 1 that's all I could get and filling with the flag prefix will do the job:
+Seems like SSTV signal. Redirect the output from the audio into a virtual sound card and use [RX SSTV](http://users.belgacom.net/hamradio/rxsstv.htm) program to decode it. It seems like it's cut out and I found no way to get the original resolution. With Scotie 1 that's all I could get and filling with the flag prefix will do the job:
 
 <p align="center">
   <img src="/images/writeups/TenableCTF/Stego/Weird/1_flag.jpg" width="50%"/>
@@ -454,7 +460,7 @@ From the 128 bits message I obtained 32 bytes, converting the binary into hexade
 Now we don't have any clue about an Initialization Vector (IV) needed on some of the AES operation modes, so we can think about Electronic CodeBook (ECB) which doesn't need IV. And looks like we got the flag:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Stego/Turtle/1_flag.png" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Stego/Turtle/1_flag.png" width="30%"/>
 </p>
 
 ``` flag{steg0_a3s} ```
@@ -656,25 +662,25 @@ The flag for this challenge should make my boss angry.
 A pcapng file is provided. First impressions showed an FTP file transmission. To retrieve the **supersecure.7z** file, go to any of the packets in the stream, right click Follow > Follow TCP Stream:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_ftp.png" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_ftp.png" width="60%"/>
 </p>
 
 We can see the data in ASCII of the 7z file:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_follow.png" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_follow.png" width="60%"/>
 </p>
 
 Now, to save it, select the raw at the menu and save it with whatever name:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_save.png" width="40%"/>
+  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_save.png" width="60%"/>
 </p>
 
 The 7z file has a password. looking back into the FTP session, we can see at the beginning that the attacker used **hunter2** as password, but didn't work as password for the 7z:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_pass.png" width="40%"/>
+  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_pass.png" width="50%"/>
 </p>
 
 Let's crack it with JohnTheRipper:
@@ -687,13 +693,13 @@ sudo apt install libcompress-raw-lzma-perl -y
 I was too greedy on the cracking stage. While crcking I inspected the pcapng file and found the password ^^'
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_password.png" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/1_password.png" width="60%"/>
 </p>
 
 Within there are 2 files, one of them is a PNG, showing the flag:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/pickle_nick.png" width="40%"/>
+  <img src="/images/writeups/TenableCTF/Forensic/Hackerman/pickle_nick.png" width="25%"/>
 </p>
 
 ``` flag{pickl3_NIIICK} ```
