@@ -216,11 +216,7 @@ We got a broken QR, a quick Paint and some redundancy on the QR code maybe will 
   <img src="/images/writeups/TenableCTF/Misc/BrokenQR/flag.jpeg" width="40%"/>
 </p>
 
-<p align="center">
-  <img src="/images/writeups/TenableCTF/Misc/BrokenQR/flag.jpeg" width="50%"/>
-</p>
-
-``` flag{d4mn_it_w0nt_sc4n}```
+``` flag{d4mn_it_w0nt_sc4n} ```
 
 
 ## Find the encoding
