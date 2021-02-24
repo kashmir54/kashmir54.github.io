@@ -496,6 +496,10 @@ We can find the server encription method. We can see that the server uses AES wi
 |userinpuuuutttfl| |ag{this_is_a_fla| |g}paddingpadding|
 ```
 
+<p align="center">
+  <img src="/images/writeups/TenableCTF/Crypto/ECB.png" width="50%"/>
+</p>
+
 {% highlight php %}
 
 <?php
@@ -630,6 +634,10 @@ def attack(block_size=16, payload_size=41):
 
 attack()
 {% endhighlight %}
+
+<p align="center">
+  <img src="/images/writeups/TenableCTF/Crypto/flag.png" width="50%"/>
+</p>
 
 ``` flag{b4d_bl0cks_for_g0nks} ```
 
