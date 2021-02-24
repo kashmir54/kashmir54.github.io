@@ -28,3 +28,4 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 - [TetCTF 2021](/ctfs/TetCTF2021) (3/01/2021)
 - [Brixel CTF 2021](/ctfs/Brixel) (3/01/2021)
 - [0xL4ugh](/ctfs/0xL4ugh) (16/01/2021)
+- [TenableCTF 2021](/ctfs/TenableCTF) (21/01/2021)
