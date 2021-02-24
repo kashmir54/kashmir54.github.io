@@ -636,7 +636,7 @@ attack()
 {% endhighlight %}
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Crypto/flag.png" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Crypto/flag.png" width="30%"/>
 </p>
 
 ``` flag{b4d_bl0cks_for_g0nks} ```
