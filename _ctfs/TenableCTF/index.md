@@ -141,38 +141,38 @@ http://167.71.246.232:8080/rabbit_hole.php?page=dUfob5k9t2vH1dVEU9bU
 We have like a flow of URLs and and array with an int and a string. Let's make an script to retrieve all the URLs and also the content of the HTML. After messing around with the messages I though that the first array could be a key:value pair:
 
 {% highlight python%}
-	import requests
-	import re
-	import json
+import requests
+import re
+import json
 
-	url = 'http://167.71.246.232:8080/rabbit_hole.php?page='
-	path = 'cE4g5bWZtYCuovEgYSO1'
-	exp = r"\[([\d]+), '([\w]+)'\]\n.(.*)"
-	array = {}
-	paths = []
+url = 'http://167.71.246.232:8080/rabbit_hole.php?page='
+path = 'cE4g5bWZtYCuovEgYSO1'
+exp = r"\[([\d]+), '([\w]+)'\]\n.(.*)"
+array = {}
+paths = []
 
-	i = 0
+i = 0
 
-	while True:
-		try:
-			r = requests.get(url+path)
-			print(r.text)
-			
-			content = re.search(exp, r.text)
-			array[content.group(1)] = content.group(2)
-			path = content.group(3)
-			i += 1
-			print(i)
-		except AttributeError:
-			break
-		except Exception:
-			break
+while True:
+	try:
+		r = requests.get(url+path)
+		print(r.text)
+		
+		content = re.search(exp, r.text)
+		array[content.group(1)] = content.group(2)
+		path = content.group(3)
+		i += 1
+		print(i)
+	except AttributeError:
+		break
+	except Exception:
+		break
 
-	with open('result.json', 'w') as out_file:
-		json.dump(array, out_file, indent=4, sort_keys=True)	
+with open('result.json', 'w') as out_file:
+	json.dump(array, out_file, indent=4, sort_keys=True)	
 
-	with open('paths.json', 'w') as out_file:
-		json.dump(paths, out_file, indent=4)
+with open('paths.json', 'w') as out_file:
+	json.dump(paths, out_file, indent=4)
 {% endhighlight %}
 
 To follow the current approach I set the key as the order in a string and merge the values in order with the following code:
@@ -454,8 +454,10 @@ From the 128 bits message I obtained 32 bytes, converting the binary into hexade
 Now we don't have any clue about an Initialization Vector (IV) needed on some of the AES operation modes, so we can think about Electronic CodeBook (ECB) which doesn't need IV. And looks like we got the flag:
 
 <p align="center">
-  <img src="/images/writeups/TenableCTF/Stego/Turtle/1_flag.jpg" width="50%"/>
+  <img src="/images/writeups/TenableCTF/Stego/Turtle/1_flag.png" width="50%"/>
 </p>
+
+``` flag{steg0_a3s} ```
 
 ---
 
@@ -478,7 +480,7 @@ synt{pbatengf_lbh_tbg_zr}
 
 - ROT13:
 
-```flag{congrats_you_got_me}```
+```flag{congrats_you_got_me} ```
 
 
 ## Netrunner Encryption
