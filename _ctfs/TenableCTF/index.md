@@ -54,8 +54,8 @@ Challenge index:
 
 ### Forensic
 
-- [H4ck3R_m4n exp0sed! 2](#h4ck3r-m4n-exp0sed-2)
-- [H4ck3R_m4n exp0sed! 3](#h4ck3r-m4n-exp0sed-3)
+- [H4ck3R_m4n exp0sed! 2](#h4ck3r_m4n-exp0sed-2)
+- [H4ck3R_m4n exp0sed! 3](#h4ck3r_m4n-exp0sed-3)
 
 ### Code
 
