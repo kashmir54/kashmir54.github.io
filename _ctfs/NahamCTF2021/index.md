@@ -43,7 +43,7 @@ Check the [video](https://www.youtube.com/watch?v=3Q9-X_NRlJc) and fix the code 
 
 ```
 kali@kali:~/Desktop/CTFs/NahamCTF2021/Warmup$ python2 decode-vbe.py veebee.vbe 
-                            ' VeeBee goes buzz buzz
+' VeeBee goes buzz buzz
 '
 '
 MsgBox("Sorry, not that easy!")
@@ -78,7 +78,7 @@ buzz:   flag{b3a33db7ba04c4c9052ea06d9ff17869}
 Abandon all hope, ye who enter here... 
 
 ```
-D'`r#LK\[}{{EUUTet,r*qo'nmlk5ihVB0S!>w<<)9xqYonsrqj0hPlkdcb(`Hd]#a`_A@VzZY;Qu8NMRQJn1MLKJCg*)ED=a$:?>7[;:981w/4-,P*p(L,%*)"!~}CB"!~}_uzs9wpotsrqj0Qmfkdcba'H^]\[Z~^W?[TSRWPt7MLKo2NMFj-IHG@dD&<;@?>76Z{9276/.R21q/.-&J*j(!E%$d"y?`_{ts9qpon4lTjohg-eMihg`&^cb[!_X@VzZ<RWVOTSLpP2HMFEDhBAFE>=BA:^8=6;:981Uvu-,10/(Lm%*)(!~D1
+D'`r#LK\[}{{EUUTet,r*qo'nmlk5ihVB0S!>w<<)9xqYonsrqj0hPlkdcb(...
 ```
 
 Looking for eighth circle in Google it makes a reference to [Malbolge](https://esolangs.org/wiki/malbolge), which is an esoteric programming language.
