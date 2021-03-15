@@ -25,10 +25,16 @@ I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/1
 
 Challenge index:
 
-### Crypto
+### Warmup
 
-- [war(sa)mup](#warsamup)
+- [Veebee](#veebee)
+- [Buzz](#buzz)
+- [Eighth Circle](#eighth-circle)
 
+### Web
+
+- [Asserted](#asserted)
+- [Bad Blog](#bad-blog)
 
 ---
 
