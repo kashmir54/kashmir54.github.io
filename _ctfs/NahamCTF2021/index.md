@@ -77,9 +77,9 @@ buzz:   flag{b3a33db7ba04c4c9052ea06d9ff17869}
 
 Abandon all hope, ye who enter here... 
 
-```
-D'`r#LK\[}{{EUUTet,r*qo'nmlk5ihVB0S!>w<<)9xqYonsrqj0hPlkdcb(...
-```
+<p align="center">
+  <img src="/images/writeups/NahamCTF2021/1_eso.png" width="80%"/>
+</p>
 
 Looking for eighth circle in Google it makes a reference to [Malbolge](https://esolangs.org/wiki/malbolge), which is an esoteric programming language.
 
