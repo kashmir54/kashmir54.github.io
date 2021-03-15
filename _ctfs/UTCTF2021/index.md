@@ -25,9 +25,32 @@ I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/1
 
 Challenge index:
 
-### Crypto
+### Beginner
 
-- [war(sa)mup](#warsamup)
+- [HTML](#html)
+- [Stringy Things](#stringy-things)
+- [Magic Bytes](#magic-bytes)
+- [Run-ELF](#run-elf)
+- [Cipher Gauntlet](#cipher-gauntlet)
+- [Sizzling Bacon](#sizzling-bacon)
+- [Various Vernacular](#various-vernacular)
+
+### Web
+
+- [Source it!](#source-it)
+- [Cutest Cookie Clicker Rip-Off](#cutest-cookie-clicker-rip-off)
+- [Oinker](#oinker)
+
+### Forensic
+
+- [SHIFT](#shift)
+- [Doubly Deleted Data](#doubly-deleted-data)
+- [OSINT Part 1](#osint-part-1)
+- [OSINT Part 2](#osint-part-1)
+
+### Misc
+
+- [Emoji Encryption](#emoji-encryption)
 
 
 ---
@@ -54,7 +77,7 @@ strings calc
 ``` utflag{strings_is_op} ```
 
 
-##  Magic Bytes
+## Magic Bytes
 859
 
 My friend sent me this text file and said they put a flag inside. I opened it and it doesn't look like a normal text file to me! Maybe you'll be able to find it.
@@ -71,13 +94,13 @@ kali@kali:~/Desktop/CTFs/UTCTF2021/Beginner$ xxd out.txt | head
 Open it as image:
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Beginner/out.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Beginner/out.png" width="50%"/>
 </p>
 
 ``` utflag{file_extensions_mean_nothing} ``` 
 
 
-##  Run-ELF
+## Run-ELF
 859
 
 Anyone know how to run an ELF file? I bet you could figure it out.
@@ -89,7 +112,7 @@ kali@kali:~/Desktop/CTFs/UTCTF2021/Beginner$ ./run
 ``` utflag{run_run_binary_9312854} ```
 
 
-##  Cipher Gauntlet
+## Cipher Gauntlet
 867
 
 Can you make it through all of the encodings and ciphers
@@ -115,7 +138,7 @@ Use a ROT13 (or caesar cipher) to get the flag:
 ``` utflag{now_youre_playing_with_crypto} ```
 
 
-##  Sizzling Bacon
+## Sizzling Bacon
 913
 
 My buddy Francis is really into Bacon. He loves it so much that he gave me this encoded bacon-themed flag (he said he was inspired by the sound of sizzling bacon).
@@ -145,7 +168,7 @@ Alphabet correlation:
 ``` utflag{crispybaconcipher} ```
 
 
-##  Various Vernacular
+## Various Vernacular
 988
 
 This flag was intercepted. wmysau{foeim_Tfusoli}
@@ -222,7 +245,7 @@ http://web1.utctf.live:4270
 Set the cookie to a high number and wait for the timer:
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Web/2_flag.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Web/2_flag.png" width="80%"/>
 </p>
 
 ``` utflag{numnum_cookies_r_yumyum} ```
@@ -238,7 +261,7 @@ http://web2.utctf.live:5320/
 We can post a "tweet" and see that there is an id on the URL. Looking for different messages and ids on the URL, we can see that the second one was the flag:
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Web/2_flag.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Web/3_flag.png" width="70%"/>
 </p>
 
 ``` utflag{traversal_bad_dude}  ```
@@ -254,13 +277,13 @@ We can post a "tweet" and see that there is an id on the URL. Looking for differ
 I just tried to download this flag, but it looks like the image got messed up in transit...
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Forensic/SHIFT.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Forensic/SHIFT.png" width="80%"/>
 </p>
 
 We can take a closer look and conclude that each row is shifted 6 pixels to the left.
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Forensic/shifted.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Forensic/shifted.png" width="40%"/>
 </p>
 
 I have implemented the following script to unshift the image:
@@ -287,7 +310,7 @@ im2.save('SHIFT2.png')
 Running the script we obtain the output image:
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Forensic/SHIFT2.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Forensic/SHIFT2.png" width="80%"/>
 </p>
 
 ``` utflag{not_when_i_shift_into_maximum_overdrive} ```
@@ -323,7 +346,7 @@ Can you find any OpSec vulnerabilities?
 We can see the description of the last member saying that he is on social media, so let's find him out:
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Forensic/1_osing.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Forensic/1_osint.png" width="70%"/>
 </p>
 
 I found him on twitter with his name and one of the photos contained the flag:
@@ -343,7 +366,7 @@ Find the origins of the linked file found in part 1.
 We have the following image:
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2021/Forensic/2_image.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2021/Forensic/2_image.jpg" width="70%"/>
 </p>
 
 Using Google Lens we can see that is a theme park on Shiroshi City, Miyagi, Japan.
@@ -370,5 +393,7 @@ I came up with this rad new encryption. Bet no one can break it
 Use the first letter of what th emoji represents
 
 ``` utflag{emojis_be_versatile} ```
+
+---
 
 And that's all for this CTF! Thanks for reading!
