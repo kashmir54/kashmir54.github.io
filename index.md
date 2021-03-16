@@ -5,7 +5,7 @@ description: ""
 ---
 
 <p align="center">
-  <img src="/images/killswitch.mp4" width="70%"/>
+  <img src="/images/killswitch.gif" width="70%"/>
 </p>
 
 A long road ahead, learning and sharing back all what I've got from the community.
@@ -23,10 +23,9 @@ Find all the CTFs and the partial writeups:
 
 Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 
-<script src="https://www.hackthebox.eu/badge/365669"></script>
-<br/>
-
 [Walk into the boxes](/walkthroughs)
+
+<script src="https://www.hackthebox.eu/badge/365669"></script>
 
 
 ## Misc
