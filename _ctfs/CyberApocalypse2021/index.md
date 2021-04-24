@@ -52,13 +52,13 @@ We have gained physical access to the debugging interface of the Access Control 
 We got a .sal file. First guess by the content could be a logic analyzer, so let's use Logic2 to inspect its content:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/1_logic.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/1_logic.png" width="80%"/>
 </p>
 
 We can see that there is only one channel with signals so probably we are talking about [UART protocol](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter), so let's analyze it. For doing that, first we have to know the baud rate also known as the transfer speed. It's standard metric is bits/s, so to calculate the baud rate in this signal we zoom into the very first signal and see the minimun period of the signal.
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/2_baud.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/2_baud.png" width="80%"/>
 </p>
 
 We can see 8.5us. So, if we have 1000000us / 8.5us = 117.647,0588. As the nearest common baud rate to this number is 115.200, we will take it as a valid result, so let's configure the analyzer:
@@ -68,7 +68,7 @@ We can see 8.5us. So, if we have 1000000us / 8.5us = 117.647,0588. As the neares
 </p>
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/3_message.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/3_message.png" width="80%"/>
 </p>
 
 Now let's export it into a csv and with a quick script, retrieve the message:
@@ -109,13 +109,13 @@ Go to the end of the transmission, calculate the baud rate of the final segment 
 
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/4_baud2.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/4_baud2.png" width="80%"/>
 </p>
 
 We have the smallest period of 13.48us: 1000000 / 13.48 = 74183 bits/s. As we don't have a common baud rate near to the calculated one, we will set it anyway to 74183 and let's see if we can decode it. Export the table as csv and rerun the script:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/5_export.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/5_export.png" width="50%"/>
 </p>
 
 Bingo:
@@ -130,6 +130,7 @@ Bingo:
 
 ``` CHTB{wh47?!_f23qu3ncy_h0pp1n9_1n_4_532141_p2070c01?!!!52} ```
 
+<br>
 
 ## Compromised
 
@@ -138,19 +139,19 @@ An embedded device in our serial network exploited a misconfiguration which resu
 We have another sal file. Let's open it with Logic2:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/Compromised/1_logic.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/Compromised/1_logic.png" width="80%"/>
 </p>
 
 We have 2 channels with signals in both... Sounds like I2C protocol. Using the analyzer, we configure the data and clock channel:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/Compromised/2_i2c.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/Compromised/2_i2c.png" width="80%"/>
 </p>
 
 We were right, it's I2C. Now let's understand what is in there:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/Compromised/3_ack.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/Compromised/3_ack.png" width="80%"/>
 </p>
 
 We export it as the previous chall. First select ascii in the protocol display and then export the csv:
@@ -183,7 +184,7 @@ with open('output.txt', 'w') as out_file:
 	out_file.write(all_msg)
 {% endhighlight %}
 
-And I had the following output. 
+And I had the following output:
 
 ```
 set_maCxH_lTimB{itn_tuo1:110_se73t_2mimn1_nli4mi70t_2to5:_1c0+.]<+/4~nr^_yz82Gb3b"4#kU_..4+J_5.
@@ -217,6 +218,7 @@ with open('output.txt', 'w') as out_file:
 
 ``` CHTB{nu11_732m1n47025_c4n_8234k_4_532141_5y573m!@52)#@%} ```
 
+<br>
 
 ## Secure
 
@@ -228,17 +230,17 @@ We have another sal file. We have 4 channels... For the different signals we can
 - Finally the data lines, Master-In-Slave-Out (MISO) and Master-Out-Slave-I (MOSI). For this task may not be as relevant, so we set the _Channel 0_ as MISO and _Channel 1_ as MOSI.
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/Secure/1_logic.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/Secure/1_logic.png" width="90%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/Secure/2_config.png" width="40%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/Secure/2_config.png" width="70%"/>
 </p>
 
 As we can see on the table, we made the assignation right, so looking at the table in ascii mode we can see some readable text. _NO NAME FAT16_, that could be the SD card we are looking for; let's export it as csv and use the previous script to export the MISO data channel to a text file.
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/Secure/3_hint.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/Secure/3_hint.png" width="50%"/>
 </p>
 
 Using the previous script to extract the row[4], we exported the following txt:
@@ -249,6 +251,7 @@ Using the previous script to extract the row[4], we exported the following txt:
 
 ``` CHTB{5P1_15_c0mm0n_0n_m3m02y_d3v1c35_!@52} ```
 
+<br>
 
 ## Off the grid
 
@@ -270,13 +273,13 @@ By opening the file we can see up to 5 channels with signals this time. Thanks t
 We don't have to asign the RST (reset) pin, since it's only used to clear and turn on the display. Once we have set the different channels to the SPI protocol, we take a look into the general image of the transmission. Experience tell us that each transmission (with 1 second between them) is an image for the display to load in its memory and to represent it. Therefore, we will try to extract an image from each transmission. 
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/2_logic.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/2_logic.png" width="90%"/>
 </p>
 
 But first, what are we looking at? How do those display work? For representing an image, usually we have different arduino libraries which are used to take images into a hexadecimal vector for monochrome displays. So we are looking into the MOSI (Master-Out-Slave-In) hexadecimal since those are the values that can build up the image. So I developed this script for extracting each image:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/4_export.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/4_export.png" width="60%"/>
 </p>
 
 ```
@@ -290,6 +293,8 @@ name,type,start_time,"mosi","miso"
 "SPI","enable",1.82870758,,
 "SPI","result",1.82871154,0x00,0x10
 ```
+
+To extract the array of values for an specific frame (one per second) I developed the following script:
 
 {% highlight python %}
 import csv
@@ -316,11 +321,17 @@ with open('output.txt', 'w') as out_file:
 	out_file.write(all_msg)
 {% endhighlight %}
 
+To retrieve the hexadecimal value for the image:
+
 ```
-0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0xF8,0x08,0x04,0xF4,0xF4,0x04,0xF4,0xF4,0x04,0xF4,0xF4,0x04,0xFC,0x00,0xB1,0x02,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0xA0,0xA0,0xB0,0xB0,0xB0,0xB0,0xB0,0xA0,0x00,0x00,0x00,0x00,0x80,0xB0,0xB0,0x00,0x00,0x00,0x80,0xB0,0xB0,0x00,0x00,0x00,0x00,0xB0,0xB0,0xB0,0xB0,0xB0,0xB0,0xB0...
+0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+0x00,0x00,0x00,0xF8,0x08,0x04,0xF4,0xF4,0x04,0xF4,0xF4,0x04,0xF4,0xF4,0x04,0xFC,0x00,
+0xB1,0x02,0x10,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0xA0,0xA0,0xB0,0xB0,0xB0,
+0xB0,0xB0,0xA0,0x00,0x00,0x00,0x00,0x80,0xB0,0xB0,0x00,0x00,0x00,0x80,0xB0,0xB0,0x00,
+0x00,0x00,0x00,0xB0,0xB0,0xB0,0xB0,0xB0,0xB0,0xB0...
 ```
 
-Now we have an hexadecimal list. We can use an online [image2cpp](https://javl.github.io/image2cpp/) to decode the images. Remember to set the resolution to _131 x 64 px_ and read as vertical:
+Now we have the hexadecimal list and we can use the online tool [image2cpp](https://javl.github.io/image2cpp/) to decode the images. Remember to set the resolution to _131 x 64 px_ and read as vertical:
 
 <p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/5_image2cpp.png" width="70%"/>
@@ -328,29 +339,24 @@ Now we have an hexadecimal list. We can use an online [image2cpp](https://javl.g
 
 The output images are these:
 
-<p align="center">
+<div display="grid">
   <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/1.png" width="20%"/>
-</p>
-<p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/2.png" width="20%"/>
-</p>
-<p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/3.png" width="20%"/>
-</p>
-<p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/5.png" width="20%"/>
-</p>
-<p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/6.png" width="20%"/>
-</p>
+</div>
+
+There was one of them with the flag:
+
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/4.png" width="40%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/4.png" width="30%"/>
 </p>
 
 
 ``` CHTB{013d_h4ck1n9_f7w!2^25#} ```
 
-
+<br>
 ---
 
 # Misc
@@ -445,6 +451,7 @@ Here is a 🎁 for you: CHTB{3v3n_4l13n5_u53_3m0j15_t0_c0mmun1c4t3}
 
 ``` CHTB{3v3n_4l13n5_u53_3m0j15_t0_c0mmun1c4t3} ```
 
+<br>
 
 ## Input as a Service
 
@@ -495,6 +502,9 @@ open('flag.txt', 'r').read()
 
  121
 ```
+
+``` CHTB{4li3n5_us3_pyth0n2.X?!} ```
+<br>
 
 ---
 
