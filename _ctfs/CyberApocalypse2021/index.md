@@ -340,11 +340,11 @@ Now we have the hexadecimal list and we can use the online tool [image2cpp](http
 The output images are these:
 
 <div display="grid">
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/1.png" width="20%"/>
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/2.png" width="20%"/>
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/3.png" width="20%"/>
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/5.png" width="20%"/>
-  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/6.png" width="20%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/1.png" width="19%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/2.png" width="19%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/3.png" width="19%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/5.png" width="19%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/OffTheGrid/6.png" width="19%"/>
 </div>
 
 There was one of them with the flag:
@@ -357,6 +357,7 @@ There was one of them with the flag:
 ``` CHTB{013d_h4ck1n9_f7w!2^25#} ```
 
 <br>
+
 ---
 
 # Misc
