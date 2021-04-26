@@ -61,17 +61,33 @@ We can see that there is only one channel with signals so probably we are talkin
   <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/2_baud.png" width="80%"/>
 </p>
 
-We can see 8.5us. So, if we have 1000000us / 8.5us = 117.647,0588. As the nearest common baud rate to this number is 115.200, we will take it as a valid result, so let's configure the analyzer:
+We can see that the smallest period between two high values is 8.5us. So, if we have 1000000us (1 second) and 1 bit is being transfered every 8.5us we can do a quick operation to get hoy many bits/seconds are sent:
+
+```
+1 bit   1000000us
+----- x --------- = 117.647,0588 bits/second
+8.5us       1s
+```
+
+Now with the list of [standard baud rates](https://electronics.stackexchange.com/questions/9264/what-standard-uart-rates-are-there), we found that the nearest baud rate to the obtained baud rate is 115.200, so we will take it as a valid result, and configure the analyzer with this standard value:
 
 <p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/3_decode.png" width="70%"/>
 </p>
 
+In the next image we can see that Logic2 have decoded correctly the communication and se can see some messages on the signals:
+
 <p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/3_message.png" width="80%"/>
 </p>
 
-Now let's export it into a csv and with a quick script, retrieve the message:
+Now we export it into a csv and with a quick script to then retrieve the message:
+
+<p align="center">
+  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/5_export.png" width="50%"/>
+</p>
+
+With the following code we can extract the data from the csv.
 
 {% highlight python %}
 import csv
@@ -83,8 +99,6 @@ with open('flag') as csv_file:
 
 	for row in csv_reader:
 		message.append(row[4])
-			
-	print(f'Processed {line_count} lines.')
 
 	all_msg = ''.join(message)
 
@@ -105,8 +119,7 @@ All was looking good and we had some logs on the file but suddenly we can see th
 ...
 ```
 
-Go to the end of the transmission, calculate the baud rate of the final segment and get the message again:
-
+Check the last readable message. It says that is switching the baud rate and then we have problems on decoding the signal. We are going to export the csv again but setting the correct baud rate for that segment. Go to the end of the transmission, calculate the baud rate of the final segment and get the message again:
 
 <p align="center">
   <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/4_baud2.png" width="80%"/>
@@ -115,7 +128,7 @@ Go to the end of the transmission, calculate the baud rate of the final segment 
 We have the smallest period of 13.48us: 1000000 / 13.48 = 74183 bits/s. As we don't have a common baud rate near to the calculated one, we will set it anyway to 74183 and let's see if we can decode it. Export the table as csv and rerun the script:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/5_export.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2021/HW/SerialLogs/5_export.png" width="40%"/>
 </p>
 
 Bingo:
