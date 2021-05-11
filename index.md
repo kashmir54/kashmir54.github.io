@@ -12,12 +12,22 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 
 ## CTF Writeups
 
-Find all the CTFs and the partial writeups:
+CTF (Capture The Flag) are competitions where we solve different cibersecurity tasks to find the secret (flag) at the end of the challenge. There are several categories depending on the type of the challenge, some of them are: Web, Forensic, OSINT (Open Source Intelligence), Cryptography, PWN (Binary Explotation), Reverse Engineering, RF (Radio Frequency), Hardware, etc. 
 
-[CTF Writeups](/ctfs)
+I have special interest in OSINT, Web and Forensic challenges and I participate with team [ISwearIGoogledIt](https://ctftime.org/team/109689) looking for scoring as much points as possible while developing new skills in different cybersecurity areas.
+
+You can find all my CTFs writeups (solutions and explanations) here: [Kashmir54's CTF Writeups](/ctfs)
+
+Latest CTFs writeups:
+
+- [CyberApocalypse 2021](/ctfs/CyberApocalypse2021) (19/04/2021)
+- [NahanCon CTF 2021](/ctfs/NahamCTF2021) (14/03/2021)
+- [UTCTF 2021](/ctfs/UTCTF2021) (14/03/2021)
+- [TenableCTF 2021](/ctfs/TenableCTF) (24/02/2021)
+- [0xL4ugh](/ctfs/0xL4ugh) (16/01/2021)
 
 
-## Walkthroughs
+## HackTheBox Walkthroughs
 
 Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 
