@@ -264,11 +264,13 @@ To approach this task I focused on the user input _request.args['content']_ and 
 
 To detect this vulnerability I checked the following payload since it is a Flask application:
 
-``` 
 
-\{{7*7}\} 
-
+```django
+{{7*7}} 
 ```
+
+
+
 
 <p align="left">
   <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.jpg" width="40%"/>
@@ -279,7 +281,9 @@ To detect this vulnerability I checked the following payload since it is a Flask
 </p>
 
 As we can see, the code is executed, therefore we can try to explote this vulnerability.
-The purpose is to read the flag file (?) or to execute code in the server. For that, we will need to call the **File** class in order to read its content, so we can use MRO (Method Resolution Order) to map 
+The purpose is to read the flag file (?) or to execute code in the server. For that, we will need to call the **File** class in order to read its content, so we can use MRO (Method Resolution Order) to list the classes to look up for the methods considering its inheritance map. The last class of the mro will be the object one, there, we could find some interesting methods that we can exploit.
+
+We use an empty string ("") and access its class attribute. We have some issues with the blacklist implemented in the code ("las", "bas", "bal") but we can bypass it with the following trick:
 
 ```
 
@@ -287,6 +291,7 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 
 ```
 
+Now, step up to the MRO:
 
 <p align="center">
   <img src="/images/writeups/ImaginaryCTF2021/Web/3_class.jpg" width="70%"/>
@@ -302,6 +307,7 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
   <img src="/images/writeups/ImaginaryCTF2021/Web/4_mro.jpg" width="70%"/>
 </p>
 
+Now I use subclasses over the object class to obtain the list of available methods for the object class:
 
 ```
 
@@ -314,7 +320,7 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 </p>
 
 
-Now we have a great set of classes that we can access to. Let's find out with one that can be used to read files.
+Now we have a great set of classes that we can access to. Let's find out which one can be used to read files.
 
 {% highlight python %}
 
@@ -379,3 +385,6 @@ Following the documentation, we crafted the following payload:
 </p>
 
 ``` ictf{:rooYay:_:rooPOG:_:rooHappy:_:rooooooooooooooooooooooooooo:} ```
+
+
+That's all for the little time I could spend. Thanks for reading!!
