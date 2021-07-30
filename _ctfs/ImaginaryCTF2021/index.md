@@ -3,14 +3,14 @@ title: "CTF - ImaginaryCTF 2021"
 categories: [ctf]
 date: 2021-02-20
 comments: true
-image: /images/writeups/ImaginaryCTF/logo.png
+image: /images/writeups/ImaginaryCTF/icon.jpg
 description: CTF - ImaginaryCTF 2021
 ---
 
 # ImaginaryCTF 2021
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/logo.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/logo.jpg" width="70%"/>
 </p>
 
 
@@ -86,7 +86,7 @@ https://imaginaryctf.org/r/10C4-challenge.psd
 Seems like a Photoshop file, and for the hints in the description, we will have to open it and check the flag:
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Forensic/1_flag.png" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/1_flag.png" width="70%"/>
 </p>
 
 ```
@@ -121,13 +121,13 @@ kali@kali:/opt/sherlock/sherlock$ python3 sherlock.py unpuzzler7
 First one and second one are false positives, but the third one... Looks promising since the user has some replies. Let's take a look to the flag one:
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Forensic/1_osint_rply.png" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/1_osint_rply.png" width="70%"/>
 </p>
 
 We have some JSFuck, but decoding it doesn't seem to be the solution
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Forensic/2_osint_rply.png" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/2_osint_rply.png" width="70%"/>
 </p>
 
 Decoded JSFuck:
@@ -139,7 +139,7 @@ alert("jctf{n0t_th3_fl4g} BUT YOU SHOULD SUBSCRIBE TO MY UNPUZZLING SERVICE!!!!!
 I kept going over those replit items and in the DiscordBot I found the following base64 code...
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Forensic/3_osint_rply.png" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/3_osint_rply.png" width="70%"/>
 </p>
 
 ```aWN0ZntyM3BsMXRfMXNudF90aDNfcGw0YzNfdDBfc3QwcjNfczNjcjN0c18xY2IyNjE0OH0=```
@@ -170,14 +170,14 @@ At the end could find the solution to Unpuzzled 1 :(
 Roo's cousin was on vacation, but he forgot to tell us where he went! But he posted this image on his social media. Could you track down his location? Submit your answer as ictf{latitude_longitude}, with both rounded to 3 decimal places. Example: ictf{-12.345_42.424} (Note: only the image is needed for this challenge, as this is an OSINT challenge.)
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Forensic/image.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/image.jpg" width="70%"/>
 </p>
 
 
 In the image we can see the Rock Shop of Tahoe Hemp Company. A quick search on GMaps will do the work. Location was found [here](https://www.google.com/maps/@38.94711,-119.9614202,3a,75y,62.45h,95.14t/data=!3m6!1e1!3m4!1soFk1nXrY9AhpaaIpQOhM2g!2e0!7i16384!8i8192)
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Forensic/4_location.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/4_location.jpg" width="70%"/>
 </p>
 
 Using the coordinates in the URL will make the work for the flag:
@@ -270,11 +270,11 @@ To detect this vulnerability I checked the following payload since it is a Flask
 ```{{7*7}}```
 
 <p align="left">
-  <img src="/images/writeups/ImaginaryCTF/Web/1_template.jpg" width="40%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.jpg" width="40%"/>
 </p>
 
 <p align="right">
-  <img src="/images/writeups/ImaginaryCTF/Web/2_execution.jpg" width="40%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/2_execution.jpg" width="40%"/>
 </p>
 
 As we can see, the code is executed, therefore we can try to explote this vulnerability.
@@ -286,7 +286,7 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Web/3_class.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/3_class.jpg" width="70%"/>
 </p>
 
 ```
@@ -294,7 +294,7 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 ```
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Web/4_mro.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/4_mro.jpg" width="70%"/>
 </p>
 
 
@@ -303,7 +303,7 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 ```
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Web/5_subclasses.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/5_subclasses.jpg" width="70%"/>
 </p>
 
 
@@ -356,7 +356,7 @@ I see that the number 99 (FileLoader) may fit our purpose:
 Now, the [documentation](https://docs.python.org/3/library/importlib.html) is checked to see how we can open and read a file:
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Web/6_fileloader.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/6_fileloader.jpg" width="70%"/>
 </p>
 
 Following the documentation, we crafted the following payload:
@@ -366,7 +366,7 @@ Following the documentation, we crafted the following payload:
 ```
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF/Web/7_flag.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/7_flag.jpg" width="70%"/>
 </p>
 
 ```ictf{:rooYay:_:rooPOG:_:rooHappy:_:rooooooooooooooooooooooooooo:}```
