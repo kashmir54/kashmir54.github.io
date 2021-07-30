@@ -265,8 +265,8 @@ To approach this task I focused on the user input _request.args['content']_ and 
 To detect this vulnerability I checked the following payload since it is a Flask application:
 
 
-```django
-{{7*7}} 
+```
+\{\{7*7\}\} 
 ```
 
 
