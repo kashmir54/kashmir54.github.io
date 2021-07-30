@@ -264,7 +264,9 @@ To approach this task I focused on the user input _request.args['content']_ and 
 
 To detect this vulnerability I checked the following payload since it is a Flask application:
 
-``` {{7*7}} ```
+``` 
+{{7*7}} 
+```
 
 <p align="left">
   <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.jpg" width="40%"/>
