@@ -65,9 +65,7 @@ qkbn{ePmv_lQL_kIMamZ_kQxpMZa_oMb_aW_pIZl}
 
 Let's apply the Caesar Cypher or ROT cypher until a ratation leads into the "ictf". I'm using [CyberChef](https://gchq.github.io/CyberChef/):
 
-```
-ictf{wHen_dID_cAEseR_cIphERs_gEt_sO_hARd}
-```
+``` ictf{wHen_dID_cAEseR_cIphERs_gEt_sO_hARd} ```
 
 
 ---
@@ -89,9 +87,7 @@ Seems like a Photoshop file, and for the hints in the description, we will have 
   <img src="/images/writeups/ImaginaryCTF2021/Forensic/1_flag.png" width="70%"/>
 </p>
 
-```
-ictf{wut_how_do_you_see_this}
-```
+``` ictf{wut_how_do_you_see_this} ```
 
 
 
@@ -148,7 +144,7 @@ aWN0ZntyM3BsMXRfMXNudF90aDNfcGw0YzNfdDBfc3QwcjNfczNjcjN0c18xY2IyNjE0OH0=
 
 Decoded:
 
-```ictf{r3pl1t_1snt_th3_pl4c3_t0_st0r3_s3cr3ts_1cb26148}```
+``` ictf{r3pl1t_1snt_th3_pl4c3_t0_st0r3_s3cr3ts_1cb26148} ```
 
 
 Seems like I got the flag from another Unpuzzled2... 
@@ -184,7 +180,7 @@ In the image we can see the Rock Shop of Tahoe Hemp Company. A quick search on G
 
 Using the coordinates in the URL will make the work for the flag:
 
-```ictf{38.947_-119.961}```
+``` ictf{38.947_-119.961} ```
 
 
 
@@ -216,9 +212,7 @@ console.log(atob("aWN0ZnsxbnNwM2N0MHJfcjAwX2cwZXNfdGgwbmt9"));
 
 Since it use the atob function, let's use CyberChef to decode the Base64:
 
-```
-ictf{1nsp3ct0r_r00_g0es_th0nk}
-```
+``` ictf{1nsp3ct0r_r00_g0es_th0nk} ```
 
 
 ## Build-A-Website
@@ -372,4 +366,4 @@ Following the documentation, we crafted the following payload:
   <img src="/images/writeups/ImaginaryCTF2021/Web/7_flag.jpg" width="70%"/>
 </p>
 
-```ictf{:rooYay:_:rooPOG:_:rooHappy:_:rooooooooooooooooooooooooooo:}```
+``` ictf{:rooYay:_:rooPOG:_:rooHappy:_:rooooooooooooooooooooooooooo:} ```
