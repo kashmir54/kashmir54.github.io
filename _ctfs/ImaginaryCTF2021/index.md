@@ -369,7 +369,7 @@ I see that the number 99 (FileLoader) may fit our purpose:
 Now, the [documentation](https://docs.python.org/3/library/importlib.html) is checked to see how we can open and read a file:
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/6_fileloader.png" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/6_loadfile.png" width="70%"/>
 </p>
 
 Following the documentation, we crafted the following payload:
