@@ -277,7 +277,7 @@ To detect this vulnerability I checked the following payload since it is a Flask
 </p>
 
 <p align="right">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/2_execution.png" width="40%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/2_executed.png" width="40%"/>
 </p>
 
 As we can see, the code is executed, therefore we can try to explote this vulnerability.
@@ -369,7 +369,7 @@ I see that the number 99 (FileLoader) may fit our purpose:
 Now, the [documentation](https://docs.python.org/3/library/importlib.html) is checked to see how we can open and read a file:
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/6_fileloader.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/6_fileloader.png" width="70%"/>
 </p>
 
 Following the documentation, we crafted the following payload:
@@ -381,7 +381,7 @@ Following the documentation, we crafted the following payload:
 ```
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/7_flag.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/7_flag.png" width="70%"/>
 </p>
 
 ``` ictf{:rooYay:_:rooPOG:_:rooHappy:_:rooooooooooooooooooooooooooo:} ```
