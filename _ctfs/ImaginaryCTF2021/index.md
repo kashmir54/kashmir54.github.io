@@ -172,10 +172,10 @@ Roo's cousin was on vacation, but he forgot to tell us where he went! But he pos
 </p>
 
 
-In the image we can see the Rock Shop of Tahoe Hemp Company. A quick search on GMaps will do the work. Location was found [here](https://www.google.com/maps/@38.94711,-119.9614202,3a,75y,62.45h,95.14t/data=!3m6!1e1!3m4!1soFk1nXrY9AhpaaIpQOhM2g!2e0!7i16384!8i8192)
+In the image we can see the Rock Shop of Tahoe Hemp Company. A quick search on GMaps will do the work. Location was found [here](https://www.google.com/maps/@38.94711,-119.9614202,3a,75y,62.45h,95.14t/data=!3m6!1e1!3m4!1soFk1nXrY9AhpaaIpQOhM2g!2e0!7i16384!8i8192):
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Forensic/4_location.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/4_location.png" width="70%"/>
 </p>
 
 Using the coordinates in the URL will make the work for the flag:
@@ -264,7 +264,7 @@ To approach this task I focused on the user input _request.args['content']_ and 
 
 To detect this vulnerability I checked the following payload since it is a Flask application:
 
-```{{7*7}}```
+``` {{7*7}} ```
 
 <p align="left">
   <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.jpg" width="40%"/>
