@@ -142,7 +142,9 @@ I kept going over those replit items and in the DiscordBot I found the following
   <img src="/images/writeups/ImaginaryCTF2021/Forensic/3_osint_rply.png" width="70%"/>
 </p>
 
-```aWN0ZntyM3BsMXRfMXNudF90aDNfcGw0YzNfdDBfc3QwcjNfczNjcjN0c18xY2IyNjE0OH0=```
+```
+aWN0ZntyM3BsMXRfMXNudF90aDNfcGw0YzNfdDBfc3QwcjNfczNjcjN0c18xY2IyNjE0OH0=
+```
 
 Decoded:
 
@@ -217,6 +219,7 @@ Since it use the atob function, let's use CyberChef to decode the Base64:
 ```
 ictf{1nsp3ct0r_r00_g0es_th0nk}
 ```
+
 
 ## Build-A-Website
 
