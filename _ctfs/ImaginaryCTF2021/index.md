@@ -266,7 +266,7 @@ To detect this vulnerability I checked the following payload since it is a Flask
 
 
 ```
- { { 7*7 } } 
+{ { 7*7 } } 
 ```
 
 
@@ -287,7 +287,7 @@ We use an empty string ("") and access its class attribute. We have some issues 
 
 ```
 
-{{""["__cl" + "ass__"]}}
+{ {""["__cl" + "ass__"]} }
 
 ```
 
@@ -299,7 +299,7 @@ Now, step up to the MRO:
 
 ```
 
-{{""["__cl" + "ass__"].__mro__}}
+{ {""["__cl" + "ass__"].__mro__} }
 
 ```
 
