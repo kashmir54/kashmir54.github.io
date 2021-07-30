@@ -117,7 +117,7 @@ kali@kali:/opt/sherlock/sherlock$ python3 sherlock.py unpuzzler7
 First one and second one are false positives, but the third one... Looks promising since the user has some replies. Let's take a look to the flag one:
 
 <p align="center">
-  <img src="/images/writeups/ImaginaryCTF2021/Forensic/1_osint_rply.png" width="70%"/>
+  <img src="/images/writeups/ImaginaryCTF2021/Forensic/1_osint_rply" width="70%"/>
 </p>
 
 We have some JSFuck, but decoding it doesn't seem to be the solution
