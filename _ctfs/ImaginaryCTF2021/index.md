@@ -3,7 +3,7 @@ title: "CTF - ImaginaryCTF 2021"
 categories: [ctf]
 date: 2021-02-20
 comments: true
-image: /images/writeups/ImaginaryCTF/icon.jpg
+image: /images/writeups/ImaginaryCTF/icon.png
 description: CTF - ImaginaryCTF 2021
 ---
 
