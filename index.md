@@ -20,6 +20,7 @@ You can find all my CTFs writeups (solutions and explanations) here: [Kashmir54'
 
 Latest CTFs writeups:
 
+- [Imaginary 2021](/ctfs/ImaginaryCTF2021) (27/07/2021)
 - [CyberApocalypse 2021](/ctfs/CyberApocalypse2021) (19/04/2021)
 - [NahanCon CTF 2021](/ctfs/NahamCTF2021) (14/03/2021)
 - [UTCTF 2021](/ctfs/UTCTF2021) (14/03/2021)
