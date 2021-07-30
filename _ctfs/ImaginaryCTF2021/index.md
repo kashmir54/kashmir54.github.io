@@ -266,7 +266,7 @@ To detect this vulnerability I checked the following payload since it is a Flask
 
 
 ```
-\{\{7*7\}\} 
+ { { 7*7 } } 
 ```
 
 
