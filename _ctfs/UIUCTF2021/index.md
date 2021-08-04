@@ -3,8 +3,9 @@ title: "CTF - UIUCTF 2021"
 categories: [ctf]
 date: 2021-02-20
 comments: true
-image: /images/writeups/UIUCTF2021/logo2.png
+image: /images/writeups/UIUCTF2021/logo2.ico
 description: CTF - UIUCTF 2021
+favicon: /images/writeups/UIUCTF2021/favicon.ico
 ---
 
 # UIUCTF 2021
