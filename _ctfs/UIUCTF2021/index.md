@@ -10,14 +10,14 @@ description: CTF - UIUCTF 2021
 # UIUCTF 2021
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/logo2.jpg" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/logo2.png" width="70%"/>
 </p>
 
 
 Hello everybody, I've participated in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got all the OSINT challenges! I had few hours for this CTF, but enjoyed it and stablished some OSINT methodology. Hope these writeups help you!
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/rank.jpg" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/rank.png" width="70%"/>
 </p>
 
 ---
@@ -69,7 +69,7 @@ author: Thomas
 I looked for Thomas on Discord and found his username, then on his profile an spoiler text will display the flag:
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/0_1_flag.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/0_1_flag.png" width="40%"/>
 </p>
 
 ``` uiuctf{@b0uT_m3_suppOrT5_maRkD0wN} ```
@@ -88,20 +88,20 @@ The inner content of this flag begins with "pe"
 With a quick search on Twitter with its name and software or coding, the result poped up (https://twitter.com/ChaplinCoding):
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/1_1_tw.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/1_1_tw.png" width="40%"/>
 </p>
 
 
 The last tweet says something about twitter lists, so let's check the out:
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/1_2_lists.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/1_2_lists.png" width="50%"/>
 </p>
 
 The second lists have the flag on the description!
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/1_3_flag.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/1_3_flag.png" width="50%"/>
 </p>
 
 
@@ -239,18 +239,18 @@ I found a group searching for C3D:
 In his profile it says that it hosted other event in the past called Top hat developement night!
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/6_1_profile.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/6_1_profile.png" width="40%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/6_2_hosted.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/6_2_hosted.png" width="40%"/>
 </p>
 
 Here is the [Linkedin page](https://www.linkedin.com/events/6822753659445743616/)
 
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/6_3_flag.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/6_3_flag.png" width="50%"/>
 </p>
 
 
@@ -270,13 +270,13 @@ The inner content of this flag begins with "th"
 I looked for his GitHub and found it witht he follofing quote: "Charlie Chaplin":
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/7_0_git.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/7_0_git.png" width="80%"/>
 </p>
 
 I was looking around its repositories and the commits, and found and interesting one with "Secret keys" and "Ok phew resolved issue":
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/7_1_commits.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/7_1_commits.png" width="80%"/>
 </p>
 
 On the secret keys I found a private RSA key:
@@ -302,7 +302,7 @@ GWeWiM4oGV3rlOFg1iMu8F9JBcJEj+OniBekFnRULQ==
 And on the other I found the flag:
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/7_3_flag.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/7_3_flag.png" width="80%"/>
 </p>
 
 I used the hint: OUtlNDQ4ME1pY1U= from base64: 9Ke4480MicU
@@ -325,25 +325,25 @@ Flag? With Gmail? I like it. Let's retrieve the Google ID and check if it has an
 To do it, we can use the Google Hangouts contacts to get it. First, open the developer tool and load the network information. Then search for the email account and look for the batchexecute requests and check the response. You will find the ID on one of the data structure received:
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/8_0_googleid.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/8_0_googleid.png" width="90%"/>
 </p>
 
 I used to do this Hangouts/Contact method to retrieve the Google ID, but you can use this [tools](https://tools.epieos.com/email.php) to get it, which is outstanding, but for your knowledge, I described it previously and you can find futher information in this [outstanding post](https://medium.com/week-in-osint/getting-a-grasp-on-googleids-77a8ab707e43):
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/8_1_id.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/8_1_id.png" width="60%"/>
 </p>
 
 Checked the Google Maps profile (which you can craft with the Google ID) and saw a [contribution](https://www.google.com/maps/contrib/117833363030761934622/photos/@41.9667449,-87.6385934,3a,104.2y,90t/data=!3m7!1e2!3m5!1sAF1QipOyi7R_ApFvR6ZeSYVpLYt4p_2wDjLu6r9V3T3T!2e10!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOyi7R_ApFvR6ZeSYVpLYt4p_2wDjLu6r9V3T3T%3Dw545-h260-k-no!7i956!8i456!4m3!8m2!3m1!1e1) with a photo:
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/8_2_contrib.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/8_2_contrib.png" width="90%"/>
 </p>
 
 A closer look to write down the flag:
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/OSINT/8_3_flag.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/OSINT/8_3_flag.png" width="90%"/>
 </p>
 
 ``` uiuctf{b0rk_b0rk_1_lOv3_mY_d0g<3} ```
