@@ -10,7 +10,7 @@ description: CTF - UIUCTF 2021
 # UIUCTF 2021
 
 <p align="center">
-  <img src="/images/writeups/UIUCTF2021/logo2.png" width="70%"/>
+  <img src="/images/writeups/UIUCTF2021/logo2.png" width="40%"/>
 </p>
 
 
