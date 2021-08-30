@@ -45,6 +45,10 @@ Find the real name of the attacker. The flag matches the specified format.
 
 We can see [here](https://www.blockchain.com/btc/address/bc1qtmyn49urgfu27n30zrghl8499sx42pqrhpm8xt) that they stole 0.00046552BTC since it's the only [outgoing transaction](https://www.blockchain.com/btc/tx/05e3d1eaec7d263e80d4cc03958bf9c0136888a1acd99661cba7dd86fe36d44b).
 
+<p align="center">
+  <img src="/images/writeups/YauzaCTF2021/OSINT/1_0_bit.png" width="70%"/>
+</p>
+
 - bc1qtmyn49urgfu27n30zrghl8499sx42pqrhpm8xt Original
 
 - bc1q0lpcsvr6p2lg0wrmwge548x0yau943n9vljzsr
@@ -59,9 +63,11 @@ I search for them on Google to try luck and the _bc1qz3n89hjq4rrlzsna3pdrygslum7
 
 https://antichat.com/members/413903/
 
+
 <p align="center">
-  <img src="/images/writeups/YauzaCTF2021/OSINT/1_1_profile.png" width="70%"/>
+  <img src="/images/writeups/YauzaCTF2021/OSINT/1_1_profile.png" width="80%"/>
 </p>
+
 
 - Info:
 
@@ -136,13 +142,13 @@ Okey, a creation date is interesting : **2021-08-24 12:34:43**
 Used the PGP key to get extra information from Kleopatra, maybe I could find the name there if it was configured, but didn't:
 
 <p align="center">
-  <img src="/images/writeups/YauzaCTF2021/OSINT/1_2_kleo.jpg" width="70%"/>
+  <img src="/images/writeups/YauzaCTF2021/OSINT/1_2_kleo.png" width="70%"/>
 </p>
 
 Nothing on protonmail contact information as well:
 
 <p align="center">
-  <img src="/images/writeups/YauzaCTF2021/OSINT/1_3_proton.jpg" width="70%"/>
+  <img src="/images/writeups/YauzaCTF2021/OSINT/1_3_proton.png" width="70%"/>
 </p>
 
 
@@ -266,6 +272,18 @@ which_playlist_i_want_to_listen();
 There are 3 YouTube videos in different iframes at the website. First thought was about... Can I find an interesting playlist on YouTube with the 3 of them? Could it be that the owner of that playlist is the guy I'm looking for...
 
 I tried with different techniques and using YouTube filters for playlists but I could not find any suspicious user.
+
+<p align="left">
+  <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_1_obs.png" width="30%"/>
+</p>
+
+<p align="center">
+  <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_2_obs.png" width="30%"/>
+</p>
+
+<p align="right">
+  <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_3_obs.png" width="30%"/>
+</p>
 
 I downloaded the comments and replies from the three videos using [YCS - YouTube Comment Search](https://chrome.google.com/webstore/detail/ycs-youtube-comment-searc/pmfhcilikeembgbiadjiojgfgcfbcoaa) for Chrome and search with a regex for a public key _\w{42,64}_
 
