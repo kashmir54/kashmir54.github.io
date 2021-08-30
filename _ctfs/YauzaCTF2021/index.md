@@ -273,17 +273,12 @@ There are 3 YouTube videos in different iframes at the website. First thought wa
 
 I tried with different techniques and using YouTube filters for playlists but I could not find any suspicious user.
 
-<p align="left">
+
+<div display="grid">
   <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_1_obs.png" width="30%"/>
-</p>
-
-<p align="center">
   <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_2_obs.png" width="30%"/>
-</p>
-
-<p align="right">
   <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_3_obs.png" width="30%"/>
-</p>
+</div>
 
 I downloaded the comments and replies from the three videos using [YCS - YouTube Comment Search](https://chrome.google.com/webstore/detail/ycs-youtube-comment-searc/pmfhcilikeembgbiadjiojgfgcfbcoaa) for Chrome and search with a regex for a public key _\w{42,64}_
 
