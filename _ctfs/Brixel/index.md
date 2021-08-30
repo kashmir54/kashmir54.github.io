@@ -20,43 +20,12 @@ I participate in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/1
 </p>
 
 
-This was an entry level CTF with challenges I really liked. This is the index:
+This was an entry level CTF with challenges I really liked, specially the OSINT ones. This is the index:
 
----
-- [Internet/Web](#internet)
-
-- [Easy](#easy)
-- [Hidden Code](#hidden-code)
-- [robotopia](#robotopia)
-- [Discord](#discord)
-- [login1](#login1)
-- [login2](#login2)
-- [login3](#login3)
-- [login4](#login4)
-- [Browsercheck](#browsercheck)
-- [SnackShack awards](#snackshack-awards)
-- [Flat earth](#flat-earth)
-- [Dadjokes](#dadjokes)
-- [Pathfinders 1](#pathfinders-1)
-- [Pathfinders 2](#pathfinders-2)
-
----
-- [Crypto](#crypto)
-
-- [Sea code](#sea-code)
-- [Merde](#merde)
-- [Merda](#merda)
-- [shit](#shit)
-- [Scheibe](#scheibe)
-- [flawed](#flawed)
-- [Dont be salty](#dont-be-salty)
-
----
-- [OSINT](#osint)
-
+### OSINT
 - [A quick search](#a-quick-search)
 - [Manhunt1](#manhunt1)
-- [Manhunt2](#Manhunt2)
+- [Manhunt2](#manhunt2)
 - [Manhunt3](#manhunt3)
 - [Manhunt4](#manhunt4)
 - [Manhunt5](#manhunt5)
@@ -70,32 +39,58 @@ This was an entry level CTF with challenges I really liked. This is the index:
 - [Visit Limburg 3](#visit-limburg-3)
 - [Bird call](#bird-call)
 
----
-- [Forensic](#forensic)
 
+### Forensic
 - [A message from space](#a-message-from-space)
 - [Lottery ticket](#lottery-ticket)
-- [Lost Evidence](#lost-evidence)
+- [Lost evidence](#lost-evidence)
 
----
-- [Programming](#programming)
+### Internet
+- [Easy](#easy)
+- [Hidden Code](#hidden-code)
+- [robotopia](#robotopia)
+- [Discord](#discord)
+- [login1](#login1)
+- [login2](#login2)
+- [login3](#login3)
+- [login4](#login4)
+- [Browsercheck](#browsercheck)
+- [SnackShack awards](#snackshack-awards)
+- [Flat earth](#flat-earth)
+- [Dadjokes](#dadjokes)
+- [Pathfinders 1](#pathfinders-1)
+- [Pathfinder 2](#pathfinder-2)
 
+
+### Crypto
+- [Sea code](#sea-code)
+- [Merde](#merde)
+- [Merda](#merda)
+- [shit](#shit)
+- [Scheibe](#scheibe)
+- [flawed](#flawed)
+- [Dont be salty](#dont-be-salty)
+
+
+### Programming
 - [Keep walking](#keep-walking)
 - [A song](#a-song)
 - [An arduino project](#an-arduino-project)
 
----
-- [Old Tech](#old-tech)
 
+### Old Tech
 - [Goodbye old friend](#goodbye-old-friend)
 - [The tape](#the-tape)
+
+
+<small><i><a href="https://github.com/kashmir54/md-toc">Table of contents generated with md-toc</a></i></small>
 
 
 ---
 
 # Internet
 
-##  Easy
+## Easy
 5
 
 On the homepage there is a hidden flag. It's a Source of easy points!
@@ -109,7 +104,7 @@ The flag was on the index page, CTRL+F to look for the work flag will do the wor
 ``` brixelCTF{notsosecret} ```
 
 
-##  Hidden Code
+## Hidden Code
 5
 
 Something strange happens on the brixel website when you enter the konami code
@@ -134,7 +129,7 @@ Entering that secuence of keys on the webside shows Mario running from left to r
 ``` mario ```
 
 
-##  robotopia
+## robotopia
 5
 
 I found this cool website, it claims to be 100% robot-free!
@@ -155,7 +150,7 @@ http://timesink.be/robotopia/robots.txt
 ``` brixelCTF{sadr0b0tz} ```
 
 
-##  Discord
+## Discord
 5
 
 Join our Discord and read the rules.
@@ -171,7 +166,7 @@ So, join discord and on the rules we can see the flag:
 ```  brixelCTF{th4nk5_f0r_r34d1ng_th3_rulz} ```
 
 
-##  login1
+## login1
 5
 
 My buddy is trying to become a web developer, he made this little login page. Can you get the password?
@@ -184,7 +179,7 @@ On the website, we inspect on the HTML code and we can see a JS function with th
 ``` brixelCTF{w0rst_j4v4scr1pt_3v3r!} ```
 
 
-##  login2
+## login2
 5
 
 Cool, you found the first password! He secured it more, could you try again?
@@ -235,7 +230,7 @@ I reversed the code, just assembling the strings on the right side in the order 
 ``` brixelCTF{st1ll_b4d_j4v45cr1pt_h3r3.18079054270} ```
 
 
-##  login3
+## login3
 5
 
 Nice! you found another one! He changed it up a bit again, could you try again?
@@ -287,7 +282,7 @@ _http://timesink.be/login3/password.txt_
 
 
 
-##  login4
+## login4
 5
 
 Whow, another one! You're good! So I told my buddy how you managed to get the password last time, and he fixed it. Could you check again please?
@@ -310,7 +305,7 @@ _Decode base64:_
 ``` brixelCTF{even_base64_wont_make_you_secure} ```
 
 
-##  Browsercheck
+## Browsercheck
 10
 
 I found this weird website, but it will only allow 'ask jeeves crawler' to enter?
@@ -337,7 +332,7 @@ Refrest the website and it shows the flag:
 ``` brixelCTF{askwho?} ```
 
 
-##  SnackShack awards
+## SnackShack awards
 10
 
 A friend of mine owns a snackbar and is entered in a competition to win an award.
@@ -367,7 +362,7 @@ Then the browser will display the flag:
 
 
 
-##  Flat earth
+## Flat earth
 10
 
 These idiots... I heard there is a rally of flat earth believers tomorrow
@@ -541,7 +536,7 @@ We can retrieve the flag!
 
 # Crypto
 
-##  Sea code
+## Sea code
 5
 
 beep beep beeeep...
@@ -563,7 +558,7 @@ We can go to [morsecode world](https://morsecode.world/international/decoder/aud
 ``` THE FLAG FOR THIS CHALLENGE IS SEAGULL ```
 
 
-##  Merde
+## Merde
 5
 
 A french messenger was caught during the war
@@ -585,7 +580,7 @@ French and that encode format... Sounds like Vigenere Encoder. Let's decode that
 
 
 
-##  Merda
+## Merda
 5
 
 An Italian messenger was caught during the war
@@ -627,7 +622,7 @@ Using binary decoder we get the following message:
 ``` the flag is brixelCTF{robocop} ```
 
 
-## Scheibe 
+## Scheibe
 Scheiße
 10
 
@@ -693,7 +688,7 @@ We went to [CrackStation](https://crackstation.net/) and introduced the hash. Th
 
 
 
-##  Dont be salty
+## Dont be salty
 20
 
 Our l33t hackers hacked a bulletin board and gained access to the database. We need to find the admin password.
@@ -735,7 +730,7 @@ hashcat -a 3 -m 10 chall.hash l?l?l?l?l? --show
 
 # OSINT
 
-##  A quick search
+## A quick search
 5
 
 Here's an easy one to start off the OSINT challenges.
@@ -1030,7 +1025,7 @@ congratulations, the flag is g1ttern00b
 
 
 
-##  Physical pentest setup
+## Physical pentest setup
 10
 
 So we're going to try to install a 'bug' at the local police office of the city of Halen (BE)
