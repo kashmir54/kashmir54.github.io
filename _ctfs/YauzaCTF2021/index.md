@@ -274,7 +274,7 @@ There are 3 YouTube videos in different iframes at the website. First thought wa
 I tried with different techniques and using YouTube filters for playlists but I could not find any suspicious user.
 
 
-<div display="grid">
+<div align="center" display="grid">
   <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_1_obs.png" width="30%"/>
   <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_2_obs.png" width="30%"/>
   <img src="/images/writeups/YauzaCTF2021/OSINT/2_0_3_obs.png" width="30%"/>
