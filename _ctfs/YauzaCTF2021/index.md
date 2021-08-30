@@ -287,10 +287,9 @@ But there was nothing. Then an idea came in... Could it be that the user left co
 
 First I got the 3 txt with the comments from the YCS addon, and created this Python script to get all users commenting and replying in the 3 videos, then I looked for the intersection between the sets of users:
 
-```python
+{% highlight python %}
 import json
 import re
-
 
 with open('Obscurity.txt', 'r') as in_file:
   obs = in_file.read()
@@ -300,7 +299,6 @@ with open('Gagarin.txt', 'r') as in_file:
 
 with open('OurDream.txt', 'r') as in_file:
   dream = in_file.read()
-
 
 obs_users = []
 gaga_users = []
@@ -318,16 +316,15 @@ res = re.findall(r'[\]]\n((\S+| )*)', dream)
 for found in res:
   dream_users.append(found[0])
 
-
 common = set.intersection(set(obs_users), set(gaga_users), set(dream_users))
 
 print(common)
 
-```
+{% endhighlight %}
 
 Results:
 
-```json
+{% highlight json %}
 {
   "0bserver1": "youtube.com/channel/UC_RHiNvDCFuI2tLYr4zFDOw", 
   "Simon Young": "youtube.com/channel/UC06U9X3aT55uPhbcP3xVBFw", 
@@ -338,7 +335,7 @@ Results:
   "Nostalgic memories": "youtube.com/channel/UCz7A7jiQI5HA22h3a1NiB4w", 
   "welcome to the Real": "youtube.com/channel/UCH4EvOS7Hz_vlCqwCNebAMQ"
 }
-```
+{% endhighlight %}
 
 Great, next step, check all those profiles. Found nothing and almost OSINTed innocent people ^^'
 I got stucked and came back to the website to look something more...
