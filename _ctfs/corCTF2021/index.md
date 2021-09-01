@@ -11,7 +11,7 @@ favicon: /images/writeups/corCTF2021/favicon.ico
 # corCTF 2021
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/logo.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/logo.png" width="30%"/>
 </p>
 
 Welcome! I've participated on my own in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges! I focused on the web ones, but had two from crypto and one from misc. I enjoyed the web ones, learned a lot from graphql and javascript and its spread syntax.
@@ -52,7 +52,6 @@ First thing was to check the functionality of the website and I fond this intere
 </p>
 
 ```javascript
-
 document.getElementById('form').onsubmit = async e => {
   e.preventDefault();
 
@@ -70,7 +69,8 @@ document.getElementById('form').onsubmit = async e => {
   })).json();
 
   if (res.data) {
-	document.getElementById('form-wrapper').innerHTML = `<h2 class="form-heading text-center">Thanks, you'll hear from us soon!</h2>`
+	document.getElementById('form-wrapper').innerHTML = `<h2 class="form-heading 
+			text-center">Thanks, you'll hear from us soon!</h2>`
   }
 
   return false;
@@ -89,7 +89,7 @@ username: "e17fb2b1415f1a670810aa54e23042818fdd93d4e873f7e2c07c421ea598acc7"
 Seems like the Graphql is executing the query set on the parameter?
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_token.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_token.png" width="90%"/>
 </p>
 
 I prepared the following payload in BurpSuite and sent it to the server:
@@ -103,14 +103,17 @@ email "test@test.com"
 ```
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_graphql.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_graphql.png" width="90%"/>
 </p>
 
 Yes it does. I have never used Graphql so I had to get a grasp of it with the [documentation](https://graphql.org/learn/queries/) to understand what's going on and how it works.
 Current query send every time is this one:
 
 ```json
-{"query":"mutation createUser($email: String!){\n\tcreateUser(email: $email) {\n\t\tusername\n\t}\n}\n","variables":{"email":"test@test.com"}}
+{
+	"query" : "mutation createUser($email: String!){\n\tcreateUser(email: $email) {\n\t\tusername\n\t}\n}\n",
+	"variables" : {"email" : "test@test.com"}
+}
 ```
 
 To enumarate the objects in the API we can use the following query. [HackTricks always helps](https://book.hacktricks.xyz/pentesting/pentesting-web/graphql) and I also saw it on this [great write up](https://jaimelightfoot.com/blog/hack-in-paris-2019-ctf-meet-your-doctor-graphql-challenge/):
@@ -118,11 +121,14 @@ To enumarate the objects in the API we can use the following query. [HackTricks 
 - Query:
 
 ```json
-{"query":"{__schema{\n\t queryType{\n\t fields{\n\t name\n}\n}\n}\n}","variables":{"email":"test@test.com"}}
+{
+	"query":"{__schema{\n\t queryType{\n\t fields{\n\t name\n}\n}\n}\n}",
+	"variables":{"email":"test@test.com"}
+}
 ```
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_graphql.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_graphql.png" width="90%"/>
 </p>
 
 We can see the object flag. Let's work on crafting a payload to retrieve its content.
@@ -131,14 +137,16 @@ To get more information:
 - Query:
 
 ```json
-{"query":"{__schema {types {name}}}"
-,"variables":{"email":"test@test.com"}}
+{
+	"query":"{__schema {types {name}}}",
+	"variables":{"email":"test@test.com"}
+}
 ```
 
 Response
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_2_graphql.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_2_graphql.png" width="90%"/>
 </p>
 
 Let's retrieve the users by the username (since we saw that the response to create user was a user hash):
@@ -146,13 +154,16 @@ Let's retrieve the users by the username (since we saw that the response to crea
 - Query:
 
 ```json
-{"query":"{users {username}}","variables":{"email":"test@test.com"}}
+{
+	"query":"{users {username}}",
+	"variables":{"email":"test@test.com"}
+}
 ```
 
 Response:
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_3_graphql.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_3_graphql.png" width="90%"/>
 </p>
 
 
@@ -167,7 +178,9 @@ Okey, now I know something more about Graphql. Following the same syntax, I will
 Response Error:
 
 ```json
-{"message":"Field \"flag\" argument \"token\" of type \"String!\" is required, but it was not provided."}
+{
+	"message":"Field \"flag\" argument \"token\" of type \"String!\" is required, but it was not provided."
+}
 ```
 
 From the message we suppose that there is a token that will be used to obtain the flag... What if the user _admin_ had two attributes _username_ and _token_? Let's give it a try:
@@ -213,11 +226,11 @@ Response:
 We have the flag:
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_7_burpflag.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_7_burpflag.png" width="90%"/>
 </p>
 
 
-```corctf{ex_g00g13_3x_fac3b00k_t3ch_l3ad_as_a_s3rvice}```
+``` corctf{ex_g00g13_3x_fac3b00k_t3ch_l3ad_as_a_s3rvice} ```
 
 
 Great, I could learn how GraphQL works and wanted to go further. Now that I have understood how it works and how to enumerate manually. I found a tool from [swisskyrepo](https://github.com/swisskyrepo) similar to sqlmap, it's called [GraphQLmap](https://github.com/swisskyrepo/GraphQLmap).
