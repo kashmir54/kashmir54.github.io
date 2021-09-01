@@ -255,7 +255,7 @@ Not only enumerate, but also interact with the API:
 </p>
 
 
-```corctf{ex_g00g13_3x_fac3b00k_t3ch_l3ad_as_a_s3rvice}```
+``` corctf{ex_g00g13_3x_fac3b00k_t3ch_l3ad_as_a_s3rvice} ```
 
 
 ## buyme
