@@ -1,8 +1,10 @@
 ---
 title: "CTFs - Writeups"
 categories: [ctfs]
-date: 2020-08-26
+date: 2021-09-02
 description: "CTF - Writeups"
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 ---
 
 Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for having me, specially to [RazviOverflow](https://ctftime.org/user/72894), he is a reverse machine. Check out his [website](https://razvioverflow.github.io/)! 

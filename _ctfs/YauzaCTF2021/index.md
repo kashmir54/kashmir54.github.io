@@ -1,11 +1,11 @@
 ---
 title: "CTF - YauzaCTF 2021"
 categories: [ctf]
-date: 2021-02-20
+date: 2021-09-02
 comments: true
-image: /images/writeups/YauzaCTF2021/logo.ico
 description: CTF - YauzaCTF 2021
-favicon: /images/writeups/YauzaCTF2021/favicon.ico
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 ---
 
 # YauzaCTF 2021

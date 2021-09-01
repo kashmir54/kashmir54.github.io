@@ -1,11 +1,11 @@
 ---
 title: "CTF - corCTF 2021"
 categories: [ctf]
-date: 2021-02-20
+date: 2021-09-02
 comments: true
-image: /images/writeups/corCTF2021/logo.png
+image: /images/kashmir.png
 description: CTF - corCTF 2021
-favicon: /images/writeups/corCTF2021/favicon.ico
+favicon: /images/favicon.ico
 ---
 
 # corCTF 2021
@@ -478,7 +478,7 @@ We can go to my flag inventory and saw the flag (it shows two because I sent the
   <img src="/images/writeups/corCTF2021/Web/2_1_flag.png" width="70%"/>
 </p>
 
-```corctf{h0w_did_u_steal_my_flags_you_flag_h0arder??!!}```
+``` corctf{h0w_did_u_steal_my_flags_you_flag_h0arder??!!} ```
 
 Really fun and learned a lot.
 
@@ -716,7 +716,7 @@ Guess ascii: 79 - O
 
 So much faster now ;)
 
-```corctf{1m4g1n3_cp_g0lf_6a318dfe}```
+``` corctf{1m4g1n3_cp_g0lf_6a318dfe} ```
 
 
 That's all from this CTF, thanks for reading!

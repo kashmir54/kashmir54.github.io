@@ -1,7 +1,9 @@
 ---
 title: "Kashmir54"
 mainPage: "true"
-description: ""
+description: "Index"
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 ---
 
 ## Welcome to my blog!
