@@ -3,7 +3,8 @@ title: "CTF - 0xL4ugh 2021"
 categories: [ctf]
 date: 2021-01-16
 comments: true
-image: /images/writeups/0xL4ugh/logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - 0xL4ugh 2021
 ---
 

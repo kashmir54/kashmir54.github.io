@@ -3,7 +3,8 @@ title: "BSides Copenhagen 2020 - Writeup"
 categories: [box]
 date: 2020-09-03
 comments: true
-image: /images/writeups/BSides Copenhagen 2020/1_logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: "BSides Copenhagen 2020 - Writeup."
 ---
 

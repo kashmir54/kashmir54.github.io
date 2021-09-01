@@ -3,7 +3,8 @@ title: "CTF - CyberApocalypse 2021"
 categories: [ctf]
 date: 2021-02-20
 comments: true
-image: /images/writeups/CyberApocalypse2021/logo.webp
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - CyberApocalypse 2021
 ---
 

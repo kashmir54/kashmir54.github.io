@@ -3,7 +3,8 @@ title: "CTF - HACON_CTF"
 categories: [ctf]
 date: 2020-09-03
 comments: true
-image: /images/writeups/HACON_CTF/1_logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - HACON_CTF
 ---
 

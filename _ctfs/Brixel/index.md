@@ -3,7 +3,8 @@ title: "CTF - Brixel CTF 2020"
 categories: [ctf]
 date: 2020-12-27
 comments: true
-image: /images/writeups/Brixel/brixel_logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - BrixelCTF 2020
 ---
 

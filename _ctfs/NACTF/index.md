@@ -3,7 +3,8 @@ title: "CTF - NACTF2020"
 categories: [ctf]
 date: 2020-10-16
 comments: true
-image: /images/writeups/NACTF/1_logo.jpeg
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - NACTF
 ---
 

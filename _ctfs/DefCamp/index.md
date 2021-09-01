@@ -3,7 +3,8 @@ title: "CTF - DefCamp 2020"
 categories: [ctf]
 date: 2020-12-07
 comments: true
-image: /images/writeups/DefCamp/1_logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - DefCamp 2020
 ---
 

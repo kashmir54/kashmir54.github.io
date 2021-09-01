@@ -3,7 +3,8 @@ title: "CTF - UTCTF 2021"
 categories: [ctf]
 date: 2021-02-20
 comments: true
-image: /images/writeups/UTCTF2021/logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - UTCTF 2021
 ---
 

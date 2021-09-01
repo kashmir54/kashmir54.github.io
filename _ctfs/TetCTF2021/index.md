@@ -3,7 +3,8 @@ title: "CTF - TetCTF 2021"
 categories: [ctf]
 date: 2021-01-03
 comments: true
-image: /images/writeups/TetCTF2021/tet_logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - TetCTF 2021
 ---
 

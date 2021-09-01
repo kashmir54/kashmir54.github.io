@@ -3,7 +3,8 @@ title: "CTF - Naham CTF 2021"
 categories: [ctf]
 date: 2021-02-20
 comments: true
-image: /images/writeups/NahamCTF2021/logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - Naham CTF 2021
 ---
 

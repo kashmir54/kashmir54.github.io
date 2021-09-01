@@ -3,7 +3,8 @@ title: "CTF - HacktoberCTF"
 categories: [ctf]
 date: 2020-10-16
 comments: true
-image: /images/writeups/HacktoberCTF/1_logo.png
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 description: CTF - HacktoberCTF
 ---
 
