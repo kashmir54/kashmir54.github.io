@@ -241,17 +241,17 @@ python3 graphqlmap.py -u https://devme.be.ax/graphql -v --method POST
 ```
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_4_graphqlmap.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_4_graphqlmap.png" width="90%"/>
 </p>
 
 Not only enumerate, but also interact with the API:
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_5_graphqlmap.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_5_graphqlmap.png" width="90%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_6_flag.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_6_flag.png" width="90%"/>
 </p>
 
 
@@ -406,7 +406,7 @@ router.post("/buy", requiresLogin, async (req, res) => {
 Let's check the request when we buy the Indian flag:
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/2_03.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/2_03.png" width="90%"/>
 </p>
 
 We can see that a POST request is sent with variable user equals to the user obtained in the session and the _flag=India_ set in the resquest body. Then, the buyFlag function is called.
@@ -469,13 +469,13 @@ Cookie: user=s%3Akash.hWxlfYBnVsfOT6FEyD7nAloOEFSk7kX4%2BHCCYdnKBVk
 
 We can see that the request is responding flag bought successfully.
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/2_0.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/2_0.png" width="90%"/>
 </p>
 
 We can go to my flag inventory and saw the flag (it shows two because I sent the request twice):
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/2_1_flag.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/2_1_flag.png" width="90%"/>
 </p>
 
 ``` corctf{h0w_did_u_steal_my_flags_you_flag_h0arder??!!} ```
@@ -493,7 +493,7 @@ https://yeetcode.be.ax
 We enter in the website and find that there is a challenge for coding:
 
 <p align="center">
-  <img src="/images/writeups/corCTF2021/Web/1_6_flag.png" width="70%"/>
+  <img src="/images/writeups/corCTF2021/Web/1_6_flag.png" width="90%"/>
 </p>
 
 With the following input (python code that meets the requirements), it shows that there are 10 test cases:
