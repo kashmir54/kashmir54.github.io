@@ -11,13 +11,13 @@ description: CTF - GrabCON 2021
 # GrabCON CTF 2021
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/logo.png" width="30%"/>
+  <img src="/images/writeups/GrabCON/logo.png" width="60%"/>
 </p>
 
-Welcome! I've participated on my own in this CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges! I focused on the web ones, but had two from crypto and one from misc. I enjoyed the web ones, learned a lot from graphql and javascript and its spread syntax.
+Welcome! I've participated on CTF for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges! I focused on OSINT and Forensic.
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/rank.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/rank.png" width="60%"/>
 </p>
 
 ---
@@ -117,7 +117,7 @@ Let's locate the village. First, I looked for the [Schennerhof in Trentino-Alto 
 </p>
 
 
-The I lookewd for the tower name and seems like its the [Schloss Schenna](https://www.google.com/maps/place/Schloss+Schenna/@46.6913315,11.1875181,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOHA9u_2PHNhG_XPm3PzFnFaj5eoLICZfiCumeC!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOHA9u_2PHNhG_XPm3PzFnFaj5eoLICZfiCumeC%3Dw203-h152-k-no!7i4032!8i3024!4m13!1m7!3m6!1s0x4782bbc1459b71c9:0xa3a02fd65b81ef62!2s39017+Schenna,+South+Tyrol,+Italy!3b1!8m2!3d46.6869305!4d11.1888008!3m4!1s0x4782bbc45938005d:0x5b295816c9c3b673!8m2!3d46.6914341!4d11.1875624) 
+The I looked for the tower name and seems like its the [Schloss Schenna](https://www.google.com/maps/place/Schloss+Schenna/@46.6913315,11.1875181,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOHA9u_2PHNhG_XPm3PzFnFaj5eoLICZfiCumeC!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOHA9u_2PHNhG_XPm3PzFnFaj5eoLICZfiCumeC%3Dw203-h152-k-no!7i4032!8i3024!4m13!1m7!3m6!1s0x4782bbc1459b71c9:0xa3a02fd65b81ef62!2s39017+Schenna,+South+Tyrol,+Italy!3b1!8m2!3d46.6869305!4d11.1888008!3m4!1s0x4782bbc45938005d:0x5b295816c9c3b673!8m2!3d46.6914341!4d11.1875624) 
 
 <p align="center">
   <img src="/images/writeups/GrabCON/OSINT/2_1.png" width="95%"/>
