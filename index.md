@@ -15,7 +15,7 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 
 ## CTF Writeups
 
-CTF (Capture The Flag) are competitions where we solve different cibersecurity tasks to find the secret (flag) at the end of the challenge. There are several categories depending on the type of the challenge, some of them are: Web, Forensic, OSINT (Open Source Intelligence), Cryptography, PWN (Binary Explotation), Reverse Engineering, RF (Radio Frequency), Hardware, etc. 
+CTF (Capture The Flag) are competitions where we solve different cybersecurity tasks to find the secret (flag) at the end of the challenge. There are several categories depending on the type of the challenge, some of them are: Web, Forensic, OSINT (Open Source Intelligence), Cryptography, PWN (Binary Explotation), Reverse Engineering, RF (Radio Frequency), Hardware, etc. 
 
 I have special interest in OSINT, Web and Forensic challenges and I participate with team [ISwearIGoogledIt](https://ctftime.org/team/109689) looking for scoring as much points as possible while developing new skills in different cybersecurity areas.
 
@@ -44,7 +44,7 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 ---
 
-## HackTheBox Walkthroughs
+## HackTheBox Walkthrough
 
 Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 
