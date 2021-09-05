@@ -25,6 +25,7 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 ### Latest CTFs writeups:
 
+- [GrabCON CTF 2021](/ctfs/GrabCON) (29/08/2021)
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
 - [corCTF 2021](/ctfs/corCTF2021) (21/08/2021)
 - [UIUCTF 2021](/ctfs/UIUCTF2021) (31/07/2021)

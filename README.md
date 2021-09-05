@@ -1,1 +1,1 @@
-Traveler of an unending voyage of discovery
+Traveler on an unending voyage of discovery
