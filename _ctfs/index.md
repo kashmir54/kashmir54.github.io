@@ -14,6 +14,7 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 
 ### 2021
 
+- [GrabCON 2021](/ctfs/GrabCON) (05/09/2021)
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
 - [corCTF 2021](/ctfs/corCTF2021) (21/08/2021)
 - [UIUCTF 2021](/ctfs/UIUCTF2021) (31/07/2021)
