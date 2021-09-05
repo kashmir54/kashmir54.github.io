@@ -45,9 +45,6 @@ Challenge index:
 
 - [Warm-up](#warm-up)
 
-
-
-
 <small><i><a href="https://github.com/kashmir54/md-toc">Table of contents generated with md-toc</a></i></small>
 
 
@@ -80,7 +77,7 @@ IP Address      Country   Region        City
 The city is set to _39031_ zipcode, but could be different depending on the part of the city. To make sure of that, we can see that in the photo there is a yellow cableway. On Google Maps we can see that the cableway is on the south of the city and still has the _39031_ zipcode:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/brunico.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/brunico.png" width="95%"/>
 </p>
 
 
@@ -109,62 +106,62 @@ A quick analysis let us with the following clues:
   <img src="/images/writeups/GrabCON/OSINT/2_0.png" width="70%"/>
 </p>
 
-- In Trentino-Alto Adige
-- In the photo we can see the word _Schennerhof_ in a building
-- A tower with a clock
+- In Trentino-Alto Adige (challenge description and previous challenge)
+- In the photo we can see the word _Schennerhof_ in a building (purple)
+- A tower/monument with a clock (orange)
 
 Let's locate the village. First, I looked for the [Schennerhof in Trentino-Alto Adige](https://www.google.es/maps/place/Schennerhof/@46.6890374,11.185739,767m/data=!3m3!1e3!4b1!5s0x4782bbc3ea26d3fb:0xd34d1298bb30ef0f!4m8!3m7!1s0x4782bbc1e23f7a2b:0xa930ded9e1a1f4c5!5m2!4m1!1i2!8m2!3d46.6890337!4d11.1879277) in Google Maps and found it a place called Schenna:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_11.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_11.png" width="95%"/>
 </p>
 
 
 The I lookewd for the tower name and seems like its the [Schloss Schenna](https://www.google.com/maps/place/Schloss+Schenna/@46.6913315,11.1875181,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOHA9u_2PHNhG_XPm3PzFnFaj5eoLICZfiCumeC!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOHA9u_2PHNhG_XPm3PzFnFaj5eoLICZfiCumeC%3Dw203-h152-k-no!7i4032!8i3024!4m13!1m7!3m6!1s0x4782bbc1459b71c9:0xa3a02fd65b81ef62!2s39017+Schenna,+South+Tyrol,+Italy!3b1!8m2!3d46.6869305!4d11.1888008!3m4!1s0x4782bbc45938005d:0x5b295816c9c3b673!8m2!3d46.6914341!4d11.1875624) 
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_1.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_1.png" width="95%"/>
 </p>
 
 Now that we have located the two elements in the photo, let's try to retrieve the perpective:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_3_view.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_3_view.png" width="95%"/>
 </p>
 
 Check this view align with the elements in the photo... Seems like its so close to [this place](https://www.google.com/maps/@46.6891552,11.1888635,3a,75y,274.74h,78.66t/data=!3m6!1e1!3m4!1sCVfUuRyGMrtG7YbLelP-gA!2e0!7i13312!8i6656):
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_4_street.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_4_street.png" width="95%"/>
 </p>
 
 Behind of that point, we can see the Hotel Hohenwart, but trying the flag didn't work...
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_5_hotel.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_5_hotel.png" width="95%"/>
 </p>
 
-Then I just start thinking about the perpective and checked the reviews and photos from some apartments in the sourroundings of my calculated location. Check the following photos taken from the _Apartments Prairerhof_:
+Then I just start thinking about the perpective and checked the reviews and photos from some apartments in the sourroundings of my calculated location. Check the following photos taken from the [_Apartments Prairerhof_](https://www.google.com/maps/place/Apartments+Prairerhof/@46.6883906,11.1889964,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPQcqFNJQYGVjzvWVZcflPzMS4eaHrQPtgK5Zk4!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPQcqFNJQYGVjzvWVZcflPzMS4eaHrQPtgK5Zk4%3Dw203-h152-k-no!7i3968!8i2976!4m8!3m7!1s0x4782bb471bbcef65:0xaf70408505f3ffe1!5m2!4m1!1i2!8m2!3d46.6883034!4d11.1888382):
 
 <div display="grid">
   <img src="/images/writeups/GrabCON/OSINT/2_6_close.png" width="49%"/>
   <img src="/images/writeups/GrabCON/OSINT/2_7_almost.png" width="49%"/>
 </div>
 
-No it couldn't be, those reviews photos are taken a little bit to the left of out reference photo... I recalculate the perspective with the points in the reference photo:
+No it couldn't be from the _Apartments Prairerhof_, those reviews photos are taken a little bit to the left of out reference photo... I recalculate the perspective with the points in the reference photo:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_0.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_0.png" width="95%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_8.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_8.png" width="95%"/>
 </p>
 
 It has to be taken from that purple arrow or from the Hotel Hohenwart for sure:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/2_9_takenfrom.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/2_9_takenfrom.png" width="95%"/>
 </p>
 
 And yes, they fixed the challenge and the flag worked:
@@ -195,13 +192,13 @@ https://mastodon.social/@w0nd3r50uL
 Great, the mastodon profile is real. We can see her photo and some kind of tweets:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/3_0.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_0.png" width="95%"/>
 </p>
 
 The challenge is asking for a place where she ate:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/3_1.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_1.png" width="95%"/>
 </p>
 
 So she was at Belgrade, Serbia because of the flight pass exposed on a photo (yes, we solved the Tour 2 chall before the 1 ^^').
@@ -213,11 +210,11 @@ So she was at Belgrade, Serbia because of the flight pass exposed on a photo (ye
 Now things started to get hard. We analyzed the photos on his social media from a restaurant and the photo of the food:
 
 <div display="grid">
-  <img src="/images/writeups/GrabCON/OSINT/3_3.png" width="48%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_3.jpg" width="48%"/>
   <img src="/images/writeups/GrabCON/OSINT/3_33.png" width="48%"/>
 </div>
 
-Clues we have until now:
+Clues we have until now from the photos:
 
 - A restaurant in the riverside.
 - A wide river in Belgrade (Danube).
@@ -231,10 +228,10 @@ Clues we have until now:
 Using Google Lens or reverse search didn't worked for me. So it was time to look for other posts. This blurred image shows a tower at the bottom. I had some clues for that tower in Belgrade by searching for it at [Google](https://www.google.com/search?q=danube+tower+belgrade&tbm=isch&ved=2ahUKEwi0h9jaw-byAhXl6OAKHYSjDoMQ2-cCegQIABAA&oq=danube+tower+belgrade&gs_lcp=CgNpbWcQAzoFCAAQgAQ6BAgAEB46BAgAEBhQ-uQBWO3xAWCO8wFoAHAAeACAAU-IAegEkgEBOZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=zQg0YfTsL-XRgweEx7qYCA&bih=937&biw=1920&rlz=1C1GIWA_enES726ES726#imgrc=sa2jVaHtfl_MSM) with keywords _danube belgrade tower_:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/3_333.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_333.png" width="60%"/>
 </p>
 
-[RazviOverflow](https://razvioverflow.github.io/)came in and worked on finding [that blurry tower](https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%A3%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%D1%9A%D0%B0+%D0%91%D0%BB%D0%B0%D0%B6%D0%B5%D0%BD%D0%B5+%D0%94%D1%98%D0%B5%D0%B2%D0%B8%D1%86%D0%B5+%D0%9C%D0%B0%D1%80%D0%B8%D1%98%D0%B5/@44.8466798,20.4120867,471m/data=!3m1!1e3!4m5!3m4!1s0x475a65aeca57330d:0xa77696182233311!8m2!3d44.8458888!4d20.4135727) and got its location and name:
+[RazviOverflow](https://razvioverflow.github.io/) came in and worked on finding [that blurry tower](https://www.google.com/maps/place/%D0%A6%D1%80%D0%BA%D0%B2%D0%B0+%D0%A3%D0%B7%D0%BD%D0%B5%D1%81%D0%B5%D1%9A%D0%B0+%D0%91%D0%BB%D0%B0%D0%B6%D0%B5%D0%BD%D0%B5+%D0%94%D1%98%D0%B5%D0%B2%D0%B8%D1%86%D0%B5+%D0%9C%D0%B0%D1%80%D0%B8%D1%98%D0%B5/@44.8466798,20.4120867,471m/data=!3m1!1e3!4m5!3m4!1s0x475a65aeca57330d:0xa77696182233311!8m2!3d44.8458888!4d20.4135727) and got its location and name:
 
 <p align="center">
   <img src="/images/writeups/GrabCON/OSINT/3_5_raz.png" width="70%"/>
@@ -243,25 +240,25 @@ Using Google Lens or reverse search didn't worked for me. So it was time to look
 Then I started looking around in that place for the different restaurants, key point here is that the photo shows that it's a place in second row of the riverside:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/3_6_rests.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_6_rests.png" width="95%"/>
 </p>
 
 One by one, with the analysis we did at the beginning, looking at the first photo of each restaurant, I came across [Gardos Coffee](https://www.google.com/maps/place/Cafeteria+Gardos/@44.8479579,20.411394,793m/data=!3m1!1e3!4m5!3m4!1s0x475a6598bfd255ad:0x7472368da91d33bf!8m2!3d44.8479657!4d20.4127181) and check out the details in the photo, those chairs look familiar to me:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/3_7_chairs.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_7_chairs.png" width="95%"/>
 </p>
 
 Woooo-wooo, mate, that is the photo she posted on social media, flag if close:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/3_9.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_9.png" width="95%"/>
 </p>
 
 Then on the [reviews](https://www.google.com/maps/place/Cafeteria+Gardos/@44.8479671,20.4124115,396m/data=!3m1!1e3!4m7!3m6!1s0x475a6598bfd255ad:0x7472368da91d33bf!8m2!3d44.8479657!4d20.4127181!9m1!1b1) we find the flag, great challenge:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/OSINT/3_8_flag.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/OSINT/3_8_flag.png" width="95%"/>
 </p>
 
 ``` GrabCON{Oops_I_forgot_to_hide} ```
@@ -325,6 +322,7 @@ Passenger status:1
 Size:			62
 Version num:	5
 ```
+
 With that information we can build up the flag:
 
 ``` GrabCON{JU802_Air_Serbia} ```
@@ -351,7 +349,7 @@ Example Flag : GrabCON{important_note.txt_random.exe_2001-01-27_23:12:56_e977656
 I started by looking into all documents and I saw a file called ConsoleHost_history.txt
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/Forensic/2_1_console.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/Forensic/2_1_console.png" width="95%"/>
 </p>
 
 In the file we can see the following commands being executed by the user:
@@ -372,7 +370,7 @@ mv '.\don''t open it.txt' '.\don''t open it.hidden'
 That filename definitely looks suspicious, doesn't it? We have the file _don't open it.hidden_ that was a parameter for the program called _timestomp.exe_. Those could be parts of our flag. Let's try to get its content by searching for its name:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/Forensic/2_2_cont.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/Forensic/2_2_cont.png" width="95%"/>
 </p>
 
 We have the content: _6b751689f3cdaed05e552eff51115684_, now let's get the time 
@@ -386,7 +384,7 @@ python2 analyzeMFT.py -f MFT -o output.csv
 Then I opened the output from the tool in csv and parsed it on Excel to extract the modification date _10/08/1969 16:33:33_:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/Forensic/2_3_mod.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/Forensic/2_3_mod.png" width="95%"/>
 </p>
 
 We can now build up the flag, replacing the spaces with underscores:
@@ -404,7 +402,7 @@ Since I got the Tampered challenge and I couldn't make volatility to work for th
 I kept working on Autopsy and searched for different tools for remote conections such as Teamviewer, Anydesk, etc.
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/Forensic/3_1_search.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/Forensic/3_1_search.png" width="95%"/>
 </p>
 
 We can see that the user has various applications downloaded and exe files from Anydesk, TeamViewer and Remote Desktop. At this time I was looking for DFIR techniques over the three apps, and I remembered a [challenge writeup](https://redpwn.net/writeups/tjctf2020/cookiemonster/) from previous year TJCTF featuring redpwn team. In there, they used volatility to extract images from the Remote Desktop cache to solve a puzzle with the bitmap (_.bmc_) files. They didn't finished the writeup but [this posts](https://cbtgeeks.com/2018/05/22/digital-forensics-on-rdp-cache/) has an outstanding explanation on it.
@@ -426,13 +424,13 @@ kali@kali:~/Desktop/CTFs/GrabCON/Forensic$ python3 bmc-tools.py -s cache/ -d res
 Great! We have a thousand small images. I can see some traces of pastebin, and also from the flag:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/Forensic/3_2_images.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/Forensic/3_2_images.png" width="95%"/>
 </p>
 
 I manage to get some of the fragments:
 
 <p align="center">
-  <img src="/images/writeups/GrabCON/Forensic/3_5_files.png" width="70%"/>
+  <img src="/images/writeups/GrabCON/Forensic/3_5_files.png" width="95%"/>
 </p>
 
 And to order them in Paint xd:
