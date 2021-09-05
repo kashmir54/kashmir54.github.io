@@ -481,6 +481,6 @@ As showed in the challenge description, we can guess that it's (base64 + base32)
 ``` GrabCON{dayuum_s0n!} ```
 
 
-Cool CTF! I didn't have all the time I wanted to spend on it and also had issues with the volatility3 that drove me crazy. Thanks to my team and specially [RazviOverflow](https://razvioverflow.github.io/) who throwed some light on the OSINT challs ;)
+Cool CTF! I didn't have all the time I wanted to spend on it and also had issues with the volatility3 that drove me crazy. Thanks to my team and specially [RazviOverflow](https://razvioverflow.github.io/) who threw some light on the OSINT challs ;)
 
 Thanks for reading!
