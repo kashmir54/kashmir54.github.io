@@ -131,13 +131,13 @@ Image Height                    : 4032
 Nothing but try harder. So I use to use Google Lens as a first approach with the mobile phone and found some similarities with the _Eleanor Schonell Bridge_ and it's on Australia, so could be right!
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/OSINT/1_0_lens.jpg" width="50%"/>
+  <img src="/images/writeups/DUCTF2021/OSINT/1_0_lens.jpeg" width="50%"/>
 </p>
 
 Now on Google Maps I tried to have the same perspective of the bridge and had a look to other years images, just in case there was a better similarity in the colors of the image and check out this one from Mar 2016. Same structure, base, cables, riverside look:
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/OSINT/1_2_maps.png" width="80%"/>
+  <img src="/images/writeups/DUCTF2021/OSINT/1_2_gmaps.png" width="80%"/>
 </p>
 
 Now that we have the name, I did a quick google search with the keywords: _eleanor schonell bridge dimensions_ and found the height:
@@ -165,14 +165,14 @@ Flag format: DUCTF{street_name}
 They provide us the following photo (I've made the markings):
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/OSINT/image.png" width="80%"/>
+  <img src="/images/writeups/DUCTF2021/OSINT/image.png" width="50%"/>
 </p>
 
 In the photo we see a set of buildings, two of them have letters on them and also the brown one has an unique look.
 Trying to see whats in the letters by enhancing the image on Photoshop didn't help too much. By zooming in the original photo we cann see that two of three letters on white are **AN.** so with that information I use Google Lens again but limiting the search to that building since the rest look normal and the results will be biased.
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/OSINT/3_0_lens.png" width="70%"/>
+  <img src="/images/writeups/DUCTF2021/OSINT/3_0_lens.png" width="50%"/>
 </p>
 
 It really make the difference when croping the photo to highlight the most peculiar sights, buildings or objects. In this challenge didn't find any results using the complete photo, so that was a game changer. Finally we identify the tower and the bank (**ANZ**) so we searched on Google for _ANZ_ and two buildings showed up once in Sydney and the other in Melbourne, obviously, ours is the one in Melbourne.
@@ -184,11 +184,11 @@ It really make the difference when croping the photo to highlight the most pecul
 Now with the 3D maps we can get [the perspective of the image](https://www.google.es/maps/@-37.8098054,144.9596064,162a,35y,165h,72.04t/data=!3m1!1e3!5m1!1e4) to look in the correct way. We can see the corresponding buildings with the ones in the original photo. To activate the 3D view from Google Maps in the menu by activating Globe View:
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/OSINT/3_hint.png" width="40%"/>
+  <img src="/images/writeups/DUCTF2021/OSINT/3_hint.png" width="25%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/OSINT/3_2_buildings.png" width="70%"/>
+  <img src="/images/writeups/DUCTF2021/OSINT/3_2_buildings.png" width="90%"/>
 </p>
 
 Looking to the yellow building with squared windows, we can see the apartments in front of them where the photo was taken (red dot):
@@ -271,7 +271,7 @@ So Alex is on [Twitter](https://twitter.com/alex_elgato93).
 I used twint to retrieve all his tweets and try to see if any of those had location or something but hit a dead end. 
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/OSINT/4_0_twitter.png" width="70%"/>
+  <img src="/images/writeups/DUCTF2021/OSINT/4_0_twitter.png" width="50%"/>
 </p>
 
 ```
@@ -345,7 +345,7 @@ Our original logo was created in paint, I wonder what other secrets it hides?
 They provide us the og.jpg
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/Forensic/og.jpg" width="80%"/>
+  <img src="/images/writeups/DUCTF2021/Forensic/og.jpg" width="40%"/>
 </p>
 
 Using exiftool we can see the details
@@ -377,11 +377,11 @@ We got a WAV file with a morse code on the background. As it is, morse2ascii too
 By appliying the following visualization settings to the spectrogram I could get a great visualization of the dots and lines:
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/Forensic/2_1_filter.png" width="80%"/>
+  <img src="/images/writeups/DUCTF2021/Forensic/2_1_filter.png" width="30%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/DUCTF2021/Forensic/2_0_sonic.png" width="80%"/>
+  <img src="/images/writeups/DUCTF2021/Forensic/2_0_sonic.png" width="95%"/>
 </p>
 
 See morse code format at the 1000Hz. I found it to be a short message so I stopped the idea of isolation and started to write them down as I could. Some of the beeps were missed due to interferences with other noises, but looking to the overall message we could get the flag:
