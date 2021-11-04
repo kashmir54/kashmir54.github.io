@@ -60,7 +60,7 @@ When over the images in full screen and I was able to notice the lighter green i
   <img src="/images/writeups/DUCTF2021/Misc/1_flag.jpeg" width="70%"/>
 </p>
 
-```DUCTF{EYES_ON_THE_PRIZES_TWITTER}```
+``` DUCTF{EYES_ON_THE_PRIZES_TWITTER} ```
 
 
 ---
@@ -90,7 +90,7 @@ A quick [who.is](https://who.is/whois/646f776e756e646572.xyz) query will get our
   <img src="/images/writeups/DUCTF2021/OSINT/0_whois.png" width="70%"/>
 </p>
 
-```DUCTF{+61420091337}```
+``` DUCTF{+61420091337} ```
 
 
 ## Get over it!
@@ -146,7 +146,7 @@ Now that we have the name, I did a quick google search with the keywords: _elean
 The bridge consists of a single main span of 185 m and multiple approach spans at each end of up to 75 m, giving a total length of 390 m. The deck is about 11 m above the Brisbane River's high tide level.
 ```
 
-```DUCTF{eleanor_schonell-185m}```
+``` DUCTF{eleanor_schonell-185m} ```
 
 
 ## Apartment Views
@@ -203,7 +203,7 @@ Looking to the yellow building with squared windows, we can see the apartments i
 
 It could be Little Lonsdale St or McLean Alley, turn out to be McLean:
 
-```DUCTF{mclean_alley}```
+``` DUCTF{mclean_alley} ```
 
 
 ## (back) On the rails
@@ -332,7 +332,7 @@ Look what ye had with that MAC!
 
 His location: Charles Mcintosh PKWY
 
-```DUCTF{charles_mcintosh_pkwy}```
+``` DUCTF{charles_mcintosh_pkwy} ```
 
 ---
 
@@ -362,7 +362,7 @@ X Resolution                    : 300
 Displayed Units X               : inches
 ```
 
-```DUCTF{sicc_paint_skillz!}```
+``` DUCTF{sicc_paint_skillz!} ```
 
 
 ## Do the loop!
@@ -390,6 +390,6 @@ See morse code format at the 1000Hz. I found it to be a short message so I stopp
 .. -.-. --- ..- .-.. -.. .-.. .. ... - . -. - --- - .... .. ... --- -. .-.. --- --- .--. .- .-.. .-.. -.. .- -.--
 ```
 
-```ICOULDLISTENTOTHISONLOOPALLDAY```
+``` ICOULDLISTENTOTHISONLOOPALLDAY ```
 
 
