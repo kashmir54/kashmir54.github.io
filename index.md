@@ -11,11 +11,11 @@ favicon: /images/favicon.ico
 There is a long road ahead for me. I'm currently learning and sharing back all what I've got from the community.
 I will try to post as much as I do, as complete as possible, knowing that sometimes, I won't be clear. In that case, you can ask anything at the comments.
 
-<div display="grid">
-	<div width="50%"><script src="https://www.hackthebox.eu/badge/365669"></script></div>
-	<div width="50%"><script src="https://tryhackme.com/badge/167590"></script></div>
+<div class="banners">
+	<div class="hack" width="48%"><script src="https://www.hackthebox.eu/badge/365669"></script></div>
+	<div width="48%"><script src="https://tryhackme.com/badge/167590"></script></div>
 </div>
-
+ 
 ---
 
 ## CTF Writeups

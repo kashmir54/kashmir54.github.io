@@ -214,6 +214,14 @@ hr {
   background: url("../images/blacktocat.png") 0 0 no-repeat;
 }
 
+.banners{
+  display: flex;
+}
+
+.hack{
+  margin: 0.5%;
+}
+
 a {
   color: #2577DD;
   text-shadow: 0 0 5px rgba(104,123,255,0.5);
