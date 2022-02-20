@@ -476,7 +476,7 @@ At first we had three paths to explore:
 - TOCTOU over string length
 
 
-#### Bypass forbidden characters detection
+### Bypass forbidden characters detection
 
 Concept: How about using Unicode bypasses?
 
@@ -492,7 +492,7 @@ Trick didn't worked out, due to this check on the JS. Our unicode characters wer
 if (c.charCodeAt(0) > 128) return 'Nice try.';
 ```
 
-#### Algorithm logic
+### Algorithm logic
 
 **Spoiler: base concept was wrong, since we couldn't achieve a two URL call in the admin ^^'**
 
@@ -545,7 +545,7 @@ Then we bypassed the uppercase filter and got our local exploit using the URL pa
 Now things got complicated in this path since we found no method to replicate this on the admin bot :(
 
 
-#### TOCTOU on string length
+### TOCTOU on string length
 
 We tried many things with special characters and unicode, looking at the documentation for toUpperCase, but missed the great ß character.
 Check out the great [writeup on this task](https://brycec.me/posts/dicectf_2022_writeups#blazingfast)
