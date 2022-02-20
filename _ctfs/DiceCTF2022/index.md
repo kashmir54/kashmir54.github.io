@@ -498,9 +498,8 @@ First we call the website with the following URL:
 
 ```html
 https://blazingfast.mc.ax/?demo=.....<img src='x' onerror='alert(1)'>
-```
-
 https://blazingfast.mc.ax/?demo=.....%3Cimg%20src=%27x%27%20onerror=%27alert(1)%27%3E
+```
 
 Then, we remove the part with the payload and left the valid offset. Call the function again and we can see that the payload is being written into the HTML. alert is not popping due to the uppercase done previously in the JS, the rest of the payload is working fine, since browser is correctly interpreting the HTML keywords:
 
