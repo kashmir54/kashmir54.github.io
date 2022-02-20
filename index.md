@@ -56,7 +56,7 @@ Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 [Walk into the boxes](/walkthroughs)
 
 
-
+---
 
 ## Misc
 

@@ -12,6 +12,10 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 ## CTF - Writeups:
 
 
+### 2022
+
+- [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
+
 ### 2021
 
 - [DownUnderCTF 2021](/ctfs/DownUnderCTF2021) (25/09/2021)
