@@ -23,8 +23,8 @@ Challenge index:
 
 ### Web
 
-- [knock-knock](#web/knock-knock)
-- [blazingfast](#web/blazingfast)
+- [knock-knock](#webknock-knock)
+- [blazingfast](#webblazingfast)
 
 
 <small><i><a href="https://github.com/kashmir54/md-toc">Table of contents generated with md-toc</a></i></small>
