@@ -30,16 +30,11 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 ### Latest CTFs writeups:
 
+- [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
+- [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
 - [GrabCON CTF 2021](/ctfs/GrabCON) (29/08/2021)
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
 - [corCTF 2021](/ctfs/corCTF2021) (21/08/2021)
-- [UIUCTF 2021](/ctfs/UIUCTF2021) (31/07/2021)
-- [Imaginary 2021](/ctfs/ImaginaryCTF2021) (27/07/2021)
-- [CyberApocalypse 2021](/ctfs/CyberApocalypse2021) (19/04/2021)
-- [NahanCon CTF 2021](/ctfs/NahamCTF2021) (14/03/2021)
-- [UTCTF 2021](/ctfs/UTCTF2021) (14/03/2021)
-- [TenableCTF 2021](/ctfs/TenableCTF) (24/02/2021)
-- [0xL4ugh](/ctfs/0xL4ugh) (16/01/2021)
 
 
 ### OSINT CTFs writeups:
