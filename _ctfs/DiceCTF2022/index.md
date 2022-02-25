@@ -1,7 +1,7 @@
 ---
 title: "CTF - DiceCTF 2022"
 categories: [ctf]
-date: 2021-09-25
+date: 2022-02-05
 comments: true
 image: /images/kashmir.png
 favicon: /images/favicon.ico

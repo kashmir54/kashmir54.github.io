@@ -14,6 +14,7 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 
 ### 2022
 
+- [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
 - [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
 
 ### 2021
