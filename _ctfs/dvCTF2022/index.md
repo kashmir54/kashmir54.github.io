@@ -125,7 +125,7 @@ In what city is the statue of this monkey found? Wrap it around with the wrapper
 We got this photo from the challenge:
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/OSINT/img.png" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/OSINT/img.png" width="50%"/>
 </p>
 
 Searching for the most characteristic parts of the photo and some keywords, we find this result:
