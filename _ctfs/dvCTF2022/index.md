@@ -11,7 +11,7 @@ description: CTF - dvCTF 2022
 # DefCamp CTF 2022
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/logo.png" width="50%"/>
+  <img src="/images/writeups/dvCTF2022/logo.png" width="30%"/>
 </p>
 
 Welcome to my blog! I've participated in this CTF by my own for team [ISwearIGoogledIt](https://ctftime.org/team/109689) and got some challenges! Limited time and couldn't go over some of the guessy ones, but overall it was fun!
