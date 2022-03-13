@@ -32,7 +32,7 @@ Challenge index:
 
 
 ### Pentest
-- [DaVinci's Playlist : Part 1](#-davincis-playlist--part-1)
+- [DaVinci's Playlist : Part 1](#davincis-playlist--part-1)
 - [DaVinci's Playlist : Part 2/2.5](#davincis-playlist--part-225)
 
 
