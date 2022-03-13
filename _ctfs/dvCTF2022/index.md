@@ -125,7 +125,7 @@ In what city is the statue of this monkey found? Wrap it around with the wrapper
 We got this photo from the challenge:
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/OSINT/img.jpg" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/OSINT/img.png" width="70%"/>
 </p>
 
 Searching for the most characteristic parts of the photo and some keywords, we find this result:
@@ -159,7 +159,7 @@ And it is [IL0veElon twitter account](https://twitter.com/IL0veElon)
 Scrolling on his tweets I found one that caught my attention [Tweet](https://twitter.com/IL0veElon/status/1453410714446614540):
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/OSINT/2_0_tweet.png" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/OSINT/2_0_tweet.png" width="50%"/>
 </p>
 
 ```
@@ -171,7 +171,7 @@ It seems like a transaction id or a public key for a cryptocurrency wallet or so
 Going over the twitter account I double checked his bio and spotted a shy **$EGLD** among all the $DOGE $SHIB
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/OSINT/2_1.png" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/OSINT/2_1.png" width="60%"/>
 </p>
 
 Bio:
@@ -182,7 +182,7 @@ $DOGE $SHIB $DOGE $SHIB $DOGE $SHIB $DOGE $SHIB $DOGE $SHIB $DOGE $SHIB $DOGE $S
 So I went into a $EGLD network lookup and got [the transaction](https://explorer.elrond.com/transactions/099627400a565a0cc64c3a61ee0ce785d80dfbd30e1b1ea8bcb9fdd9952b9b8a). Down on the input data, we can see the flag:
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/OSINT/2_2_flag.png" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/OSINT/2_2_flag.png" width="80%"/>
 </p>
 
 ``` dvCTF{Bl0cKcH4In_Rul3S} ```
@@ -216,7 +216,7 @@ XP Keywords                     : Pintura
 
 These _GPS Dest Bearing_ and _GPS Img Direction_ are not very useful for the geolocation we want to achieve, and no further information about the location was found. Eventough, I found the XP comment which is written in portuguese, so maybe we can limit our search for countries where they speak portuguese.
 
-_
+
 Next step was to search the photo on Google images with aux text _Portugal_ so the search prioritized images related with Portugal. I went for portugal first just to try. And we found a pretty similar image with [that search query](https://www.google.com/search?hl=en-ES&tbs=simg:CAESYQnrtX6syq4mGxpWCxCwjKcIGjoKOAgEEhSOELo2nDDCO-srjznSNM8c5D2CKBoabTsoaCauq7_1KFfV_1E-Z1QKHYNltjwV_1XikUgBTAEDAsQjq7-CBoKCggIARIE06C4OAw&sxsrf=APq-WBtYq1WoNv7OZBD7zL8-V6G6wAjAMQ:1647161255437&q=portugal+&tbm=isch&source=iu&ictx=1&vet=1&fir=sXsjcNXj7CWqzM%252C2t1atU6yjFRDjM%252C_%253BmyJjZrGvyPiAEM%252CvDXld61xz2U6VM%252C_%253Bx_bPbVpgFBJH6M%252CE8j6qJYlNGZKIM%252C_%253B3xR6b44_dntcPM%252CIDYwiCI3-znIsM%252C_%253BkuYSqTg9_xtGaM%252C2t1atU6yjFRDjM%252C_%253BiHRIxW5s7hNBzM%252CAaxYvs6k_3ppzM%252C_%253B5DvGBr5ytnUrOM%252C5tbMSxwIqkad0M%252C_%253Be8tnQ-X7SJ6w7M%252CJgvDO-s_r6qgpM%252C_%253B6VFnViU-Io-ItM%252ChnDOuHIZNtgNCM%252C_%253BS_9-f9b4XEK-OM%252Covync1OW90CgWM%252C_%253Bt6u4bYBIiiUEqM%252CgWGV_jWIE_kz7M%252C_%253BtiIOdRfrhxkppM%252CP-SyaBaQxbtfpM%252C_%253BwikpgpIHOfhBVM%252C_u7uajf5bT9LQM%252C_%253B1tMs9ZDH23ewlM%252CfdNdBMo0UJi7eM%252C_%253BBOPzBIvB5v-b2M%252CDmceCT_BOyAVjM%252C_%253BLtwC62vWSPMOEM%252C7lz4GajUuesGeM%252C_%253B16y2zq6sdiu45M%252C1EVpcVQB9Ngc7M%252C_%253B_CBehGMcaiWqnM%252CHi3g4XfbyuBC9M%252C_%253BC00h_gKe31D2fM%252C9rjnxlRGhWXBXM%252C_%253B_cmALcwWi2w7nM%252CbGvGmjIDjIYVdM%252C_%253BFyOg2lcEgVFgrM%252CIDYwiCI3-znIsM%252C_%253BLe3cgaRDDbtZlM%252CBTFUMqMfnd1uwM%252C_%253B1-kqx2TevvEmAM%252CHnPEyxR6W06UjM%252C_%253B7wDGhP09O77uBM%252COH4XbrMymksHaM%252C_&usg=AI4_-kT630WJn5M7fASrqKn_vi6cqkRPYw&sa=X&ved=2ahUKEwjfjpLs2cL2AhUwzIUKHfuFDhsQ9QF6BAgFEAE&biw=1920&bih=937&dpr=1#imgrc=sXsjcNXj7CWqzM):
 
 <p align="center">
@@ -656,7 +656,7 @@ Some exiftools and binwalk over the photo didn't showed anything, so I went for 
 in this [website](https://www.neodynamic.com/barcodes/Australia-Post-4-state-Barcode.aspx) I found great information:
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/Misc/1_0.png" width="80%"/>
+  <img src="/images/writeups/dvCTF2022/Misc/1_0.png" width="70%"/>
 </p>
 
 So it seems like they are very common on Australia Post letters and packages, so with this query on [Google](https://www.google.com/search?client=firefox-b-e&q=auspost+bar+decoder) I found that page "Bob" did as stated on the challenge description with this query _auspost bar decoder_:
@@ -775,19 +775,21 @@ There we can find some tweets, one video and a gif.
 On the video we can see that it has captions, so I looked at them and said:
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/Misc/3_1.png" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/Misc/3_0.png" width="55%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/Misc/3_2.png" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/Misc/3_1.png" width="55%"/>
 </p>
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/Misc/3_3.png" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/Misc/3_2.png" width="55%"/>
 </p>
 
 _I finish my first CTF *hurray*_
+
 _Find it at "hacker/[0-9]+/"_
+
 _Signed: "The Hackerman"_
 
 Then, other tweet says:
@@ -801,13 +803,17 @@ So probably he posted his CTF challenge in docker. Looking at that regex in the 
 
 Use this [website](http://www.dialabc.com/sound/detect/index.html) to decode the wav file and showed that the followind numbers were dialed:
 
+```
 439804
+```
 
 Following the regex on the video I tried many things, but didn't work:
 
+```
 hacker/439804/
 
 https://hub.docker.com/r/hacker/439804/
+```
 
 I searched for other thehackerman, thehacker, hackerman... But no luck.
 
