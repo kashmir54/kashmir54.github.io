@@ -133,7 +133,7 @@ Searching for the most characteristic parts of the photo and some keywords, we f
 [Google search](https://www.google.com/search?q=big+balls+bonobo&tbm=isch&ved=2ahUKEwjMl8nW0772AhWi8bsIHc25BaUQ2-cCegQIABAA&oq=big+balls+bonobo&gs_lcp=CgNpbWcQAzoHCCMQ7wMQJ1DBAljBAmDfB2gAcAB4AIABxQGIAZACkgEDMS4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=UJArYsyvJqLj7_UPzfOWqAo&bih=937&biw=1920&hl=en-ES#imgrc=pPeIsoVUGpayhM)
 
 <p align="center">
-  <img src="/images/writeups/dvCTF2022/OSINT/king.webp" width="70%"/>
+  <img src="/images/writeups/dvCTF2022/OSINT/king.png" width="80%"/>
 </p>
 
 Digging deep in the related images shows the name "king kong balls prague" and a quick search with that query confirmed us the city:
