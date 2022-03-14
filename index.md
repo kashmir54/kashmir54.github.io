@@ -15,8 +15,10 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 	<div class="hack" width="48%"><script src="https://www.hackthebox.eu/badge/365669"></script></div>
 	<div width="48%"><script src="https://tryhackme.com/badge/167590"></script></div>
 </div>
- 
+
+
 ---
+<br>
 
 ## CTF Writeups
 
@@ -26,10 +28,15 @@ I have special interest in OSINT, Web and Forensic challenges and I participate 
 
 You can find all my CTFs writeups (solutions and explanations) here: 
 
-[**Kashmir54's CTF Writeups**](/ctfs)
+/---------------------------------/
+
+/ [**Kashmir54's CTF Writeups**](/ctfs) /
+
+/---------------------------------/
 
 ### Latest CTFs writeups:
 
+- [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
 - [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
 - [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
 - [GrabCON CTF 2021](/ctfs/GrabCON) (29/08/2021)
@@ -39,10 +46,12 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 ### OSINT CTFs writeups:
 
+- [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
 - [Brixel CTF 2021](/ctfs/Brixel#visit-limburg-1) (3/01/2021)
 
 ---
+<br>
 
 ## HackTheBox Walkthrough
 
@@ -52,6 +61,7 @@ Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 
 
 ---
+<br>
 
 ## Misc
 
