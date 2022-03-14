@@ -17,7 +17,9 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 </div>
 
 <br>
+
 ---
+
 <br>
 
 ## CTF Writeups
@@ -28,11 +30,11 @@ I have special interest in OSINT, Web and Forensic challenges and I participate 
 
 You can find all my CTFs writeups (solutions and explanations) here: 
 
-/---------------------------------------------------------------------------------------------------/
+/-----------------------------------------------------------------------------------------/
 
 / [**Kashmir54's CTF Writeups**](/ctfs) /
 
-/---------------------------------------------------------------------------------------------------/
+/-----------------------------------------------------------------------------------------/
 
 ### Latest CTFs writeups:
 
@@ -49,9 +51,11 @@ You can find all my CTFs writeups (solutions and explanations) here:
 - [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
 - [Brixel CTF 2021](/ctfs/Brixel#visit-limburg-1) (3/01/2021)
+
 <br>
 
 ---
+
 <br>
 
 ## HackTheBox Walkthrough
@@ -61,7 +65,9 @@ Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 [Walk into the boxes](/walkthroughs)
 
 <br>
+
 ---
+
 <br>
 
 ## Misc
