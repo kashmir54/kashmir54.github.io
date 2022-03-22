@@ -8,7 +8,7 @@ favicon: /images/favicon.ico
 description: CTF - dvCTF 2022
 ---
 
-# DefCamp CTF 2022
+# dvCTF CTF 2022
 
 <p align="center">
   <img src="/images/writeups/dvCTF2022/logo.png" width="30%"/>
