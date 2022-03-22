@@ -117,7 +117,7 @@ https://h3y-buddy.vishwactf.com/submit?name=Kash
   <img src="/images/writeups/VishwaCTF2022/Web/2_2_wappa.png" width="60%"/>
 </p>
 
-It's using Flash and Python, maybe an SSTI (Server Side Template Injection) in the reflected input might work. Let's start with some basic payloads:
+It's using Flask and Python, maybe an SSTI (Server Side Template Injection) in the reflected input might work. Let's start with some basic payloads:
 
 ```
 https://h3y-buddy.vishwactf.com/submit?name={{7*7}}
