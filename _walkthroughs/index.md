@@ -19,16 +19,17 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 
 ## Easy
 
-<div display="grid" class="box">
-	<div class="logo">
-		<img src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
+<div display="grid">
+	<div class="box">
+		<div class="logo">
+			<img src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
+		</div>
+		<div width="70%">
+			RouterSpace
+		</div>
 	</div>
-	<div width="70%">
-		RouterSpace
-	</div>
-</div>
 
-<div display="grid" class="box">
+<div class="box">
 	<div class="logo">
 		<img src="/images/walkthroughs/hackthebox/timelapse/logo.png"/>
 	</div>
@@ -37,7 +38,7 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 	</div>
 </div>
 
-<div display="grid" class="box">
+<div class="box">
 	<div class="logo">
 		<img src="/images/walkthroughs/hackthebox/late/logo.png"/>
 	</div>
@@ -45,6 +46,10 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		Late
 	</div>
 </div>
+
+</div>
+
+
 
 
 ---
