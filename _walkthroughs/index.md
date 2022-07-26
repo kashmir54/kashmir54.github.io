@@ -1,24 +1,49 @@
 ---
 title: "Walkthroughs"
 categories: [box]
-date: 2020-08-26
-description: Walkthroughs.
+date: 2022-07-26
+description: Walkthroughs
+image: /images/kashmir.png
+favicon: /images/favicon.ico
 ---
 
-## HackTheBox:
+# HackTheBox:
 
 Here you can find the walkythoughs for the HackTheBox machines. I will be doing as much as possible this 2022.
 
 <script src="https://www.hackthebox.eu/badge/365669"></script>
 
+<br>
+---
+<br>
 
-### Easy
+## Easy
 
-<div display="grid">
-  <img src="/images/walkthroughs/hackthebox/routerspace/logo.png" width="20%"/>
-  <div width="70%">
-  	- [RouterSpace](/walkthroughs/hackthebox/routerspace)
-  </div>
+<div display="grid" class="box">
+	<div class="logo">
+		<img src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
+	</div>
+	<div width="70%">
+		RouterSpace
+	</div>
+</div>
+
+<div display="grid" class="box">
+	<div class="logo">
+		<img src="/images/walkthroughs/hackthebox/timelapse/logo.png"/>
+	</div>
+	<div width="70%">
+		Timelapse
+	</div>
+</div>
+
+<div display="grid" class="box">
+	<div class="logo">
+		<img src="/images/walkthroughs/hackthebox/late/logo.png"/>
+	</div>
+	<div width="70%">
+		Late
+	</div>
 </div>
 
 

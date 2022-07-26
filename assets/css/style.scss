@@ -13,6 +13,14 @@ body {
   font-family: Monaco,"Bitstream Vera Sans Mono"," Console",Terminal,monospace;
 }
 
+div.box{
+  border-style: dashed;
+  border-color: #40E7AA;
+  border-radius: 25px;
+  color: white;
+  width: 30%;
+}
+
 .container {
   width: 90%;
   max-width: 1000px;
