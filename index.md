@@ -32,7 +32,7 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 /-----------------------------------------------------------------------------------------/
 
-/ [**Kashmir54's CTF Writeups**](/ctfs) /
+/ --- [**Kashmir54's CTF Writeups**](/ctfs) --- /
 
 /-----------------------------------------------------------------------------------------/
 
@@ -63,6 +63,26 @@ You can find all my CTFs writeups (solutions and explanations) here:
 Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 
 [Walk into the boxes](/walkthroughs)
+
+### Upcoming walkthroughs:
+
+- [RouterSpace]() (When machine retires)
+- [Paper]() (When machine retires)
+- [Late]() (When machine retires)
+
+
+<br>
+
+---
+
+<br>
+
+## Academic research
+
+I have been working on cyber intelligence for over two years. My research focuses on phishing and fraud detection using machine learning.
+To read more about this topic go to the link:
+
+[Academic research](/academic)
 
 <br>
 
