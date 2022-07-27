@@ -30,8 +30,8 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 			<div class="card-text">
 				<p>RouterSpace</p>
-				<img class="flag" src="/images/ic-userflag.png"></img>
-				<img class="flag" src="/images/ic-rootflag.png"></img>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
 		</div>
 	</a>
@@ -43,8 +43,8 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 			<div class="card-text">
 				<p>Timelapse</p>
-				<img class="flag" src="/images/ic-userflag.png"></img>
-				<img class="flag" src="/images/ic-rootflag.png"></img>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
 
 		</div>
@@ -57,8 +57,8 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 			<div class="card-text">
 				<p>Late</p>
-				<img class="flag" src="/images/ic-userflag.png"></img>
-				<img class="flag" src="/images/ic-rootflag.png"></img>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
 		</div>
 	</a>
@@ -120,8 +120,8 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 			<div class="card-text">
 				<p>Faculty</p>
-				<img class="flag" src="/images/ic-userflag.png"></img>
-				<img class="flag" src="/images/ic-rootflag.png"></img>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
 		</div>
 	</a>
@@ -133,8 +133,8 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 			<div class="card-text">
 				<p>Noter</p>
-				<img class="flag" src="/images/ic-userflag.png"></img>
-				<img class="flag" src="/images/ic-rootflag.png"></img>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
 
 		</div>
