@@ -19,37 +19,62 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 
 ## Easy
 
-<div display="grid">
-	<div class="box">
-		<div class="logo">
-			<img src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
-		</div>
-		<div width="70%">
-			RouterSpace
-		</div>
-	</div>
+<div class="grid">
 
-<div class="box">
-	<div class="logo">
-		<img src="/images/walkthroughs/hackthebox/timelapse/logo.png"/>
-	</div>
-	<div width="70%">
-		Timelapse
-	</div>
-</div>
+		<a class="box" href="">
+			<div class="box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>RouterSpace</p>
+					<img class="flag" src="/images/ic-userflag.png"></i>
+					<img class="flag" src="/images/ic-rootflag.png"></i>
+				</div>
+			</div>
+		</a>
 
-<div class="box">
-	<div class="logo">
-		<img src="/images/walkthroughs/hackthebox/late/logo.png"/>
+		<a class="box" href="">
+			<div class="box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/timelapse/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>Timelapse</p>
+					<img class="flag" src="/images/ic-userflag.png"></i>
+					<img class="flag" src="/images/ic-rootflag.png"></i>
+				</div>
+
+			</div>
+		</a>
+
+		<a class="box" href="">
+			<div class="box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/late/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>Late</p>
+					<img class="flag" src="/images/ic-userflag.png"></i>
+					<img class="flag" src="/images/ic-rootflag.png"></i>
+				</div>
+			</div>
+		</a>
+
+		<a class="box" href="">
+			<div class="disabled box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/trick/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>Trick</p>
+					<img class="flag" src="/images/ic-userflag.png"></i>
+					<img class="flag" src="/images/ic-rootflag.png"></i>
+				</div>
+			</div>
+		</a>
+
 	</div>
-	<div width="70%">
-		Late
-	</div>
-</div>
-
-</div>
-
-
 
 
 ---

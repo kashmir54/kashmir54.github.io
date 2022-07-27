@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>ic-userflag</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ic-userflag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group-27" transform="translate(3.000000, 3.000000)">
+            <g id="ic-ctfs" stroke="#A4B1CD" stroke-width="1.5">
+                <g id="flag-plain-3">
+                    <line x1="0.5625" y1="17.4375" x2="0.5625" y2="0.5625" id="Shape"></line>
+                    <path d="M0.5625,13.281 L2.928,12.5535 C3.75816368,12.2979177 4.61758646,12.1972978 5.4659102,12.2465082 M17.4375,12.648 L17.4375,3.85275 C17.4372516,3.58807646 17.3129322,3.33882848 17.1016539,3.17941204 C16.8903755,3.0199956 16.6165795,2.96885247 16.362,3.04125 L14.58525,3.549 C12.6394118,4.1047892 10.5495832,3.81740033 8.826,2.757 C7.05950007,1.6699916 4.91033267,1.39669971 2.928,2.007 L0.5625,2.73375" id="Shape"></path>
+                </g>
+            </g>
+            <g id="Group-19" transform="translate(8.224138, 7.775862)" stroke="#FFFFFF">
+                <g id="Group-17">
+                    <circle id="Oval" cx="3.37931034" cy="1.97126437" r="1.97126437"></circle>
+                    <path d="M0,9.63601533 C0,7.76967376 1.51296878,6.25670498 3.37931034,6.25670498 C5.24565191,6.25670498 6.75862069,7.76967376 6.75862069,9.63601533 L0,9.63601533 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

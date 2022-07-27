@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>ic-rootflag</title>
+    <desc>Created with Sketch.</desc>
+    <g id="ic-rootflag" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Group-27-Copy" transform="translate(3.000000, 3.000000)">
+            <g id="ic-ctfs" stroke="#A4B1CD" stroke-linejoin="round" stroke-width="1.5">
+                <g id="flag-plain-3">
+                    <line x1="0.5625" y1="17.4375" x2="0.5625" y2="0.5625" id="Shape"></line>
+                    <path d="M0.5625,13.281 L2.928,12.5535 C3.29628678,12.4401156 3.67033201,12.3572292 4.046612,12.3043928 C4.51851337,12.2381293 4.99392962,12.2191291 5.4659102,12.2465082 M17.4375,12.648 L17.4375,3.85275 C17.4372516,3.58807646 17.3129322,3.33882848 17.1016539,3.17941204 C16.8903755,3.0199956 16.6165795,2.96885247 16.362,3.04125 L14.58525,3.549 C12.6394118,4.1047892 10.5495832,3.81740033 8.826,2.757 C7.05950007,1.6699916 4.91033267,1.39669971 2.928,2.007 L0.5625,2.73375" id="Shape"></path>
+                </g>
+            </g>
+            <g id="Group-34" transform="translate(7.000000, 10.000000)" stroke="#FFFFFF">
+                <g id="Group-32" transform="translate(2.413793, 0.000000)">
+                    <line x1="0.24137931" y1="0.24137931" x2="0.24137931" y2="7.48275862" id="Line"></line>
+                    <line x1="3.13793103" y1="0.24137931" x2="3.13793103" y2="7.48275862" id="Line-Copy"></line>
+                </g>
+                <g id="Group-31" transform="translate(4.241379, 3.551724) rotate(-90.000000) translate(-4.241379, -3.551724) translate(2.241379, -0.448276)">
+                    <line x1="0.24137931" y1="0.24137931" x2="0.24137931" y2="7.48275862" id="Line"></line>
+                    <line x1="3.13793103" y1="0.24137931" x2="3.13793103" y2="7.48275862" id="Line-Copy"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

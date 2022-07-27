@@ -13,16 +13,49 @@ body {
   font-family: Monaco,"Bitstream Vera Sans Mono"," Console",Terminal,monospace;
 }
 
+div.grid{
+  display: grid;
+  column-gap: 2%;
+  row-gap: 2%;
+  grid-template-columns: 20% 20% 20% 20%;
+}
+
+a.box{
+  text-decoration-line: none; 
+}
+
 div.box{
+  display: inline-grid;
   border-style: dashed;
   border-color: #40E7AA;
   border-radius: 25px;
   color: white;
-  width: 30%;
+  display: grid;
+  grid-template-columns: 40% 50%;
 }
 
-img.logo{
-  width: 30%;
+div.box:hover{
+  border-color: #FCA310;
+}
+
+.disabled{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+
+.flag{
+  width: 25%;
+}
+
+.card-text{
+  padding-top: 3%;
+  padding-left: 8%;
+}
+
+.logo{
+  width: 80%;
+  padding: 10%;
 }
 
 .container {
