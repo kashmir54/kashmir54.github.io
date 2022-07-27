@@ -14,7 +14,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 <script src="https://www.hackthebox.eu/badge/365669"></script>
 
 <br>
+
 ---
+
 <br>
 
 ## Easy
@@ -28,35 +30,35 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 				</div>
 				<div class="card-text">
 					<p>RouterSpace</p>
-					<img class="flag" src="/images/ic-userflag.png"></i>
-					<img class="flag" src="/images/ic-rootflag.png"></i>
+					<img class="flag" src="/images/ic-userflag.png"></img>
+					<img class="flag" src="/images/ic-rootflag.png"></img>
 				</div>
 			</div>
 		</a>
 
 		<a class="box" href="">
-			<div class="box">
+			<div class="disabled box">
 				<div class="card-logo">
 					<img class="logo" src="/images/walkthroughs/hackthebox/timelapse/logo.png"/>
 				</div>
 				<div class="card-text">
 					<p>Timelapse</p>
-					<img class="flag" src="/images/ic-userflag.png"></i>
-					<img class="flag" src="/images/ic-rootflag.png"></i>
+					<img class="flag" src="/images/ic-userflag.png"></img>
+					<img class="flag" src="/images/ic-rootflag.png"></img>
 				</div>
 
 			</div>
 		</a>
 
 		<a class="box" href="">
-			<div class="box">
+			<div class="disabled box">
 				<div class="card-logo">
 					<img class="logo" src="/images/walkthroughs/hackthebox/late/logo.png"/>
 				</div>
 				<div class="card-text">
 					<p>Late</p>
-					<img class="flag" src="/images/ic-userflag.png"></i>
-					<img class="flag" src="/images/ic-rootflag.png"></i>
+					<img class="flag" src="/images/ic-userflag.png"></img>
+					<img class="flag" src="/images/ic-rootflag.png"></img>
 				</div>
 			</div>
 		</a>
@@ -68,16 +70,86 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 				</div>
 				<div class="card-text">
 					<p>Trick</p>
-					<img class="flag" src="/images/ic-userflag.png"></i>
-					<img class="flag" src="/images/ic-rootflag.png"></i>
+					<img class="flag" src="/images/ic-userflag.png"></img>
+					<img class="flag" src="/images/ic-rootflag.png"></img>
+				</div>
+			</div>
+		</a>
+
+		<a class="box" href="">
+			<div class="disabled box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/opensource/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>OpenSource</p>
+					<img class="flag" src="/images/ic-userflag.png"></img>
+					<img class="flag" src="/images/ic-rootflag.png"></img>
+				</div>
+			</div>
+		</a>
+
+		<a class="box" href="">
+			<div class="disabled box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/redpanda/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>RedPanda</p>
+					<img class="flag" src="/images/ic-userflag.png"></img>
 				</div>
 			</div>
 		</a>
 
 	</div>
 
+</div>
 
+<br>
 ---
+<br>
+
+
+## Medium
+
+<div class="grid">
+
+		<a class="box" href="">
+			<div class="box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/faculty/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>Faculty</p>
+					<img class="flag" src="/images/ic-userflag.png"></img>
+					<img class="flag" src="/images/ic-rootflag.png"></img>
+				</div>
+			</div>
+		</a>
+
+		<a class="box" href="">
+			<div class="disabled box">
+				<div class="card-logo">
+					<img class="logo" src="/images/walkthroughs/hackthebox/noter/logo.png"/>
+				</div>
+				<div class="card-text">
+					<p>Noter</p>
+					<img class="flag" src="/images/ic-userflag.png"></img>
+					<img class="flag" src="/images/ic-rootflag.png"></img>
+				</div>
+
+			</div>
+		</a>
+
+	</div>
+
+</div>
+
+<br>
+---
+<br>
+
+
 ### Old writeups
 - [Traceback](/walkthroughs/hackthebox/traceback)
 - [Admirer](/walkthroughs/hackthebox/admirer)

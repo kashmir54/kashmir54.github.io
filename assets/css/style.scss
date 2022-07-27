@@ -17,7 +17,7 @@ div.grid{
   display: grid;
   column-gap: 2%;
   row-gap: 2%;
-  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-columns: 23% 23% 23% 23%;
 }
 
 a.box{
@@ -55,7 +55,8 @@ div.box:hover{
 
 .logo{
   width: 80%;
-  padding: 10%;
+  padding-left: 15%;
+  padding-top: 30%;
 }
 
 .container {
