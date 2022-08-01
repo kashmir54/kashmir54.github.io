@@ -66,6 +66,8 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 ### Latest walkthroughs:
 
+<div class="grid">
+
 <a class="box" href="/walkthroughs/hackthebox/routerspace">
 	<div class="box">
 		<div class="card-logo">
@@ -92,7 +94,7 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		</div>
 	</div>
 </a>
-
+</div>
 
 <br>
 
