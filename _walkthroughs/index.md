@@ -23,7 +23,7 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 
 <div class="grid">
 
-	<a class="box" href="">
+	<a class="box" href="/walkthroughs/hackthebox/routerspace">
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
@@ -37,7 +37,7 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 	</a>
 	
 
-	<a class="box" href="">
+	<a class="box" href="/walkthroughs/hackthebox/late">
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/late/logo.png"/>

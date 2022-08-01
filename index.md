@@ -6,7 +6,7 @@ image: /images/kashmir.png
 favicon: /images/favicon.ico
 ---
 
-## Welcome to my blog!
+# Welcome to my blog!
 
 There is a long road ahead for me. I'm currently learning and sharing back all what I've got from the community.
 I will try to post as much as I do, as complete as possible, knowing that sometimes, I won't be clear. In that case, you can ask anything at the comments.
@@ -22,7 +22,7 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 
 <br>
 
-## CTF Writeups
+# CTF Writeups
 
 CTF (Capture The Flag) are competitions where we solve different cybersecurity tasks to find the secret (flag) at the end of the challenge. There are several categories depending on the type of the challenge, some of them are: Web, Forensic, OSINT (Open Source Intelligence), Cryptography, PWN (Binary Explotation), Reverse Engineering, RF (Radio Frequency), Hardware, etc. 
 
@@ -58,17 +58,40 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 <br>
 
-## HackTheBox Walkthrough
+# HackTheBox Walkthroughs
 
-Here you will find some walkthoughs of machines, at the moment only HackTheBox:
+Here you will find some walkthoughs of virtual machines, at the moment I'm only at HackTheBox:
 
 [Walk into the boxes](/walkthroughs)
 
-### Upcoming walkthroughs:
+### Latest walkthroughs:
 
-- [RouterSpace]() (When machine retires)
-- [Paper]() (When machine retires)
-- [Late]() (When machine retires)
+<a class="box" href="/walkthroughs/hackthebox/routerspace">
+	<div class="box">
+		<div class="card-logo">
+			<img class="logo" src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
+		</div>
+		<div class="card-text">
+			<p>RouterSpace</p>
+			<img class="flag" src="/images/ic-userflag.png">
+			<img class="flag" src="/images/ic-rootflag.png">
+		</div>
+	</div>
+</a>
+
+
+<a class="box" href="/walkthroughs/hackthebox/late">
+	<div class="box">
+		<div class="card-logo">
+			<img class="logo" src="/images/walkthroughs/hackthebox/late/logo.png"/>
+		</div>
+		<div class="card-text">
+			<p>Late</p>
+			<img class="flag" src="/images/ic-userflag.png">
+			<img class="flag" src="/images/ic-rootflag.png">
+		</div>
+	</div>
+</a>
 
 
 <br>
@@ -77,10 +100,10 @@ Here you will find some walkthoughs of machines, at the moment only HackTheBox:
 
 <br>
 
-## Academic research
+# Academic research
 
 I have been working on cyber intelligence for over two years. My research focuses on phishing and fraud detection using machine learning.
-To read more about this topic go to the link:
+To read more about this topic go to the link (TBD):
 
 [Academic research](/academic)
 
@@ -90,7 +113,7 @@ To read more about this topic go to the link:
 
 <br>
 
-## Misc
+# Misc
 
 [Useful tools](/misc)
 
