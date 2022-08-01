@@ -10,7 +10,7 @@ description: HTB - Late walkthrough
 # Late
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/late/logo.png" width="500"/>
+  <img src="/images/walkthroughs/hackthebox/late/banner.png" width="70%"/>
 </p>
 
 
