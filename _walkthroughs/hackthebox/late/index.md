@@ -4,6 +4,7 @@ categories: [box]
 date: 2020-07-30
 comments: true
 image: /images/walkthroughs/hackthebox/late/logo.png
+favicon: /images/walkthroughs/hackthebox/late/logo.png
 description: HTB - Late walkthrough
 ---
 
