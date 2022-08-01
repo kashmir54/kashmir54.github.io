@@ -149,7 +149,7 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 				<img class="logo" src="/images/walkthroughs/hackthebox/shared/logo.png"/>
 			</div>
 			<div class="card-text">
-				<p>Noter</p>
+				<p>Shared</p>
 				<img class="flag" src="/images/ic-userflag.png">
 				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
