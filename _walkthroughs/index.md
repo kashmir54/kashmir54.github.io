@@ -51,8 +51,8 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 	</a>
 
 
-	<a class="box" href="">
-		<div class="disabled box">
+	<a class="box" href="/walkthroughs/hackthebox/timelapse">
+		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/timelapse/logo.png"/>
 			</div>
@@ -163,6 +163,21 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 			<div class="card-text">
 				<p>Shared</p>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
+			</div>
+
+		</div>
+	</a>
+
+
+	<a class="box" href="">
+		<div class="disabled box">
+			<div class="card-logo">
+				<img class="logo" src="/images/walkthroughs/hackthebox/streamio/logo.png"/>
+			</div>
+			<div class="card-text">
+				<p>StreamIO</p>
 				<img class="flag" src="/images/ic-userflag.png">
 				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
