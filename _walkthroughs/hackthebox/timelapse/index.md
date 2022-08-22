@@ -228,7 +228,7 @@ john lega.hash --wordlist=/usr/share/wordlists/rockyou.txt
 The obtained password is **thuglegacy** now we can retrieve the private key and the information:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/timelapse/1_0_pfx.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/timelapse/1_0_pfx.png" width="70%"/>
 </p>
 
 Now, extract the private key. We could copy and paste the terminal output, but when dealing with certificates I recommend using in-built commands from OpenSSL to avoid whitespaces/end-of-line issues:
@@ -256,7 +256,7 @@ And we are in:
 Let's grab the user flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/timelapse/1_2_user.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/timelapse/1_2_user.png" width="70%"/>
 </p>
 
 
@@ -602,7 +602,7 @@ evil-winrm -u 'Administrator' -p '-wr8lMxvLm4H)4256zm18i5+' -i 10.10.11.152  -S
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/timelapse/3_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/timelapse/3_0_root.png" width="70%"/>
 </p>
 
 
