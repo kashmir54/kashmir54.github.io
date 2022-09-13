@@ -220,7 +220,7 @@ with app.test_client() as client:
 Let's create a cookie with user "blue":
 
 ```bash
-flask-unsign --sign --cookie "{'logged_in': True, 'username': 'blue'}" --secret 'secret123'
+kali@kali:~/Desktop/HackTheBox/Noter$ flask-unsign --sign --cookie "{'logged_in': True, 'username': 'blue'}" --secret 'secret123'
 
 eyJsb2dnZWRfaW4iOnRydWUsInVzZXJuYW1lIjoiYmx1ZSJ9.YtxCZg.WBKydRQS3DvXXJDRX8zjKNX46tE
 ```
@@ -232,7 +232,7 @@ Using the cookie shows the following notes (I was right and they has lower ids:
 </p>
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/noter/7_1.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/noter/7_1.png" width="70%"/>
 </p>
 
 
