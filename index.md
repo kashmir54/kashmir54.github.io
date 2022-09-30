@@ -68,6 +68,20 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 <div class="grid">
 
+<a class="box" href="">
+	<div class="box">
+		<div class="card-logo">
+			<img class="logo" src="/images/walkthroughs/hackthebox/streamio/logo.png"/>
+		</div>
+		<div class="card-text">
+			<p>StreamIO</p>
+			<img class="flag" src="/images/ic-userflag.png">
+			<img class="flag" src="/images/ic-rootflag.png">
+		</div>
+	</div>
+</a>
+
+
 <a class="box" href="/walkthroughs/hackthebox/noter">
 	<div class="box">
 		<div class="card-logo">
@@ -101,19 +115,6 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		</div>
 		<div class="card-text">
 			<p>Late</p>
-			<img class="flag" src="/images/ic-userflag.png">
-			<img class="flag" src="/images/ic-rootflag.png">
-		</div>
-	</div>
-</a>
-
-<a class="box" href="/walkthroughs/hackthebox/routerspace">
-	<div class="box">
-		<div class="card-logo">
-			<img class="logo" src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
-		</div>
-		<div class="card-text">
-			<p>RouterSpace</p>
 			<img class="flag" src="/images/ic-userflag.png">
 			<img class="flag" src="/images/ic-rootflag.png">
 		</div>
