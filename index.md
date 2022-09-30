@@ -68,7 +68,7 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 <div class="grid">
 
-<a class="box" href="">
+<a class="box" href="/walkthroughs/hackthebox/streamio">
 	<div class="box">
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/streamio/logo.png"/>

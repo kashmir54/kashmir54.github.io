@@ -144,7 +144,7 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 	</a>
 
 
-	<a class="box" href="">
+	<a class="box" href="/walkthroughs/hackthebox/streamio">
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/streamio/logo.png"/>

