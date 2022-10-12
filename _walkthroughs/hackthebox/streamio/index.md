@@ -974,3 +974,5 @@ And the flag is on the Martin user:
 </p>
 
 
+That's all! Very great box, a lot of stuff combined to retreive the different flags. Also great approach for AD privesc beginners.
+Hope you liked the writeup!
