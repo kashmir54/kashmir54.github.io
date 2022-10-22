@@ -22,51 +22,36 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 
 <br>
 
-# CTF Writeups
-
-CTF (Capture The Flag) are competitions where we solve different cybersecurity tasks to find the secret (flag) at the end of the challenge. There are several categories depending on the type of the challenge, some of them are: Web, Forensic, OSINT (Open Source Intelligence), Cryptography, PWN (Binary Explotation), Reverse Engineering, RF (Radio Frequency), Hardware, etc. 
-
-I have special interest in OSINT, Web and Forensic challenges and I participate with team [ISwearIGoogledIt](https://ctftime.org/team/109689) looking for scoring as much points as possible while developing new skills in different cybersecurity areas.
-
-You can find all my CTFs writeups (solutions and explanations) here: 
-
-/-----------------------------------------------------------------------------------------/
-
-/ --- [**Kashmir54's CTF Writeups**](/ctfs) --- /
-
-/-----------------------------------------------------------------------------------------/
-
-### Latest CTFs writeups:
-
-- [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
-- [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
-- [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
-- [GrabCON CTF 2021](/ctfs/GrabCON) (29/08/2021)
-- [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
-- [corCTF 2021](/ctfs/corCTF2021) (21/08/2021)
-
-
-### OSINT CTFs writeups:
-
-- [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
-- [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
-- [Brixel CTF 2021](/ctfs/Brixel#visit-limburg-1) (3/01/2021)
-
-<br>
-
----
-
-<br>
-
 # HackTheBox Walkthroughs
 
 Here you will find some walkthoughs of virtual machines, at the moment I'm only at HackTheBox:
 
+<a href="/walkthroughs">
+	<div class="box">
+		<p>Check out all the boxes</p>
+		<img class="flag" src="/images/ic-userflag.png">
+		<img class="flag" src="/images/ic-rootflag.png">
+	</div>
+</a>
+
 [Walk into the boxes](/walkthroughs)
 
-### Latest walkthroughs:
+## Latest walkthroughs:
 
 <div class="grid">
+
+<a class="box" href="/walkthroughs/hackthebox/scrambled">
+	<div class="box">
+		<div class="card-logo">
+			<img class="logo" src="/images/walkthroughs/hackthebox/scrambled/logo.png"/>
+		</div>
+		<div class="card-text">
+			<p>Scrambled</p>
+			<img class="flag" src="/images/ic-userflag.png">
+			<img class="flag" src="/images/ic-rootflag.png">
+		</div>
+	</div>
+</a>
 
 <a class="box" href="/walkthroughs/hackthebox/streamio">
 	<div class="box">
@@ -108,20 +93,46 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 	</div>
 </a>
 
-<a class="box" href="/walkthroughs/hackthebox/late">
-	<div class="box">
-		<div class="card-logo">
-			<img class="logo" src="/images/walkthroughs/hackthebox/late/logo.png"/>
-		</div>
-		<div class="card-text">
-			<p>Late</p>
-			<img class="flag" src="/images/ic-userflag.png">
-			<img class="flag" src="/images/ic-rootflag.png">
-		</div>
-	</div>
-</a>
-
 </div>
+
+
+<br>
+
+---
+
+<br>
+
+
+# CTF Writeups
+
+CTF (Capture The Flag) are competitions where we solve different cybersecurity tasks to find the secret (flag) at the end of the challenge. There are several categories depending on the type of the challenge, some of them are: Web, Forensic, OSINT (Open Source Intelligence), Cryptography, PWN (Binary Explotation), Reverse Engineering, RF (Radio Frequency), Hardware, etc. 
+
+I have special interest in OSINT, Web and Forensic challenges and I participate with team [ISwearIGoogledIt](https://ctftime.org/team/109689) looking for scoring as much points as possible while developing new skills in different cybersecurity areas.
+
+You can find all my CTFs writeups (solutions and explanations) here: 
+
+/-----------------------------------------------------------------------------------------/
+
+/ --- [**Kashmir54's CTF Writeups**](/ctfs) --- /
+
+/-----------------------------------------------------------------------------------------/
+
+### Latest CTFs writeups:
+
+- [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
+- [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
+- [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
+- [GrabCON CTF 2021](/ctfs/GrabCON) (29/08/2021)
+- [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
+- [corCTF 2021](/ctfs/corCTF2021) (21/08/2021)
+
+
+### OSINT CTFs writeups:
+
+- [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
+- [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
+- [Brixel CTF 2021](/ctfs/Brixel#visit-limburg-1) (3/01/2021)
+
 
 <br>
 

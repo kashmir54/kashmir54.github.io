@@ -143,20 +143,19 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 
 <div class="grid">
 
-	<a class="box" href="/walkthroughs/hackthebox/noter">
+	<a class="box" href="/walkthroughs/hackthebox/scrambled">
 		<div class="box">
 			<div class="card-logo">
-				<img class="logo" src="/images/walkthroughs/hackthebox/noter/logo.png"/>
+				<img class="logo" src="/images/walkthroughs/hackthebox/scrambled/logo.png"/>
 			</div>
 			<div class="card-text">
-				<p>Noter</p>
+				<p>Scrambled</p>
 				<img class="flag" src="/images/ic-userflag.png">
 				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
 
 		</div>
 	</a>
-
 
 	<a class="box" href="/walkthroughs/hackthebox/streamio">
 		<div class="box">
@@ -172,6 +171,19 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		</div>
 	</a>
 
+	<a class="box" href="/walkthroughs/hackthebox/noter">
+		<div class="box">
+			<div class="card-logo">
+				<img class="logo" src="/images/walkthroughs/hackthebox/noter/logo.png"/>
+			</div>
+			<div class="card-text">
+				<p>Noter</p>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
+			</div>
+
+		</div>
+	</a>
 
 	<a class="box" href="">
 		<div class="disabled box">
@@ -223,20 +235,6 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 			<div class="card-text">
 				<p>UpDown</p>
-				<img class="flag" src="/images/ic-userflag.png">
-				<img class="flag" src="/images/ic-rootflag.png">
-			</div>
-
-		</div>
-	</a>
-
-	<a class="box" href="">
-		<div class="disabled box">
-			<div class="card-logo">
-				<img class="logo" src="/images/walkthroughs/hackthebox/scrambled/logo.png"/>
-			</div>
-			<div class="card-text">
-				<p>Scrambled</p>
 				<img class="flag" src="/images/ic-userflag.png">
 				<img class="flag" src="/images/ic-rootflag.png">
 			</div>
