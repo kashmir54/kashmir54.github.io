@@ -34,6 +34,14 @@ div.box{
   grid-template-columns: 40% 50%;
 }
 
+div.box-big{
+  border-style: dashed;
+  border-color: #40E7AA;
+  border-radius: 25px;
+  color: white;
+}
+
+
 div.box:hover{
   border-color: #FCA310;
 }
