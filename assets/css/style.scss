@@ -21,6 +21,7 @@ div.grid{
 }
 
 div.grid-one{
+  text-align: center;
   display: grid;
   column-gap: 2%;
   row-gap: 0%;
@@ -75,7 +76,7 @@ div.box:hover{
 }
 
 .mini-flag{
-  width: 15%;
+  width: 12%;
 }
 
 .logo{
