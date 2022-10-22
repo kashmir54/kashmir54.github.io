@@ -27,7 +27,7 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 Here you will find some walkthoughs of virtual machines, at the moment I'm only at HackTheBox:
 
 <div class="grid-one">
-	<a class="box-big" href="/walkthroughs">
+	<a class="box" href="/walkthroughs">
 		<div class="box">
 			<div class="card-text">
 				<p>Check out all the boxes</p>
