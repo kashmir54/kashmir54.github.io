@@ -17,7 +17,7 @@ description: HTB - Faculty walkthrough
 
 ## Summary
 
-Faculty is a medium dificulty machine were we have a managing website with a vulnerable login form for the administration site. Using basic SQLi techniques we get in. Then we discover mPDF, a vulnerbale HTML to PDF package that we can use to trigger LFI vulnerability. Checking for interesting files, we retrieve a password for the _gbyolo_ user from the DB.php file. Using those password for SSH into the machine, we can trigger Arbitrary File Read on meta-git packagae that can be run as _developer_ (user with flag in the machine). Then for privesc we use gbd SYS_TRACE capability to make a system call from a debugged root process and get a reverse shell as root.
+Faculty is a medium dificulty machine where we have a managing website with a vulnerable login form for the administration site. Using basic SQLi techniques we get in. Then we discover mPDF, a vulnerbale HTML to PDF package that we can use to trigger LFI vulnerability. Checking for interesting files, we retrieve a password for the _gbyolo_ user from the DB.php file. Using those password for SSH into the machine, we can trigger Arbitrary File Read on meta-git packagae that can be run as _developer_ (user with flag in the machine). Then for privesc we use gbd SYS_TRACE capability to make a system call from a debugged root process and get a reverse shell as root.
 
 
 ## Enumeration
@@ -130,7 +130,7 @@ sqlmap -r login --dbms=mysql --dump
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/2_0_sqli.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/2_0_sqli.png" width="90%"/>
 </p>
 
 
@@ -165,26 +165,26 @@ We have the following credentials, it cannot be found on crackstation (even with
 We have the user IDs, we can use them to check user's funcitonallity:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/3_0_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/3_0_in.png" width="80%"/>
 </p>
 
 
 There is nothing interesting there, so let's move into the administration pane. On the subject tab I could see that I can insert new subjects and also the PDF export functionallity which makes me think that there is some king of vuln in this way.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/4_1_pdf.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/4_1_pdf.png" width="80%"/>
 </p>
 
 When hitting the download button, we do a POST with the data to be inputed on the PDF. This data is on HTML, maybe there is an engine to convert it to PDF. The response to this POST request is a link to the PDF on a new tab:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/4_2_download.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/4_2_download.png" width="80%"/>
 </p>
 
 HTML data sent to the download.php:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/4_3_pdf_decode.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/4_3_pdf_decode.png" width="80%"/>
 </p>
 
 The new tab has a new URL path in the previously seen _mpdf_ directory (check gobuster output):
@@ -236,7 +236,7 @@ Then we can see the attachement on the PDF (first image on the browser, the seco
 </p>
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/4_5_attached.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/4_5_attached.png" width="70%"/>
 </p>
 
 
@@ -268,7 +268,7 @@ Tried to trigger an error on the website to get some kind of exception trace wit
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/5_0_error.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/5_0_error.png" width="80%"/>
 </p>
 
 Now that we can find the absolute path, let's use it to dump the file:
@@ -294,7 +294,7 @@ We tried the pass for the developer account and the gbyolo and turned out to be 
 **gbyolo:Co.met06aci.dly53ro.per**
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/6_0_in_machine.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/6_0_in_machine.png" width="80%"/>
 </p>
 
 
@@ -332,7 +332,7 @@ user.txt: command 'git clone sss || cat /home/developer/user.txt user.txt' exite
 Correct execution out of the home directory:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/7_0_user.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/7_0_user.png" width="85%"/>
 </p>
 
 No output when triggering "permission denied" exception:
@@ -394,7 +394,7 @@ YEeVKoox5zK4lPYIAgGJvhUTzSuu0tS8O9bGnTBTqUAq21NF59XVHDlX0ZAkCfnTW4IE7j
 Using the private key we get in as _developer_ user:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/8_0_developer.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/8_0_developer.png" width="98%"/>
 </p>
 
 
@@ -482,13 +482,13 @@ root         924       1  0 Jul25 ?        00:00:07 bash /root/service_check.sh
 Had no luck with process like cron and bash, they have no "system" symbol:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/10_0_no_gdb.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/10_0_no_gdb.png" width="80%"/>
 </p>
 
 Trying different processes, I found that the _/usr/bin/vmtoolsd_ process let me execute the system call:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/10_1_vm.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/10_1_vm.png" width="80%"/>
 </p>
 
 
@@ -522,7 +522,7 @@ Obviously, create your netcat listener on your machine, then get the flag. If ha
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/faculty/11_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/faculty/11_root.png" width="75%"/>
 </p>
 
 ``` 9d6d066b09f6f7e38a70085112861ffe ```
