@@ -20,6 +20,14 @@ div.grid{
   grid-template-columns: 23% 23% 23% 23%;
 }
 
+div.grid-one{
+  display: grid;
+  column-gap: 2%;
+  row-gap: 0%;
+  grid-template-columns: 90%;
+}
+
+
 a.box{
   text-decoration-line: none; 
 }
@@ -35,6 +43,7 @@ div.box{
 }
 
 div.box-big{
+  display: inline-grid;
   border-style: dashed;
   border-color: #40E7AA;
   border-radius: 25px;

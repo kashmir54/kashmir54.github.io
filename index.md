@@ -26,15 +26,17 @@ I will try to post as much as I do, as complete as possible, knowing that someti
 
 Here you will find some walkthoughs of virtual machines, at the moment I'm only at HackTheBox:
 
-<a class="box-big" href="/walkthroughs">
-	<div class="box">
-		<div class="card-text">
-			<p>Check out all the boxes</p>
-			<img class="mini-flag" src="/images/ic-userflag.png">
-			<img class="mini-flag" src="/images/ic-rootflag.png">
+<div class="grid-one">
+	<a class="box-big" href="/walkthroughs">
+		<div class="box">
+			<div class="card-text">
+				<p>Check out all the boxes</p>
+				<img class="mini-flag" src="/images/ic-userflag.png">
+				<img class="mini-flag" src="/images/ic-rootflag.png">
+			</div>
 		</div>
-	</div>
-</a>
+	</a>
+</div>
 
 [Walk into the boxes](/walkthroughs)
 

