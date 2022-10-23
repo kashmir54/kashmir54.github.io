@@ -29,6 +29,18 @@ div.grid-one{
 }
 
 
+div.big-box{
+  display: inline-grid;
+  border-style: dashed;
+  border-color: #40E7AA;
+  border-radius: 25px;
+  color: white;
+  display: grid;
+  grid-template-columns: 90%;
+  padding-bottom: 3%;
+  font-size: 25px;
+}
+
 a.box{
   text-decoration-line: none; 
 }
@@ -76,7 +88,7 @@ div.box:hover{
 }
 
 .mini-flag{
-  width: 12%;
+  width: 5%;
 }
 
 .logo{

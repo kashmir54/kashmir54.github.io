@@ -28,7 +28,7 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 <div class="grid-one">
 	<a class="box" href="/walkthroughs">
-		<div class="box">
+		<div class="big-box">
 			<div class="card-text">
 				<p>Check out all the boxes</p>
 				<img class="mini-flag" src="/images/ic-userflag.png">
