@@ -24,8 +24,6 @@ div.grid-one{
   text-align: center;
   display: grid;
   column-gap: 2%;
-  row-gap: 0%;
-  grid-template-columns: 90%;
 }
 
 
@@ -39,6 +37,10 @@ div.big-box{
   grid-template-columns: 90%;
   padding-bottom: 3%;
   font-size: 25px;
+}
+
+div.big-box:hover{
+  border-color: #FCA310;
 }
 
 a.box{

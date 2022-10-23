@@ -38,8 +38,6 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 	</a>
 </div>
 
-[Walk into the boxes](/walkthroughs)
-
 ## Latest walkthroughs:
 
 <div class="grid">
