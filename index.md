@@ -114,13 +114,20 @@ I have special interest in OSINT, Web and Forensic challenges and I participate 
 
 You can find all my CTFs writeups (solutions and explanations) here: 
 
-/-----------------------------------------------------------------------------------------/
+<div class="grid-one">
+	<a class="box" href="/ctfs">
+		<div class="big-box">
+			<div class="card-text">
+				<p>Kashmir54's CTF Writeups</p>
+				<img class="mini-icon" src="/images/ctf.png">
+			</div>
+		</div>
+	</a>
+</div>
 
-/ --- [**Kashmir54's CTF Writeups**](/ctfs) --- /
+<br>
 
-/-----------------------------------------------------------------------------------------/
-
-### Latest CTFs writeups:
+## Latest CTFs writeups:
 
 - [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
 - [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
@@ -130,7 +137,7 @@ You can find all my CTFs writeups (solutions and explanations) here:
 - [corCTF 2021](/ctfs/corCTF2021) (21/08/2021)
 
 
-### OSINT CTFs writeups:
+## OSINT CTFs writeups:
 
 - [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
