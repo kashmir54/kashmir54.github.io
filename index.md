@@ -44,6 +44,19 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 <div class="grid">
 
+<a class="box" href="/walkthroughs/hackthebox/opensource">
+	<div class="box">
+		<div class="card-logo">
+			<img class="logo" src="/images/walkthroughs/hackthebox/opensource/logo.png"/>
+		</div>
+		<div class="card-text">
+			<p>OpenSource</p>
+			<img class="flag" src="/images/ic-userflag.png">
+			<img class="flag" src="/images/ic-rootflag.png">
+		</div>
+	</div>
+</a>
+
 <a class="box" href="/walkthroughs/hackthebox/faculty">
 	<div class="box">
 		<div class="card-logo">
@@ -83,19 +96,6 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 	</div>
 </a>
 
-
-<a class="box" href="/walkthroughs/hackthebox/noter">
-	<div class="box">
-		<div class="card-logo">
-			<img class="logo" src="/images/walkthroughs/hackthebox/noter/logo.png"/>
-		</div>
-		<div class="card-text">
-			<p>Noter</p>
-			<img class="flag" src="/images/ic-userflag.png">
-			<img class="flag" src="/images/ic-rootflag.png">
-		</div>
-	</div>
-</a>
 </div>
 
 
