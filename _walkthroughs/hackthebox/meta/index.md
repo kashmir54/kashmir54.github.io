@@ -11,8 +11,7 @@ description: HTB - Meta walkthrough
 # Meta
 
 <p align="center">
-  <h2> Meta </h2>
-  <img src="/images/walkthroughs/hackthebox/meta/logo.png" width="30%"/>
+  <img src="/images/walkthroughs/hackthebox/meta/logo.png" width="20%"/>
 </p>
 
 
@@ -124,7 +123,7 @@ ffuf -c -u 'http://artcorp.htb' -H 'Host: FUZZ.artcorp.htb' -w /usr/share/wordli
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/meta/1_1_dev.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/meta/1_1_dev.png" width="80%"/>
 </p>
 
 It is used to check metadata within a file. And we have a file upload:
@@ -421,14 +420,14 @@ sudo /usr/bin/neofetch \"\" --config $TF
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/meta/7_2_neo.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/meta/7_2_neo.png" width="80%"/>
 </p>
 
 The \"\" is preventing from appending the GTFOBin but the env_keep set caught my eye. From this [post](https://superuser.com/questions/365847/where-should-the-xdg-config-home-variable-be-defined). We can export the XDG_CONFIG_HOME variable to set it to the thomas config directory.
 Recalling the pspy64, we saw that the file is being rewritten form a copy on the root config directory.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/meta/5_0_pspy.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/meta/5_0_pspy.png" width="80%"/>
 </p>
 
 
