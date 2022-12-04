@@ -17,14 +17,14 @@ description: HTB - OpenSource walkthrough
 
 ## Summary
 
+Socker is an easy machine where we exploit shelshock vulnerbility after spotting a script in the cgi-bin directory. 
+
+Then we see that we can run perl with sudo and with no password. Using a shell escape from GTFOBins we ge ta root shell.
+
 
 ## Enumeration
 
-nmap:
-
-
-
-
+- nmap:
 
 ```bash
 nmap -sC -sV -p- 10.129.228.39 -oA nmap
@@ -176,7 +176,7 @@ We use the following payload to call our listener for a revshell:
 And we get the user flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shocker/1_0_user.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/shocker/1_0_user.png" width="95%"/>
 </p>
 
 

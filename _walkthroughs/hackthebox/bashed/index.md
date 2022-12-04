@@ -95,7 +95,7 @@ Also we see the _/dev_ path. Within it we can see the bash:
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/bashed/1_1_bash.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/bashed/1_1_bash.png" width="60%"/>
 </p>
 
 
@@ -134,7 +134,7 @@ We can see a cronjob running the python scripts within /scripts as root, but tha
 Also, test.txt and test.py files in that directory:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/bashed/4_1_scripts.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/bashed/4_1_scripts.png" width="75%"/>
 </p>
 
 Checking the linpeas output, we can see the users **arrexel** within the sudo group and the **scriptmanager**, owner of the folder used in the cronjob:
@@ -154,7 +154,7 @@ uid=102(systemd-resolve) gid=104(systemd-resolve) groups=104(systemd-resolve)
 Apparently we can read user flag so we grab it:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/bashed/5_0_user.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/bashed/5_0_user.png" width="70%"/>
 </p>
 
 
@@ -163,7 +163,7 @@ Apparently we can read user flag so we grab it:
 I didn't try sudo -l because I never saw www-data with sudo capabilities, but seems like we can run sudo with no password for user scriptmanager:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/bashed/5_1_sudo.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/bashed/5_1_sudo.png" width="70%"/>
 </p>
 
 So we create a revshell using sudo as scriptmanager, then wait for it to execute as root (id 0):
