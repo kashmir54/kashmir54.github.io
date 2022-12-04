@@ -11,7 +11,7 @@ description: HTB - RedPanda walkthrough
 # RedPanda
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/redpanda/banner.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/banner.png" width="70%"/>
 </p>
 
 
@@ -94,7 +94,7 @@ PORT     STATE SERVICE    VERSION
 In nmap we can see that the port 8080 is a web server. When we reach it, it displays the following website with a browser:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/1_0_web.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/1_0_web.png" width="90%"/>
 </p>
 
 As seen on the title line, it is powerded by Spring Boot, therefore Java and any of their templating components might be running in the backend. Some basic [SSTI payloads for Java](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#java) backends shows us some interesting results, showing that the payload is working:
@@ -120,7 +120,7 @@ At the end, we spotted that the optimal expoitation payload is by using the \* b
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/2_0_test.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/2_0_test.png" width="90%"/>
 </p>
 
 
@@ -135,7 +135,7 @@ I give a shot to multiple payloads trying to spawn a reverse shell, but some of 
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/2_1_banned.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/2_1_banned.png" width="90%"/>
 </p>
 
 
@@ -232,7 +232,7 @@ except KeyboardInterrupt:
 Now we can check for any hint within the box. We are lucky, since the same user running the server is the one with the flag, no need to pivot wintin the machine:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/2_2_flag.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/2_2_flag.png" width="90%"/>
 </p>
 
 ``` 786c397d794c360f464b9b85978b49ab ```
@@ -276,7 +276,7 @@ Command ==> ls -la /home/woodenk
 Sadly, I found no SSH keys... Looking for secrets in the code I found under /opt/panda_search:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/2_3_code.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/2_3_code.png" width="90%"/>
 </p>
 
 ```bash
@@ -422,7 +422,7 @@ Credentials for the DB:
 Testing out for an SSH session, we are lucky and the user is reusing the password for the SSH service:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/3_0_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/3_0_in.png" width="90%"/>
 </p>
 
 
@@ -737,7 +737,7 @@ exiftool -artist=../tmp/mir masterpiece.jpg
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/6_0_masterpiece.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/6_0_masterpiece.png" width="70%"/>
 </p>
 
 
@@ -789,7 +789,7 @@ curl -H "User-Agent: curl/7.81.0||/../../../../../../tmp/masterpiece.jpg" http:/
 And after sometime waiting for the run_credits to run, we get the root.txt
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/7_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/7_0_root.png" width="90%"/>
 </p>
 
 
@@ -841,6 +841,6 @@ RwNRnQ60aT55qz5sV7N9AAAADXJvb3RAcmVkcGFuZGE=
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/redpanda/7_1_root_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/redpanda/7_1_root_in.png" width="90%"/>
 </p>
 
