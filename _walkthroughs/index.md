@@ -129,7 +129,59 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			</div>
 		</div>
 	</a>
-	
+
+	<a class="box" href="/walkthroughs/hackthebox/admirer">
+		<div class="box">
+			<div class="card-logo">
+				<img class="logo" src="/images/walkthroughs/hackthebox/admirer/logo.png"/>
+			</div>
+			<div class="card-text">
+				<p>Admirer</p>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
+			</div>
+		</div>
+	</a>
+
+	<a class="box" href="/walkthroughs/hackthebox/tabby">
+		<div class="box">
+			<div class="card-logo">
+				<img class="logo" src="/images/walkthroughs/hackthebox/tabby/logo.png"/>
+			</div>
+			<div class="card-text">
+				<p>Tabby</p>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
+			</div>
+		</div>
+	</a>
+
+	<a class="box" href="/walkthroughs/hackthebox/blunder">
+		<div class="box">
+			<div class="card-logo">
+				<img class="logo" src="/images/walkthroughs/hackthebox/blunder/logo.png"/>
+			</div>
+			<div class="card-text">
+				<p>Blunder</p>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
+			</div>
+		</div>
+	</a>
+
+	<a class="box" href="/walkthroughs/hackthebox/traceback">
+		<div class="box">
+			<div class="card-logo">
+				<img class="logo" src="/images/walkthroughs/hackthebox/traceback/logo.png"/>
+			</div>
+			<div class="card-text">
+				<p>Traceback</p>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
+			</div>
+		</div>
+	</a>
+
 	<a class="box" href="">
 		<div class="disabled box">
 			<div class="card-logo">

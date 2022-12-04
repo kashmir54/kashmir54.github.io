@@ -1,16 +1,17 @@
 ---
 title: "HTB - Tabby"
 categories: [box]
-date: 2020-11-08
+date: 2022-11-01
 comments: true
-image: /images/walkthroughs/hackthebox/tabby/1_tabby_logo.webp
-description: HTB - Tabby walkthrough.
+image: /images/walkthroughs/hackthebox/tabby/logo.png
+favicon: /images/walkthroughs/hackthebox/tabby/logo.png
+description: HTB - Tabby walkthrough
 ---
 
 # Tabby
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/tabby/1_tabby.png" width="500"/>
+  <img src="/images/walkthroughs/hackthebox/tabby/banner.png" width="70%"/>
 </p>
 
 ## Enumeration

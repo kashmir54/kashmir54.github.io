@@ -11,7 +11,7 @@ description: HTB - Nibbles walkthrough
 # Nibbles
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/nibbles/banner.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/nibbles/banner.png" width="70%"/>
 </p>
 
 
@@ -46,7 +46,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 nmap does not give too much information more than Ubuntu 16.04. Checking the website we see a comment that takes us to _nibbleblog_ path. Let's enumerate it with gobuster:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/nibbles/1_0_web.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/nibbles/1_0_web.png" width="70%"/>
 </p>
 
 - gobuster
@@ -83,7 +83,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 On _/admin_ we can see a list of directories being served:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/nibbles/1_1_admin.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/nibbles/1_1_admin.png" width="70%"/>
 </p>
 
 
@@ -275,6 +275,6 @@ sudo monitor.sh
 My output was a mess so I clear the terminal and get the root flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/nibbles/4_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/nibbles/4_0_root.png" width="70%"/>
 </p>
 

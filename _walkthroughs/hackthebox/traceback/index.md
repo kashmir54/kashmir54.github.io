@@ -3,14 +3,14 @@ title: "HTB - Traceback"
 categories: [box]
 date: 2020-08-26
 comments: true
-image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
+image: /images/walkthroughs/hackthebox/traceback/logo.png
 description: HTB - Traceback walkthrough.
 ---
 
 # Traceback 
 
 <p align="left">
-  <img src="/images/walkthroughs/hackthebox/traceback/traceback.png" width="450"/>
+  <img src="/images/walkthroughs/hackthebox/traceback/banner.png" width="70%"/>
 </p>
 
 ## Enumeration

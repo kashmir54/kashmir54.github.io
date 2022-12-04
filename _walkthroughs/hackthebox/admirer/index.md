@@ -1,16 +1,17 @@
 ---
 title: "HTB - Admirer"
 categories: [box]
-date: 2020-09-03
+date: 2022-11-01
 comments: true
-image: /images/walkthroughs/hackthebox/traceback/traceback_logo.png
-description: HTB - Admirer walkthrough.
+image: /images/walkthroughs/hackthebox/admirer/logo.png
+favicon: /images/walkthroughs/hackthebox/admirer/logo.png
+description: HTB - Admirer walkthrough
 ---
 
 # Admirer
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/admirer/1_admirer.png" width="500"/>
+  <img src="/images/walkthroughs/hackthebox/admirer/banner.png" width="70%"/>
 </p>
 
 
