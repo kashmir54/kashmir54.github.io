@@ -1,15 +1,16 @@
 ---
 title: "HTB - Traceback"
 categories: [box]
-date: 2020-08-26
+date: 2022-11-01
 comments: true
 image: /images/walkthroughs/hackthebox/traceback/logo.png
-description: HTB - Traceback walkthrough.
+favicon: /images/walkthroughs/hackthebox/traceback/logo.png
+description: HTB - Traceback walkthrough
 ---
 
 # Traceback 
 
-<p align="left">
+<p align="center">
   <img src="/images/walkthroughs/hackthebox/traceback/banner.png" width="70%"/>
 </p>
 
