@@ -316,6 +316,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/photobomb/logo.png"/>
+				<div class="mini-os">
+					<img src="/images/ic-linux.png">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Photobomb</p>
@@ -329,6 +332,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/precious/logo.png"/>
+				<div class="mini-os">
+					<img src="/images/ic-linux.png">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Precious</p>
