@@ -11,7 +11,7 @@ description: HTB - Meta walkthrough
 # Meta
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/meta/logo.png" width="20%"/>
+  <img src="/images/walkthroughs/hackthebox/meta/banner.png" width="70%"/>
 </p>
 
 
@@ -26,7 +26,7 @@ For privilege escalation we can run neofetch with SUDO keeping the XDG_CONFIG_HO
 
 ## Enumeration
 
-nmap:
+- nmap:
 
 
 ```bash
@@ -47,6 +47,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 We add the artcorp.htb domain into the /etc/hosts
 
+. gobuster
 
 ```bash
 gobuster dir -u "http://artcorp.htb" --wordlist=/usr/share/wordlists/SecLists/Discovery/Web-Content/common.txt -t 10  
