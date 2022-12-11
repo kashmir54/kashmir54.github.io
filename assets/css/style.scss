@@ -99,9 +99,18 @@ div.box:hover{
 }
 
 .mini-os{
-  width: 5%;
-  height: 5%;
-  margin-top: -18.4px;
+  width: 30%;
+  height: 22%;
+  margin-top: -50%;
+  margin-right: 0;
+  background: #111927 !important;
+  border: 2px solid #141d2b;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 0;
+  position: relative;
+  vertical-align: middle;
+  z-index: 2;
 }
 
 .logo{
