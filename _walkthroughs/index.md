@@ -27,6 +27,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/redpanda/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>RedPanda</p>
@@ -40,6 +43,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/opensource/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>OpenSource</p>
@@ -53,6 +59,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/routerspace/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>RouterSpace</p>
@@ -67,6 +76,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/late/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Late</p>
@@ -81,6 +93,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/timelapse/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Timelapse</p>
@@ -95,6 +110,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/active/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Active</p>
@@ -108,6 +126,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/forest/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Forest</p>
@@ -121,6 +142,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/sauna/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Sauna</p>
@@ -134,6 +158,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/shocker/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Shocker</p>
@@ -147,6 +174,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/bashed/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Bashed</p>
@@ -160,6 +190,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/nibbles/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg>
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Nibbles</p>
@@ -173,6 +206,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/irked/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Irked</p>
@@ -186,6 +222,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/admirer/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Admirer</p>
@@ -199,6 +238,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/tabby/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Tabby</p>
@@ -212,6 +254,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/blunder/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Blunder</p>
@@ -225,6 +270,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/traceback/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Traceback</p>
@@ -238,6 +286,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/beep/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Beep</p>
@@ -251,6 +302,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/lame/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Lame</p>
@@ -264,6 +318,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/blocky/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Blocky</p>
@@ -277,6 +334,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/trick/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Trick</p>
@@ -290,6 +350,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/support/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Support</p>
@@ -303,6 +366,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/shoppy/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Shoppy</p>
@@ -317,7 +383,7 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/photobomb/logo.png"/>
 				<div class="mini-os">
-					<img src="/images/ic-linux.svg">
+					<img class="mini-os" src="/images/ic-linux.svg">
 				</div>
 			</div>
 			<div class="card-text">
@@ -333,7 +399,7 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/precious/logo.png"/>
 				<div class="mini-os">
-					<img src="/images/ic-linux.svg">
+					<img class="mini-os" src="/images/ic-linux.svg">
 				</div>
 			</div>
 			<div class="card-text">
@@ -361,6 +427,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/faculty/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Faculty</p>
@@ -374,6 +443,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/scrambled/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Scrambled</p>
@@ -388,6 +460,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/streamio/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-windows.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>StreamIO</p>
@@ -402,6 +477,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/noter/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Noter</p>
@@ -416,6 +494,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/meta/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Meta</p>
@@ -430,6 +511,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/shared/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Shared</p>
@@ -445,6 +529,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/health/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Health</p>
@@ -459,6 +546,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/updown/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>UpDown</p>
@@ -473,6 +563,9 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		<div class="disabled box">
 			<div class="card-logo">
 				<img class="logo" src="/images/walkthroughs/hackthebox/ambassador/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 			</div>
 			<div class="card-text">
 				<p>Ambassador</p>

@@ -99,8 +99,8 @@ div.box:hover{
 }
 
 .mini-os{
-  width: 30%;
-  height: 22%;
+  width: 1em;
+  height: 1em;
   margin-top: -50%;
   margin-right: 0;
   background: #111927 !important;
@@ -111,6 +111,12 @@ div.box:hover{
   position: relative;
   vertical-align: middle;
   z-index: 2;
+}
+
+img.mini-os{
+  width: 90%;
+  padding-bottom: 0.12em;
+  padding-left: 0.05em;
 }
 
 .logo{

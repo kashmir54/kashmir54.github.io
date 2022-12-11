@@ -48,6 +48,9 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 	<div class="box">
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/redpanda/logo.png"/>
+			<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 		</div>
 		<div class="card-text">
 			<p>RedPanda</p>
@@ -61,6 +64,9 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 	<div class="box">
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/shared/logo.png"/>
+			<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 		</div>
 		<div class="card-text">
 			<p>Shared</p>
@@ -74,6 +80,9 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 	<div class="box">
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/opensource/logo.png"/>
+			<div class="mini-os">
+					<img class="mini-os" src="/images/ic-linux.svg">
+				</div>
 		</div>
 		<div class="card-text">
 			<p>OpenSource</p>
@@ -87,6 +96,9 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 	<div class="box">
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/faculty/logo.png"/>
+			<div class="mini-os">
+				<img class="mini-os" src="/images/ic-linux.svg">
+			</div>
 		</div>
 		<div class="card-text">
 			<p>Faculty</p>
