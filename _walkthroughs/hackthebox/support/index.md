@@ -408,7 +408,7 @@ Info: Establishing connection to remote endpoint
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/5_0_user.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/5_0_user.png" width="60%"/>
 </p>
 
 And we got the user flag:
@@ -484,7 +484,7 @@ Get-DomainObject -Identity "dc=support,dc=htb" -Domain support.htb
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_1_quota.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_1_quota.png" width="80%"/>
 </p>
 
 We can see that the quota is ten, so requirement checked. Now, the attack also requires the DC to be running at least Windows 2012, so let's check if we're in the right environment:
@@ -514,7 +514,7 @@ Get-NetComputer DC | Select-Object -Property name, msds-allowedtoactonbehalfofot
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_3_msds-dc.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_3_msds-dc.png" width="95%"/>
 </p>
 
 We got nothing, so last requierement checked. Now, let's perform the attack.
@@ -532,7 +532,7 @@ Evil-WinRM* PS C:\Users\support\Desktop>
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_4_machine.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_4_machine.png" width="95%"/>
 </p>
 
 Check if the computer was created and take the SID:
@@ -568,7 +568,7 @@ Get-DomainComputer DC | Set-DomainObject -Set @{'msds-allowedtoactonbehalfofothe
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_5_bytes.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_5_bytes.png" width="95%"/>
 </p>
 
 We were able to write this because _SUPPORT@SUPPORT.HTB_ belongs to security group _SHARED SUPPORT ACCOUNTS@SUPPORT.HTB_, which has full control (GenericAll) over the target computer DC$.
@@ -612,7 +612,7 @@ AuditFlags         : None
 We have SID _S-1-5-21-1677581083-3380853377-188903654-5601_ which is FAKE01$ SID. So we are good.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_7_check.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_7_check.png" width="95%"/>
 </p>
 
 Now, perform the impersonation with Rubeus.exe First, generate the RC4 hash of the password we set for the FAKE01 computer:
@@ -647,7 +647,7 @@ Now, perform the impersonation with Rubeus.exe First, generate the RC4 hash of t
 We get the RC4_HMAC: **32ED87BDB5FDC5E9CBA88547376818D4**. Now, let's execute the attack, with Rubeus requesting a Kerberos Ticket for FAKE01$ with the capability of impersonating user ADMINISTRATOR@SUPPORT.HTB. Why this user? because this user is an Explicit Admin of target machine DC.SUPPORT.HTB as seen on BloodHound:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_8_admins.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_8_admins.png" width="95%"/>
 </p>
 
 Execute the following command to get the ticket as ADMINISTRATOR:
@@ -658,7 +658,7 @@ Execute the following command to get the ticket as ADMINISTRATOR:
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_9_ticket.png" width="80%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_9_ticket.png" width="70%"/>
 </p>
 
 Even though we got the ticket, I did not impersonate the ADMINISTRATOR since I got permission denied trying to list C$ share in the DC:
@@ -723,7 +723,7 @@ impacket-getST SUPPORT.HTB/FAKE01:123456 -dc-ip 10.129.227.255 -impersonate ADMI
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/6_12_impa.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/support/6_12_impa.png" width="95%"/>
 </p>
 
 Now export the ticket to current session and launch the attack. Make sure to have the DC.SUPPORT.HTB on the /etc/hosts:
@@ -738,7 +738,7 @@ impacket-wmiexec SUPPORT.HTB/ADMINISTRATOR@DC.SUPPORT.HTB -no-pass -k
 </p>
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/support/7_1_root.png" width="60%"/>
+  <img src="/images/walkthroughs/hackthebox/support/7_1_root.png" width="55%"/>
 </p>
 
 ``` 1d00ed25fd6aad8a70fe85394fa4e506 ```
