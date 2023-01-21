@@ -49,7 +49,7 @@ We can see only port 80 and 22. Let's check the website:
 
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_0_web.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_0_web.png" width="90%"/>
 </p>
 
 
@@ -58,7 +58,7 @@ We can see the domain name (that we are going to place in the /etc/hosts) and it
 While running gobuster, I tried the webstie's funcitonallity. On the debug mode, the website displays extra information, including the complete request.
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_1_debug.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_1_debug.png" width="90%"/>
 </p>
 
 
@@ -158,7 +158,7 @@ http://127.0.0.1/dev/
 But we had no luck:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_2_301.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_2_301.png" width="90%"/>
 </p>
 
 
@@ -185,7 +185,7 @@ I tried other payloads such as _file:///etc/passwd_ and we can see some kind of 
 
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_3_hacking.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_3_hacking.png" width="90%"/>
 </p>
 
 
@@ -193,13 +193,13 @@ With the redirection trick I found nothing also fo the _file:///etc/passwd_ payl
 
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_4_reed.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_4_reed.png" width="90%"/>
 </p>
 
 Recalling the _server-status_ on gobuster I had access to it:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_6_server.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_6_server.png" width="90%"/>
 </p>
 
 No relevant information.
@@ -219,7 +219,7 @@ Then I started going for funky payloads:
 With some results:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_5_payload.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_5_payload.png" width="90%"/>
 </p>
 
 
@@ -254,7 +254,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 Now we have something to stick to.
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/1_7_git.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_7_git.png" width="90%"/>
 </p>
 
 
@@ -271,7 +271,7 @@ find . -type f -name 'index*' -exec rm {} +
 Checking the content within that .git folder, we can see that there are some staged changes to detele some files from the last commit:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/2_0_git.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/2_0_git.png" width="90%"/>
 </p>
 
 
@@ -453,25 +453,25 @@ Allow from env=Required-Header
 So we need the following header to access the **dev** subdomain: _Special-Dev: only4dev_. That was why we could now get anything from the dev subdomain. With an easy curl request we can see that we can now accesss to the server:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/3_0_dev.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/3_0_dev.png" width="70%"/>
 </p>
 
 To accomodate the header to all requests, we can use Burp extension called _Add Custom Header_ with the following config:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/3_1_header.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/3_1_header.png" width="70%"/>
 </p>
 
 And on the Session handling rule, invoke the extension:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/3_2_header.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/3_2_header.png" width="70%"/>
 </p>
 
 Also remember to add http://dev.siteisup.htb/ to the scope on burp. Then we are in:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/3_3_dev.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/3_3_dev.png" width="70%"/>
 </p>
 
 In this new dev website we can see that they allow the users to upload a file. We will try to exploit this upload functionality. Exploring the site and the code, we can set our redirection script to take 10 seconds sleep before solving the redirection. That time gap will provide us some room to check the uploaded file and potentially, avoid filter detection to upload a webshell. To avoid the detection, there are some tricks from previous CTF that I did. At [Hacktricks](https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology) there is a compilation of potential extensions that get executed. When I saw the code, I inmediately thought about the **.phar** extension:
@@ -486,7 +486,7 @@ if(preg_match("/php|php[0-9]|html|py|pl|phtml|zip|rar|gz|gzip|tar/i",$ext)){
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/4_1_payload.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/4_1_payload.png" width="70%"/>
 </p>
 
 
@@ -500,7 +500,7 @@ http://10.10.14.41
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/4_2_exe.png" width="70%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/4_2_exe.png" width="70%"/>
 </p>
 
 
@@ -512,7 +512,7 @@ http://10.10.14.41
 ```
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/4_3_phpinfo.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/4_3_phpinfo.png" width="90%"/>
 </p>
 
 On the disable functions, we can see the exec, shell_exec, etc... That it is why our shell is now comming back:
@@ -561,7 +561,7 @@ if (!is_resource($process)) {
 We got the first execution correct. Due to the threading process on the original payload, we cannot demonize the rev shell process, therefore I opted for executing one command and get the shell as it is.
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/4_4_result_first.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/4_4_result_first.png" width="90%"/>
 </p>
 
 
@@ -610,7 +610,7 @@ echo "command returned $return_value\n";
 And we are in as www-data:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/4_5_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/4_5_in.png" width="90%"/>
 </p>
 
 
@@ -661,7 +661,7 @@ __import__('os').system('cat /home/developer/user.txt')
 And we get permission denied:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/5_1_no.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/5_1_no.png" width="90%"/>
 </p>
 
 
@@ -746,7 +746,7 @@ We have it, then use it to log in as user:
 
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/6_0_user.png" width="60%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/6_0_user.png" width="60%"/>
 </p>
 
 
@@ -778,5 +778,5 @@ developer@updown:~$ sudo /usr/local/bin/easy_install $TF
 And we have a shell as root:
 
 <p align="center">
-  <img src="/images/walkthrougshs/hackthebox/updown/7_0_root.png" width="60%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/7_0_root.png" width="60%"/>
 </p>

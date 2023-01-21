@@ -11,7 +11,7 @@ description: HTB - Shoppy walkthrough
 # Shoppy
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/banner.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/banner.png" width="70%"/>
 </p>
 
 
@@ -153,7 +153,7 @@ go_gc_heap_allocs_by_size_bytes_total_bucket{le="27264.999999999996"} 177369
 What I can see from a quick google search is [promscale metrics](https://github.com/timescale/promscale/blob/master/docs/metrics.md) as seen on the documentation.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/1_0_promscale.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/1_0_promscale.png" width="70%"/>
 </p>
 
 We can see the following versions within that gibberish. I take note of them for the future:
@@ -195,7 +195,7 @@ username=admin'||'1==1&password=1'||'1==1
 When logged in, we can see that cookie which is usually related to NodeJS and Express:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/2_0_logged.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/2_0_auth.png" width="90%"/>
 </p>
 
 We finally land in the following website, seems like a store:
@@ -248,7 +248,7 @@ The behaviour on this website is strange, we make the request and it returns a l
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/2_3_export.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/2_3_report.png" width="90%"/>
 </p>
 
 In the end we have the hashes for admin and josh:
@@ -331,7 +331,7 @@ cd /home/jaeger/ShoppyApp && npm start
 On the deploy user we can see some interesting files:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/4_1_deploy.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/4_1_deploy.png" width="70%"/>
 </p>
 
 Currently there is no way to get into those files. The password manager cannot be executed from our user, so I kept enumerating the machine.
@@ -382,7 +382,7 @@ It was not obvious with strings since it was in UTF16-LE. With rabin2 it could b
 We got the credentials:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/6_4_deploy.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/6_4_deploy.png" width="70%"/>
 </p>
 
 
@@ -392,7 +392,7 @@ We got the credentials:
 We can confirm the reversed theory (kinda weird this code):
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/6_2_weird.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/6_2_weird.png" width="70%"/>
 </p>
 
 
@@ -400,7 +400,7 @@ deploy user is on the docker group, so we can try some docker privesc as suggest
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/7_1_docker.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/7_1_docker.png" width="80%"/>
 </p>
 
 
@@ -411,7 +411,7 @@ docker run -v /:/mnt --rm -it alpine chroot /mnt sh
 And we get a shell with root:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/shoppy/8_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/shoppy/8_0_root.png" width="80%"/>
 </p>
 
 
