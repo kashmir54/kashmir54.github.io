@@ -254,7 +254,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 Now we have something to stick to.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/updown/1_7_git.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/1_7_git.png" width="60%"/>
 </p>
 
 
@@ -271,7 +271,7 @@ find . -type f -name 'index*' -exec rm {} +
 Checking the content within that .git folder, we can see that there are some staged changes to detele some files from the last commit:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/updown/2_0_git.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/2_0_git.png" width="60%"/>
 </p>
 
 
@@ -610,7 +610,7 @@ echo "command returned $return_value\n";
 And we are in as www-data:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/updown/4_5_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/4_5_in.png" width="70%"/>
 </p>
 
 
@@ -778,5 +778,5 @@ developer@updown:~$ sudo /usr/local/bin/easy_install $TF
 And we have a shell as root:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/updown/7_0_root.png" width="60%"/>
+  <img src="/images/walkthroughs/hackthebox/updown/7_0_root.png" width="80%"/>
 </p>
