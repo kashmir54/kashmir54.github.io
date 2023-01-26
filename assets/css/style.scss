@@ -15,10 +15,9 @@ body {
 
 div.grid{
   display: grid;
-  column-gap: 2%;
-  row-gap: 5%;
-  grid-template-columns: 23% 23% 23% 23%;
-  margin-bottom: 10%;
+  column-gap: 10px;
+  row-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
 }
 
 div.grid-one{
