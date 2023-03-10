@@ -11,7 +11,7 @@ favicon: /images/favicon.ico
 # Flipper Zero 🐬📻
 
 <p align="center">
-  <img src="/images/flipper/flipper.jpg" width="30%"/>
+  <img src="/images/flipper/flipper.png" width="30%"/>
 </p>
 
 Flipper Zero, we all know what this marvellous RF swiss tool is capable of and if don't let me introduce you to it. This compact device is a mix of chips and antennas that can work on different RF scenarios, such as SubGHz frequencies, NFC, 125kHz RFID, WiFi, Bluetooth and Infrared but it can also work as an Arduino thanks to its GPIO pins, so basically, the combinations and expansions are limitless. Since there are many GPIO apps and external modules developed by the community, I decided to design a PCB to connect the different modules to the flipper and take advantage of these developements. On previous days I was using a fistful set of dangling cables to connect the different chips but with this little PCB I managed to prepare a plug-and-play conenctor, which save time and space. At the moment I only prepared a multipurpose PCB, especifically to connect the NRF24 and CC1101 chips.
@@ -32,12 +32,12 @@ This module that operates on the 2.4GHz band, which allows the user to interact 
 
 <p align="center">
   <img src="/images/flipper/nrf24_dia.png" width="40%"/>
-  NRF24L01 pinout, similar to NRF24L01+PA/LNA. Courtesy of [UberGuidoZ](https://github.com/UberGuidoZ).
+  <p>NRF24L01 pinout, similar to NRF24L01+PA/LNA. Courtesy of [UberGuidoZ](https://github.com/UberGuidoZ).</p>
 </p>
 
 <p align="center">
   <img src="/images/flipper/nrf24_sch.png" width="60%"/>
-  NRF24L01 wiring diagram.
+  <p>NRF24L01 wiring diagram.</p>
 </p>
 
 Probably you already know which devices use this band, that's right, wireless keyboards and mice, well, some of them. There ar some well-known brands and models that implement "unencrypted" packets to communicate the device with the USB dongle, therefore, we can sniff the spectrum to grab the address of the device then use it to send our curated payload to the dongle. Further information can be found in the original [blog post](http://travisgoodspeed.blogspot.com/2011/02/promiscuity-is-nrf24l01s-duty.html) or in [mousejack.com](https://www.mousejack.com/).
@@ -63,7 +63,7 @@ CC1101 is an RF transceiver that works on the sub GHz frequencies. It works on 3
 
 <p align="center">
   <img src="/images/flipper/cc1101_pinout.png" width="30%"/>
-  CC1101 wiring diagram. Courtesy of [quen0n](https://github.com/quen0n).
+  <p>CC1101 wiring diagram. Courtesy of [quen0n](https://github.com/quen0n).</p>
 </p>
 
 
