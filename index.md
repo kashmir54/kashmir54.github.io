@@ -8,8 +8,9 @@ favicon: /images/favicon.ico
 
 # Welcome to my blog!
 
-There is a long road ahead for me. I'm currently learning and sharing back all what I've got from the community.
-I will try to post as much as I do, as complete as possible, knowing that sometimes, I won't be clear. In that case, you can ask anything at the comments.
+Wow! You make it to this website. Thanks for comming in, dear visitor. 
+This website is all about sharing this awesome path of discovery I'm in. I usually do some CTFs and HackTheBox stuff but I'm interested in radio and any other thing that has to deal with computers and electronics. This is an open space, so feel free to contact me in case there are any doubts of what I post here.
+
 
 <div class="banners">
 	<div class="hack" width="48%"><script src="https://www.hackthebox.eu/badge/365669"></script></div>
@@ -156,6 +157,19 @@ You can find all my CTFs writeups (solutions and explanations) here:
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
 - [Brixel CTF 2021](/ctfs/Brixel#visit-limburg-1) (3/01/2021)
 
+
+<br>
+
+---
+
+
+<br>
+
+# Flipper Zero
+
+I backed FlipperZero from the early stage of the kickstarter and I enjoy it very much. It is nowadays my favorite tool for pentesting and I have developed some addons to use external modules such as NRF24 and CC1101. If you want to know more about these modules, get in the following post:  
+
+[FlipperZero](/flipper)
 
 <br>
 
