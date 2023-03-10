@@ -8,6 +8,8 @@ collections:
     output: true
   ctfs:
     output: true
+  flipper:
+    output: true
   misc:
     output: true
     
