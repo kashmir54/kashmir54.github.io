@@ -16,7 +16,7 @@ First, the NRF24:
 ## NRF24
 
 <p align="center">
-  <img src="/images/flipper/nrf24.png" width="70%"/>
+  <img src="/images/flipper/nrf24.jpg" width="70%"/>
 </p>
 
 This module that operates on the 2.4GHz band, which allows the user to interact send and receive data in that band. Unlike the ESP32 (which also operates on the 2.4GHz band) this chip does not implement the TPC/IP stack, therefore, control of the raw physical layer is provided. This module is used by Flipper's GPIO plugins such as [MouseJacker](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/documentation/NRF24.md). This plugin is used in combination with the NRF24 Sniffer, which allow us to grab interesting information from devices working in this band.
@@ -28,13 +28,13 @@ What implies this vulnerability? Mainly, that we can impersonate the keyboard or
 I have developed some PCBs to connect this module. I added some decoupling capacitors for stable power delivery and noise reduction on the signal. If you are in Spain and interested in this PCB (obviously with the components needed to plug-and-play), you can contact me on kashmir_54@hotmail.com. Here you have some photos of the PCBs in action and the schematics:
 
 <div display="grid">
-  <img src="/images/flipper/nrf24_dia.png" width="40%"/>
-  <img src="/images/flipper/nrf24_sch.png" width="40%"/>
+  <img src="/images/flipper/nrf24_dia.png" width="30%"/>
+  <img src="/images/flipper/nrf24_sch.png" width="60%"/>
 </div>
 
 <div display="grid">
-  <img src="/images/flipper/nrf24.png" width="40%"/>
-  <img src="/images/flipper/nrf24_1.png" width="40%"/>
+  <img src="/images/flipper/nrf24.jpg" width="40%"/>
+  <img src="/images/flipper/nrf24_1.jpg" width="40%"/>
 </div>
 
 
@@ -49,8 +49,8 @@ Some tests that I performed at home, showed that the stock SubGHz module could g
 Here you have the CC1101 external module in action with the same PCB:
 
 <div display="grid">
-  <img src="/images/flipper/cc1101.png" width="40%"/>
-  <img src="/images/flipper/cc1101_1.png" width="40%"/>
+  <img src="/images/flipper/cc1101.jpg" width="40%"/>
+  <img src="/images/flipper/cc1101_1.jpg" width="40%"/>
 </div>
 
 
@@ -59,7 +59,7 @@ Here you have the CC1101 external module in action with the same PCB:
 I also have other interesting stuff, such as USBC keychains, which comes pretty handy on ground pentest operations and have the same orange tone as the flipper do! These gadget allow the researcher to bring the Flipper Zero and the keychain attached without the worry of bringing a spare USBC cable. A perfect combination for the Flipper! I created a "MegaPack RF" which is a combination of all these items, for beginners (and also experienced) FlipperZero users to explore new boundaries for this outstanding tool. 
 
 <p align="center">
-  <img src="/images/flipper/megapack_rf.png" width="70%"/>
+  <img src="/images/flipper/megapack_rf.jpg" width="70%"/>
 </p>
 
 
