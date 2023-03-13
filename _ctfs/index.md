@@ -7,9 +7,15 @@ image: /images/kashmir.png
 favicon: /images/favicon.ico
 ---
 
-Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for having me, specially to [RazviOverflow](https://ctftime.org/user/72894), he is a reverse machine. Check out his [website](https://razvioverflow.github.io/)! 
+Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for having me, specially to [RazviOverflow](https://ctftime.org/user/72894), he is a pwning machine. Check out his [website](https://razvioverflow.github.io/)! 
 
 ## CTF - Writeups:
+
+### 2023
+
+- [UTCTF 2023](/ctfs/UTCTF2023) (11/03/2023)
+- [0xL4ughCTF 2023]() (17/02/2023) - No writeup yet
+- [idekCTF 2022*]() (13/01/2023) - No writeup yet
 
 
 ### 2022

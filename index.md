@@ -29,8 +29,8 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 <div class="grid-one">
 	<a class="box" href="/walkthroughs">
-		<div class="big-box">
-			<div class="card-text">
+		<div class="main-box">
+			<div>
 				<p>Check out all the boxes</p>
 				<img class="mini-flag" src="/images/ic-userflag.png">
 				<img class="mini-flag" src="/images/ic-rootflag.png">
@@ -130,8 +130,8 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 <div class="grid-one">
 	<a class="box" href="/ctfs">
-		<div class="big-box">
-			<div class="card-text">
+		<div class="main-box">
+			<div>
 				<p>Kashmir54's CTF Writeups</p>
 				<img class="mini-icon" src="/images/ctf.png">
 			</div>
@@ -143,12 +143,12 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 ## Latest CTFs writeups:
 
+- [UTCTF 2023](/ctfs/UTCTF2023) (11/03/2023)
 - [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
 - [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
 - [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
 - [GrabCON CTF 2021](/ctfs/GrabCON) (29/08/2021)
 - [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
-- [corCTF 2021](/ctfs/corCTF2021) (21/08/2021)
 
 
 ## OSINT CTFs writeups:
@@ -169,7 +169,16 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 I backed FlipperZero from the early stage of the kickstarter and I enjoy it very much. It is nowadays my favorite tool for pentesting and I have developed some addons to use external modules such as NRF24 and CC1101. If you want to know more about these modules, get in the following post:  
 
-[FlipperZero](/flipper)
+<div class="grid-one">
+	<a class="box" href="/flipper">
+		<div class="main-box">
+			<div>
+				<p>Kashmir54's works on Flipper</p>
+				<img class="mini-icon" src="/images/flipper/flipper.png">
+			</div>
+		</div>
+	</a>
+</div>
 
 <br>
 
@@ -182,7 +191,7 @@ I backed FlipperZero from the early stage of the kickstarter and I enjoy it very
 I have been working on cyber intelligence for over two years. My research focuses on phishing and fraud detection using machine learning.
 To read more about this topic go to the link (TBD):
 
-[Academic research](/academic)
+[Academic research (TBD)](/academic)
 
 <br>
 
