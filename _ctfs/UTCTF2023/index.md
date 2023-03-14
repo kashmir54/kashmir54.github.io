@@ -13,7 +13,7 @@ description: CTF - UTCTF 2023
 Welcome to another CTF writeup. This time I played UTCTF2023, a great CTF with interesting challenges, some easier than others. [RazviOverflow](https://razvioverflow.github.io/) joined me on this, participating as [ISwearGoogledIt](https://ctftime.org/team/109689). Let's dive into the challenges!  
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2023/banner.png" width="80%"/>
+  <img src="/images/writeups/UTCTF2023/banner.png" width="85%"/>
 </p>
 
 ---
@@ -58,6 +58,8 @@ Hi Wade! I am using socat to broadcat this message. Pretty nifty right? --jwalke
 We got the flag... Unexpected
 
 ``` utflag{meh-netcats-cooler} ```
+
+<br>
 
 ## A Network Problem - Part 2
 987
@@ -143,7 +145,7 @@ utflag{out-of-c0ntrol-access}
 
 ``` utflag{out-of-c0ntrol-access} ```
 
-
+<br>
 
 ## A Network Problem - Part 3
 1000
@@ -250,13 +252,13 @@ hydra -s 8822 -L users.txt -P pass.txt betta.utctf.live -t 1 -c 2 -V ssh
 And we found a valid combination!
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2023/1_0_hydra.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2023/1_0_hydra.png" width="80%"/>
 </p>
 
 We can now log in and get the flag:
 
 <p align="center">
-  <img src="/images/writeups/UTCTF2023/1_1_flag.png" width="40%"/>
+  <img src="/images/writeups/UTCTF2023/1_1_flag.png" width="70%"/>
 </p>
 
 ```bash
@@ -270,8 +272,9 @@ ssh wcoldwater@betta.utctf.live -p 8822
 ``` utctf{cust0m3d-lsts-rule!} ```
 
 <br>
+
 ---
-<br>
+
 
 # Web
 
@@ -537,6 +540,7 @@ Congratulations! The flag is utflag{LGvb7PJXG5JDwhsEW7xp}.
 
 ``` utflag{LGvb7PJXG5JDwhsEW7xp} ```
 
+<br>
 
 ---
 
@@ -580,7 +584,7 @@ PID     Process CommandTime     Command
 ``` 08ffea76-b232-4768-a815-3cc1c467e813 ```
 
 
-
+<br>
 
 ## What Time is It?
 993
