@@ -459,6 +459,23 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 
 <div class="grid">
 
+	<a class="box" href="/walkthroughs/hackthebox/mentor">
+		<div class="box">
+			<div class="card-logo">
+				<img class="logo" src="/images/walkthroughs/hackthebox/mentor/logo.png"/>
+				<div class="mini-os">
+					<img class="mini-os-img" src="/images/ic-linux.svg">
+				</div>
+			</div>
+			<div class="card-text">
+				<p>Mentor</p>
+				<img class="flag" src="/images/ic-userflag.png">
+				<img class="flag" src="/images/ic-rootflag.png">
+			</div>
+
+		</div>
+	</a>
+
 	<a class="box" href="/walkthroughs/hackthebox/ambassador">
 		<div class="box">
 			<div class="card-logo">
@@ -612,22 +629,6 @@ Here you can find the walkythoughs for the HackTheBox machines. I will be doing 
 		</div>
 	</a>
 
-	<a class="box" href="">
-		<div class="disabled box">
-			<div class="card-logo">
-				<img class="logo" src="/images/walkthroughs/hackthebox/mentor/logo.png"/>
-				<div class="mini-os">
-					<img class="mini-os-img" src="/images/ic-linux.svg">
-				</div>
-			</div>
-			<div class="card-text">
-				<p>Mentor</p>
-				<img class="flag" src="/images/ic-userflag.png">
-				<img class="flag" src="/images/ic-rootflag.png">
-			</div>
-
-		</div>
-	</a>
 
 	<a class="box" href="">
 		<div class="disabled box">

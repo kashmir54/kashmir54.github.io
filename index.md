@@ -45,6 +45,22 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 <div class="grid">
 
+<a class="box" href="/walkthroughs/hackthebox/mentor">
+	<div class="box">
+		<div class="card-logo">
+			<img class="logo" src="/images/walkthroughs/hackthebox/mentor/logo.png"/>
+			<div class="mini-os">
+				<img class="mini-os-img" src="/images/ic-windows.svg">
+			</div>
+		</div>
+		<div class="card-text">
+			<p>Mentor</p>
+			<img class="flag" src="/images/ic-userflag.png">
+			<img class="flag" src="/images/ic-rootflag.png">
+		</div>
+	</div>
+</a>
+
 <a class="box" href="/walkthroughs/hackthebox/ambassador">
 	<div class="box">
 		<div class="card-logo">
@@ -87,22 +103,6 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		</div>
 		<div class="card-text">
 			<p>Shoppy</p>
-			<img class="flag" src="/images/ic-userflag.png">
-			<img class="flag" src="/images/ic-rootflag.png">
-		</div>
-	</div>
-</a>
-
-<a class="box" href="/walkthroughs/hackthebox/support">
-	<div class="box">
-		<div class="card-logo">
-			<img class="logo" src="/images/walkthroughs/hackthebox/support/logo.png"/>
-			<div class="mini-os">
-				<img class="mini-os-img" src="/images/ic-windows.svg">
-			</div>
-		</div>
-		<div class="card-text">
-			<p>Support</p>
 			<img class="flag" src="/images/ic-userflag.png">
 			<img class="flag" src="/images/ic-rootflag.png">
 		</div>
