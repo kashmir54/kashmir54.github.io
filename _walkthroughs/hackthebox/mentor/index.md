@@ -200,7 +200,7 @@ Connection: close
 Login in will grant us a token:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/mentor/1_3_login.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/mentor/1_3_token.png" width="90%"/>
 </p>
 
 
@@ -496,7 +496,7 @@ chmod +x chisel_32
 ```
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/mentor/4_1_chisel_client.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/mentor/4_1_chisel_client.png" width="80%"/>
 </p>
 
 
@@ -537,7 +537,7 @@ Using [crackstation](https://crackstation.net/) we get the password for svc
 And we got into the machine using the **svc** on SSH and that password:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/mentor/6_0_user.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/mentor/6_0_user.png" width="80%"/>
 </p>
 
 
@@ -572,7 +572,7 @@ rocommunity6 public default -V systemonly
 Looking at them, the one with real value was the SNMP configuration file, which has the following credential in cleartext:
 
 <p align="center">
-  <img src="/images/walkthroughs/hackthebox/mentor/6_1_password.png" width="90%"/>
+  <img src="/images/walkthroughs/hackthebox/mentor/6_1_password.png" width="80%"/>
 </p>
 
 

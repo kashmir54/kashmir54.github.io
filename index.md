@@ -50,7 +50,7 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/mentor/logo.png"/>
 			<div class="mini-os">
-				<img class="mini-os-img" src="/images/ic-windows.svg">
+				<img class="mini-os-img" src="/images/ic-linux.svg">
 			</div>
 		</div>
 		<div class="card-text">
