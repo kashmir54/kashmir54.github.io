@@ -1,7 +1,7 @@
 ---
 title: "CTFs - Writeups"
 categories: [ctfs]
-date: 2023-24-03
+date: 2023-03-24
 description: "CTF - Writeups"
 image: /images/kashmir.png
 favicon: /images/favicon.ico
