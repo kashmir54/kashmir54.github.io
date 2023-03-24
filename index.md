@@ -143,12 +143,12 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 ## Latest CTFs writeups:
 
+- [CyberApocalypse 2023](/ctfs/CyberApocalypse2023) (24/03/2023)
 - [UTCTF 2023](/ctfs/UTCTF2023) (11/03/2023)
 - [dvCTF 2022](/ctfs/dvCTF2022) (11/03/2022)
 - [DefCamp CTF 2022](/ctfs/DefCampCTF2022) (12/02/2022)
 - [DiceCTF 2022](/ctfs/DiceCTF2022) (05/02/2022)
 - [GrabCON CTF 2021](/ctfs/GrabCON) (29/08/2021)
-- [YauzaCTF 2021](/ctfs/YauzaCTF2021) (29/08/2021)
 
 
 ## OSINT CTFs writeups:

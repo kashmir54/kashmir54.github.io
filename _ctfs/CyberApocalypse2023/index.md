@@ -71,13 +71,13 @@ Challenge index:
 Intergalactic Ministry of Spies tested Pandora's movement and intelligence abilities. She found herself locked in a room with no apparent means of escape. Her task was to unlock the door and make her way out. Can you help her in opening the door?
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/8_0_web.png" width="85%"/>
+  <img src="/images/writeups/CyberApocalypse2023/8_0_web.png" width="75%"/>
 </p>
 
 Input the conde in teh source
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/8_1_flag.png" width="85%"/>
+  <img src="/images/writeups/CyberApocalypse2023/8_1_flag.png" width="75%"/>
 </p>
 
 ``` HTB{V13w_50urc3_c4n_b3_u53ful!!!} ```
@@ -91,13 +91,13 @@ During Pandora's training, the Gunhead AI combat robot had been tampered with an
 We have the command /ping. We can do some command injection using ; at the end. Let's locate the flag with ls -la
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/9_0_inject.png" width="85%"/>
+  <img src="/images/writeups/CyberApocalypse2023/9_0_inject.png" width="75%"/>
 </p>
 
 Now read with cat:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/9_1_flag.png" width="85%"/>
+  <img src="/images/writeups/CyberApocalypse2023/9_1_flag.png" width="75%"/>
 </p>
 
 ``` HTB{4lw4y5_54n1t1z3_u53r_1nput!!!} ```
@@ -115,7 +115,7 @@ An easy SQL injection:
 ```
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/10_0_flag.png" width="85%"/>
+  <img src="/images/writeups/CyberApocalypse2023/10_1_flag.png" width="85%"/>
 </p>
 
 ``` HTB{p4r4m3t3r1z4t10n_1s_1mp0rt4nt!!!} ```
@@ -130,7 +130,7 @@ In order to decipher the alien communication that held the key to their location
 We have a login:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/12_0_web.png" width="85%"/>
+  <img src="/images/writeups/CyberApocalypse2023/12_0_web.png" width="75%"/>
 </p>
 
 Checking the output from the login requests, we can see an error with inserting a double quote. Arranging other tests we did not findf any return data, so I thought that might be a time based attack. 
@@ -152,7 +152,6 @@ Parameter: JSON username ((custom) POST)
     Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
     Payload: {"username":"admin" AND (SELECT 3656 FROM (SELECT(SLEEP(5)))YRCQ)-- lHPK","password":"admin"}
 ---
-
 ```
 
 We can see a hash and using crackstating we get the password:
@@ -242,13 +241,13 @@ Your team has assigned you to a mission to investigate the production files of P
 We have a PCB (you can spot it since those are the different layers of a Gerber file). Loading it in an online tool, we can start to see part of the flag, so the rest might be hidden in different layers:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/2_0_flag.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/2_0_flag.png" width="50%"/>
 </p>
 
 Removing different layers from the visualizaton we can see the flag. Concatenate it to get it correctly
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/2_1_ez_flag.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/2_1_ez_flag.png" width="50%"/>
 </p>
 
 ``` HTB{533_7h3_1nn32_w02k1n95_0f_313c720n1c5#$@} ```
@@ -262,7 +261,7 @@ Your team has recovered a satellite dish that was used for transmitting the loca
 Using Logic2, we open the file:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/3_0_async.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/3_0_async.png" width="80%"/>
 </p>
 
 We have two lines, TX (transmit) and RX (receive), so probably we have an Async Serial communication. To get this data, first we have to identify the baud rate this is using. We can do it by checking the elapsed time between the narrowest peaks in the signal, in this case, 8.68us. To calculate the baudrate, we will assume that 1 bit is being transmitted every 8.68us, so with some calculations we get the baudrate:
@@ -277,14 +276,14 @@ We have two lines, TX (transmit) and RX (receive), so probably we have an Async 
 Now with the list of standard baud rates, we found that the nearest baud rate to the obtained baud rate is 115.200, so we will take it as a valid result, and configure the analyzer with this standard value:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/3_1_baud.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/3_1_baud.png" width="80%"/>
 </p>
 
 We can see the data in the table, let's export it to format it correctly and get a better understanding:
 
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/3_1_export.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/3_1_export.png" width="80%"/>
 </p>
 
 With the following commands, we can get the complete text easily:
@@ -308,7 +307,7 @@ To gain access to the tomb containing the relic, you must find a way to open the
 In the following pictures, we can see a PCB with the different channels and what it looks like a 7 segments display. The channels go to the different pads following this schema (yes, follow the traces)
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/4_0_pcb.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/4_0_pcb.png" width="80%"/>
 </p>
 
 ```
@@ -327,7 +326,7 @@ Channel -
 Now on Logic2 we have the following signals:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/4_1_logic.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/4_1_logic.png" width="80%"/>
 </p>
 
 So the target will be to display the codes it was being displayed on the 7 segments display. I was having fun, so I decided to get hands on and get my Raspberry Pi involved in this challenge. The main goal is to export somehow the different channels, create an array for each character and display it on a physical display with the RaspPi.
@@ -335,7 +334,7 @@ So the target will be to display the codes it was being displayed on the 7 segme
 First, export the data. Hit the menu button in the bottom right and select export raw, then select CVS:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/4_2_export.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/4_2_export.png" width="80%"/>
 </p>
 
 We will end up with the following file:
@@ -484,7 +483,7 @@ for s in data['k']:
 Do all the wiring. I used a common cathode 7 segments display wired with pull down resistors (important hehe). This is the POC:
 
 <p align="center">
-  <video src="/images/ctfs/CyberApocalypse2023/4_3_flag.png" width="80%"/>
+  <video src="/images/writeups/CyberApocalypse2023/4_3_flag.png" width="80%"/>
 </p>
 
 Taking notes of the chars we get the following hexadecimals (B was displayed as b, D as d and F as F):
@@ -567,7 +566,7 @@ We have the AES encription in the script, which has almost no entropy and no dis
 
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/13_0_ecb.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/13_0_ecb.png" width="80%"/>
 </p>
 
 With the following script we can check which lines are repeated the most:
@@ -632,7 +631,7 @@ This is the output:
 Might me logical to think that the last two lines correspond to { and } since the flag is composed by them. We expect the message to be in english, therefore, we can appli a substitution from the [english character frequency](https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html).
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/13_1_letters.png" width="70%"/>
+  <img src="/images/writeups/CyberApocalypse2023/13_1_letters.png" width="70%"/>
 </p>
 
 Now we can craft a list sorted by most frequent character and substitute each hexadecimal line with the corresponding word. I added the space in the first place since searching for its frequency in google provides the best: _The SPACE character (represented by ' ') has the largest probability, about 20%._
@@ -779,7 +778,7 @@ OR YIRKNCE ASM IEAH YIROEDONRS FRI DRSFNCESONAH CAOA YUXXHE YUXXHE YUXXHE
 We have a fair message, but there are some letters misplaced, so we can use [quipquip](https://quipqiup.com/) to solve this last step:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/13_2_quip.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/13_2_quip.png" width="80%"/>
 </p>
 
 ```
@@ -812,7 +811,7 @@ The security of the alien spacecrafts did not prove very robust, and you have ga
 We get an IP and a port _178.128.42.134:31264_. Using netcat,  we get prompted a menu. Exporting a configuration we get the following output:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/1_0_py.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/1_0_py.png" width="50%"/>
 </p>
 
 Decoding the payload form Base64 we get the following output, which is a YAML serialized payload:
@@ -831,7 +830,7 @@ We can also import configs and load them into the ship, so let's import a Popen 
 ```
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/1_1_ls.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/1_1_ls.png" width="50%"/>
 </p>
 
 We can see the flag.txt, let's grab it with a payload to run _cat flag.txt_. This time we need a tuple since Popen receives a list of strings, one per argument.
@@ -845,7 +844,7 @@ We can see the flag.txt, let's grab it with a payload to run _cat flag.txt_. Thi
 ```
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/1_2_flag.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/1_2_flag.png" width="50%"/>
 </p>
 
 And we get the flag:
@@ -861,7 +860,7 @@ Connecting with netcat we can start checking that we are within an eval function
 
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/6_0_start.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/6_0_start.png" width="50%"/>
 </p>
 
 
@@ -954,7 +953,7 @@ print(eval(str(chr(111)+chr(112)+chr(101)+
 Use the payload and get the flag!
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/6_1_flag.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/6_1_flag.png" width="80%"/>
 </p>
 
 
@@ -973,7 +972,7 @@ Threat intelligence has found that the aliens operate through a command and cont
 Open the pcap on Wireshark, filter for HTTP, check the POST and get the form hexadecimal for the password:
 
 <p align="center">
-  <img src="/images/ctfs/CyberApocalypse2023/7_0_http.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/7_0_http.png" width="80%"/>
 </p>
 
 
