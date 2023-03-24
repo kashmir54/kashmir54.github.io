@@ -1,7 +1,7 @@
 ---
-title: "CTF - UTCTF 2023"
+title: "CTF - CyberApocalypse 2023"
 categories: [ctf]
-date: 2023-03-13
+date: 2023-24-03
 comments: true
 image: /images/kashmir.png
 favicon: /images/favicon.ico
@@ -496,7 +496,7 @@ Do all the wiring. I used a common cathode 7 segments display wired with pull do
 
 <p align="center">
   <video width="70%" controls>
-    <source src="/images/writeups/CyberApocalypse2023/4_3_flag.png" type="video/mp4">
+    <source src="/images/writeups/CyberApocalypse2023/4_3_flag.mp4" type="video/mp4">
   </video>
 </p>
 

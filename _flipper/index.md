@@ -16,7 +16,66 @@ favicon: /images/favicon.ico
 
 Flipper Zero, we all know what this marvellous RF swiss tool is capable of and if not, let me introduce you to it. This compact device is a mix of chips and antennas that can work on different RF scenarios, such as SubGHz frequencies, NFC, 125kHz RFID, WiFi, Bluetooth and Infrared but it can also work as an Arduino thanks to its GPIO pins, so basically, the combinations and expansions are limitless. Since there are many GPIO apps and external modules developed by the community, I decided to design a PCB to connect the different modules to the flipper and take advantage of these developements. On previous days I was using a fistful set of dangling cables to connect the different chips but with this little PCB I managed to prepare a plug-and-play conenctor, which save time and space. At the moment I only prepared a multipurpose PCB, especifically to connect the NRF24 and CC1101 chips.
 
-In the following sections I will go over each of them, to summarize their basic capabilities and some interesting use case scenarios.
+
+## Current PCBs and bundles
+
+If you are interested on any item or bundle, contact me through [email](mailto:kashmir_54@hotmail.com)
+
+
+<div class="grid-two">
+
+<a class="box" href="#nrf24">
+  <div class="box-two">
+    <p class="rodden">Pack NRF24</p>
+    <p>Get the connection board and the NRF24.</p>
+    <img src="/images/flipper/nrf24.jpg">
+  </div>
+</a>
+
+<a class="box" href="#cc1101">
+  <div class="box-two">
+    <p class="rodden">Pack CC1101</p>
+    <p>Get the connection board and the CC1101.</p>
+    <img src="/images/flipper/cc1101_1.jpg">
+  </div>
+</a>
+
+<a class="box" href="#other-stuff">
+  <div class="box-two">
+    <p class="rodden">MegaPack RF</p>
+    <p>Go beyond! A starter pack to increase your Flipper capabilities.</p>
+    <img src="/images/flipper/megapack_rf.jpg">
+  </div>
+</a>
+
+<a class="box" href="">
+  <div class="box-two">
+    <p class="rodden">VoyagerRF</p>
+    <p>WiFi DevBoard with ESP32-C3, Micro SD Card socket and Marauder firmware. Includes a socket for NRF24/CC1101 connection.</p>
+    <p>Coming soon...</p>
+  </div>
+</a>
+
+<a class="box" href="">
+  <div class="box-two">
+    <p class="rodden">Standalone PCB</p>
+    <p>Plug-and-play PCB for those who already own the NRF24/CC1101 chip.</p>
+    <img src="/images/flipper/pcb_v1_1.jpg">
+  </div>
+</a>
+
+<a class="box" href="">
+  <div class="box-two">
+    <p class="rodden">USB-C Keychain</p>
+    <p>Avoid carrying a spare USB cable on your pocket.</p>
+    <img src="/images/flipper/usbc.jpeg">
+  </div>
+</a>
+
+</div>
+
+
+In the following sections I will go over each of them, to summarize their basic capabilities.
 
 <br>
 ---
@@ -44,7 +103,7 @@ Probably you already know which devices use this band, that's right, wireless ke
 
 What implies this vulnerability? Mainly, that we can impersonate the keyboard or the mouse and send [HID codes](https://gist.github.com/MightyPork/6da26e382a7ad91b5496ee55fdc73db2), aka, keystrokes or mouse movements. Known products affected by this vulnerability can be found in the [JackIt repo](https://github.com/insecurityofthings/jackit). You can check them out and play around with them.
 
-I have developed some PCBs to connect this module. I added some decoupling capacitors for stable power delivery and noise reduction on the signal. If you are in Spain and interested in this PCB (obviously with the components needed to plug-and-play), you can [contact me](mailto:kashmir_54@hotmail.com). Here you have some photos of the PCBs in action:
+I have developed some PCBs to connect this module. I added some decoupling capacitors for stable power delivery and noise reduction on the signal. Here you have some photos of the PCBs in action:
 
 
 <div display="grid" align="center">
@@ -84,7 +143,7 @@ Here you have the CC1101 external module in action with the same PCB:
 
 ## Other stuff
 
-I also have other interesting stuff, such as USBC keychains, which comes pretty handy on ground pentest operations and have the same orange tone as the flipper do! These gadget allow the researcher to bring the Flipper Zero and the keychain attached without the worry of bringing a spare USBC cable. A perfect combination for the Flipper! I created a "MegaPack RF" which is a combination of all these items, for beginners (and also experienced) FlipperZero users to explore new boundaries for this outstanding tool. If you are interested in it, contact me on my [email](mailto:kashmir_54@hotmail.com). 
+I also have other interesting stuff, such as USBC keychains, which comes pretty handy on ground pentest operations and have the same orange tone as the flipper do! These gadget allow the researcher to bring the Flipper Zero and the keychain attached without the worry of bringing a spare USBC cable. A perfect combination for the Flipper! I created a "MegaPack RF" which is a combination of all these items, for beginners (and also experienced) FlipperZero users to explore new boundaries for this outstanding tool. 
 
 <p align="center">
   <img src="/images/flipper/megapack_rf.jpg" width="60%"/>

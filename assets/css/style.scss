@@ -20,6 +20,26 @@ div.grid{
   grid-template-columns: 1fr 1fr 1fr 1fr ;
 }
 
+@font-face {
+  font-family: "Roddenberry";
+  src: url('/assets/css/Roddenberry.otf') format("opentype");
+}
+
+div.grid-two{
+  display: grid;
+  column-gap: 3.125em;
+  row-gap: 3.125em;
+  grid-template-columns: 1fr 1fr;
+}
+
+div.box-two{
+  padding: 10%;
+  font-weight: bold;
+  font-family: "Roddenberry";
+  color: #43CAB2;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 0 5px rgba(83,232,170,0.1), 0 0 10px rgba(83,232,191,0.1);
+}
+
 div.grid-one{
   text-align: center;
   display: grid;
