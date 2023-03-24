@@ -276,21 +276,33 @@ We have two lines, TX (transmit) and RX (receive), so probably we have an Async 
 Now with the list of standard baud rates, we found that the nearest baud rate to the obtained baud rate is 115.200, so we will take it as a valid result, and configure the analyzer with this standard value:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/3_1_baud.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/3_0_baud.png" width="80%"/>
 </p>
 
 We can see the data in the table, let's export it to format it correctly and get a better understanding:
 
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/3_1_export.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/3_1_export.png" width="70%"/>
 </p>
 
 With the following commands, we can get the complete text easily:
 
 ```bash
 awk '{print $6}' < flag | sed ':a; N; $!ba; s/\n//g'
-INFO:AUTOSTARTUPMODE=1\nNOTICE:BootingTrustedFirmware\nNOTICE:BL1:v1.3(release):f26889a\nNOTICE:BL1:Built:13:04:48,Jul302018\nINFO:BL1:RAM0x30200000-0x30209000\nINFO:Usingcryptolibrary'STMATFMiniCertificatesCryptoLibrary'\nINFO:BL1:SearchingFIPimage\nINFO:search_fipstart,slot:0\nINFO:search_fipend,slot:0,result:0\nINFO:VALIDcodeatslot0ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:1\nINFO:search_fipend,slot:1,result:0\nINFO:VALIDcodeatslot1ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:2\nINFO:search_fipend,slot:2,result:0\nINFO:VALIDcodeatslot2ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:3\nINFO:search_fipend,slot:3,result:0\nINFO:VALIDcodeatslot3ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:4\nINFO:search_fipend,slot:4,result:0\nINFO:TERMcodeatslot4\nINFO:Chosenslot=3\nINFO:BL1:Gettheimagedescriptor\nINFO:BL1:LoadingBL2\nINFO:Loadingimageid=6ataddress0x30209000\nINFO:Skipreservingregion[base=0x30209000,size=0x90]\nINFO:Imageid=6loadedataddress0x30209000,size=0x90\nINFO:cert_nv_ctr:1\nINFO:plat_nv_ctr:0\nINFO:Loadingimageid=1ataddress0x30209000\nINFO:Imageid=1loadedataddress0x30209000,size=0xf178\nNOTICE:BL1:BootingBL2\nINFO:Entrypointaddress=0x30209000\nNOTICE:BL20:v1.3(debug):25afa823\nNOTICE:BL20:Built:16:55:25,Jul172020\nNOTICE:EMMCbootcounteris47\nNOTICE:BL2:v1.3(debug):4ac84b3\nNOTICE:BL2:Built:15:39:21,Oct152020\nNOTICE:Evaluate0x8110010&0x10==0x0->0\nNOTICE:Usingdefaulttargetpackconfig\nBootfirmwarev20190415-1starting\n!*:#)$<@[|{!!("!%5!#!!"O-#A!!!"\nBootfirmwareexitingnormally\nNOTICE:BL2:endTP\nNNOTICE:BL31:v1.3(debug):4ac84b3\nNOTICE:BL31:Built:15:39:24,Oct152020\n\n\nU-Boot2016.05-00307-g16c388c(Jul232021-22:19:05+0000)\n\nDRAM:1004MiB\nMMC:Fastboot:eMMC:8xbit-div2\nstm-sdhci0:0\nUsingdefaultenvironment\n\nIn:nulldev\nOut:serial\nErr:serial\nCPUID:0x000201010x090110100xb9258380\nDetectedBoardrev:#rev1_pre_production\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nFIP1:3FIP2:3\nBOOTSLOTB\nNet:NetInitializationSkipped\nNoethernetfound.\n\n\n}--O--{\n[^]\n/ooo\\n______________:/oo\:______________\n|=|=|=|=|=|=|:A|":|||:"|A:|=|=|=|=|=|=|\n^""""""""""""""!::{o}::!""""""""""""""^\n\/\n\.../\n____"---"____\n|\/\/|=======|*|=======|\/\/|\n:----"/-\"----:\n/ooo\\n#|ooo|#\n\___/\n\nIsproductionhardware?YES\n=============================================================================\n=Type'egypt'tostopbootprocessinthenext2seconds=\n=============================================================================\n\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nswitchtopartitions#0,OK\nmmc0(part0)iscurrentdevice\n\nMMCread:dev#0,block#98304,count49152...49152blocksread:OK\n##LoadingkernelfromFITImageata2000000...\nUsing'rev1_pre_production@1'configuration\nVerifyingHashIntegrity...sha256,rsa2048:dev+OK\nTrying'kernel@1'kernelsubimage\nDescription:compressedkernel\nCreated:2020-10-1515:44:52UTC\nType:KernelImage\nCompression:lzmacompressed\nDataStart:0xa20000dc\nDataSize:2620262Bytes=2.5MiB\nArchitecture:AArch64\nOS:Linux\nLoadAddress:0x80080000\nLoadSize:unavailable\nEntryPoint:0x80080000\nHashalgo:sha256\nHashvalue:2eee092ccbd0a45f7d73aa1086d28994a60a615b7e967f0508e956a776bfe2b0\nVerifyingHashIntegrity...sha256+OK\n##LoadingramdiskfromFITImageata2000000...\nUsing'rev1_pre_production@1'configuration\nTrying'ramdisk@1'ramdisksubimage\nDescription:compressedramdisk\nCreated:2020-10-1515:40:21UTC\nType:RAMDiskImage\nCompression:lzmacompressed\nDataStart:0xa23139d4\nDataSize:5474268Bytes=5.2MiB\nArchitecture:AArch64\nOS:Linux\nLoadAddress:0xb0000000\nLoadSize:unavailable\nEntryPoint:0xb0000000\nHashalgo:sha256\nHashvalue:1bece01a0ad3c63006f24f6a07cad6f3ff023469907c202c8fc07eb5fda057b2\nVerifyingHashIntegrity...sha256+OK\nLoadingramdiskfrom0xa23139d4to0xb0000000\n##LoadingfdtfromFITImageata2000000...\nUsing'rev1_pre_production@1'configuration\nTrying'rev1_pre_production_fdt@1'fdtsubimage\nDescription:rev1preproductiondevicetree\nCreated:2020-10-1515:40:21UTC\nType:FlatDeviceTree\nCompression:uncompressed\nDataStart:0xa22d8650\nDataSize:60328Bytes=58.9KiB\nArchitecture:AArch64\nHashalgo:sha256\nHashvalue:b30932fd6e42020720ae6a062da9df0a5b5049f26b1bd8ddafd90cb9759a2922\nVerifyingHashIntegrity...sha256+OK\nLoadingfdtfrom0xa22d8650to0x8f000000\nBootingusingthefdtblobat0x8f000000\nUncompressingKernelImage...OK\nLoadingRamdiskto8fac7000,end8ffff7dc...OK\nLoadingDeviceTreeto000000008fab5000,end000000008fac6ba7...OK\nWARNING:ethactisnotset.Notincludingethprimein/chosen.\n\n======================================\n=GalaxyGatewayNetworkInformation=\n======================================\n\nWARNING:ThedeepspaceobservatoryisofflineHTB{\nINFO:Communicationsystemsareofflinereferencecode:547311173_\nWARNING:Unauthorizedsubroutinesdetected!referencecode:n37w02k_\nWARNING:Thesatellitedishcannotsyncwiththeswarm.referencecode:c0mp20m153d}\n\n______\n,'""-._\n,'"-.__._\n;__,-'/|\n;|,-'_,'"'._,.\n|:_,'|\`.\n:\_,-'|\`.\n\\,-'|\\\n\'..-.|\\n\\"|:\n`.`.||\n`."-._|;\n/|`._`-._L/\n/|\`._"-.____,'\n/|\_.-"-.___""""\n\:/"""\n`._\___.'_\n__,--''_'"--''''\_`-._\n__,--'.'/_|__.`-._`-._\n<`.`-.-''__,-'_,-'\n`.`._,-'"_,-'\n`.''"_,-'\n`._,-'\n`._,-'\n`.__,'"\n`'"\n\nStartingkernel...\n\nDevelopmentloginenabled:no\nDebuggingmodeenabled:yes\nSafemodeenabled:no\n\nSATDish-ManagmentUserTerminal.\nDishisoffline\nadminlogin:\n
+INFO:AUTOSTARTUPMODE=1\nNOTICE:BootingTrustedFirmware\nNOTICE:BL1:v1.3(release):f26889a\nNOTICE:BL1:Built:13:04:48,Jul302018\nINFO:BL1:RAM0x30200000-0x30209000\nINFO:Usingcryptolibrary'STMATFMiniCertificatesCryptoLibrary'\nINFO:BL1:SearchingFIPimage\nINFO:search_fipstart,slot:0\nINFO:search_fipend,slot:0,result:0\nINFO:VALIDcodeatslot0ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:1\nINFO:search_fipend,slot:1,result:0\nINFO:VALIDcodeatslot1ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:2\nINFO:search_fipend,slot:2,result:0\nINFO:VALIDcodeatslot2ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:3\nINFO:search_fipend,slot:3,result:0\nINFO:VALIDcodeatslot3ref_ctr0x5555(21845)\nINFO:search_fipstart,slot:4\nINFO:search_fipend,slot:4,result:0\nINFO:TERMcodeatslot4\nINFO:Chosenslot=3\nINFO:BL1:Gettheimagedescriptor\nINFO:BL1:LoadingBL2\nINFO:Loadingimageid=6ataddress0x30209000\nINFO:Skipreservingregion[base=0x30209000,size=0x90]\nINFO:Imageid=6loadedataddress0x30209000,size=0x90\nINFO:cert_nv_ctr:1\nINFO:plat_nv_ctr:0\nINFO:Loadingimageid=1ataddress0x30209000\nINFO:Imageid=1loadedataddress0x30209000,size=0xf178\nNOTICE:BL1:BootingBL2\nINFO:Entrypointaddress=0x30209000\nNOTICE:BL20:v1.3(debug):25afa823\nNOTICE:BL20:Built:16:55:25,Jul172020\nNOTICE:EMMCbootcounteris47\nNOTICE:BL2:v1.3(debug):4ac84b3\nNOTICE:BL2:Built:15:39:21,Oct152020\nNOTICE:Evaluate0x8110010&0x10==0x0->0\
+NOTICE:Usingdefaulttargetpackconfig\nBootfirmwarev20190415-1starting\n!*:#)$<@[|{!!("!%5!#!!"O-#A!!!"\nBootfirmwareexitingnormally\nNOTICE:BL2:endTP\nNNOTICE:BL31:v1.3(debug):4ac84b3\nNOTICE:BL31:Built:15:39:24,Oct152020\n\n\nU-Boot2016.05-00307-g16c388c(Jul232021-22:19:05+0000)\n\nDRAM:1004MiB\nMMC:Fastboot:eMMC:8xbit-div2\nstm-sdhci0:0\nUsingdefaultenvironment\n\nIn:nulldev\nOut:serial\nErr:serial\nCPUID:0x000201010x090110100xb9258380\nDetectedBoardrev:#rev1_pre_production\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nFIP1:3FIP2:3\nBOOTSLOTB\nNet:NetInitializationSkipped\nNoethernetfound.\n\n\n}--O--{\n[^]\n/ooo\\n______________:/oo\:______________\n|=|=|=|=|=|=|:A|":|||:"|A:|=|=|=|=|=|=|\n^""""""""""""""!::{o}::!""""""""""""""^\n\/\n\.../\n____"---"____\n|\/\/|=======|*|=======|\/\/|\n:----"/-\"----:\n/ooo\\n#|ooo|#\n\___/\n\nIsproductionhardware?YES\n=============================================================================\n=Type'egypt'tostopbootprocessinthenext2seconds=\n=============================================================================\n\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nsdhci_transfer_data:Errordetectedinstatus(0x208000)!\nswitchtopartitions#0,OK\nmmc0(part0)iscurrentdevice\n\nMMCread:dev#0,block#98304,count49152...49152blocksread:OK\n##LoadingkernelfromFITImageata2000000...\nUsing'rev1_pre_production@1'configuration\nVerifyingHashIntegrity...sha256,rsa2048:dev+OK\nTrying'kernel@1'kernelsubimage\nDescription:compressedkernel\nCreated:2020-10-1515:44:52UTC\nType:KernelImage\nCompression:lzmacompressed\nDataStart:0xa20000dc\nDataSize:2620262Bytes=2.5MiB\nArchitecture:AArch64\nOS:Linux\nLoadAddress:0x80080000\nLoadSize:unavailable\nEntryPoint:0x80080000\nHashalgo:sha256\nHashvalue:2eee092ccbd0a45f7d73aa1086d28994a60a615b7e967f0508e956a776bfe2b0\nVerifyingHashIntegrity...sha256+OK\n##LoadingramdiskfromFITImageata2000000...\nUsing'rev1_pre_production@1'configuration\nTrying'ramdisk@1'ramdisksubimage\nDescription:compressedramdisk\nCreated:2020-10-1515:40:21UTC\nType:RAMDiskImage\nCompression:lzmacompressed\nDataStart:0xa23139d4\nDataSize:5474268Bytes=5.2MiB\nArchitecture:AArch64\nOS:Linux\nLoadAddress:0xb0000000\nLoadSize:unavailable\nEntryPoint:0xb0000000\nHashalgo:sha256\nHashvalue:1bece01a0ad3c63006f24f6a07cad6f3ff023469907c202c8fc07eb5fda057b2\nVerifyingHashIntegrity...sha256+OK\nLoadingramdiskfrom0xa23139d4to0xb0000000\n##LoadingfdtfromFITImageata2000000...\nUsing'rev1_pre_production@1'configuration\nTrying'rev1_pre_production_fdt@1'fdtsubimage\nDescription:rev1preproductiondevicetree\nCreated:2020-10-1515:40:21UTC\nType:FlatDeviceTree\nCompression:uncompressed\nDataStart:0xa22d8650\nDataSize:60328Bytes=58.9KiB\nArchitecture:AArch64\nHashalgo:sha256\nHashvalue:b30932fd6e42020720ae6a062da9df0a5b5049f26b1bd8ddafd90cb9759a2922\nVerifyingHashIntegrity...sha256+OK\nLoadingfdtfrom0xa22d8650to0x8f000000\nBootingusingthefdtblobat0x8f000000\nUncompressingKernelImage...OK\nLoadingRamdiskto8fac7000,end8ffff7dc...OK\nLoadingDeviceTreeto000000008fab5000,end000000008fac6ba7...OK
+WARNING:ethactisnotset.Notincludingethprimein/chosen.
+
+======================================
+=GalaxyGatewayNetworkInformation=
+======================================
+
+WARNING:ThedeepspaceobservatoryisofflineHTB{
+INFO:Communicationsystemsareofflinereferencecode:547311173_
+WARNING:Unauthorizedsubroutinesdetected!referencecode:n37w02k_
+WARNING:Thesatellitedishcannotsyncwiththeswarm.referencecode:c0mp20m153d}
+\n______\n,'""-._\n,'"-.__._\n;__,-'/|\n;|,-'_,'"'._,.\n|:_,'|\`.\n:\_,-'|\`.\n\\,-'|\\\n\'..-.|\\n\\"|:\n`.`.||\n`."-._|;\n/|`._`-._L/\n/|\`._"-.____,'\n/|\_.-"-.___""""\n\:/"""\n`._\___.'_\n__,--''_'"--''''\_`-._\n__,--'.'/_|__.`-._`-._\n<`.`-.-''__,-'_,-'\n`.`._,-'"_,-'\n`.''"_,-'\n`._,-'\n`._,-'\n`.__,'"\n`'"\n\nStartingkernel...\n\nDevelopmentloginenabled:no\nDebuggingmodeenabled:yes\nSafemodeenabled:no\n\nSATDish-ManagmentUserTerminal.\nDishisoffline\nadminlogin:\n
 ```
 
 In that transmission, we can see at the end the flag on the reference codes of the _WARNING:Thesatellitedishcannotsyncwiththeswarm_ meesage. WE get the flag by concatenating those Warnings:
@@ -334,7 +346,7 @@ So the target will be to display the codes it was being displayed on the 7 segme
 First, export the data. Hit the menu button in the bottom right and select export raw, then select CVS:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/4_2_export.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/4_2_export.png" width="60%"/>
 </p>
 
 We will end up with the following file:
@@ -483,7 +495,9 @@ for s in data['k']:
 Do all the wiring. I used a common cathode 7 segments display wired with pull down resistors (important hehe). This is the POC:
 
 <p align="center">
-  <video src="/images/writeups/CyberApocalypse2023/4_3_flag.png" width="80%"/>
+  <video width="70%" controls>
+    <source src="/images/writeups/CyberApocalypse2023/4_3_flag.png" type="video/mp4">
+  </video>
 </p>
 
 Taking notes of the chars we get the following hexadecimals (B was displayed as b, D as d and F as F):
@@ -565,7 +579,7 @@ Up to 1479 lines...
 We have the AES encription in the script, which has almost no entropy and no dispersion due to the ECB (Electronic CodeBlock) operation mode. Basically, this is a XOR operation over all blocks, so we can do a frequecy analysis over the output, since it is not only the flag, but probably, a complete text:
 
 
-<p align="center">
+<p align="center" style="background-color: #166c78;">
   <img src="/images/writeups/CyberApocalypse2023/13_0_ecb.png" width="80%"/>
 </p>
 
@@ -793,8 +807,6 @@ FOR CONFIDENTIAL DATA PUZZLE PUZZLE PUZZLE
 
 ``` HTB{A_SIMPLE_SUBSTITUTION_IS_WEAK} ```
 
-
-
 <br>
 
 --- 
@@ -811,7 +823,7 @@ The security of the alien spacecrafts did not prove very robust, and you have ga
 We get an IP and a port _178.128.42.134:31264_. Using netcat,  we get prompted a menu. Exporting a configuration we get the following output:
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/1_0_py.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/1_0_py.png" width="70%"/>
 </p>
 
 Decoding the payload form Base64 we get the following output, which is a YAML serialized payload:
@@ -830,7 +842,7 @@ We can also import configs and load them into the ship, so let's import a Popen 
 ```
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/1_1_ls.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/1_1_ls.png" width="70%"/>
 </p>
 
 We can see the flag.txt, let's grab it with a payload to run _cat flag.txt_. This time we need a tuple since Popen receives a list of strings, one per argument.
@@ -844,7 +856,7 @@ We can see the flag.txt, let's grab it with a payload to run _cat flag.txt_. Thi
 ```
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/1_2_flag.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/1_2_flag.png" width="70%"/>
 </p>
 
 And we get the flag:
@@ -860,7 +872,7 @@ Connecting with netcat we can start checking that we are within an eval function
 
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/6_0_start.png" width="50%"/>
+  <img src="/images/writeups/CyberApocalypse2023/6_0_start.png" width="65%"/>
 </p>
 
 
@@ -953,7 +965,7 @@ print(eval(str(chr(111)+chr(112)+chr(101)+
 Use the payload and get the flag!
 
 <p align="center">
-  <img src="/images/writeups/CyberApocalypse2023/6_1_flag.png" width="80%"/>
+  <img src="/images/writeups/CyberApocalypse2023/6_1_flag.png" width="70%"/>
 </p>
 
 
@@ -1035,5 +1047,5 @@ WantedBy=multi-user.target
 ``` HTB{th3s3_4l13nS_4r3_s00000_b4s1c} ```
 
 
-Thanks all for this CTF, hope you enjoyed it!
+That's it for this CTF, hope you enjoyed it!
 
