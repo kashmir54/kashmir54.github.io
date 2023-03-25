@@ -66,7 +66,7 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/ambassador/logo.png"/>
 			<div class="mini-os">
-					<img class="mini-os" src="/images/ic-linux.svg">
+					<img class="mini-os-img" src="/images/ic-linux.svg">
 				</div>
 		</div>
 		<div class="card-text">
@@ -82,7 +82,7 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/updown/logo.png"/>
 			<div class="mini-os">
-					<img class="mini-os" src="/images/ic-linux.svg">
+					<img class="mini-os-img" src="/images/ic-linux.svg">
 				</div>
 		</div>
 		<div class="card-text">
@@ -98,7 +98,7 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		<div class="card-logo">
 			<img class="logo" src="/images/walkthroughs/hackthebox/shoppy/logo.png"/>
 			<div class="mini-os">
-					<img class="mini-os" src="/images/ic-linux.svg">
+					<img class="mini-os-img" src="/images/ic-linux.svg">
 				</div>
 		</div>
 		<div class="card-text">

@@ -3,6 +3,61 @@
 
 @import "{{ site.theme }}";
 
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  div.grid-two{
+    display: grid;
+    column-gap: 1.125em;
+    row-gap: 2.125em;
+    grid-template-columns: 1fr;
+  }
+
+  img.schema{
+    background-color: #2a2a2a;
+    padding: 5%;
+    width: 80%;
+  }
+
+  img.head-logo{
+    width: 80%;
+  }
+
+  .logo {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .card-text {
+    padding-left: 20%;
+    padding-top: 10%;
+  }
+
+  div.grid{
+    display: grid;
+    column-gap: 20px;
+    row-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mini-os{
+    width: 2em;
+    height: 2em;
+    margin-top: -50%;
+    margin-bottom: 20%;
+    margin-right: 0;
+    background: #111927 !important;
+    border: 2px solid #141d2b;
+    border-radius: 50%;
+    margin-left: auto;
+    position: relative;
+    vertical-align: middle;
+    z-index: 2;
+  }
+  
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -11,6 +66,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   font-family: Monaco,"Bitstream Vera Sans Mono"," Console",Terminal,monospace;
+  text-align: justify;
 }
 
 div.grid{
@@ -168,9 +224,7 @@ div.box:hover{
 }
 
 .mini-os-img{
-  width: 90%;
-  padding-bottom: 0.12em;
-  padding-left: 0.05em;
+  width: 100%;
 }
 
 .logo{

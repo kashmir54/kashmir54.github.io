@@ -11,7 +11,7 @@ favicon: /images/favicon.ico
 # Flipper Zero 🐬📻
 
 <p align="center">
-  <img src="/images/flipper/flipper.png" width="30%"/>
+  <img class="head-logo" src="/images/flipper/flipper.png" width="30%"/>
 </p>
 
 Flipper Zero, we all know what this marvellous RF swiss tool is capable of and if not, let me introduce you to it. This compact device is a mix of chips and antennas that can work on different RF scenarios, such as SubGHz frequencies, NFC, 125kHz RFID, WiFi, Bluetooth and Infrared but it can also work as an Arduino thanks to its GPIO pins, so basically, the combinations and expansions are limitless. Since there are many GPIO apps and external modules developed by the community, I decided to design a PCB to connect the different modules to the flipper and take advantage of these developements. On previous days I was using a fistful set of dangling cables to connect the different chips but with this little PCB I managed to prepare a plug-and-play conenctor, which save time and space. At the moment I only prepared a multipurpose PCB, especifically to connect the NRF24 and CC1101 chips.
@@ -125,7 +125,7 @@ CC1101 is an RF transceiver that works on the sub GHz frequencies. It works on 3
 
 
 <p align="center">
-  <img src="/images/flipper/cc1101_pinout.png" width="30%"/>
+  <img class="schema" src="/images/flipper/cc1101_pinout.png" width="30%"/>
 </p>
 <div align="center">
 CC1101 wiring diagram. Courtesy of [quen0n](https://github.com/quen0n).
@@ -138,8 +138,8 @@ Some tests that I performed at home, showed that the stock SubGHz module could g
 Here you have the CC1101 external module in action with the same PCB:
 
 <div display="grid" align="center">
-  <img src="/images/flipper/cc1101.jpg" width="40%"/>
-  <img src="/images/flipper/cc1101_1.jpg" width="44%"/>
+  <img src="/images/flipper/cc1101.jpg" width="50%"/>
+  <img src="/images/flipper/cc1101_1.jpg" width="46%"/>
 </div>
 
 <br>
