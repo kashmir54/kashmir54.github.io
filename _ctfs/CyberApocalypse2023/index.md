@@ -1,7 +1,7 @@
 ---
 title: "CTF - CyberApocalypse 2023"
 categories: [ctf]
-date: 2023-24-03
+date: 2023-03-24
 comments: true
 image: /images/kashmir.png
 favicon: /images/favicon.ico
