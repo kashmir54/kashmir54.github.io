@@ -75,30 +75,31 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 </div>
 
-
 In the following sections I will go over each of them, to summarize their basic capabilities.
 
 <br>
+
 ---
+
 <br>
 
 ## NRF24
 
-<p align="center">
-  <img src="/images/flipper/nrf24.jpg" width="50%"/>
-</p>
-
 This module that operates on the 2.4GHz band, which allows the user to interact send and receive data in that band. Unlike the ESP32 (which also operates on the 2.4GHz band) this chip does not implement the TPC/IP stack, therefore, control of the raw physical layer is provided. This module is used by Flipper's GPIO plugins such as [MouseJacker](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/documentation/NRF24.md). This plugin is used in combination with the NRF24 Sniffer, which allow us to grab interesting information from devices working in this band.
 
 <p align="center">
-  <img src="/images/flipper/nrf24_dia.png" width="40%"/>
-  <p>NRF24L01 pinout, similar to NRF24L01+PA/LNA. Courtesy of [UberGuidoZ](https://github.com/UberGuidoZ).</p>
+  <img class="schema" src="/images/flipper/nrf24_dia.png" width="40%"/>
 </p>
+<div align="center">
+NRF24L01 pinout, similar to NRF24L01+PA/LNA. Courtesy of [UberGuidoZ](https://github.com/UberGuidoZ).
+</div>
 
 <p align="center">
   <img src="/images/flipper/nrf24_sch.png" width="60%"/>
-  <p>NRF24L01 wiring diagram.</p>
 </p>
+<div align="center">
+NRF24L01 wiring diagram.
+</div>
 
 Probably you already know which devices use this band, that's right, wireless keyboards and mice, well, some of them. There ar some well-known brands and models that implement "unencrypted" packets to communicate the device with the USB dongle, therefore, we can sniff the spectrum to grab the address of the device then use it to send our curated payload to the dongle. Further information can be found in the original [blog post](http://travisgoodspeed.blogspot.com/2011/02/promiscuity-is-nrf24l01s-duty.html) or in [mousejack.com](https://www.mousejack.com/).
 
@@ -113,7 +114,9 @@ I have developed some PCBs to connect this module. I added some decoupling capac
 </div>
 
 <br>
+
 ---
+
 <br>
 
 ## CC1101
@@ -123,9 +126,10 @@ CC1101 is an RF transceiver that works on the sub GHz frequencies. It works on 3
 
 <p align="center">
   <img src="/images/flipper/cc1101_pinout.png" width="30%"/>
-  <p>CC1101 wiring diagram. Courtesy of [quen0n](https://github.com/quen0n).</p>
 </p>
-
+<div align="center">
+CC1101 wiring diagram. Courtesy of [quen0n](https://github.com/quen0n).
+</div>
 
 The board that I've designed has the same pinout required for the [Unleashed SubGHz application](https://github.com/quen0n/flipperzero-ext-cc1101) to use the external module, therefore, you can use the same board for the NRF24 and the CC1101! 
 
@@ -139,7 +143,9 @@ Here you have the CC1101 external module in action with the same PCB:
 </div>
 
 <br>
+
 ---
+
 <br>
 
 ## Other stuff
