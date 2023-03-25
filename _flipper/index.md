@@ -21,6 +21,7 @@ Flipper Zero, we all know what this marvellous RF swiss tool is capable of and i
 
 If you are interested on any item or bundle, contact me through [email](mailto:kashmir_54@hotmail.com)
 
+<br>
 
 <div class="grid-two">
 
@@ -28,7 +29,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">Pack NRF24</p>
     <p>Get the connection board and the NRF24.</p>
-    <img src="/images/flipper/nrf24.jpg">
+    <img class="orange-border" src="/images/flipper/nrf24.jpg">
   </div>
 </a>
 
@@ -36,7 +37,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">Pack CC1101</p>
     <p>Get the connection board and the CC1101.</p>
-    <img src="/images/flipper/cc1101_1.jpg">
+    <img class="orange-border" src="/images/flipper/cc1101_1.jpg">
   </div>
 </a>
 
@@ -44,14 +45,14 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">MegaPack RF</p>
     <p>Go beyond! A starter pack to increase your Flipper capabilities.</p>
-    <img src="/images/flipper/megapack_rf.jpg">
+    <img class="orange-border" src="/images/flipper/megapack_rf.jpg">
   </div>
 </a>
 
 <a class="box" href="">
   <div class="box-two">
     <p class="rodden">VoyagerRF</p>
-    <p>WiFi DevBoard with ESP32-C3, Micro SD Card socket and Marauder firmware. Includes a socket for NRF24/CC1101 connection.</p>
+    <p>WiFi DevBoard with ESP32-C3, proper antenna, Micro SD Card socket and Marauder firmware. Includes a socket for NRF24/CC1101 connection.</p>
     <p>Coming soon...</p>
   </div>
 </a>
@@ -60,7 +61,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">Standalone PCB</p>
     <p>Plug-and-play PCB for those who already own the NRF24/CC1101 chip.</p>
-    <img src="/images/flipper/pcb_v1_1.jpg">
+    <img class="orange-border" src="/images/flipper/pcb_v1_1.jpg">
   </div>
 </a>
 
@@ -68,7 +69,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">USB-C Keychain</p>
     <p>Avoid carrying a spare USB cable on your pocket.</p>
-    <img src="/images/flipper/usbc.jpeg">
+    <img class="orange-border" src="/images/flipper/usbc.jpeg">
   </div>
 </a>
 

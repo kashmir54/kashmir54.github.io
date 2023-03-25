@@ -33,14 +33,27 @@ div.grid-two{
 }
 
 div.box-two{
-  padding: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  display: inline-grid;
+  border-style: dashed;
+  border-color: #40E7AA;
+  border-radius: 25px;
+  color: white;
+}
+
+img.orange-border{
+  border: 10px solid #f3a660;
 }
 
 .rodden{
-  font-weight: bold;
   font-family: "Roddenberry";
   color: #43CAB2;
+  letter-spacing: 0.05em;
   text-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 0 5px rgba(83,232,170,0.1), 0 0 10px rgba(83,232,191,0.1);
+  font-size: 28px;
+  margin-bottom: 0;
 }
 
 div.grid-one{
