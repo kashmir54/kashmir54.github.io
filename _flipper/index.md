@@ -16,10 +16,23 @@ favicon: /images/favicon.ico
 
 Flipper Zero, we all know what this marvellous RF swiss tool is capable of and if not, let me introduce you to it. This compact device is a mix of chips and antennas that can work on different RF scenarios, such as SubGHz frequencies, NFC, 125kHz RFID, WiFi, Bluetooth and Infrared but it can also work as an Arduino thanks to its GPIO pins, so basically, the combinations and expansions are limitless. Since there are many GPIO apps and external modules developed by the community, I decided to design a PCB to connect the different modules to the flipper and take advantage of these developements. On previous days I was using a fistful set of dangling cables to connect the different chips but with this little PCB I managed to prepare a plug-and-play conenctor, which save time and space. At the moment I only prepared a multipurpose PCB, especifically to connect the NRF24 and CC1101 chips.
 
+<br>
+
+---
+
+<br>
 
 ## Information and tutorials
 
 [Flashing XIAO-ESP32-C3](/flipper/wifi#flashing-xiao-esp32-c3)
+
+<br>
+
+---
+
+<br>
+
+
 ## Current PCBs and bundles
 
 If you are interested on any item or bundle, contact me through [email](mailto:kashmir_54@hotmail.com). Go to any of the following cards to check further information.

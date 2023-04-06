@@ -56,7 +56,7 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
 We will install the firmware from the source code, therefore, we will need the libraries used in the marauder. To do it, download the libraries as zip as displayed in the following image:
 
 <p align="center">
-  <img src="/images/flipper/download.png" width="70%"/>
+  <img src="/images/flipper/download.png" width="90%"/>
 </p>
 
 You gotta do it over all the following requirements:
@@ -112,8 +112,8 @@ Save and restart Arduino IDE (if open).
 In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since the VoyagerRF board is designed to work with CS pin in that GPIO:
 
 ```c
-//...
-//// SD DEFINITIONS
+//
+// SD DEFINITIONS
   #ifdef MARAUDER_V4
     #define SD_CS 12
   #endif
@@ -131,13 +131,13 @@ In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since t
   #endif
 
   #ifdef MARAUDER_FLIPPER
-    #define SD_CS 4 //Change from 10 to 4 here
+    #define SD_CS 4 // Change from 10 to 4 here
   #endif
 
   #ifdef ESP32_LDDB
     #define SD_CS 4
   #endif
-//...
+//
 ```
 
 - Set the board (XIAO-ESP32-C3)
@@ -145,7 +145,7 @@ In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since t
 Go to the boards menu and select the proper model:
 
 <p align="center">
-  <img src="/images/flipper/xiao_esp32_option.png" width="70%"/>
+  <img src="/images/flipper/xiao_esp32_option.png" width="80%"/>
 </p>
 
 Now hit compile and upload and all should run correctly. 
