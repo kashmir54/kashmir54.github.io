@@ -11,8 +11,8 @@ favicon: /images/favicon.ico
 # VoyagerRF
 
 <div display="grid" align="center">
-  <img src="/images/flipper/voyager_white_1.jpg" width="49%"/>
-  <img src="/images/flipper/voyager_white_2.jpg" width="49%"/>
+  <img src="/images/flipper/voyager_white_1.jpg" width="40%"/>
+  <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
 </div>
 
 After working on the NRF24 board and checking the range improvement of the external CC1101 with the antenna, I wonderedif I can also enhance the WiFi dev module in terms of range, size and functionality. After hours of design, programming and research, I produced the VoyagerRF, a multipurpose board with several interesting features such as:
@@ -28,20 +28,22 @@ I have some units in stock. If you are interested in getting the board and other
 Here you have more photos (there is also a black version!):
 
 <div display="grid" align="center">
-  <img src="/images/flipper/voyager_white_5.jpg" width="49%"/>
-  <img src="/images/flipper/voyager_black_0.jpg" width="49%"/>
+  <img src="/images/flipper/voyager_white_5.jpg" width="40%"/>
+  <img src="/images/flipper/voyager_black_0.jpg" width="40%"/>
 </div>
 
+<br>
 
 ## Models
 
 Currently, I am building two models. The first one is focused on capabilities and range, and it includes an SMA connector to attach a 2.4GHz antenna. This increases the range significantly against the original dev board. The second one is focused on portability, and features a flat antenna in the back connected to the ESP32C3. This increases substantially the range in comparison to the original dev board, which makes it an interesting option.
 
 <div display="grid" align="center">
-  <img src="/images/flipper/voyagermini_black.jpg" width="49%"/>
-  <img src="/images/flipper/voyagermini_black_back.jpg" width="49%"/>
+  <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
+  <img src="/images/flipper/voyagermini_black_back.jpg" width="40%"/>
 </div>
 
+<br>
 
 ## Flashing Xiao-ESP32-C3
 
@@ -54,7 +56,7 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
 We will install the firmware from the source code, therefore, we will need the libraries used in the marauder. To do it, download the libraries as zip as displayed in the following image:
 
 <p align="center">
-  <img class="schema" src="/images/flipper/download.png" width="70%"/>
+  <img src="/images/flipper/download.png" width="70%"/>
 </p>
 
 You gotta do it over all the following requirements:
@@ -71,7 +73,7 @@ You gotta do it over all the following requirements:
 Then to add the libraries go to the following menu and select the downloaded ZIPs one by one.
 
 <p align="center">
-  <img class="schema" src="/images/flipper/add_lib.png" width="70%"/>
+  <img src="/images/flipper/add_lib.png" width="70%"/>
 </p>
 
 - Install esp32 board
@@ -79,7 +81,7 @@ Then to add the libraries go to the following menu and select the downloaded ZIP
 Currently, I found the esp32 stable atversion 2.0.6, I will explore newer versions and test them out, but for now: Go to boards, search for esp32 and install version 2.0.6:
 
 <p align="center">
-  <img class="schema" src="/images/flipper/esp32.png" width="50%"/>
+  <img src="/images/flipper/esp32.png" width="50%"/>
 </p>
 
 
@@ -143,7 +145,7 @@ In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since t
 Go to the boards menu and select the proper model:
 
 <p align="center">
-  <img class="schema" src="/images/flipper/xiao_esp32_option.png" width="70%"/>
+  <img src="/images/flipper/xiao_esp32_option.png" width="70%"/>
 </p>
 
 Now hit compile and upload and all should run correctly. 
@@ -186,10 +188,11 @@ Includes:
 - 3dBi Helical Antenna (433Mhz) 
 
 <div display="grid" align="center">
-  <img src="/images/flipper/models/white_3.jpg" width="49%"/>
-  <img src="/images/flipper/models/black_3.jpg" width="49%"/>
+  <img src="/images/flipper/models/white_3.jpg" width="40%"/>
+  <img src="/images/flipper/models/black_3.jpg" width="40%"/>
 </div>
 
+<br>
 
 ## VoyagerRF mini Complete Pack / 50€
 
@@ -205,10 +208,11 @@ Includes:
 - Flat WiFi antenna
 
 <div display="grid" align="center">
-  <img src="/images/flipper/voyagermini_white_0.jpg" width="49%"/>
-  <img src="/images/flipper/voyagermini_black.jpg" width="49%"/>
+  <img src="/images/flipper/voyagermini_white_0.jpg" width="40%"/>
+  <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
 </div>
 
+<br>
 
 ## VoyagerRF / 40€
 
@@ -220,10 +224,11 @@ Includes:
 - 3dBi Omni Antenna (2.4GHz)
 
 <div display="grid" align="center">
-  <img src="/images/flipper/models/white_3.jpg" width="49%"/>
-  <img src="/images/flipper/models/black_3.jpg" width="49%"/>
+  <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
+  <img src="/images/flipper/voyager_black_0.jpg" width="40%"/>
 </div>
 
+<br>
 
 ## VoyagerRF mini / 35€
 
@@ -235,8 +240,8 @@ Includes:
 - Flat WiFi antenna
 
 <div display="grid" align="center">
-  <img src="/images/flipper/voyagermini_white_0.jpg" width="49%"/>
-  <img src="/images/flipper/voyagermini_black.jpg" width="49%"/>
+  <img src="/images/flipper/voyagermini_white_0.jpg" width="40%"/>
+  <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
 </div>
 
 

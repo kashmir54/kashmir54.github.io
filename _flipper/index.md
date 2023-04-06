@@ -17,15 +17,18 @@ favicon: /images/favicon.ico
 Flipper Zero, we all know what this marvellous RF swiss tool is capable of and if not, let me introduce you to it. This compact device is a mix of chips and antennas that can work on different RF scenarios, such as SubGHz frequencies, NFC, 125kHz RFID, WiFi, Bluetooth and Infrared but it can also work as an Arduino thanks to its GPIO pins, so basically, the combinations and expansions are limitless. Since there are many GPIO apps and external modules developed by the community, I decided to design a PCB to connect the different modules to the flipper and take advantage of these developements. On previous days I was using a fistful set of dangling cables to connect the different chips but with this little PCB I managed to prepare a plug-and-play conenctor, which save time and space. At the moment I only prepared a multipurpose PCB, especifically to connect the NRF24 and CC1101 chips.
 
 
+## Information and tutorials
+
+[Flashing XIAO-ESP32-C3](/flipper/wifi#flashing-xiao-esp32-c3)
 ## Current PCBs and bundles
 
-If you are interested on any item or bundle, contact me through [email](mailto:kashmir_54@hotmail.com). Go to any of the following card to check further information.
+If you are interested on any item or bundle, contact me through [email](mailto:kashmir_54@hotmail.com). Go to any of the following cards to check further information.
 
 <br>
 
 <div class="grid-two">
 
-<a class="box" href="#nrf24">
+<a class="box" href="/flipper/nrf24_board#nrf24">
   <div class="box-two">
     <p class="rodden">Pack NRF24</p>
     <p>Get the connection board and the NRF24.</p>
@@ -33,7 +36,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="#cc1101">
+<a class="box" href="/flipper/nrf24_board#cc1101">
   <div class="box-two">
     <p class="rodden">Pack CC1101</p>
     <p>Get the connection board and the CC1101.</p>
@@ -41,7 +44,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="#other-stuff">
+<a class="box" href="/flipper/nrf24_board#other-stuff">
   <div class="box-two">
     <p class="rodden">MegaPack RF</p>
     <p>Go beyond! A starter pack to increase your Flipper capabilities.</p>
@@ -49,7 +52,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="">
+<a class="box" href="/flipper/wifi">
   <div class="box-two">
     <p class="rodden">VoyagerRF</p>
     <p>WiFi DevBoard with ESP32-C3, proper antenna, Micro SD Card socket and Marauder firmware. Includes a socket for NRF24/CC1101 connection.</p>
@@ -57,7 +60,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="">
+<a class="box" href="/flipper/nrf24_board">
   <div class="box-two">
     <p class="rodden">Standalone PCB</p>
     <p>Plug-and-play PCB for those who already own the NRF24/CC1101 chip.</p>
@@ -65,7 +68,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="">
+<a class="box" href="/flipper/nrf24_board#other-stuff">
   <div class="box-two">
     <p class="rodden">USB-C Keychain</p>
     <p>Avoid carrying a spare USB cable on your pocket.</p>
