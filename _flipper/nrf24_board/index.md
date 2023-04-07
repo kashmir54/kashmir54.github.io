@@ -10,7 +10,7 @@ favicon: /images/favicon.ico
 
 # NRF24
 
-This module that operates on the 2.4GHz band, which allows the user to interact send and receive data in that band. Unlike the ESP32 (which also operates on the 2.4GHz band) this chip does not implement the TPC/IP stack, therefore, control of the raw physical layer is provided. This module is used by Flipper's GPIO plugins such as [MouseJacker](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/documentation/NRF24.md). This plugin is used in combination with the NRF24 Sniffer, which allow us to grab interesting information from devices working in this band.
+This module operates on the 2.4GHz band, which allows the user to interact send, and receive data in that band. Unlike the ESP32 (which also operates on the 2.4GHz band) this chip does not implement the TPC/IP stack, therefore, control of the raw physical layer is provided. This module is used by Flipper's GPIO plugins such as [MouseJacker](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/documentation/NRF24.md). This plugin is used in combination with the NRF24 Sniffer, which allows us to grab interesting information from devices working in this band.
 
 <p align="center">
   <img class="schema" src="/images/flipper/nrf24_dia.png" width="40%"/>
@@ -26,9 +26,9 @@ NRF24L01 pinout, similar to NRF24L01+PA/LNA. Courtesy of [UberGuidoZ](https://gi
 NRF24L01 wiring diagram.
 </div>
 
-Probably you already know which devices use this band, that's right, wireless keyboards and mice, well, some of them. There ar some well-known brands and models that implement "unencrypted" packets to communicate the device with the USB dongle, therefore, we can sniff the spectrum to grab the address of the device then use it to send our curated payload to the dongle. Further information can be found in the original [blog post](http://travisgoodspeed.blogspot.com/2011/02/promiscuity-is-nrf24l01s-duty.html) or in [mousejack.com](https://www.mousejack.com/).
+Probably you already know which devices use this band, that's right, wireless keyboards and mice, well, some of them. There are some well-known brands and models that implement "unencrypted" packets to communicate the device with the USB dongle, therefore, we can sniff the spectrum to grab the address of the device and then use it to send our curated payload to the dongle. Further information can be found in the original [blog post](http://travisgoodspeed.blogspot.com/2011/02/promiscuity-is-nrf24l01s-duty.html) or in [mousejack.com](https://www.mousejack.com/).
 
-What implies this vulnerability? Mainly, that we can impersonate the keyboard or the mouse and send [HID codes](https://gist.github.com/MightyPork/6da26e382a7ad91b5496ee55fdc73db2), aka, keystrokes or mouse movements. Known products affected by this vulnerability can be found in the [JackIt repo](https://github.com/insecurityofthings/jackit). You can check them out and play around with them.
+What implies this vulnerability? Mainly, we can impersonate the keyboard or the mouse and send [HID codes](https://gist.github.com/MightyPork/6da26e382a7ad91b5496ee55fdc73db2), aka, keystrokes or mouse movements. Known products affected by this vulnerability can be found in the [JackIt repo](https://github.com/insecurityofthings/jackit). You can check them out and play around with them.
 
 I have developed some PCBs to connect this module. I added some decoupling capacitors for stable power delivery and noise reduction on the signal. Here you have some photos of the PCBs in action:
 

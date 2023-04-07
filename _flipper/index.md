@@ -14,7 +14,7 @@ favicon: /images/favicon.ico
   <img class="head-logo" src="/images/flipper/flipper.png" width="30%"/>
 </p>
 
-Flipper Zero, we all know what this marvellous RF swiss tool is capable of and if not, let me introduce you to it. This compact device is a mix of chips and antennas that can work on different RF scenarios, such as SubGHz frequencies, NFC, 125kHz RFID, WiFi, Bluetooth and Infrared but it can also work as an Arduino thanks to its GPIO pins, so basically, the combinations and expansions are limitless. Since there are many GPIO apps and external modules developed by the community, I decided to design a PCB to connect the different modules to the flipper and take advantage of these developements. On previous days I was using a fistful set of dangling cables to connect the different chips but with this little PCB I managed to prepare a plug-and-play conenctor, which save time and space. At the moment I only prepared a multipurpose PCB, especifically to connect the NRF24 and CC1101 chips.
+Flipper Zero, we all know what this marvelous RF Swiss tool is capable of and if not, let me introduce you to it. This compact device is a mix of chips and antennas that can work on different RF scenarios, such as SubGHz frequencies, NFC, 125kHz RFID, WiFi, Bluetooth, and Infrared but it can also work as an Arduino thanks to its GPIO pins, so basically, the combinations and expansions are limitless. Since there are many GPIO apps and external modules developed by the community, I decided to design a PCB to connect the different modules to the flipper and take advantage of these developments. On previous days I was using a fistful set of dangling cables to connect the different chips but with this little PCB I managed to prepare a plug-and-play connector, which save time and space. At the moment I only prepared a multipurpose PCB, specifically to connect the NRF24 and CC1101 chips.
 
 <br>
 
@@ -68,7 +68,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 <a class="box" href="/flipper/wifi">
   <div class="box-two">
     <p class="rodden">VoyagerRF</p>
-    <p>WiFi DevBoard with ESP32-C3, proper antenna, Micro SD Card socket and Marauder firmware. Includes a socket for NRF24/CC1101 connection.</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, proper antenna, and Micro SD Card socket.</p>
     <img class="orange-border" src="/images/flipper/voyager_white_1.jpg">
   </div>
 </a>
