@@ -206,8 +206,8 @@ Includes:
 - Flat WiFi antenna
 
 <div display="grid" align="center">
-  <img src="/images/flipper/mini_white_pack_0.jpg" width="40%"/>
-  <img src="/images/flipper/mini_black_pack_0.jpg" width="40%"/>
+  <img src="/images/flipper/models/mini_white_pack_0.jpg" width="40%"/>
+  <img src="/images/flipper/models/mini_black_pack_0.jpg" width="40%"/>
 </div>
 
 <br>
