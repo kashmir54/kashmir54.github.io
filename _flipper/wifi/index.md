@@ -173,7 +173,7 @@ Check the configs.h and make sure that only #define MARAUDER_FLIPPER is uncommen
 
 # Bundles and Boards
 
-## VoyagerRF Complete Pack / 55€
+## VoyagerRF Complete Pack / 60€
 
 Available in black or white. Antennas can be black or white, as you prefer.
 
@@ -192,7 +192,7 @@ Includes:
 
 <br>
 
-## VoyagerRF mini Complete Pack / 50€
+## VoyagerRF mini Complete Pack / 55€
 
 Available in black or white. Antennas can be black or white, as you prefer.
 
