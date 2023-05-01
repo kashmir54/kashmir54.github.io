@@ -15,6 +15,24 @@ favicon: /images/favicon.ico
   <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
 </div>
 
+## Page index
+
+- [Intro](#intro)
+- [Models](#models)
+- [Flashing Xiao-ESP32-C3](#flashing-xiao-esp32-c3)
+- [Troubleshooting](#troubleshooting)
+- [Bundles and Boards](#bundles-and-boards)
+- [Renders and OBJs](#renders-and-objs)
+
+<br>
+
+---
+
+<br>
+
+
+## Intro
+
 After working on the NRF24 board and checking the range improvement of the external CC1101 with the antenna, I wondered if I can also enhance the WiFi dev module in terms of range, size, and functionality. After hours of design, programming, and research, I produced the VoyagerRF, a multipurpose board with several interesting features such as:
 
 - ESP32-C3: A low-consumption WiFi chip with the latest Marauder firmware. Ready to plug and play and control it with the ESP32 WiFi Marauder GPIO app.
@@ -45,9 +63,17 @@ Currently, I am building two models. The first one is focused on capabilities an
 
 <br>
 
+
 ## Flashing Xiao-ESP32-C3
 
-Are you looking to explore further with the ESP32-C3? Then, let me share with you the flashing process and the different steps needed to shape the Arduino IDE environment:
+Are you looking to explore further with the ESP32-C3? Then, let me share with you the flashing process and the different steps needed to shape the Arduino IDE environment.
+
+<div display="grid" align="center">
+
+**WARNING:** If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your computer or to a power source, make sure to unplug the VoyagerRF from your flipper in order to avoid malfunctions or data corruption on your Flipper's micro SD card.
+
+</div>
+
 
 - Install [Arduino IDE](https://www.arduino.cc/en/software).
 
@@ -61,14 +87,14 @@ We will install the firmware from the source code, therefore, we will need the l
 
 You gotta do it over all the following requirements:
 
-[lv_arduino](https://github.com/lvgl/lv_arduino)
-[LinkedList](https://github.com/ivanseidel/LinkedList)
-[TFT_eSPI](https://github.com/justcallmekoko/TFT_eSPI)
-[JPEGDecoder](https://github.com/Bodmer/JPEGDecoder)
-[NimBLE-Arduino](https://github.com/h2zero/NimBLE-Arduino)
-[Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
-[ArduinoJson](https://github.com/bblanchon/ArduinoJson/archive/refs/tags/v6.18.2.zip)
-[SwitchLib](https://github.com/justcallmekoko/SwitchLib/archive/refs/tags/v1.1.1.zip)
+- [lv_arduino](https://github.com/lvgl/lv_arduino)
+- [LinkedList](https://github.com/ivanseidel/LinkedList)
+- [TFT_eSPI](https://github.com/justcallmekoko/TFT_eSPI)
+- [JPEGDecoder](https://github.com/Bodmer/JPEGDecoder)
+- [NimBLE-Arduino](https://github.com/h2zero/NimBLE-Arduino)
+- [Adafruit_NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
+- [ArduinoJson](https://github.com/bblanchon/ArduinoJson/archive/refs/tags/v6.18.2.zip)
+- [SwitchLib](https://github.com/justcallmekoko/SwitchLib/archive/refs/tags/v1.1.1.zip)
 
 Then to add the libraries go to the following menu and select the downloaded ZIPs one by one.
 
@@ -149,7 +175,7 @@ Go to the boards menu and select the proper model:
 Now hit compile and upload and all should run correctly. 
 
 
-## Troubleshooting 
+## Troubleshooting
 
 I have picked up some errors and solutions:
 
@@ -173,13 +199,13 @@ Check the configs.h and make sure that only #define MARAUDER_FLIPPER is uncommen
 
 # Bundles and Boards
 
-## VoyagerRF Complete Pack / 60€
+## VoyagerRF Complete Pack / 70€
 
 Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.2)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
 - CC1101
 - NRF24
 - 3dBi Omni Antenna (2.4GHz)
@@ -192,13 +218,13 @@ Includes:
 
 <br>
 
-## VoyagerRF mini Complete Pack / 55€
+## VoyagerRF mini Complete Pack / 65€
 
 Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.2)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
 - CC1101
 - NRF24
 - 3dBi Omni Antenna (2.4GHz)
@@ -212,13 +238,13 @@ Includes:
 
 <br>
 
-## VoyagerRF / 40€
+## VoyagerRF / 45€
 
 Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.2)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
 - 3dBi Omni Antenna (2.4GHz)
 
 <div display="grid" align="center">
@@ -228,13 +254,13 @@ Includes:
 
 <br>
 
-## VoyagerRF mini / 35€
+## VoyagerRF mini / 40€
 
 Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.2)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
 - Flat WiFi antenna
 
 <div display="grid" align="center">
@@ -243,6 +269,14 @@ Includes:
 </div>
 
 
+
+## Renders and objs
+
+Many people asked me for the 3D model of the board to start creating some cases, I have uploaded the file and you can download the obj [here](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip). If you create a 3D case, bear in mind the cable for the back antenna and the antenna itself! Also I will be grateful if you could share the 3D model with me or upload it to any of the free platforms (thingiverse or similars), so others can enjoy it. I will place the link and author in this blog.
+
+<p align="center">
+  <img src="/images/flipper/voyager_render_v0.png" width="90%"/>
+</p>
 
 
 <br>
