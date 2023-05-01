@@ -15,6 +15,10 @@ favicon: /images/favicon.ico
   <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
 </div>
 
+---
+
+<br>
+
 ## Page index
 
 - [Intro](#intro)
@@ -23,8 +27,6 @@ favicon: /images/favicon.ico
 - [Troubleshooting](#troubleshooting)
 - [Bundles and Boards](#bundles-and-boards)
 - [Renders and OBJs](#renders-and-objs)
-
-<br>
 
 ---
 
@@ -68,9 +70,9 @@ Currently, I am building two models. The first one is focused on capabilities an
 
 Are you looking to explore further with the ESP32-C3? Then, let me share with you the flashing process and the different steps needed to shape the Arduino IDE environment.
 
-<div display="grid" align="center">
+<div class="warning">
 
-**WARNING:** If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your computer or to a power source, make sure to unplug the VoyagerRF from your flipper in order to avoid malfunctions or data corruption on your Flipper's micro SD card.
+<b>WARNING:</b> If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your computer or to a power source, make sure to unplug the VoyagerRF from your flipper in order to avoid malfunctions or data corruption on your Flipper's micro SD card.
 
 </div>
 
