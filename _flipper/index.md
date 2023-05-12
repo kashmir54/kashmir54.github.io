@@ -22,38 +22,20 @@ Flipper Zero, we all know what this marvelous RF Swiss tool is capable of and if
 
 <br>
 
-## Information and tutorials
-
-[Flashing XIAO-ESP32-C3](/flipper/wifi#flashing-xiao-esp32-c3)
-
-<br>
-
----
-
-<br>
-
 
 ## Current PCBs and bundles
 
-If you are interested on any item or bundle, contact me through [email](mailto:kashmir_54@hotmail.com). Go to any of the following cards to check further information.
+If you are interested on any item or bundle, contact me through [email](mailto:kashmir_54@hotmail.com). Click on any of the following cards to check further information.
 
 <br>
 
 <div class="grid-two">
 
-<a class="box" href="/flipper/nrf24_board#nrf24">
+<a class="box" href="/flipper/wifi">
   <div class="box-two">
-    <p class="rodden">Pack NRF24</p>
-    <p>Get the connection board and the NRF24.</p>
-    <img class="orange-border" src="/images/flipper/nrf24.jpg">
-  </div>
-</a>
-
-<a class="box" href="/flipper/nrf24_board#cc1101">
-  <div class="box-two">
-    <p class="rodden">Pack CC1101</p>
-    <p>Get the connection board and the CC1101.</p>
-    <img class="orange-border" src="/images/flipper/cc1101_1.jpg">
+    <p class="rodden">VoyagerRF</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, proper antenna, and Micro SD Card socket.</p>
+    <img class="orange-border" src="/images/flipper/voyager_white_1.jpg">
   </div>
 </a>
 
@@ -65,18 +47,26 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="/flipper/wifi">
+<a class="box" href="/flipper/nrf24_board#nrf24">
   <div class="box-two">
-    <p class="rodden">VoyagerRF</p>
-    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, proper antenna, and Micro SD Card socket.</p>
-    <img class="orange-border" src="/images/flipper/voyager_white_1.jpg">
+    <p class="rodden">Pack NRF24</p>
+    <p>Connect an NRF24 to explore wireless devices.</p>
+    <img class="orange-border" src="/images/flipper/nrf24.jpg">
+  </div>
+</a>
+
+<a class="box" href="/flipper/nrf24_board#cc1101">
+  <div class="box-two">
+    <p class="rodden">Pack CC1101</p>
+    <p>Connect an external CC1101 to increase SubGHz range.</p>
+    <img class="orange-border" src="/images/flipper/cc1101_1.jpg">
   </div>
 </a>
 
 <a class="box" href="/flipper/nrf24_board">
   <div class="box-two">
     <p class="rodden">Standalone PCB</p>
-    <p>Plug-and-play PCB for those who already own the NRF24/CC1101 chip.</p>
+    <p>Plug-and-play PCB for those who already own a NRF24/CC1101 chip.</p>
     <img class="orange-border" src="/images/flipper/pcb_v1_1.jpg">
   </div>
 </a>
@@ -93,4 +83,12 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 <br>
 
-That's all for now. In further updates I will explain how to play around with these modules. 
+---
+
+<br>
+
+## Information and tutorials
+
+[Flashing XIAO-ESP32-C3](/flipper/wifi#flashing-xiao-esp32-c3)
+
+<br>

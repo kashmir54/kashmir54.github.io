@@ -15,6 +15,8 @@ favicon: /images/favicon.ico
   <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
 </div>
 
+<br>
+
 ---
 
 <br>
@@ -23,10 +25,12 @@ favicon: /images/favicon.ico
 
 - [Intro](#intro)
 - [Models](#models)
-- [Flashing Xiao-ESP32-C3](#flashing-xiao-esp32-c3)
-- [Troubleshooting](#troubleshooting)
 - [Bundles and Boards](#bundles-and-boards)
 - [Renders and OBJs](#renders-and-objs)
+- [Tutorials](#tutorials)
+- [Troubleshooting](#troubleshooting)
+
+<br>
 
 ---
 
@@ -45,7 +49,7 @@ After working on the NRF24 board and checking the range improvement of the exter
 
 I have some units in stock. If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com). Check out the [last section](#bundles-and-boards) to see bundles and prices.
 
-Here you have more photos (there is also a black version!):
+Here you have more photos (also in black matte!):
 
 <div display="grid" align="center">
   <img src="/images/flipper/voyager_white_5.jpg" width="40%"/>
@@ -54,9 +58,14 @@ Here you have more photos (there is also a black version!):
 
 <br>
 
+---
+
+<br>
+
 ## Models
 
-Currently, I am building two models. The first one is focused on capabilities and range, and it includes an SMA connector to attach a 2.4GHz antenna. This increases the range significantly against the original dev board. The second one is focused on portability and features a flat antenna in the back connected to the ESP32C3. This increases substantially the range in comparison to the original dev board, which makes it an interesting option.
+Currently, I am building two models. The first one (normal) is focused on capabilities and range, and it includes an SMA connector to attach a 2.4GHz antenna. This increases the range significantly against the original dev board and any other PCB antennas. 
+The second one (mini) is focused on portability and features a flat antenna in the back connected to the ESP32C3. This increases substantially the range in comparison to the original dev board, which makes it an interesting option. Here you have some pictures for the mini board:
 
 <div display="grid" align="center">
   <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
@@ -64,6 +73,121 @@ Currently, I am building two models. The first one is focused on capabilities an
 </div>
 
 <br>
+
+---
+
+<br>
+
+# Bundles and Boards
+
+## VoyagerRF Complete Pack / 70€
+
+Available in black or white. Antennas can be black or white, as you prefer.
+
+Includes:
+
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- SMA Connector for ESP32C3 solvered into the PCB
+- 3dBi Omni Antenna (2.4GHz)
+- 3dBi Helical Antenna (433Mhz) 
+- CC1101 module
+- NRF24 module
+
+<div display="grid" align="center">
+  <img src="/images/flipper/models/white_3.jpg" width="40%"/>
+  <img src="/images/flipper/models/black_3.jpg" width="40%"/>
+</div>
+
+<br>
+
+## VoyagerRF mini Complete Pack / 65€
+
+Available in black or white. Antennas can be black or white, as you prefer. 
+
+Includes:
+
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- Flat WiFi antenna
+- 3dBi Omni Antenna (2.4GHz)
+- 3dBi Helical Antenna (433Mhz) 
+- CC1101 module
+- NRF24 module
+
+<div display="grid" align="center">
+  <img src="/images/flipper/models/mini_white_pack_0.jpg" width="40%"/>
+  <img src="/images/flipper/models/mini_black_pack_0.jpg" width="40%"/>
+</div>
+
+<br>
+
+## VoyagerRF / 45€
+
+Available in black or white. The antenna can be black or white, as you prefer.
+
+Includes:
+
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- SMA Connector for ESP32C3 solvered into the PCB
+- 3dBi Omni Antenna (2.4GHz)
+
+<div display="grid" align="center">
+  <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
+  <img src="/images/flipper/voyager_black_0.jpg" width="40%"/>
+</div>
+
+<br>
+
+## VoyagerRF mini / 40€
+
+Available in black or white. The antenna can be black or white, as you prefer.
+
+Includes:
+
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- Flat WiFi antenna
+
+<div display="grid" align="center">
+  <img src="/images/flipper/voyagermini_white_0.jpg" width="40%"/>
+  <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
+</div>
+
+<br>
+
+---
+
+<br>
+
+## Renders, objs and 3D cases.
+
+Many people asked me for the 3D model of the board to start creating some cases, I have uploaded the file and you can download the obj [here](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip). 
+
+Currently I don't have a 3D case design, if you create a 3D case, bear in mind the cable for the back antenna and the antenna itself! Also I will be grateful if you could share the 3D model with me or upload it to any of the free platforms (thingiverse or similars), so others can enjoy it. I will place the link and author in this blog.
+
+- [VoyagerRF ver 0.1](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip)
+
+<p align="center">
+  <img src="/images/flipper/voyager_render_v0.png" width="80%"/>
+</p>
+
+
+<br>
+
+---
+
+<br>
+
+
+# Tutorials
+
+In this section you can find resource to explore further this little board.
+
+- [Getting Started](#getting-started)
+- [Flashing XIAO-ESP32-C3](#flashing-xiao-esp32-c3)
+
+
+## Getting started
+
+New tutorials comming on next updates!
 
 
 ## Flashing Xiao-ESP32-C3
@@ -77,11 +201,29 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
 </div>
 
 
-- Install [Arduino IDE](https://www.arduino.cc/en/software).
+1. Install [Arduino IDE](https://www.arduino.cc/en/software).
 
-- Set up the libraries for Marauder:
+2. Download [latests ESP32 Marauder source code](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) and extract the ZIP content in a folder:
 
-We will install the firmware from the source code, therefore, we will need the libraries used in the marauder. To do it, download the libraries as a zip as displayed in the following image:
+<p align="center">
+  <img src="/images/flipper/marauder_src.png" width="80%"/>
+</p>
+
+3. Go to the folder you have extracted, over esp32_marauder and open esp32_marauder.ino with ArduinoIDE:
+
+<div class="warning">
+
+<b>ESP32Marauder-0.10.4 > esp32_marauder > esp32_marauder.ino</b>
+
+</div>
+
+<p align="center">
+  <img src="/images/flipper/open_ino.png" width="80%"/>
+</p>
+
+4. Set up the libraries for Marauder:
+
+We will install the firmware from the source code, therefore, we will need the libraries used in the Marauder. To do it, download the libraries as a zip as displayed in the following image:
 
 <p align="center">
   <img src="/images/flipper/download.png" width="90%"/>
@@ -104,22 +246,24 @@ Then to add the libraries go to the following menu and select the downloaded ZIP
   <img src="/images/flipper/add_lib.png" width="70%"/>
 </p>
 
-- Install esp32 board
+5. Install _esp32 by Espressif Systems_ from the Boards Manager:
 
-Currently, I found the esp32 stable at version 2.0.6, I will explore newer versions and test them out, but for now: Go to boards, search for esp32 and install version 2.0.6:
+Currently, I found the ESP32 stable at version 2.0.9. Go to boards, search for esp32 and install version 2.0.9:
 
 <p align="center">
   <img src="/images/flipper/esp32.png" width="50%"/>
 </p>
 
 
-- Modifying platform.txt for ESP32-C3 support:
+6. Modifying platform.txt for ESP32-C3 support:
 
-As stated in the [ArduinoIDE setup instructions](https://github.com/justcallmekoko/ESP32Marauder/wiki/arduino-ide-setup#if-you-are-following-these-instructions-you-do-not-need-to-do-this), you have to modify the platform.txt. To do that, find the esp32 platform.txt on your system. It should be someplace near this path:
+As stated in the [ArduinoIDE setup instructions](https://github.com/justcallmekoko/ESP32Marauder/wiki/arduino-ide-setup#if-you-are-following-these-instructions-you-do-not-need-to-do-this), you have to modify the platform.txt. To do that, find the esp32 platform.txt on your system. It should be somewhere near this path:
 
-```
-C:\Users\your_user\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.6\platform.txt
-```
+<div class="warning">
+
+<b>C:\Users\your_user\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.6\platform.txt</b>
+
+</div>
 
 Now, add **-w** to build.extra_flags.esp32c3 option:
 
@@ -135,7 +279,7 @@ compiler.c.elf.libs.esp32c3=-zmuldefs -lesp_ringbuf -lefuse -lesp_ipc -ldriver -
 
 Save and restart Arduino IDE (if open).
 
-- Change Micro SD Card pin
+7. Change Micro SD Card pin
 
 In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since the VoyagerRF board is designed to work with CS pin in that GPIO:
 
@@ -166,20 +310,45 @@ In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since t
 #endif
 ```
 
-- Set the board (XIAO-ESP32-C3)
+8. Set the board (XIAO-ESP32-C3)
 
-Go to the boards menu and select the proper model:
+Connect your VoyagerRF board (remember to disconnect it from the Flipper). Go to the boards menu and select the proper model (XIAO-ESP32-C3):
 
 <p align="center">
   <img src="/images/flipper/xiao_esp32_option.png" width="80%"/>
 </p>
 
-Now hit compile and upload and all should run correctly. 
+Go over port and select the board that poped up when connected (don't mind the fingerprint, it will be a little bit random):
+
+<p align="center">
+  <img src="/images/flipper/port.png" width="80%"/>
+</p>
+
+The rest of the options are as follow:
+
+| Setting     | Value       |
+| ----------- | ----------- |
+| **USB CDC On Boot**   | Text          |
+| CPU Frequency         | 160MHz (WiFi) |
+| Core Debug Level      | None          |
+| Erase All Flash...    | Disabled      |
+| Flash Frequency       | 80 MHz        |
+| Flash Mode            | QIO           |
+| Flash Size            | 4MB (32Mb)    |
+| Partition Scheme      | Minimal SPIFFS|
+| Upload Speed          | 921600        |
 
 
-## Troubleshooting
+Now hit Compile and Upload and all should run correctly. You should have this output:
 
-I have picked up some errors and solutions:
+<p align="center">
+  <img src="/images/flipper/output.png" width="80%"/>
+</p>
+
+
+
+# Troubleshooting
+
 
 - If the compilation output errors with duplicates variables and headers:
 
@@ -189,105 +358,10 @@ Check that the changes on platform.txt are correct and that you have restarted A
 
 Go to Tools > USB CDC On Boot and set "Disable" so the connection is set on the TX/RX ports instead of the USBC connector in the XIAO-ESP32-C3
 
+- I hit scan or other commands in ESP32 Wifi Marauder Companion and I get no output:
+
+This happens usually on Flipper's RogueMaster firmware. Go to GPIO and set _5V on GPIO_ to **ON**. 
+
 - The SD card is not detected and no pcaps are being saved:
 
 Check the configs.h and make sure that only #define MARAUDER_FLIPPER is uncommented and that you have changed the #define SD_CS 4 as previously described.
-
-<br>
-
----
-
-<br>
-
-# Bundles and Boards
-
-## VoyagerRF Complete Pack / 70€
-
-Available in black or white. Antennas can be black or white, as you prefer.
-
-Includes:
-
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
-- CC1101
-- NRF24
-- 3dBi Omni Antenna (2.4GHz)
-- 3dBi Helical Antenna (433Mhz) 
-
-<div display="grid" align="center">
-  <img src="/images/flipper/models/white_3.jpg" width="40%"/>
-  <img src="/images/flipper/models/black_3.jpg" width="40%"/>
-</div>
-
-<br>
-
-## VoyagerRF mini Complete Pack / 65€
-
-Available in black or white. Antennas can be black or white, as you prefer.
-
-Includes:
-
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
-- CC1101
-- NRF24
-- 3dBi Omni Antenna (2.4GHz)
-- 3dBi Helical Antenna (433Mhz)
-- Flat WiFi antenna
-
-<div display="grid" align="center">
-  <img src="/images/flipper/models/mini_white_pack_0.jpg" width="40%"/>
-  <img src="/images/flipper/models/mini_black_pack_0.jpg" width="40%"/>
-</div>
-
-<br>
-
-## VoyagerRF / 45€
-
-Available in black or white. The antenna can be black or white, as you prefer.
-
-Includes:
-
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
-- 3dBi Omni Antenna (2.4GHz)
-
-<div display="grid" align="center">
-  <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
-  <img src="/images/flipper/voyager_black_0.jpg" width="40%"/>
-</div>
-
-<br>
-
-## VoyagerRF mini / 40€
-
-Available in black or white. The antenna can be black or white, as you prefer.
-
-Includes:
-
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.3)
-- Flat WiFi antenna
-
-<div display="grid" align="center">
-  <img src="/images/flipper/voyagermini_white_0.jpg" width="40%"/>
-  <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
-</div>
-
-
-
-## Renders and objs
-
-Many people asked me for the 3D model of the board to start creating some cases, I have uploaded the file and you can download the obj [here](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip). If you create a 3D case, bear in mind the cable for the back antenna and the antenna itself! Also I will be grateful if you could share the 3D model with me or upload it to any of the free platforms (thingiverse or similars), so others can enjoy it. I will place the link and author in this blog.
-
-<p align="center">
-  <img src="/images/flipper/voyager_render_v0.png" width="90%"/>
-</p>
-
-
-<br>
-
----
-
-<br>
-
-
-# Tutorials
-
-I'm planning to record several videos for tutorials using the ESP32. Stay tuned!
