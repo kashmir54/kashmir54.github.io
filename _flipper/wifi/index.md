@@ -201,15 +201,15 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
 </div>
 
 
-1. Install [Arduino IDE](https://www.arduino.cc/en/software).
+**Step 1.** Install [Arduino IDE](https://www.arduino.cc/en/software).
 
-2. Download [latests ESP32 Marauder source code](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) and extract the ZIP content in a folder:
+**Step 2.**. Download [latests ESP32 Marauder source code](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) and extract the ZIP content in a folder:
 
 <p align="center">
   <img src="/images/flipper/marauder_src.png" width="80%"/>
 </p>
 
-3. Go to the folder you have extracted, over esp32_marauder and open esp32_marauder.ino with ArduinoIDE:
+**Step 3.** Go to the folder you have extracted, over esp32_marauder and open esp32_marauder.ino with ArduinoIDE:
 
 <div class="warning">
 
@@ -221,7 +221,7 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
   <img src="/images/flipper/open_ino.png" width="80%"/>
 </p>
 
-4. Set up the libraries for Marauder:
+**Step 4.** Set up the libraries for Marauder:
 
 We will install the firmware from the source code, therefore, we will need the libraries used in the Marauder. To do it, download the libraries as a zip as displayed in the following image:
 
@@ -246,7 +246,7 @@ Then to add the libraries go to the following menu and select the downloaded ZIP
   <img src="/images/flipper/add_lib.png" width="70%"/>
 </p>
 
-5. Install _esp32 by Espressif Systems_ from the Boards Manager:
+**Step 5.** Install _esp32 by Espressif Systems_ from the Boards Manager:
 
 Currently, I found the ESP32 stable at version 2.0.9. Go to boards, search for esp32 and install version 2.0.9:
 
@@ -255,7 +255,7 @@ Currently, I found the ESP32 stable at version 2.0.9. Go to boards, search for e
 </p>
 
 
-6. Modifying platform.txt for ESP32-C3 support:
+**Step 6.** Modifying platform.txt for ESP32-C3 support:
 
 As stated in the [ArduinoIDE setup instructions](https://github.com/justcallmekoko/ESP32Marauder/wiki/arduino-ide-setup#if-you-are-following-these-instructions-you-do-not-need-to-do-this), you have to modify the platform.txt. To do that, find the esp32 platform.txt on your system. It should be somewhere near this path:
 
@@ -279,7 +279,7 @@ compiler.c.elf.libs.esp32c3=-zmuldefs -lesp_ringbuf -lefuse -lesp_ipc -ldriver -
 
 Save and restart Arduino IDE (if open).
 
-7. Change Micro SD Card pin
+**Step 7.** Change Micro SD Card pin
 
 In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since the VoyagerRF board is designed to work with CS pin in that GPIO:
 
@@ -310,7 +310,7 @@ In the configs.h, change the MARAUDER_FLIPPER SD_CS definition to pin 4, since t
 #endif
 ```
 
-8. Set the board (XIAO-ESP32-C3)
+**Step 8.** Set the board (XIAO-ESP32-C3)
 
 Connect your VoyagerRF board (remember to disconnect it from the Flipper). Go to the boards menu and select the proper model (XIAO-ESP32-C3):
 
@@ -321,14 +321,14 @@ Connect your VoyagerRF board (remember to disconnect it from the Flipper). Go to
 Go over port and select the board that poped up when connected (don't mind the fingerprint, it will be a little bit random):
 
 <p align="center">
-  <img src="/images/flipper/port.png" width="80%"/>
+  <img src="/images/flipper/port.png" width="70%"/>
 </p>
 
 The rest of the options are as follow:
 
 | Setting     | Value       |
 | ----------- | ----------- |
-| **USB CDC On Boot**   | Text          |
+| USB CDC On Boot (important)   | Disabled      |
 | CPU Frequency         | 160MHz (WiFi) |
 | Core Debug Level      | None          |
 | Erase All Flash...    | Disabled      |
@@ -339,7 +339,7 @@ The rest of the options are as follow:
 | Upload Speed          | 921600        |
 
 
-Now hit Compile and Upload and all should run correctly. You should have this output:
+**Step 9.** Hit Compile and Upload and all should run correctly. You should have this output if all went smoothly:
 
 <p align="center">
   <img src="/images/flipper/output.png" width="80%"/>
