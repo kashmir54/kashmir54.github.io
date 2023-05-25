@@ -26,9 +26,11 @@ favicon: /images/favicon.ico
 - [Intro](#intro)
 - [Models](#models)
 - [Bundles and Boards](#bundles-and-boards)
+- [Community posts](#community-posts)
 - [Renders and OBJs](#renders-and-objs)
 - [Tutorials](#tutorials)
 - [Troubleshooting](#troubleshooting)
+
 
 <br>
 
@@ -157,6 +159,30 @@ Includes:
 
 <br>
 
+
+# Community posts
+
+Thanks for sharing the VoyagerRF over the internet! This little project got some awesome backers posting on reddit about it, go check them out!
+
+- [Original post](https://www.reddit.com/r/flipperzero/comments/12hfs8t/voyagerrf_a_multipurpose_gpio_board_based_on/)
+
+- [Post by u/Cyber-bros](https://www.reddit.com/r/flipperzero/comments/1375tcj/which_color_would_you_get_white_or_black/)
+
+- [Post by u/Deauther94](https://www.reddit.com/r/flipperzero/comments/12r7ub1/got_a_upgrade/)
+
+
+<div display="grid" align="center">
+  <img src="/images/flipper/reddit/cyber.png" width="40%"/>
+  <img src="/images/flipper/reddit/deauth.png" width="40%"/>
+</div>
+
+
+<br>
+
+---
+
+<br>
+
 ## Renders, objs and 3D cases.
 
 Many people asked me for the 3D model of the board to start creating some cases, I have uploaded the file and you can download the obj [here](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip). 
@@ -203,7 +229,7 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
 
 **Step 1.** Install [Arduino IDE](https://www.arduino.cc/en/software).
 
-**Step 2.**. Download [latests ESP32 Marauder source code](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) and extract the ZIP content in a folder:
+**Step 2.** Download [latests ESP32 Marauder source code](https://github.com/justcallmekoko/ESP32Marauder/releases/latest) and extract the ZIP content in a folder:
 
 <p align="center">
   <img src="/images/flipper/marauder_src.png" width="80%"/>
@@ -365,3 +391,5 @@ This happens usually on Flipper's RogueMaster firmware. Go to GPIO and set _5V o
 - The SD card is not detected and no pcaps are being saved:
 
 Check the configs.h and make sure that only #define MARAUDER_FLIPPER is uncommented and that you have changed the #define SD_CS 4 as previously described.
+
+

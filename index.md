@@ -8,7 +8,7 @@ favicon: /images/favicon.ico
 
 # Welcome to my blog!
 
-Wow! You make it to this website. Thanks for comming in, dear visitor. 
+Wow! You make it to this website. Thanks for coming in!
 This website is all about sharing this awesome path of discovery I'm in. I usually do some CTFs and HackTheBox stuff but I'm interested in radio and any other thing that has to deal with computers and electronics. This is an open space, so feel free to contact me in case there are any doubts of what I post here.
 
 
@@ -167,7 +167,7 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 # Flipper Zero
 
-I backed FlipperZero from the early stage of the kickstarter and I enjoy it very much. It is nowadays my favorite tool for pentesting and I have developed some addons to use external modules such as NRF24 and CC1101. If you want to know more about these modules, get in the following post:  
+I backed FlipperZero from the early stage of the kickstarter and I enjoy it very much. It is nowadays my favorite tool for pentesting and I have developed some addons to use external modules such as NRF24 and CC1101. Also, I developed the VoyagerRF board, a multipurpose WiFi auditing board to take all your tools everywhere. Find out more in the following post:  
 
 <div class="grid-one">
 	<a class="box" href="/flipper">
