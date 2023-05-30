@@ -384,12 +384,26 @@ Check that the changes on platform.txt are correct and that you have restarted A
 
 Go to Tools > USB CDC On Boot and set "Disable" so the connection is set on the TX/RX ports instead of the USBC connector in the XIAO-ESP32-C3
 
-- I hit scan or other commands in ESP32 Wifi Marauder Companion and I get no output:
+- I hit **scan** or other commands in ESP32 Wifi Marauder Companion and I get no output or I get a "Press BACK to send stopscan":
 
-This happens usually on Flipper's RogueMaster firmware. Go to GPIO and set _5V on GPIO_ to **ON**. 
+  - If you are using the VoyagerRF **WITH** the Micro SD card connected:
+    
+    This happens usually on Flipper's RogueMaster firmware. Go to GPIO and set _5V on GPIO_ to **ON**.
 
-- The SD card is not detected and no pcaps are being saved:
+  - If you are using the VoyagerRF **WITHOUT** the Micro SD card connected:
+    
+    There is a bug on the Marauder v0.10.4 firmware or companion app. If there is no SD card connected, when booting (entering the ESP32 WiFi Marauder app), the ESP32 will be bugged, you can hit the reset button while being in the app and you can use the module as normal. Everytime you get into the app with no Micro SD card connected to the VoyagerRF, you will have to hit the reset button. I'm trying to work this out.
+
+<p align="center">
+  <img src="/images/flipper/reset_button.png" width="60%"/>
+</p>
+
+- The SD card is connected and no pcaps are being saved:
 
 Check the configs.h and make sure that only #define MARAUDER_FLIPPER is uncommented and that you have changed the #define SD_CS 4 as previously described.
 
+Connect the SD card before entering the ESP32 WiFi Marauder app.
+
+
+- Please, if you have other issues, please, contact me on my email.
 
