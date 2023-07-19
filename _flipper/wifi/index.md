@@ -27,8 +27,10 @@ favicon: /images/favicon.ico
 - [Models](#models)
 - [Bundles and Boards](#bundles-and-boards)
 - [Community posts](#community-posts)
-- [Renders and OBJs](#renders-and-objs)
+- [Renders and OBJs](#renders-objs-and-3d-cases)
 - [Tutorials](#tutorials)
+  - [Flashing Marauder on XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
+  - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
 - [Troubleshooting](#troubleshooting)
 
 
@@ -88,7 +90,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
 - SMA Connector for ESP32C3 solvered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -108,7 +110,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
 - Flat WiFi antenna
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -128,7 +130,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
 - SMA Connector for ESP32C3 solvered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 
@@ -145,7 +147,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.4)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
 - Flat WiFi antenna
 
 <div display="grid" align="center">
@@ -208,15 +210,15 @@ Currently I don't have a 3D case design, if you create a 3D case, bear in mind t
 In this section you can find resource to explore further this little board.
 
 - [Getting Started](#getting-started)
-- [Flashing XIAO-ESP32-C3](#flashing-xiao-esp32-c3)
-
+- [Flashing XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
+- [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
 
 ## Getting started
 
 New tutorials comming on next updates!
 
 
-## Flashing Xiao-ESP32-C3
+## Flashing Marauder on Xiao-ESP32-C3
 
 Are you looking to explore further with the ESP32-C3? Then, let me share with you the flashing process and the different steps needed to shape the Arduino IDE environment.
 
@@ -239,7 +241,7 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
 
 <div class="warning">
 
-<b>ESP32Marauder-0.10.4 > esp32_marauder > esp32_marauder.ino</b>
+<b>ESP32Marauder-0.10.x > esp32_marauder > esp32_marauder.ino</b>
 
 </div>
 
@@ -372,9 +374,174 @@ The rest of the options are as follow:
 </p>
 
 
+## Flashing Marauder on Xiao-ESP32-C3
+
+Many people have requested a guide for flashing ESP32C3 with new trending app, [EvilPortal](https://github.com/bigbrodude6119/flipper-zero-evil-portal). Following these steps you will achieve it.
+
+<div class="warning">
+
+<b>NOTE:</b> This steps were valid on version 0.0.2. Tutorial could get old as the version evolve.
+
+</div>
+
+**Step 1.** Install [Arduino IDE](https://www.arduino.cc/en/software).
+
+
+**Step 2.** Download [latests evilportal release](https://github.com/bigbrodude6119/flipper-zero-evil-portal/releases/latest) specifically, we will need EvilPortal.ino. You might want to download evil_portal_sd_folder.zip and unleashed-.evil_portal.fap.zip since you need them for seting up your Flipper:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/evilportal_src.png" width="80%"/>
+</p>
+
+
+**Step 3.** Open EvilPortal.ino with ArduinoIDE:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/open_ino_2.png" width="80%"/>
+</p>
+
+
+**Step 4.** Set up the libraries for EvilPortal:
+
+We will install the firmware from the source code, therefore, we will need the libraries used in the EvilPortal. To do it, download the libraries as a zip as displayed in the following image:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/lib.png" width="90%"/>
+</p>
+
+You gotta do it over all the following libraries:
+
+- [AsyncTCP](https://github.com/me-no-dev/AsyncTCP)
+- [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
+
+Then to add the libraries go to the following menu and select the downloaded ZIPs one by one.
+
+<p align="center">
+  <img src="/images/flipper/evilportal/install_lib.png" width="70%"/>
+</p>
+
+<p align="center">
+  <img src="/images/flipper/evilportal/add_lib.png" width="70%"/>
+</p>
+
+**Step 5.** Install _esp32 by Espressif Systems_ from the Boards Manager:
+
+Currently, I found the ESP32 stable at version 2.0.9. Go to boards, search for esp32 and install version 2.0.9:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/esp32.png" width="50%"/>
+</p>
+
+**Step 6** Modify AsyncWebSocket.cpp:
+
+There is a bug in the ESPAsyncWebServer library for the ESP32C3, mainteiner has not fixed it, so we have to do it manually. 
+
+Go to the folder where the file is, it should be something like this one:
+
+<div class="warning">
+
+<b>NOTE:</b> C:\Users\youruser\Documents\Arduino\libraries\ESPAsyncWebServer-master\src
+
+</div>
+
+Then open the file and edit the following line:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/edit.png" width="50%"/>
+</p>
+
+<p align="center">
+  <img src="/images/flipper/evilportal/line.png" width="50%"/>
+</p>
+
+Replace it with the following typed return statement as shown in the following piece of code: _return IPAddress((uint32_t)0);_
+
+```c
+IPAddress AsyncWebSocketClient::remoteIP() {
+    if(!_client) {
+        return IPAddress((uint32_t)0);  //Before: return IPAddress(0U);
+    }
+    return _client->remoteIP();
+}
+```
+
+Code and library wise you are all set, now move into board selection.
+
+
+**Step 7** Set the board (XIAO-ESP32-C3)
+
+Connect your VoyagerRF board (remember to disconnect it from the Flipper). Go to the boards menu and select the proper model (XIAO-ESP32-C3):
+
+<p align="center">
+  <img src="/images/flipper/evilportal/board.png" width="80%"/>
+</p>
+
+Go over port and select the board that poped up when connected (don't mind the fingerprint, it will be a little bit random):
+
+<p align="center">
+  <img src="/images/flipper/evilportal/port.png" width="70%"/>
+</p>
+
+The rest of the options are as follow:
+
+| Setting     | Value       |
+| ----------- | ----------- |
+| USB CDC On Boot (important)   | Disabled      |
+| CPU Frequency         | 160MHz (WiFi) |
+| Core Debug Level      | None          |
+| Erase All Flash...    | Disabled      |
+| Flash Frequency       | 80 MHz        |
+| Flash Mode            | QIO           |
+| Flash Size            | 4MB (32Mb)    |
+| Partition Scheme      | Minimal SPIFFS|
+| Upload Speed          | 921600        |
+
+
+If everything is successful, you should see the following messages:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/ok.png" width="70%"/>
+</p>
+
+Now we can set up the rest of the environment.
+
+
+**Step 8** Load APP (.fap) and set up data to your Flipper:
+
+Connect your flipper, use the qFlipper app or other file explorer, then, get the unleashed-evil_portal.fap.zip we downloaded from the repo, unzip it, and drop it to the apps/gpio folder as shown in the image:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/app.png" width="70%"/>
+</p>
+
+Do the same with the folder evil_portal_sd_folder.zip, unzip it, and drop the complete folder 
+
+<p align="center">
+  <img src="/images/flipper/evilportal/evil_folder.png" width="70%"/>
+</p>
+
+Within that folder you should have two files, ap.config.txt, where you have to place the AP name and the index.html, which is the page that is going to load when the Captive Portal is displayed in the phone.
+
+And that's it, you are now able to plug the VoyagerRF and show up with the captive portal when clients connect. You can also save the logs to the flipper sd card with no issue:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/set_up.jpg" width="80%"/>
+</p>
+
+We connect to the Wifi Network and the captive portal shows up:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/captive_portal.jpg" width="80%"/>
+</p>
+
+Inseting the credentials and saving them to the log file:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/logs.png" width="50%"/>
+</p>
+
 
 # Troubleshooting
-
 
 - If the compilation output errors with duplicates variables and headers:
 
