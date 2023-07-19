@@ -374,7 +374,7 @@ The rest of the options are as follow:
 </p>
 
 
-## Flashing Marauder on Xiao-ESP32-C3
+## Flashing EvilPortal on Xiao-ESP32-C3
 
 Many people have requested a guide for flashing ESP32C3 with new trending app, [EvilPortal](https://github.com/bigbrodude6119/flipper-zero-evil-portal). Following these steps you will achieve it.
 
@@ -390,7 +390,7 @@ Many people have requested a guide for flashing ESP32C3 with new trending app, [
 **Step 2.** Download [latests evilportal release](https://github.com/bigbrodude6119/flipper-zero-evil-portal/releases/latest) specifically, we will need EvilPortal.ino. You might want to download evil_portal_sd_folder.zip and unleashed-.evil_portal.fap.zip since you need them for seting up your Flipper:
 
 <p align="center">
-  <img src="/images/flipper/evilportal/evilportal_src.png" width="80%"/>
+  <img src="/images/flipper/evilportal/evilportal_src.png" width="90%"/>
 </p>
 
 
@@ -429,7 +429,7 @@ Then to add the libraries go to the following menu and select the downloaded ZIP
 Currently, I found the ESP32 stable at version 2.0.9. Go to boards, search for esp32 and install version 2.0.9:
 
 <p align="center">
-  <img src="/images/flipper/evilportal/esp32.png" width="50%"/>
+  <img src="/images/flipper/esp32.png" width="50%"/>
 </p>
 
 **Step 6** Modify AsyncWebSocket.cpp:
@@ -447,11 +447,11 @@ Go to the folder where the file is, it should be something like this one:
 Then open the file and edit the following line:
 
 <p align="center">
-  <img src="/images/flipper/evilportal/edit.png" width="50%"/>
+  <img src="/images/flipper/evilportal/edit.png" width="70%"/>
 </p>
 
 <p align="center">
-  <img src="/images/flipper/evilportal/line.png" width="50%"/>
+  <img src="/images/flipper/evilportal/line.png" width="70%"/>
 </p>
 
 Replace it with the following typed return statement as shown in the following piece of code: _return IPAddress((uint32_t)0);_
@@ -500,7 +500,7 @@ The rest of the options are as follow:
 If everything is successful, you should see the following messages:
 
 <p align="center">
-  <img src="/images/flipper/evilportal/ok.png" width="70%"/>
+  <img src="/images/flipper/evilportal/ok.png" width="80%"/>
 </p>
 
 Now we can set up the rest of the environment.
