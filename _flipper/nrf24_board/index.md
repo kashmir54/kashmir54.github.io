@@ -1,5 +1,5 @@
 ---
-title: "Kashmir54 - FlipperZero NRF24 board"
+title: "NRF24 board for Flipper Zero"
 categories: [flipper]
 date: 2023-04-01
 comments: true

@@ -1,5 +1,5 @@
 ---
-title: "Kashmir54 - VoyagerRF for Flipper Zero"
+title: "VoyagerRF for Flipper Zero"
 categories: [flipper]
 date: 2023-04-06
 comments: true
@@ -29,6 +29,7 @@ favicon: /images/favicon.ico
 - [Community posts](#community-posts)
 - [Renders and OBJs](#renders-objs-and-3d-cases)
 - [Tutorials](#tutorials)
+  - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
   - [Flashing Marauder on XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
   - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
 - [Troubleshooting](#troubleshooting)
@@ -210,12 +211,58 @@ Currently I don't have a 3D case design, if you create a 3D case, bear in mind t
 In this section you can find resource to explore further this little board.
 
 - [Getting Started](#getting-started)
+- [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
 - [Flashing XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
 - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
 
 ## Getting started
 
 New tutorials comming on next updates!
+
+
+## Flashing Marauder on VoyagerRF using micro SD card
+
+Since current update from source might be hard to compile and manage with the new dependencies, I have prepared the bin file to update from the SD on marauder firmware. If you got a VoyagerRF, you have Marauder firmware preinstalled, so you can perform this update. These are the steps to update:
+
+
+**Step 1.** Download the desired version of marauder from the following options:
+
+| Version     | File       |
+| ----------- | ----------- |
+| v0.10.7   | [voyagerrf_marauder_v0_10_7.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_10_7.bin)      |
+| v0.11.0-rc1   | [voyagerrf_marauder_v0_11_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0.bin)      |
+
+**Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
+
+<p align="center">
+  <img src="/images/flipper/update/file_sd.png" width="70%"/>
+</p>
+
+**Step 3.** Insert the micro SD card in the VoyagerRF and enter into the companion app (ESP32 WiFi Marauder app) and go to _Update_ option and select the sd option, hit enter, then if you have renamed the file correctly, the update will start:
+
+<p align="center">
+  <img src="/images/flipper/update/1_0_update.png" width="70%"/>
+</p>
+
+Updating...
+
+<p align="center">
+  <img src="/images/flipper/update/1_1_update.png" width="70%"/>
+</p>
+
+Reboot the Marauder and you can see the new version:
+
+<p align="center">
+  <img src="/images/flipper/update/1_2_update.png" width="70%"/>
+</p>
+
+And the evilportal command (if you got the v0.11.0+) ready to use:
+
+<p align="center">
+  <img src="/images/flipper/update/1_3_update.png" width="70%"/>
+</p>
+
+That's it, now we have to wait until companion app gets updated.
 
 
 ## Flashing Marauder on Xiao-ESP32-C3
@@ -551,6 +598,10 @@ Check that the changes on platform.txt are correct and that you have restarted A
 
 Go to Tools > USB CDC On Boot and set "Disable" so the connection is set on the TX/RX ports instead of the USBC connector in the XIAO-ESP32-C3
 
+- I'm trying to update, but it is not working.
+
+Using a Samsung MicroSD card will cause Marauder not to boot, as stated on the [official wiki](https://github.com/justcallmekoko/ESP32Marauder/wiki/sd-update).
+
 - I hit **scan** or other commands in ESP32 Wifi Marauder Companion and I get no output or I get a "Press BACK to send stopscan":
 
   - If you are using the VoyagerRF **WITH** the Micro SD card connected:
@@ -565,12 +616,13 @@ Go to Tools > USB CDC On Boot and set "Disable" so the connection is set on the 
   <img src="/images/flipper/reset_button.png" width="60%"/>
 </p>
 
-- The SD card is connected and no pcaps are being saved:
+- The micro SD card is connected to the VoyagerRF, but no pcaps are being saved:
+
+Do not use a micro SD card with more than 32GB, use 32GB or less.
 
 Check the configs.h and make sure that only #define MARAUDER_FLIPPER is uncommented and that you have changed the #define SD_CS 4 as previously described.
 
 Connect the SD card before entering the ESP32 WiFi Marauder app.
-
 
 - Please, if you have other issues, please, contact me on my email.
 

@@ -1,5 +1,5 @@
 ---
-title: "Kashmir54 - FlipperZero"
+title: "Kashmir54 - Flipper Zero"
 categories: [flipper]
 date: 2023-03-10
 comments: true
