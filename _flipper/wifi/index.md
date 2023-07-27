@@ -231,6 +231,7 @@ Since current update from source might be hard to compile and manage with the ne
 | ----------- | ----------- |
 | v0.10.7   | [voyagerrf_marauder_v0_10_7.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_10_7.bin)      |
 | v0.11.0-rc1   | [voyagerrf_marauder_v0_11_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0.bin)      |
+| v0.11.0-rc2   | [voyagerrf_marauder_v0_11_0_rc2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc2.bin)      |
 
 **Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
 
@@ -241,25 +242,25 @@ Since current update from source might be hard to compile and manage with the ne
 **Step 3.** Insert the micro SD card in the VoyagerRF and enter into the companion app (ESP32 WiFi Marauder app) and go to _Update_ option and select the sd option, hit enter, then if you have renamed the file correctly, the update will start:
 
 <p align="center">
-  <img src="/images/flipper/update/1_0_update.png" width="70%"/>
+  <img src="/images/flipper/update/1_0_update.png" width="55%"/>
 </p>
 
 Updating...
 
 <p align="center">
-  <img src="/images/flipper/update/1_1_update.png" width="70%"/>
+  <img src="/images/flipper/update/1_1_update.png" width="55%"/>
 </p>
 
 Reboot the Marauder and you can see the new version:
 
 <p align="center">
-  <img src="/images/flipper/update/1_2_update.png" width="70%"/>
+  <img src="/images/flipper/update/1_2_update.png" width="55%"/>
 </p>
 
 And the evilportal command (if you got the v0.11.0+) ready to use:
 
 <p align="center">
-  <img src="/images/flipper/update/1_3_update.png" width="70%"/>
+  <img src="/images/flipper/update/1_3_update.png" width="55%"/>
 </p>
 
 That's it, now we have to wait until companion app gets updated.
