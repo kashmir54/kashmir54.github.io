@@ -232,6 +232,7 @@ Since current update from source might be hard to compile and manage with the ne
 | v0.10.7   | [voyagerrf_marauder_v0_10_7.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_10_7.bin)      |
 | v0.11.0-rc1   | [voyagerrf_marauder_v0_11_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0.bin)      |
 | v0.11.0-rc2   | [voyagerrf_marauder_v0_11_0_rc2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc2.bin)      |
+| v0.11.0-rc3   | [voyagerrf_marauder_v0_11_0_rc3.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc3.bin)      |
 
 **Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
 
