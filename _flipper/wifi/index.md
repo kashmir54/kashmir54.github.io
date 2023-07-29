@@ -222,8 +222,14 @@ New tutorials comming on next updates!
 
 ## Flashing Marauder on VoyagerRF using micro SD card
 
-Since current update from source might be hard to compile and manage with the new dependencies, I have prepared the bin file to update from the SD on marauder firmware. If you got a VoyagerRF, you have Marauder firmware preinstalled, so you can perform this update. These are the steps to update:
+Since current update from source might be hard to compile and manage with the new dependencies, I have prepared the bin file to update from the SD on marauder firmware. If you got a VoyagerRF, you have Marauder firmware preinstalled, so you can perform this update. 
 
+Here you have the video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JZKtMV9_qtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+And these are the steps to update:
 
 **Step 1.** Download the desired version of marauder from the following options:
 
