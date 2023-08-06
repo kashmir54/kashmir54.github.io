@@ -85,14 +85,16 @@ The second one (mini) is focused on portability and features a flat antenna in t
 
 # Bundles and Boards
 
+If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com) on my email kashmir_54@hotmail.com and I will get back to you!
+
 ## VoyagerRF Complete Pack / 70€
 
 Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
-- SMA Connector for ESP32C3 solvered into the PCB
+- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
+- SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
 - CC1101 module
@@ -111,7 +113,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
 - Flat WiFi antenna
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -131,8 +133,8 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
-- SMA Connector for ESP32C3 solvered into the PCB
+- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
+- SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 
 <div display="grid" align="center">
@@ -148,7 +150,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.10.7)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
 - Flat WiFi antenna
 
 <div display="grid" align="center">
