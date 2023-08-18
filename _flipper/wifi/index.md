@@ -94,7 +94,6 @@ Available in black or white. Antennas can be black or white, as you prefer.
 Includes:
 
 - VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
-- SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
 - CC1101 module
@@ -219,7 +218,76 @@ In this section you can find resource to explore further this little board.
 
 ## Getting started
 
-New tutorials comming on next updates!
+What can you do with the VoyagerRF and the rest of the modules in the kit?
+
+Possibilities are limitless! But here I will go over some ideas that you might find interesting and useful in some red teaming tasks.
+
+<div class="warning">
+
+<b>DISCLAIMER:</b> These tutorials and information are solely for educational purposes and not an intended use of the device.
+
+</div>
+
+### RogueAP / Evilportal
+
+A rogue access point is a wireless access point that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker. [Wikipedia, Rogue Access Point](https://en.wikipedia.org/wiki/Rogue_access_point).
+
+In this case, we can use the VoyagerRF and Marauder firmware to create a RogueAP to log user credentials. Requirements:
+
+- Unleashed Firmware (v060+) or any other firmware with Marauder Companion app v0.6.0+ (\[ESP32\] WiFi Marauder app).
+- Marauder firmware (v0.11.0+) on you WiFi devboard
+- WiFi devboard with micro SD card slot (or a VoyagerRF 😉)
+- 32GB or less MicroSD card + USB adapter
+- A computer or a device to load files into the VoyagerRF board micro SD card
+
+Once you have all the requirements set you are good to go.
+
+Steps:
+
+**Step 1.** Set the configuration files.
+
+You need two files to be placed on the MicroSD card: **ap.config.txt** and **index.html**. The first one holds the AP name (the WiFi name) and the second one stores the html code that will be displayed in the captive portal (the webpage that pops up when you connect to the WiFi).
+
+For the ap.config.txt I will use this content:
+
+```
+Google Free Wifi
+```
+
+And for the index.html I have use a login form with Google's look and feel. You can choose any html you want, in this [Github repo](https://github.com/bigbrodude6119/flipper-zero-evil-portal/tree/main/portals) you will find many html files, download it and rename it to index.html.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    ...
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+</head>
+<body>
+    <div class="login-container">
+        <form action="/get" id="email-form-step">
+            ...
+            <h1>Sign in</h1>
+            <h2>Use your Google Account</h2>
+            <input name="email" type="text" class="g-input" placeholder="Email" required>
+            <input name="password" type="password" class="g-input" placeholder="Password" required>
+            <button class="gbtn-primary" type="submit">Next</button>
+        </form>
+    </div>
+</body>
+</html>
+
+```
+
+**Step 2.** Load the files into the MicroSD card.
+
+Just that, place the two files in the root folder or the MicroSD card
+
+**Step 3.** Eject the MicroSD card and plug it into the VoyagerRF board.
+
+**Step 4.** Launch WiFi Marauder app on the flipper with the MicroSD card already plugged in and launch the portal.
+
+As easy as that! If you have any concerns, check out the YouTube video showing these steps.
 
 
 ## Flashing Marauder on VoyagerRF using micro SD card
@@ -281,7 +349,9 @@ Are you looking to explore further with the ESP32-C3? Then, let me share with yo
 
 <div class="warning">
 
-<b>WARNING:</b> If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your computer or to a power source, make sure to unplug the VoyagerRF from your flipper in order to avoid malfunctions or data corruption on your Flipper's micro SD card.
+<b>WARNING:</b> This tutorial is valid for Marauder v0.10.7 or before, version v0.11.0 requires tricky configurations that won't be explained in this page. If you already have marauder firmware, use the [update from micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card) option, it will be painless. If you installed evilportal or other firmware and you don't have the possibility to update from the micro sd card, I suggest you install this v0.10.0 version and then update from the sd card.
+
+If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your computer or to a power source, make sure to unplug the VoyagerRF from your flipper in order to avoid malfunctions or data corruption on your Flipper's micro SD card.
 
 </div>
 
@@ -435,9 +505,9 @@ The rest of the options are as follow:
 
 Many people have requested a guide for flashing ESP32C3 with new trending app, [EvilPortal](https://github.com/bigbrodude6119/flipper-zero-evil-portal). Following these steps you will achieve it.
 
-<div class="warning">
+<div class="error">
 
-<b>NOTE:</b> This steps were valid on version 0.0.2. Tutorial could get old as the version evolve.
+<b>WARNING:</b> Marauder firmware and app includes the evilportal within, so there is no need to have this Evilportal firmware. If you flash the VoyagerRF with this standalone version you won't be able to use marauder until you flash it again. This steps were valid on version 0.0.2. Tutorial could get old as the version evolve.
 
 </div>
 
