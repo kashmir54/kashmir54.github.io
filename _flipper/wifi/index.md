@@ -8,7 +8,7 @@ image: /images/kashmir.png
 favicon: /images/favicon.ico
 ---
 
-# VoyagerRF
+<p class="vera">VoyagerRF</p>
 
 <div display="grid" align="center">
   <img src="/images/flipper/voyager_white_1.jpg" width="40%"/>
@@ -29,6 +29,7 @@ favicon: /images/favicon.ico
 - [Community posts](#community-posts)
 - [Renders and OBJs](#renders-objs-and-3d-cases)
 - [Tutorials](#tutorials)
+  - [Setup Evilportal](##rogueap--evilportal)
   - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
   - [Flashing Marauder on XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
   - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
@@ -94,6 +95,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 Includes:
 
 - VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
+- SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
 - CC1101 module
@@ -211,7 +213,7 @@ Currently I don't have a 3D case design, if you create a 3D case, bear in mind t
 
 In this section you can find resource to explore further this little board.
 
-- [Getting Started](#getting-started)
+- [Setup Evilportal](##rogueap--evilportal)
 - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
 - [Flashing XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
 - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
@@ -222,13 +224,19 @@ What can you do with the VoyagerRF and the rest of the modules in the kit?
 
 Possibilities are limitless! But here I will go over some ideas that you might find interesting and useful in some red teaming tasks.
 
-<div class="warning">
+<div class="error">
 
 <b>DISCLAIMER:</b> These tutorials and information are solely for educational purposes and not an intended use of the device.
 
 </div>
 
-### RogueAP / Evilportal
+<br>
+
+## RogueAP / Evilportal
+
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q-dpkW7P3o0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 A rogue access point is a wireless access point that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker. [Wikipedia, Rogue Access Point](https://en.wikipedia.org/wiki/Rogue_access_point).
 
@@ -289,6 +297,19 @@ Just that, place the two files in the root folder or the MicroSD card
 
 As easy as that! If you have any concerns, check out the YouTube video showing these steps.
 
+<br>
+
+## NRF24 Sniffer: Wireless BadUSB
+
+TBA
+
+<br>
+
+## WiFi WPA Handshake: catch and crack
+
+TBA
+
+<br>
 
 ## Flashing Marauder on VoyagerRF using micro SD card
 
@@ -296,8 +317,9 @@ Since current update from source might be hard to compile and manage with the ne
 
 Here you have the video:
 
+<div>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JZKtMV9_qtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+</div>
 
 And these are the steps to update:
 
@@ -366,7 +388,7 @@ If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your comp
 
 **Step 3.** Go to the folder you have extracted, over esp32_marauder and open esp32_marauder.ino with ArduinoIDE:
 
-<div class="warning">
+<div class="note">
 
 <b>ESP32Marauder-0.10.x > esp32_marauder > esp32_marauder.ino</b>
 
@@ -414,7 +436,7 @@ Currently, I found the ESP32 stable at version 2.0.9. Go to boards, search for e
 
 As stated in the [ArduinoIDE setup instructions](https://github.com/justcallmekoko/ESP32Marauder/wiki/arduino-ide-setup#if-you-are-following-these-instructions-you-do-not-need-to-do-this), you have to modify the platform.txt. To do that, find the esp32 platform.txt on your system. It should be somewhere near this path:
 
-<div class="warning">
+<div class="note">
 
 <b>C:\Users\your_user\AppData\Local\Arduino15\packages\esp32\hardware\esp32\2.0.6\platform.txt</b>
 
@@ -565,7 +587,7 @@ There is a bug in the ESPAsyncWebServer library for the ESP32C3, mainteiner has 
 
 Go to the folder where the file is, it should be something like this one:
 
-<div class="warning">
+<div class="note">
 
 <b>NOTE:</b> C:\Users\youruser\Documents\Arduino\libraries\ESPAsyncWebServer-master\src
 

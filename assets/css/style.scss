@@ -27,6 +27,12 @@ div.grid{
   src: url('/assets/css/Roddenberry.otf') format("opentype");
 }
 
+@font-face {
+  font-family: "VeraMoBI";
+  src: url('/assets/css/VeraMoBI.otf') format("opentype");
+}
+
+
 div.grid-two{
   display: grid;
   column-gap: 3.125em;
@@ -46,10 +52,21 @@ div.box-two{
   text-align: center;
 }
 
-div.warning{
+img.main{
+  border: solid 10px #dfdfdf;
+}
+
+div.note{
   border: solid #029b8a;
   border-width: 3px;
   background-color: #023832;
+  padding: 10px;
+}
+
+div.warning{
+  border: solid #ffc189;
+  border-width: 3px;
+  background-color: #cd7901;
   padding: 10px;
 }
 
@@ -81,6 +98,14 @@ img.schema{
   text-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 0 5px rgba(83,232,170,0.1), 0 0 10px rgba(83,232,191,0.1);
   font-size: 28px;
   margin-bottom: 0;
+}
+
+.vera{
+  font-family: "VeraMoBI";
+  color: #43CAB2;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 0 5px rgba(83,232,170,0.1), 0 0 10px rgba(83,232,191,0.1);
+  font-size: 40px;
 }
 
 div.grid-one{
