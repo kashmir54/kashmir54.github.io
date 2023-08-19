@@ -11,8 +11,8 @@ favicon: /images/favicon.ico
 <p class="vera">VoyagerRF</p>
 
 <div display="grid" align="center">
-  <img src="/images/flipper/voyager_white_1.jpg" width="40%"/>
-  <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
+  <img src="/images/flipper/voyager_white_1.jpg" class="main" width="40%"/>
+  <img src="/images/flipper/voyager_black_0.jpg" class="main" width="40%"/>
 </div>
 
 <br>
@@ -29,7 +29,7 @@ favicon: /images/favicon.ico
 - [Community posts](#community-posts)
 - [Renders and OBJs](#renders-objs-and-3d-cases)
 - [Tutorials](#tutorials)
-  - [Setup Evilportal](##rogueap--evilportal)
+  - [Setup Evilportal](#rogueap--evilportal)
   - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
   - [Flashing Marauder on XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
   - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
@@ -59,7 +59,7 @@ Here you have more photos (also in black matte!):
 
 <div display="grid" align="center">
   <img src="/images/flipper/voyager_white_5.jpg" width="40%"/>
-  <img src="/images/flipper/voyager_black_0.jpg" width="40%"/>
+  <img src="/images/flipper/voyager_white_2.jpg" width="40%"/>
 </div>
 
 <br>
@@ -213,7 +213,7 @@ Currently I don't have a 3D case design, if you create a 3D case, bear in mind t
 
 In this section you can find resource to explore further this little board.
 
-- [Setup Evilportal](##rogueap--evilportal)
+- [Setup Evilportal](#rogueap--evilportal)
 - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
 - [Flashing XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
 - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
@@ -226,7 +226,7 @@ Possibilities are limitless! But here I will go over some ideas that you might f
 
 <div class="error">
 
-<b>DISCLAIMER:</b> These tutorials and information are solely for educational purposes and not an intended use of the device.
+<b>DISCLAIMER:</b> These tutorials and information are solely for educational purposes and not an intended use of the device. They provide a hands-on experience in the field of cybersecurity and penetration testing. Any illegal use is strictly prohibited. Test on your own environment and with your own gear.
 
 </div>
 
@@ -242,8 +242,8 @@ A rogue access point is a wireless access point that has been installed on a sec
 
 In this case, we can use the VoyagerRF and Marauder firmware to create a RogueAP to log user credentials. Requirements:
 
-- Unleashed Firmware (v060+) or any other firmware with Marauder Companion app v0.6.0+ (\[ESP32\] WiFi Marauder app).
-- Marauder firmware (v0.11.0+) on you WiFi devboard
+- [Unleashed Firmware](https://github.com/DarkFlippers/unleashed-firmware) (v060+) or any other firmware with [Marauder Companion app](https://github.com/0xchocolate/flipperzero-wifi-marauder) v0.6.0+ (\[ESP32\] WiFi Marauder app).
+- [Marauder firmware (v0.11.0+)](https://github.com/justcallmekoko/ESP32Marauder/wiki/update-firmware) on you WiFi devboard
 - WiFi devboard with micro SD card slot (or a VoyagerRF 😉)
 - 32GB or less MicroSD card + USB adapter
 - A computer or a device to load files into the VoyagerRF board micro SD card
@@ -262,7 +262,7 @@ For the ap.config.txt I will use this content:
 Google Free Wifi
 ```
 
-And for the index.html I have use a login form with Google's look and feel. You can choose any html you want, in this [Github repo](https://github.com/bigbrodude6119/flipper-zero-evil-portal/tree/main/portals) you will find many html files, download it and rename it to index.html.
+And for the index.html I have use a login form with Google's look and feel. You can choose any html you want, in this [Github repo](https://github.com/bigbrodude6119/flipper-zero-evil-portal/tree/main/portals) you will find many html files created by [roshanravan](https://github.com/roshanravan), download it and rename it to **index.html** .
 
 ```html
 <!DOCTYPE html>
@@ -295,7 +295,17 @@ Just that, place the two files in the root folder or the MicroSD card
 
 **Step 4.** Launch WiFi Marauder app on the flipper with the MicroSD card already plugged in and launch the portal.
 
-As easy as that! If you have any concerns, check out the YouTube video showing these steps.
+**Step 5.** Test it out on your mobile phone, it will display the captive portal once connected. Here are some examples:
+
+<div display="grid" align="center">
+  <img src="/images/flipper/evilportal/amazon.jpg" width="30%"/>
+  <img src="/images/flipper/evilportal/google.jpg" width="30%"/>
+  <img src="/images/flipper/evilportal/microsoft.jpg" width="30%"/>
+</div>
+
+_Templates by [roshanravan](https://github.com/roshanravan)._
+
+As easy as that! If you have any concerns, check out the YouTube video showing these steps!
 
 <br>
 
@@ -527,9 +537,9 @@ The rest of the options are as follow:
 
 Many people have requested a guide for flashing ESP32C3 with new trending app, [EvilPortal](https://github.com/bigbrodude6119/flipper-zero-evil-portal). Following these steps you will achieve it.
 
-<div class="error">
+<div class="warning">
 
-<b>WARNING:</b> Marauder firmware and app includes the evilportal within, so there is no need to have this Evilportal firmware. If you flash the VoyagerRF with this standalone version you won't be able to use marauder until you flash it again. This steps were valid on version 0.0.2. Tutorial could get old as the version evolve.
+<b>WARNING:</b> Marauder firmware (v0.11.0+) and Flipper's Marauder Companion app (v0.6.0+) already includes the evilportal within, so there is no need to have this Evilportal firmware. If you flash the VoyagerRF board with this standalone version you won't be able to use marauder until you flash it again. This steps were valid on version 0.0.2. Tutorial could get old as the version evolve.
 
 </div>
 
