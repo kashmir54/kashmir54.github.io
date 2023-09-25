@@ -341,6 +341,7 @@ And these are the steps to update:
 | v0.11.0-rc1   | [voyagerrf_marauder_v0_11_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0.bin)      |
 | v0.11.0-rc2   | [voyagerrf_marauder_v0_11_0_rc2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc2.bin)      |
 | v0.11.0-rc3   | [voyagerrf_marauder_v0_11_0_rc3.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc3.bin)      |
+| v0.12.0  | [voyagerrf_marauder_v0_12_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_12_0.bin)      |
 
 **Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
 
