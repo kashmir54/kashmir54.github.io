@@ -10,6 +10,8 @@ collections:
     output: true
   flipper:
     output: true
+  academia:
+    output: true
   misc:
     output: true
     

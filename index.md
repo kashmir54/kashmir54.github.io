@@ -196,7 +196,7 @@ To read more about this topic:
 		<div class="main-box">
 			<div>
 				<p>Kashmir54's Research</p>
-				<img class="mini-icon" src="/images/search.png"><!-- icon from https://www.flaticon.com/free-icons/article" title="article icons by Canticons - Flaticon-->
+				<img style="width: 10%;" src="/images/search.png"><!-- icon from https://www.flaticon.com/free-icons/article" title="article icons by Canticons - Flaticon-->
 			</div>
 		</div>
 	</a>
@@ -223,7 +223,7 @@ During this journey, I got some awards, badges and certifications:
   </div>
 </a>
 
-<a class="box" href="">
+<a class="box" href="#">
   <div class="box-two">
     <p class="rodden">Intel Security Badge</p>
     <p>Third team solving Intel Security Challenge</p>
@@ -231,7 +231,7 @@ During this journey, I got some awards, badges and certifications:
   </div>
 </a>
 
-<a class="box" href="">
+<a class="box" href="#">
   <div class="box-two">
     <p class="rodden">Cyberleague Guardia Civil</p>
     <p>Guardia Civil's Cyberleague Finalist</p>
@@ -239,10 +239,10 @@ During this journey, I got some awards, badges and certifications:
   </div>
 </a>
 
-<a class="box" href="">
+<a class="box" href="#">
   <div class="box-two">
     <p class="rodden">JNIC CFF</p>
-    <p>Best CTF challenge "Fullstack tester" along with the one and only <a href="https://razvioverflow.github.io/">RazviOverflow</a></p>
+    Best CTF challenge "Fullstack tester" along with the one and only [RazviOverflow](https://razvioverflow.github.io)
     <img class="" src="/images/badges/jnic.png">
   </div>
 </a>
