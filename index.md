@@ -27,6 +27,8 @@ This website is all about sharing this awesome path of discovery I'm in. I usual
 
 Here you will find some walkthoughs of virtual machines, at the moment I'm only at HackTheBox:
 
+<br>
+
 <div class="grid-one">
 	<a class="box" href="/walkthroughs">
 		<div class="main-box">
@@ -128,6 +130,8 @@ I have special interest in OSINT, Web and Forensic challenges and I participate 
 
 You can find all my CTFs writeups (solutions and explanations) here: 
 
+<br>
+
 <div class="grid-one">
 	<a class="box" href="/ctfs">
 		<div class="main-box">
@@ -169,6 +173,8 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 I backed FlipperZero from the early stage of the kickstarter and I enjoy it very much. It is nowadays my favorite tool for pentesting and I have developed some addons to use external modules such as NRF24 and CC1101. Also, I developed the VoyagerRF board, a multipurpose WiFi auditing board to take all your tools everywhere. Find out more in the following post:  
 
+<br>
+
 <div class="grid-one">
 	<a class="box" href="/flipper">
 		<div class="main-box">
@@ -188,8 +194,9 @@ I backed FlipperZero from the early stage of the kickstarter and I enjoy it very
 
 # Research
 
-I have been working on cyber intelligence for over two years. My research focused on phishing and fraud detection using machine learning.
-To read more about this topic:
+I have been working on cyber intelligence for over two years. My research focused on phishing and fraud detection using machine learning. To read more about this topic:
+
+<br>
 
 <div class="grid-one">
 	<a class="box" href="/academia">
@@ -213,6 +220,8 @@ To read more about this topic:
 
 During this journey, I got some awards, badges and certifications:
 
+<br>
+
 <div class="grid-two">
 
 <a class="box" href="https://www.credential.net/3b60bc6e-b2bc-474c-90dc-418754490bc5">
@@ -220,14 +229,6 @@ During this journey, I got some awards, badges and certifications:
     <p class="rodden">OSWP</p>
     <p>OffSec Wireless Professional (OSWP)</p>
     <img class="" src="/images/badges/oswp.png">
-  </div>
-</a>
-
-<a class="box" href="#">
-  <div class="box-two">
-    <p class="rodden">Intel Security Badge</p>
-    <p>Third team solving Intel Security Challenge</p>
-    <img class="" src="/images/badges/i_front.jpg">
   </div>
 </a>
 
@@ -241,8 +242,16 @@ During this journey, I got some awards, badges and certifications:
 
 <a class="box" href="#">
   <div class="box-two">
+    <p class="rodden">Intel Security Badge</p>
+    <p>Third team solving Intel Security Challenge</p>
+    <img class="" src="/images/badges/i_front.jpg">
+  </div>
+</a>
+
+<a class="box" href="#">
+  <div class="box-two">
     <p class="rodden">JNIC CFF</p>
-    Best CTF challenge "Fullstack tester" along with the one and only [RazviOverflow](https://razvioverflow.github.io)
+    Best CTF challenge "Fullstack tester" along with the one and only RazviOverflow
     <img class="" src="/images/badges/jnic.png">
   </div>
 </a>
