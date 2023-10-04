@@ -7,7 +7,14 @@ image: /images/kashmir.png
 favicon: /images/favicon.ico
 ---
 
-Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for having me, specially to [RazviOverflow](https://ctftime.org/user/72894), he is a pwning machine. Check out his [website](https://razvioverflow.github.io/)! 
+Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for having me, specially to [RazviOverflow](https://ctftime.org/user/72894), he is a pwning machine. Check out his [website](https://razvioverflow.github.io/) and [Youtube channel](https://www.youtube.com/@RazviOverflow)!
+
+<br>
+
+---
+
+<br>
+
 
 ## CTF - Writeups:
 

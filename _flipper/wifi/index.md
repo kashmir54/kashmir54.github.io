@@ -94,7 +94,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.12.0)
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -106,25 +106,6 @@ Includes:
   <img src="/images/flipper/models/black_3.jpg" width="40%"/>
 </div>
 
-<br>
-
-## VoyagerRF mini Complete Pack / 65€
-
-Available in black or white. Antennas can be black or white, as you prefer. 
-
-Includes:
-
-- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
-- Flat WiFi antenna
-- 3dBi Omni Antenna (2.4GHz)
-- 3dBi Helical Antenna (433Mhz) 
-- CC1101 module
-- NRF24 module
-
-<div display="grid" align="center">
-  <img src="/images/flipper/models/mini_white_pack_0.jpg" width="40%"/>
-  <img src="/images/flipper/models/mini_black_pack_0.jpg" width="40%"/>
-</div>
 
 <br>
 
@@ -134,7 +115,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.12.0)
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 
@@ -143,21 +124,6 @@ Includes:
   <img src="/images/flipper/voyager_black_0.jpg" width="40%"/>
 </div>
 
-<br>
-
-## VoyagerRF mini / 40€
-
-Available in black or white. The antenna can be black or white, as you prefer.
-
-Includes:
-
-- VoyagerRF board with Marauder Firmware preinstalled (v0.11.0)
-- Flat WiFi antenna
-
-<div display="grid" align="center">
-  <img src="/images/flipper/voyagermini_white_0.jpg" width="40%"/>
-  <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
-</div>
 
 <br>
 
@@ -176,10 +142,12 @@ Thanks for sharing the VoyagerRF over the internet! This little project got some
 
 - [Post by u/Deauther94](https://www.reddit.com/r/flipperzero/comments/12r7ub1/got_a_upgrade/)
 
+- [Post by @Ano1X8](https://twitter.com/Ano1X8/status/1697994130465464815)
 
 <div display="grid" align="center">
-  <img src="/images/flipper/reddit/cyber.png" width="40%"/>
-  <img src="/images/flipper/reddit/deauth.png" width="40%"/>
+  <img src="/images/flipper/reddit/cyber.png" width="30%"/>
+  <img src="/images/flipper/reddit/deauth.png" width="30%"/>
+  <img src="/images/flipper/reddit/anon.png" width="30%"/>
 </div>
 
 

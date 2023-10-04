@@ -186,14 +186,71 @@ I backed FlipperZero from the early stage of the kickstarter and I enjoy it very
 
 <br>
 
-# Academic research
+# Research
 
-I have been working on cyber intelligence for over two years. My research focuses on phishing and fraud detection using machine learning.
-To read more about this topic go to the link (TBD):
+I have been working on cyber intelligence for over two years. My research focused on phishing and fraud detection using machine learning.
+To read more about this topic:
 
-[Academic research (TBD)](/academic)
+<div class="grid-one">
+	<a class="box" href="/academia">
+		<div class="main-box">
+			<div>
+				<p>Kashmir54's Research</p>
+				<img class="mini-icon" src="/images/search.png"><!-- icon from https://www.flaticon.com/free-icons/article" title="article icons by Canticons - Flaticon-->
+			</div>
+		</div>
+	</a>
+</div>
+
 
 <br>
+
+---
+
+<br>
+
+# Badges
+
+During this journey, I got some awards, badges and certifications:
+
+<div class="grid-two">
+
+<a class="box" href="https://www.credential.net/3b60bc6e-b2bc-474c-90dc-418754490bc5">
+  <div class="box-two">
+    <p class="rodden">OSWP</p>
+    <p>OffSec Wireless Professional (OSWP)</p>
+    <img class="" src="/images/badges/oswp.png">
+  </div>
+</a>
+
+<a class="box" href="">
+  <div class="box-two">
+    <p class="rodden">Intel Security Badge</p>
+    <p>Third team solving Intel Security Challenge</p>
+    <img class="" src="/images/badges/i_front.jpg">
+  </div>
+</a>
+
+<a class="box" href="">
+  <div class="box-two">
+    <p class="rodden">Cyberleague Guardia Civil</p>
+    <p>Guardia Civil's Cyberleague Finalist</p>
+    <img class="" src="/images/badges/g_front.jpg">
+  </div>
+</a>
+
+<a class="box" href="">
+  <div class="box-two">
+    <p class="rodden">JNIC CFF</p>
+    <p>Best CTF challenge "Fullstack tester" along with the one and only <a href="https://razvioverflow.github.io/">RazviOverflow</a></p>
+    <img class="" src="/images/badges/jnic.png">
+  </div>
+</a>
+
+</div>
+
+<br>
+
 
 ---
 

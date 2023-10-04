@@ -32,6 +32,23 @@ div.grid{
   src: url('/assets/css/VeraMoBI.ttf');
 }
 
+.academia {
+  align-items: center;
+  justify-content: center;
+}
+
+.article {
+  max-width: 25%;
+  max-height:15%;
+  float: left;
+}
+
+.abstract {
+  padding-left: 20px;
+  padding-top: 20%;
+  float: left;
+}
+
 
 div.grid-two{
   display: grid;

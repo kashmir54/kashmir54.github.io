@@ -85,10 +85,3 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 ---
 
-<br>
-
-## Information and tutorials
-
-[Flashing XIAO-ESP32-C3](/flipper/wifi#flashing-xiao-esp32-c3)
-
-<br>
