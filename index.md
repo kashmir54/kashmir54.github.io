@@ -251,7 +251,7 @@ During this journey, I got some awards, badges and certifications:
 <a class="box" href="#">
   <div class="box-two">
     <p class="rodden">JNIC CFF</p>
-    Best CTF challenge "Fullstack tester" along with the one and only RazviOverflow
+    <p>Best CTF challenge "Fullstack tester" along with the one and only RazviOverflow</p>
     <img class="" src="/images/badges/jnic.png">
   </div>
 </a>
