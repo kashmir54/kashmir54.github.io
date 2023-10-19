@@ -47,11 +47,13 @@ favicon: /images/favicon.ico
 
 After working on the NRF24 board and checking the range improvement of the external CC1101 with the antenna, I wondered if I can also enhance the WiFi dev module in terms of range, size, and functionality. After hours of design, programming, and research, I produced the VoyagerRF, a multipurpose board with several interesting features such as:
 
-- ESP32-C3: A low-consumption WiFi chip with the latest Marauder firmware. Ready to plug and play and control it with the ESP32 WiFi Marauder GPIO app.
+- ESP32-C3: A low-consumption WiFi and Bluetooth chip with the latest Marauder firmware. This chip will allow you to perform all WiFi and Bluetooth tools deployed on marauder (including evilportal, sour apple, etc). Ready to plug and play and control it with the ESP32 WiFi Marauder GPIO app.
 - 3dBi Omnidirectional WiFi antenna (2.4GHz) mounted into the board and connected to the ESP32-C3 for great range improvement against the original devboard.
-- MicroSD card slot to save the output from the Marauder app (already configured in the firmware).
+- MicroSD card slot to save the output from the Marauder app (already configured in the firmware) and different configuration files (for evilportal, for example).
 - NRF24/CC1101 socket with decoupling capacitors for noise reduction. Compatible with [External CC1101 configuration](https://github.com/quen0n/flipperzero-ext-cc1101) and [NRF24 Sniffer/MouseJacker](https://github.com/UberGuidoZ/Flipper/blob/main/GPIO/ReadMe.md#nrf24l01--mousejack-pinout---8-pin) (see chip compatibility since not all chips have the same pinout).
 - Compact design 
+
+I wanna give a big shoutout to [justcallmekoko](https://github.com/justcallmekoko) for the amazing community he is building and for the developement and maintenance of the [marauder project](https://github.com/justcallmekoko/ESP32Marauder/). Make sure you check out his [YouTube channel](https://www.youtube.com/justcallmekoko).
 
 I have some units in stock. If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com). Check out the [last section](#bundles-and-boards) to see bundles and prices.
 
@@ -94,7 +96,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.12.0)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.13.2)
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -115,7 +117,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.12.0)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.13.2)
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 
@@ -185,6 +187,7 @@ In this section you can find resource to explore further this little board.
 - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
 - [Flashing XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
 - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
+
 
 ## Getting started
 
@@ -291,7 +294,7 @@ TBA
 
 ## Flashing Marauder on VoyagerRF using micro SD card
 
-Since current update from source might be hard to compile and manage with the new dependencies, I have prepared the bin file to update from the SD on marauder firmware. If you got a VoyagerRF, you have Marauder firmware preinstalled, so you can perform this update. 
+Since current update from source might be hard to compile and manage with the new dependencies, I have prepared the bin file to update from the SD on marauder firmware. If you got a VoyagerRF, you have Marauder firmware preinstalled, so you can perform this update.
 
 Here you have the video:
 
@@ -305,12 +308,13 @@ And these are the steps to update:
 
 | Version     | File       |
 | ----------- | ----------- |
-| v0.10.7   | [voyagerrf_marauder_v0_10_7.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_10_7.bin)      |
-| v0.11.0-rc1   | [voyagerrf_marauder_v0_11_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0.bin)      |
-| v0.11.0-rc2   | [voyagerrf_marauder_v0_11_0_rc2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc2.bin)      |
-| v0.11.0-rc3   | [voyagerrf_marauder_v0_11_0_rc3.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc3.bin)      |
-| v0.12.0  | [voyagerrf_marauder_v0_12_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_12_0.bin)      |
-| v0.13.1  | [voyagerrf_marauder_v0_13_1.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_1.bin)      |
+| [v0.10.7](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.10.7)   | [voyagerrf_marauder_v0_10_7.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_10_7.bin)      |
+| [v0.11.0-rc1](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.11.0-RC1)   | [voyagerrf_marauder_v0_11_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0.bin)      |
+| [v0.11.0-rc2](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.11.0-RC2)   | [voyagerrf_marauder_v0_11_0_rc2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc2.bin)      |
+| [v0.11.0-rc3](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.11.0-RC3)   | [voyagerrf_marauder_v0_11_0_rc3.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc3.bin)      |
+| [v0.12.0](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.12.0)  | [voyagerrf_marauder_v0_12_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_12_0.bin)      |
+| [v0.13.1](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.1)  | [voyagerrf_marauder_v0_13_1.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_1.bin)      |
+| [v0.13.2](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.2)  | [voyagerrf_marauder_v0_13_2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_2.bin)      |
 
 **Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
 
