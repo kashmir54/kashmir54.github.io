@@ -315,6 +315,7 @@ And these are the steps to update:
 | [v0.12.0](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.12.0)  | [voyagerrf_marauder_v0_12_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_12_0.bin)      |
 | [v0.13.1](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.1)  | [voyagerrf_marauder_v0_13_1.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_1.bin)      |
 | [v0.13.2](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.2)  | [voyagerrf_marauder_v0_13_2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_2.bin)      |
+| [v0.13.4](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.4)  | [voyagerrf_marauder_v0_13_4.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_4.bin)      |
 
 **Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
 
