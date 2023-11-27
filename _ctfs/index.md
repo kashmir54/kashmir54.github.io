@@ -20,6 +20,7 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 
 ### 2023
 
+- [GlacierCTF 2023](/ctfs/GlacierCTF2023) (25/11/2023)
 - [CyberApocalypse 2023](/ctfs/CyberApocalypse2023) (24/03/2023)
 - [UTCTF 2023](/ctfs/UTCTF2023) (11/03/2023)
 - [0xL4ughCTF 2023]() (17/02/2023) - No writeup yet
