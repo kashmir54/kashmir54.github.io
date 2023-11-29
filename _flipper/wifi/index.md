@@ -96,7 +96,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.13.2)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.13.5)
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -117,7 +117,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.13.2)
+- VoyagerRF board with Marauder Firmware preinstalled (v0.13.5)
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 
@@ -316,6 +316,9 @@ And these are the steps to update:
 | [v0.13.1](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.1)  | [voyagerrf_marauder_v0_13_1.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_1.bin)      |
 | [v0.13.2](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.2)  | [voyagerrf_marauder_v0_13_2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_2.bin)      |
 | [v0.13.4](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.4)  | [voyagerrf_marauder_v0_13_4.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_4.bin)      |
+| [v0.13.5](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.5)  | [voyagerrf_marauder_v0_13_5.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_5.bin)      |
+
+
 
 **Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
 
