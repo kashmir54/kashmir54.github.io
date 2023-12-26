@@ -30,6 +30,7 @@ favicon: /images/favicon.ico
 - [Renders and OBJs](#renders-objs-and-3d-cases)
 - [Tutorials](#tutorials)
   - [Setup Evilportal](#rogueap--evilportal)
+  - [Flashing Marauder on VoyagerRF using web interface](#flashing-marauder-on-voyagerrf-using-web-interface)
   - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
   - [Flashing Marauder on XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
   - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
@@ -163,7 +164,11 @@ Thanks for sharing the VoyagerRF over the internet! This little project got some
 
 Many people asked me for the 3D model of the board to start creating some cases, I have uploaded the file and you can download the obj [here](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip). 
 
-Currently I don't have a 3D case design, if you create a 3D case, bear in mind the cable for the back antenna and the antenna itself! Also I will be grateful if you could share the 3D model with me or upload it to any of the free platforms (thingiverse or similars), so others can enjoy it. I will place the link and author in this blog.
+Here are some of the cases created by the community:
+
+- [VoyagerRF cover by CristianMoreira](https://www.thingiverse.com/thing:6262485)
+
+Currently I don't have a 3D case designed by myself, if you create a 3D case, bear in mind the cable for the back antenna and the antenna itself! Also I will be grateful if you could share the 3D model with me or upload it to any of the free platforms (thingiverse or similars), so others can enjoy it. I will place the link and author in this blog.
 
 - [VoyagerRF ver 0.1](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip)
 
@@ -292,6 +297,63 @@ TBA
 
 <br>
 
+## Flashing Marauder on VoyagerRF using web interface
+
+I was curious about the Web Serial API and I also wanted to provide an easy way to update the VoyagerRF. That's how I ended up creating the new [VoyagerRF Flasher web application](https://kashmir54.github.io/voyagerrf/). Without further ado, let's see how it works:
+
+<div class="note">
+
+<b>NOTE: Perform the update with the board disconnected from the Flipper. Optionally, remove the MicroSD card from the VoyagerRF.</b>
+
+</div>
+
+**Step 1.** Open the website and connect the board holding the ESP32C3 BOOT button (the one on the top with the "B" letter):
+
+Boot button (press, hold, and connect while holding the button, then, release):
+
+<p align="center">
+  <img src="/images/flipper/webflash/1_0_boot.png" width="50%"/>
+</p>
+
+Web interface:
+
+<p align="center">
+  <img src="/images/flipper/webflash/1_0_flasher.png" width="80%"/>
+</p>
+
+**Step 2.** Select the version you want to flash and select the "USB JTAG/serial debug unit". The COM number can be different, so don't worry about that.
+
+<p align="center">
+  <img src="/images/flipper/webflash/1_1_connect.png" width="60%"/>
+</p>
+
+**Step 3.** Now, select "Install VoyagerRF Marauder vX.X.X"
+
+<p align="center">
+  <img src="/images/flipper/webflash/1_2_install.png" width="50%"/>
+</p>
+
+**Step 4.** Hit next, doesn't matter if you erase the device, MicroSD card data will remain.
+
+<p align="center">
+  <img src="/images/flipper/webflash/1_1_install.png" width="40%"/>
+</p>
+
+**Step 5.** Hit "Install" to perform the update
+
+<p align="center">
+  <img src="/images/flipper/webflash/1_3_install.png" width="40%"/>
+</p>
+
+**Step 6.** Wait for the process to finish. If successful, the following message will be displayed:
+
+<p align="center">
+  <img src="/images/flipper/webflash/1_4_done.png" width="40%"/>
+</p>
+
+Now you can check the version in the reboot option in the ESP32 WiFi Marauder app in your Flipper!
+
+
 ## Flashing Marauder on VoyagerRF using micro SD card
 
 Since current update from source might be hard to compile and manage with the new dependencies, I have prepared the bin file to update from the SD on marauder firmware. If you got a VoyagerRF, you have Marauder firmware preinstalled, so you can perform this update.
@@ -317,6 +379,7 @@ And these are the steps to update:
 | [v0.13.2](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.2)  | [voyagerrf_marauder_v0_13_2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_2.bin)      |
 | [v0.13.4](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.4)  | [voyagerrf_marauder_v0_13_4.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_4.bin)      |
 | [v0.13.5](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.5)  | [voyagerrf_marauder_v0_13_5.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_5.bin)      |
+| [v0.13.6](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.6)  | [voyagerrf_marauder_v0_13_6.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_6.bin)      |
 
 
 
@@ -708,7 +771,7 @@ Using a Samsung MicroSD card will cause Marauder not to boot, as stated on the [
 
 - The micro SD card is connected to the VoyagerRF, but no pcaps are being saved:
 
-Do not use a micro SD card with more than 32GB, use 32GB or less.
+Make sure to use **32GB or less** MicroSD card, **FAT32** file format and NOT to use **SanDisk** brand (awkward, but the brand counts).
 
 Check the configs.h and make sure that only #define MARAUDER_FLIPPER is uncommented and that you have changed the #define SD_CS 4 as previously described.
 
