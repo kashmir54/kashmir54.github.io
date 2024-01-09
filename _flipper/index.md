@@ -31,10 +31,18 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 <div class="grid-two">
 
+<a class="box" href="/flipper/voyagerrfv2">
+  <div class="box-two">
+    <p class="rodden">VoyagerRFv2</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, GPS, antenna, and MicroSD Card socket.</p>
+    <img class="orange-border" src="/images/flipper/v2/thumbs.png">
+  </div>
+</a>
+
 <a class="box" href="/flipper/wifi">
   <div class="box-two">
-    <p class="rodden">VoyagerRF</p>
-    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, proper antenna, and Micro SD Card socket.</p>
+    <p class="rodden">VoyagerRFv1</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, proper antenna, and MicroSD Card socket.</p>
     <img class="orange-border" src="/images/flipper/voyager_white_1.jpg">
   </div>
 </a>

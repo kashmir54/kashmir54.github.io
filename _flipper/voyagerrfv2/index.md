@@ -64,7 +64,7 @@ Here you have more photos (also in black matte for those it may concern):
 
 <div display="grid" align="center">
   <img src="/images/flipper/v2/black_0.png" width="40%"/>
-  <img src="/images/flipper/v2/white_0.jpg" width="40%"/>
+  <img src="/images/flipper/v2/white_0.png" width="40%"/>
 </div>
 
 
@@ -92,13 +92,13 @@ Includes:
 - Ebyte ML01DP5 (NRF24) module
 
 <div display="grid" align="center">
-  <img src="/images/flipper/v2/white_2.png" width="40%"/>
-  <img src="/images/flipper/v2/black_2.png" width="40%"/>
+  <img src="/images/flipper/v2/white_1.png" width="40%"/>
+  <img src="/images/flipper/v2/black_1.png" width="40%"/>
 </div>
 
 <div display="grid" align="center">
-  <img src="/images/flipper/v2/white_3.png" width="40%"/>
-  <img src="/images/flipper/v2/black_3.png" width="40%"/>
+  <img src="/images/flipper/v2/white_2.png" width="40%"/>
+  <img src="/images/flipper/v2/black_2.png" width="40%"/>
 </div>
 
 
