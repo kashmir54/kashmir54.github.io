@@ -44,17 +44,17 @@ I was thinking about getting some upgrades, mainly with a better form factor, a 
 
 Let's recap the new features of this v2 version:
 
-- ⚡️ **New GPS module and antenna:** The ATGM336H GPS module is connected to the ESP32C3, which allows the Marauder firmware to collect GeoPositioning information on wardriving mode. This mode saves the location and WiFi SSID (among other data) in the VoyagerRF's MicroSD card with a certain file formatthat can be uploaded on websites such as [wigle.net](https://wigle.net/).
-- ⚡️ **New NeoPixel status LED:** This RGB LED will indicate the status of the Marauder firmware. Blue for sniffing and red for attack mode. You can also set maually the HEX code for the LED or flex it with the raimbow mode.
-- ⚡️ **New Even more compact design**, removing the side cable and making it smaller and more portable.
-- ⚡️ **New 3D Printed case:** For people looking for a clean look, I designed a case and a base to store and carry your VoyagerRF everywhere. 3D models ready for printing are provided below. (To be honest, I prefer to see the PCB and components).
+- **New GPS module and antenna:** The ATGM336H GPS module is connected to the ESP32C3, which allows the Marauder firmware to collect GeoPositioning information on wardriving mode. This mode saves the location and WiFi SSID (among other data) in the VoyagerRF's MicroSD card with a certain file formatthat can be uploaded on websites such as [wigle.net](https://wigle.net/).
+- **New NeoPixel status LED:** This RGB LED will indicate the status of the Marauder firmware. Blue for sniffing and red for attack mode. You can also set maually the HEX code for the LED or flex it with the raimbow mode.
+- **New Even more compact design**, removing the side cable and making it smaller and more portable.
+- **New 3D Printed case:** For people looking for a clean look, I designed a case and a base to store and carry your VoyagerRF everywhere. 3D models ready for printing are provided below. (To be honest, I prefer to see the PCB and components).
 
 Inherited features from previous VoyagerRF v1:
 
-- ✅ ESP32-C3: A low-consumption **WiFi and Bluetooth** chip with the latest Marauder firmware. This chip will allow you to perform all WiFi and Bluetooth tools deployed on marauder (including deauths, evilportal, sour apple, ble spam, etc). Ready to plug and play and control it with the [ESP32 WiFi Marauder](https://github.com/0xchocolate/flipperzero-wifi-marauder/releases) GPIO app.
-- ✅ MicroSD card slot to save the output from the Marauder app (already configured in the firmware) and different configuration files (for evilportal, for example).
-- ✅ 3dBi Omnidirectional WiFi antenna (2.4GHz) mounted into the board's SMA connector. Adds a great range improvement against the original devboard (PCB antenna).
-- ✅ NRF24/CC1101 socket with decoupling capacitors for noise reduction. Compatible with [External CC1101 configuration](https://github.com/quen0n/flipperzero-ext-cc1101) and [NRF24 Sniffer/MouseJacker](https://github.com/UberGuidoZ/Flipper/blob/main/GPIO/ReadMe.md#nrf24l01--mousejack-pinout---8-pin) (see chip compatibility since not all chips have the same pinout).
+- ESP32-C3: A low-consumption **WiFi and Bluetooth** chip with the latest Marauder firmware. This chip will allow you to perform all WiFi and Bluetooth tools deployed on marauder (including deauths, evilportal, sour apple, ble spam, etc). Ready to plug and play and control it with the [ESP32 WiFi Marauder](https://github.com/0xchocolate/flipperzero-wifi-marauder/releases) GPIO app.
+- MicroSD card slot to save the output from the Marauder app (already configured in the firmware) and different configuration files (for evilportal, for example).
+- 3dBi Omnidirectional WiFi antenna (2.4GHz) mounted into the board's SMA connector. Adds a great range improvement against the original devboard (PCB antenna).
+- NRF24/CC1101 socket with decoupling capacitors for noise reduction. Compatible with [External CC1101 configuration](https://github.com/quen0n/flipperzero-ext-cc1101) and [NRF24 Sniffer/MouseJacker](https://github.com/UberGuidoZ/Flipper/blob/main/GPIO/ReadMe.md#nrf24l01--mousejack-pinout---8-pin) (see chip compatibility since not all chips have the same pinout).
 
 Remember that the VoyagerRFv2 can be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/) following the steps [below](#flashing-marauder-on-voyagerrf-using-web-interface).
 
