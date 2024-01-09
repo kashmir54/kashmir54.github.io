@@ -180,7 +180,7 @@ I backed FlipperZero from the early stage of the kickstarter and I enjoy it very
 	<a class="box" href="/flipper">
 		<div class="main-box">
 			<div>
-				<p>Kashmir54's works on Flipper</p>
+				<p>Kashmir54's DevBoards for Flipper</p>
 				<img class="mini-icon" src="/images/flipper/flipper.png">
 			</div>
 		</div>
