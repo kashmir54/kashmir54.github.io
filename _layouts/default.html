@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/lightgallery.min.css' | relative_url }}">
+    <script src="{{ '/assets/js/lightgallery.min.js' | relative_url }}">
+
     <link rel="shortcut icon" type="image/x-icon" href="{{ page.favicon }}">
 {% seo %}
     <!-- Google tag (gtag.js) -->
@@ -16,6 +19,7 @@
 
       gtag('config', 'G-BWT408TBEN');
     </script>
+
   </head>
 
   <body>
@@ -84,6 +88,13 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
   </body>
 </html>
 

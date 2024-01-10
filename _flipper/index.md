@@ -31,11 +31,11 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 <div class="grid-two">
 
-<a class="box" href="/flipper/voyagerrf">
+<a class="box" href="/flipper/voyagerrf_v2">
   <div class="box-two">
     <p class="rodden">VoyagerRFv2</p>
     <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, GPS, antenna, and MicroSD Card socket.</p>
-    <img class="orange-border" src="/images/flipper/v2/thumbs.png">
+    <img class="main" src="/images/flipper/v2/thumbs.png">
   </div>
 </a>
 
@@ -43,7 +43,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">VoyagerRFv1</p>
     <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, proper antenna, and MicroSD Card socket.</p>
-    <img class="orange-border" src="/images/flipper/voyager_white_1.jpg">
+    <img class="main" src="/images/flipper/voyager_white_1.jpg">
   </div>
 </a>
 
@@ -51,7 +51,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">MegaPack RF</p>
     <p>Go beyond! A starter pack to increase your Flipper capabilities.</p>
-    <img class="orange-border" src="/images/flipper/megapack_rf.jpg">
+    <img class="main" src="/images/flipper/megapack_rf.jpg">
   </div>
 </a>
 
@@ -59,7 +59,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">Pack NRF24</p>
     <p>Connect an NRF24 to explore wireless devices.</p>
-    <img class="orange-border" src="/images/flipper/nrf24.jpg">
+    <img class="main" src="/images/flipper/nrf24.jpg">
   </div>
 </a>
 
@@ -67,7 +67,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">Pack CC1101</p>
     <p>Connect an external CC1101 to increase SubGHz range.</p>
-    <img class="orange-border" src="/images/flipper/cc1101_1.jpg">
+    <img class="main" src="/images/flipper/cc1101_1.jpg">
   </div>
 </a>
 
@@ -75,7 +75,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">Standalone PCB</p>
     <p>Plug-and-play PCB for those who already own a NRF24/CC1101 chip.</p>
-    <img class="orange-border" src="/images/flipper/pcb_v1_1.jpg">
+    <img class="main" src="/images/flipper/pcb_v1_1.jpg">
   </div>
 </a>
 
@@ -83,7 +83,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">USB-C Keychain</p>
     <p>Avoid carrying a spare USB cable on your pocket.</p>
-    <img class="orange-border" src="/images/flipper/usbc.jpeg">
+    <img class="main" src="/images/flipper/usbc.jpeg">
   </div>
 </a>
 
