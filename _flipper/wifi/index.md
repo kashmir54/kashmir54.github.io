@@ -17,6 +17,14 @@ favicon: /images/favicon.ico
 
 <br>
 
+<div class="note">
+
+<b>NOTE: A new version of the board was released. Check out the <a href="https://kashmir54.github.io/flipper/voyagerrf_v2/">VoyagerRFv2 post</a>.</b>
+
+</div>
+
+<br>
+
 ---
 
 <br>
