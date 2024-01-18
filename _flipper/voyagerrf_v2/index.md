@@ -15,6 +15,7 @@ favicon: /images/favicon.ico
     <a href="/images/flipper/v2/black_0.png" data-sub-html="VoyagerRFv2 black version">
       <img src="/images/flipper/v2/black_0.png" class="main" width="70%"/>
     </a>
+
   </div>
 </div>
 
@@ -32,6 +33,21 @@ favicon: /images/favicon.ico
 - [Tutorials](#tutorials)
 - [Troubleshooting](#troubleshooting)
 
+
+<br>
+
+## Related tools
+
+<div class="grid-one">
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/v2.html">
+    <div class="main-box">
+      <div>
+        <p>Update your VoyagerRFv2 board here</p>
+        <img class="micro-icon" src="/images/flipper/pixel.png">
+      </div>
+    </div>
+  </a>
+</div>
 
 <br>
 
@@ -208,7 +224,33 @@ Includes:
 
 ## 3D case files
 
-I will sortly upload the stl files to thingiverse!
+You can download the STL for the cases and the base here:
+
+| Part     | File       |
+| ----------- | ----------- |
+| Front | [v2.2-FrontCase.stl](https://kashmir54.github.io/assets/files/cases/v2.2-FrontCase.stl)      |
+| Back  | [v2.2-BackCase.stl](https://kashmir54.github.io/assets/files/cases/v2.2-BackCase.stl)      |
+| Base  | [v2.2-Base.stl](https://kashmir54.github.io/assets/files/cases/v2.2-Base.stl)      |
+
+<br>
+
+To mount it you will need:
+
+- 2x M1.4 or M1.6 screws (10mm or 12mm long)
+- 2x M1.4 or M1.6 nuts
+
+<br>
+
+<div display="grid" align="center">
+  <div class="lightgallery">
+    <a href="/images/flipper/v2/front.png" data-sub-html="Front cover for VoyagerRFv2">
+      <img src="/images/flipper/v2/front.png" width="45%"/>
+    </a>
+    <a href="/images/flipper/v2/back.png" data-sub-html="Back cover for VoyagerRFv2">
+      <img src="/images/flipper/v2/back.png" width="45%"/>
+    </a>
+  </div>
+</div>
 
 
 <br>
@@ -247,8 +289,23 @@ Keep the flipper upwards so the GPS antenna points to the sky. Once it gets enou
   <img src="/images/flipper/v2/gps.png" width="70%"/>
 </div>
 
-You can check it in the **GPS: stream** option in Marauder menu.
+You can check it in the **GPS: stream** option in Marauder menu:
 
+<div display="grid" align="center">
+  <div class="lightgallery">
+    <a href="/images/flipper/v2/gps_0.png" data-sub-html="Marauder menu">
+      <img src="/images/flipper/v2/gps_0.png" width="30%"/>
+    </a>
+    <a href="/images/flipper/v2/gps_1.png" data-sub-html="GPS Data when sync">
+      <img src="/images/flipper/v2/gps_1.png" width="30%"/>
+    </a>
+    <a href="/images/flipper/v2/gps_2.png" data-sub-html="Coordinates">
+      <img src="/images/flipper/v2/gps_2.png" width="30%"/>
+    </a>
+  </div>
+</div>
+
+<br>
 
 # Troubleshooting
 
@@ -280,3 +337,5 @@ Connect the SD card before entering the ESP32 WiFi Marauder app.
 
 
 Thank you for reading and for your interest in the board. I hope you enjoyed this project as much as I did!
+
+

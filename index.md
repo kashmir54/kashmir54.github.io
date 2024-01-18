@@ -227,7 +227,7 @@ During this journey, I got some awards, badges and certifications:
 
 <a class="box" href="https://www.credential.net/0795b484-21f4-440f-99be-f6305e84832e">
   <div class="box-two">
-    <p class="rodden">OSWP</p>
+    <p class="rodden">OSCP</p>
     <p>OffSec Certified Professional (OSCP)</p>
     <img class="" src="/images/badges/oscp.png">
   </div>

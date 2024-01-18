@@ -69,6 +69,10 @@ div.box-two{
   text-align: center;
 }
 
+div.box-two:hover{
+  border-color: #cd7901;
+}
+
 img.main{
   border: solid 10px #dfdfdf;
 }
@@ -131,6 +135,10 @@ div.grid-one{
   column-gap: 2%;
 }
 
+div.main-box:hover{
+  border-color: #cd7901;
+}
+
 div.main-box{
   display: inline-grid;
   border-style: dashed;
@@ -154,9 +162,7 @@ div.big-box{
   font-size: 25px;
 }
 
-div.big-box:hover{
-  border-color: #FCA310;
-}
+
 
 a.box{
   text-decoration-line: none; 
@@ -170,6 +176,12 @@ div.box{
   color: white;
   display: grid;
   grid-template-columns: 40% 50%;
+}
+
+div.box:hover{
+  display: inline-grid;
+  border-style: dashed;
+  border-color: #cd7901;
 }
 
 div.box-big{
@@ -210,6 +222,11 @@ div.box:hover{
 .mini-icon{
   width: 15%;
 }
+
+.micro-icon{
+  width: 10%;
+}
+
 
 .mini-os{
   width: 1em;

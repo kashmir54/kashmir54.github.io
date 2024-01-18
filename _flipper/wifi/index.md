@@ -17,6 +17,21 @@ favicon: /images/favicon.ico
 
 <br>
 
+## Related tools
+
+<div class="grid-one">
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/index.html">
+    <div class="main-box">
+      <div>
+        <p>Update your VoyagerRF board here</p>
+        <img class="micro-icon" src="/images/flipper/pixel.png">
+      </div>
+    </div>
+  </a>
+</div>
+
+<br>
+
 <div class="note">
 
 <b>NOTE: A new version of the board was released. Check out the <a href="https://kashmir54.github.io/flipper/voyagerrf_v2/">VoyagerRFv2 post</a>.</b>
@@ -105,7 +120,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.13.5)
+- VoyagerRF board with latest Marauder Firmware preinstalled
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -126,7 +141,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with Marauder Firmware preinstalled (v0.13.5)
+- VoyagerRF board with latest Marauder Firmware preinstalled
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 
@@ -181,7 +196,7 @@ Currently I don't have a 3D case designed by myself, if you create a 3D case, be
 - [VoyagerRF ver 0.1](https://kashmir54.github.io/assets/files/OBJ_PCB_VoyagerRF_v0.1.zip)
 
 <p align="center">
-  <img src="/images/flipper/voyager_render_v0.png" width="80%"/>
+  <img src="/images/flipper/voyager_render_v0.png" width="60%"/>
 </p>
 
 
@@ -201,6 +216,7 @@ In this section you can find resource to explore further this little board.
 - [Flashing XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
 - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
 
+<br>
 
 ## Getting started
 
@@ -218,8 +234,8 @@ Possibilities are limitless! But here I will go over some ideas that you might f
 
 ## RogueAP / Evilportal
 
-<div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/q-dpkW7P3o0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div style="text-align: center;">
+<iframe width="560" height="355" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/q-dpkW7P3o0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 A rogue access point is a wireless access point that has been installed on a secure network without explicit authorization from a local network administrator, whether added by a well-meaning employee or by a malicious attacker. [Wikipedia, Rogue Access Point](https://en.wikipedia.org/wiki/Rogue_access_point).
@@ -229,7 +245,7 @@ In this case, we can use the VoyagerRF and Marauder firmware to create a RogueAP
 - [Unleashed Firmware](https://github.com/DarkFlippers/unleashed-firmware) (v060+) or any other firmware with [Marauder Companion app](https://github.com/0xchocolate/flipperzero-wifi-marauder) v0.6.0+ (\[ESP32\] WiFi Marauder app).
 - [Marauder firmware (v0.11.0+)](https://github.com/justcallmekoko/ESP32Marauder/wiki/update-firmware) on you WiFi devboard
 - WiFi devboard with micro SD card slot (or a VoyagerRF 😉)
-- 32GB or less MicroSD card + USB adapter
+- 32GB or less MicroSD card (with FAT32 format) + USB adapter
 - A computer or a device to load files into the VoyagerRF board micro SD card
 
 Once you have all the requirements set you are good to go.
@@ -288,6 +304,13 @@ Just that, place the two files in the root folder or the MicroSD card
 </div>
 
 _Templates by [roshanravan](https://github.com/roshanravan)._
+
+We connect to the Wifi Network and the captive portal shows up. Bare in mind that phones and PCs have defenses against these attacks, therefore, do not expect to work on all devices:
+
+<p align="center">
+  <img src="/images/flipper/evilportal/captive_portal.jpg" width="70%"/>
+</p>
+
 
 As easy as that! If you have any concerns, check out the YouTube video showing these steps!
 
@@ -361,6 +384,7 @@ Web interface:
 
 Now you can check the version in the reboot option in the ESP32 WiFi Marauder app in your Flipper!
 
+<br>
 
 ## Flashing Marauder on VoyagerRF using micro SD card
 
@@ -368,8 +392,8 @@ Since current update from source might be hard to compile and manage with the ne
 
 Here you have the video:
 
-<div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JZKtMV9_qtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div style="text-align: center;">
+<iframe width="560" height="355" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/JZKtMV9_qtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 And these are the steps to update:
@@ -423,6 +447,7 @@ And the evilportal command (if you got the v0.11.0+) ready to use:
 
 That's it, now we have to wait until companion app gets updated.
 
+<br>
 
 ## Flashing Marauder on Xiao-ESP32-C3
 
