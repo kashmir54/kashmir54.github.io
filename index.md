@@ -47,6 +47,22 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 
 <div class="grid">
 
+<a class="box" href="/walkthroughs/hackthebox/sau">
+	<div class="box">
+		<div class="card-logo">
+			<img class="logo" src="/images/walkthroughs/hackthebox/sau/logo.png"/>
+			<div class="mini-os">
+					<img class="mini-os-img" src="/images/ic-linux.svg">
+				</div>
+		</div>
+		<div class="card-text">
+			<p>Sau</p>
+			<img class="flag" src="/images/ic-userflag.png">
+			<img class="flag" src="/images/ic-rootflag.png">
+		</div>
+	</div>
+</a>
+
 <a class="box" href="/walkthroughs/hackthebox/broscience">
 	<div class="box">
 		<div class="card-logo">
@@ -90,22 +106,6 @@ Here you will find some walkthoughs of virtual machines, at the moment I'm only 
 		</div>
 		<div class="card-text">
 			<p>Ambassador</p>
-			<img class="flag" src="/images/ic-userflag.png">
-			<img class="flag" src="/images/ic-rootflag.png">
-		</div>
-	</div>
-</a>
-
-<a class="box" href="/walkthroughs/hackthebox/updown">
-	<div class="box">
-		<div class="card-logo">
-			<img class="logo" src="/images/walkthroughs/hackthebox/updown/logo.png"/>
-			<div class="mini-os">
-					<img class="mini-os-img" src="/images/ic-linux.svg">
-				</div>
-		</div>
-		<div class="card-text">
-			<p>Updown</p>
 			<img class="flag" src="/images/ic-userflag.png">
 			<img class="flag" src="/images/ic-rootflag.png">
 		</div>

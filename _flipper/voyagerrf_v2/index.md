@@ -275,7 +275,7 @@ You can use the [tutorials for the VoyagerRFv1](https://kashmir54.github.io/flip
 
 ## Wardriving
 
-For wardriving, the best workflow is to be on outdoors with a clear view of the sky, and enter the ESP32 WiFi Marauder app. The GPS needs time to pick up satellites and it takes some time to pick them up. Time depends on the atmosphere, the meteorology and other factors, from experience it takes from 30 seconds to 2 minutes with clear sky outdoors and around 5 minutes on heavy cloudy days. 
+For wardriving, the best workflow is to be on outdoors with a clear view of the sky, and enter the ESP32 WiFi Marauder app. The GPS needs time to pick up satellites and it takes some time to pick them up. Time depends on the atmosphere, the staellite constelation and other factors, from experience it takes from 30 seconds up to 2 minutes with clear sky outdoors. Within buildings, you will find issues due to the bouncing pulses. 
 
 <div class="warning">
 
@@ -283,7 +283,7 @@ For wardriving, the best workflow is to be on outdoors with a clear view of the 
 
 </div>
 
-Keep the flipper upwards so the GPS antenna points to the sky. Once it gets enought satellites, the red led behind the board will slowly flash, indicating that the GPS module is ready to use.
+Keep the flipper with the screen facing the floor so the GPS antenna points to the sky. Once it gets enought satellites, the red led behind the board will slowly flash, indicating that the GPS module is ready to use. Then you can hold the flipper as you want, the localtion will work even if the antena is not facing the sky.
 
 <div display="grid" align="center">
   <img src="/images/flipper/v2/gps.png" width="70%"/>
@@ -322,7 +322,7 @@ Make sure you have enough battery in the Flipper.
 Hit the reset button (the one in the bottom of the board). 
 
 <p align="center">
-  <img src="/images/flipper/reset_button.png" width="60%"/>
+  <img src="/images/flipper/reset_button.png" width="40%"/>
 </p>
 
 
