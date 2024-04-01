@@ -18,6 +18,11 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 
 ## CTF - Writeups:
 
+### 2024
+
+- [UTCTF 2024](/ctfs/UTCTF2024) (31/03/2024)
+
+
 ### 2023
 
 - [GlacierCTF 2023](/ctfs/GlacierCTF2023) (25/11/2023)
