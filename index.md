@@ -86,9 +86,26 @@ I backed FlipperZero from the early stage of the kickstarter and I enjoy it very
 
 <br>
 
-# Blog
+# The Real Blog
 
-I backed FlipperZero from the early stage of the kickstarter and I enjoy it very much. It is nowadays my favorite tool for pentesting and I have developed some addons to use external modules such as NRF24 and CC1101. Also, I developed the VoyagerRF board, a multipurpose WiFi auditing board to take all your tools everywhere. Find out more in the following post:  
+Yet Another CyberSecurity Blog, with tutorials and curious things I find along the way.
+
+<br>
+
+## Last entries:
+
+<div class="grid-post-big">
+		<div>
+			<a class="blog" href="/blog/dropbox">
+			<img class="blog-thumb" src="/images/blog/dropbox/main.jpg"></a>
+		</div>
+		<div>
+			<a class="blog" href="/blog/dropbox">
+			<h2 class="blog">Building a pentest dropbox for fun and (no) profit</h2>
+			<span><i>10 min read - 05/04/2024</i></span>
+			<p>An easy and automated dropbox for remote pentesting assessments using OpenVPN and Kali Linux. We will configure the complete setup using RDP and SSH as connection protocols.</p></a>
+		</div>
+</div>
 
 <br>
 
@@ -96,8 +113,8 @@ I backed FlipperZero from the early stage of the kickstarter and I enjoy it very
 	<a class="box" href="/blog">
 		<div class="main-box">
 			<div>
-				<p>Kashmir54's Blog</p>
-				<img class="mini-icon" src="">
+				<p>Kashmir54's Blog Entries (All posts)</p>
+				<img class="mini-flag" src="/images/blog.png">
 			</div>
 		</div>
 	</a>

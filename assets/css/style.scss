@@ -57,6 +57,13 @@ div.grid-post{
   grid-template-columns: 1fr 4fr;
 }
 
+div.grid-post-big{
+  display: grid;
+  column-gap: 1.5em;
+  row-gap: 3.125em;
+  grid-template-columns: 1fr 3fr;
+}
+
 img.blog-thumb{
   padding-top: 6%;
 }

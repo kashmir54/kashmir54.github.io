@@ -7,8 +7,9 @@ image: /images/kashmir.png
 favicon: /images/favicon.ico
 ---
 
-Welcome to my blog! Here I go through some of the things I believe it's worth sharing. 
+# The Real Blog
 
+Welcome to my blog! Here I go through some of the things I believe it's worth sharing. 
 
 
 <br>

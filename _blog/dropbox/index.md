@@ -213,7 +213,7 @@ Now I spawn a Droplet (or an EC2 on AWS, Azure Virtual Machines, etc) with low r
 _Apologies for the white screenshots; unfortunately, the website does not offer a dark mode._
 
 <p align="center">
-	<img src="/images/blog/dropbox/do.jpg" width="85%"/>
+	<img src="/images/blog/dropbox/do.jpg" width="75%"/>
 	<p align="center">Digital Ocean droplet configuration</p>
 </p>
 
@@ -358,14 +358,14 @@ systemctl enable openvpn
 Copy both files (dropbox ovpn and setup script) to a USB and plug it into the dropbox. Once in the dropbox, run the setup script (make sure to set execute permissions over the script:
 
 <p align="center">
-	<img src="/images/blog/dropbox/setup_artemis.png" width="85%"/>
+	<img src="/images/blog/dropbox/setup_artemis.png" width="80%"/>
 	<p align="center">Setup script output</p>
 </p>
 
 Now, reboot your dropbox, and you will see that it is automatically connected to the OpenVPN server on boot:
 
 <p align="center">
-	<img src="/images/blog/dropbox/artemis_up.png" width="85%"/>
+	<img src="/images/blog/dropbox/artemis_up.png" width="80%"/>
 	<p align="center">Dropbox connected to the VPN</p>
 </p>
 
@@ -393,7 +393,7 @@ sudo openvpn pentester.ovpn
 Once connected, we can check the new **tun0** interface with the VPN:
 
 <p align="center">
-	<img src="/images/blog/dropbox/vpn_up.png" width="85%"/>
+	<img src="/images/blog/dropbox/vpn_up.png" width="80%"/>
 	<p align="center">OpenVPN client connected to the server</p>
 </p>
 
@@ -486,6 +486,8 @@ As these Wi-Fi adapters have in-kernel drivers, once you connect them you are go
 <br>
 
 That's all for this post, I hope it was useful and that you liked it. I might update this post when I find some interesting stuff worth sharing, until then, thanks for reading and keep exploring!
+
+<br>
 
 <p align="right">
 	Kashmir54 🌊⚡
