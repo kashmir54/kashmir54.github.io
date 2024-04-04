@@ -50,6 +50,32 @@ div.grid{
 }
 
 
+div.grid-post{
+  display: grid;
+  column-gap: 1em;
+  row-gap: 3.125em;
+  grid-template-columns: 1fr 4fr;
+}
+
+img.blog-thumb{
+  padding-top: 6%;
+}
+
+h2.blog:hover{
+  color: #cd7901;
+}
+
+a.blog{
+  text-decoration: inherit;
+  color: inherit;
+}
+
+div.grid-two-photos{
+  display: grid;
+  row-gap: 3.125em;
+  grid-template-columns: 1fr 1fr;
+}
+
 div.grid-two{
   display: grid;
   column-gap: 3.125em;
@@ -161,7 +187,6 @@ div.big-box{
   padding-bottom: 3%;
   font-size: 25px;
 }
-
 
 
 a.box{

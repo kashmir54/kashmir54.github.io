@@ -86,6 +86,29 @@ I backed FlipperZero from the early stage of the kickstarter and I enjoy it very
 
 <br>
 
+# Blog
+
+I backed FlipperZero from the early stage of the kickstarter and I enjoy it very much. It is nowadays my favorite tool for pentesting and I have developed some addons to use external modules such as NRF24 and CC1101. Also, I developed the VoyagerRF board, a multipurpose WiFi auditing board to take all your tools everywhere. Find out more in the following post:  
+
+<br>
+
+<div class="grid-one">
+	<a class="box" href="/blog">
+		<div class="main-box">
+			<div>
+				<p>Kashmir54's Blog</p>
+				<img class="mini-icon" src="">
+			</div>
+		</div>
+	</a>
+</div>
+
+<br>
+
+---
+
+<br>
+
 # HackTheBox Walkthroughs
 
 Here you will find some walkthoughs of virtual machines, at the moment I'm only at HackTheBox:
