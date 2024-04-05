@@ -1,10 +1,10 @@
 ---
-title: "Pentesting dropbox"
+title: "Building a pentest dropbox for fun and (no) profit"
 categories: [blog]
 date: 2024-04-03
 comments: true
 description: "Pentesing dropbox build guide"
-image: /images/blog/main.jpg
+image: /images/blog/dropbox/main.jpg
 favicon: /images/favicon.ico
 ---
 
