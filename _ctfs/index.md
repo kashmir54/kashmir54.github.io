@@ -20,6 +20,10 @@ Thanks to my CTF team [ISwearIGoogledIt](https://ctftime.org/team/109689) for ha
 
 ### 2024
 
+- [L3akCTF 2024](/ctfs/L3akCTF2024) (26/05/2024)
+- [TJCTF 2024](/ctfs/TJCTF2024) (19/05/2024)
+- [BYUCTF 2024]() (19/05/2024) - No writeup yet
+- [AmateursCTF 2024]() (05/04/2024) - No writeup yet
 - [UTCTF 2024](/ctfs/UTCTF2024) (31/03/2024)
 
 

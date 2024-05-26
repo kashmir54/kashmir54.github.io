@@ -49,6 +49,8 @@ You can find all my CTFs writeups (solutions and explanations) here:
 
 ## Latest CTFs writeups:
 
+- [L3akCTF 2024](/ctfs/L3akCTF2024) (26/05/2024)
+- [TJCTF 2024](/ctfs/TJCTF2024) (19/05/2024)
 - [UTCTF 2024](/ctfs/UTCTF2024) (31/03/2024)
 - [GlacierCTF 2023](/ctfs/GlacierCTF2023) (25/11/2023)
 - [CyberApocalypse 2023](/ctfs/CyberApocalypse2023) (24/03/2023)
