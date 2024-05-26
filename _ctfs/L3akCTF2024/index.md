@@ -3,6 +3,7 @@ title: "CTF - L3akCTF 2024"
 categories: [ctf]
 date: 2024-05-19
 comments: true
+description: L3akCTF 2024 Writeups
 image: /images/kashmir.png
 favicon: /images/favicon.ico
 description: CTF - L3akCTF 2024

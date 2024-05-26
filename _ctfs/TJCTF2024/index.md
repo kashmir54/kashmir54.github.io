@@ -3,6 +3,7 @@ title: "CTF - TJCTF 2024"
 categories: [ctf]
 date: 2024-05-19
 comments: true
+description: TJCTF 2024 Writeups
 image: /images/kashmir.png
 favicon: /images/favicon.ico
 description: CTF - TJCTF 2024
