@@ -3,7 +3,6 @@ title: "CTF - L3akCTF 2024"
 categories: [ctf]
 date: 2024-05-19
 comments: true
-description: L3akCTF 2024 Writeups
 image: /images/kashmir.png
 favicon: /images/favicon.ico
 description: CTF - L3akCTF 2024
@@ -11,7 +10,7 @@ description: CTF - L3akCTF 2024
 
 # L3akCTF 2024
 
-Welcome to another CTF writeup. I did some CTFs early this year but didn't publish writeups, but here we are, back again. This time I played L3akCTF 2024 in the weekend time. We participated as [ISwearGoogledIt](https://ctftime.org/team/109689) with [Razvi](https://razvioverflow.github.io/) and [Bubu](https://albertofdr.github.io/). We got on top 20! 🔥 Let's get started:
+Welcome to another CTF writeup. I did some CTFs early this year but didn't publish writeups, but here we are, back again. This time I played L3akCTF 2024 in the weekend time. We participated as [ISwearGoogledIt](https://ctftime.org/team/109689) with my mates [Razvi](https://razvioverflow.github.io/) and [Bubu](https://albertofdr.github.io/). We got on top 20! 🔥 Let's get started:
 
 <br>
 
@@ -1190,8 +1189,7 @@ _Authors: Suvoni & 0x157_
 
 Let's get to the fun part 😉
 
-We can grab some information from previous sources. From instagram post:
-
+We can grab some information from previous sources. From [Martini Craft's latest instagram post](https://www.instagram.com/p/C7Pis2vviRS/?img_index=1) we extract the following clue:
 
 _I absolutely love Atwood's Pizza! I had the Lazy Cat specialty pizza with my CTF team and it was delicious!
 I took my school's Gold Route bus to get here from campus, although I usually take a different bus route to get from my apartment to campus.
@@ -1206,38 +1204,38 @@ Anyways, I would highly recommend this place to other students living in the are
 </p>
 
 
-We searched for [Atwood's Pizza](https://www.google.es/maps/@33.7775399,-84.3871781,3a,75y,140.39h,102.17t/data=!3m6!1e1!3m4!1sJuURJvHRz4F4Cs-CsZLfWQ!2e0!7i16384!8i8192?hl=es&entry=ttu) at Google.
+We searched for [Atwood's Pizza](https://www.google.es/maps/@33.7775399,-84.3871781,3a,75y,140.39h,102.17t/data=!3m6!1e1!3m4!1sJuURJvHRz4F4Cs-CsZLfWQ!2e0!7i16384!8i8192?hl=es&entry=ttu) at Google and there was not so much information such as reviews or something. We had to keep up the investigation taking note of the "Gold Route bus" hint.
 
-We follow the conversation on Discord, Martini Craft lives near here:
+going back to the conversation on Discord, we can assume Martini Craft lives near the building in the picture:
 
 <p align="center">
   <img src="/images/writeups/L3akCTF2024/gameplay_4_dis.png" width="70%"/>
 </p>
 
-Using Google Lens we see that it Coda building on Atlanta, close to our [Atwood's Pizza](https://www.google.es/maps/@33.7775399,-84.3871781,3a,75y,140.39h,102.17t/data=!3m6!1e1!3m4!1sJuURJvHRz4F4Cs-CsZLfWQ!2e0!7i16384!8i8192?hl=es&entry=ttu). This is the exact [Google Maps location](https://www.google.es/maps/@33.7767032,-84.388816,3a,75y,180.48h,104.95t/data=!3m6!1e1!3m4!1suVB5RB5zUK2w2eh2RFnyOQ!2e0!7i16384!8i8192?hl=es&entry=ttu).
+Using Google Lens we see that it refers to the [Coda building](https://en.wikipedia.org/wiki/CODA_(mixed-use_development)) in Atlanta, close to the aforementioned [Atwood's Pizza](https://www.google.es/maps/@33.7775399,-84.3871781,3a,75y,140.39h,102.17t/data=!3m6!1e1!3m4!1sJuURJvHRz4F4Cs-CsZLfWQ!2e0!7i16384!8i8192?hl=es&entry=ttu). This is the exact [Google Maps location](https://www.google.es/maps/@33.7767032,-84.388816,3a,75y,180.48h,104.95t/data=!3m6!1e1!3m4!1suVB5RB5zUK2w2eh2RFnyOQ!2e0!7i16384!8i8192?hl=es&entry=ttu).
 
 <p align="center">
   <img src="/images/writeups/L3akCTF2024/gameplay_4_coda.png" width="70%"/>
 </p>
 
-On the Instagram post it says he uses the Gold line to get to Atwood's Pizza from the Campus, but **uses other lane to go from Campus to his Apartment**. Looking for the Gold Bus line, we find the [following map](https://www.pts.gatech.edu/shuttles/stinger/) that will help us in the task:
+On the Instagram post it says he uses the **Gold Route bus** line to get to Atwood's Pizza from the Campus, but **uses other lane to go from Campus to his Apartment**. Looking for the Gold Bus line, we find the [following map](https://www.pts.gatech.edu/shuttles/stinger/) with the campus bus lines that will help us in the task:
 
 <p align="center">
   <img src="/images/writeups/L3akCTF2024/map.png" width="70%"/>
 </p>
 
 
-Next, we collect more data on the Discord:
+Next, we keep digging for more clues at Discord. In the conversation he provides more hints for his location:
 
 <p align="center">
   <img src="/images/writeups/L3akCTF2024/gameplay_4_comments.png" width="70%"/>
 </p>
 
 
-Time to connect the dots. We search for Subway and Gas stations on Google Map and use the bus lines to connect the dots:
+Time to connect the dots. We search for [Subway Restaurants](https://www.google.com/maps/search/subway/@33.7810051,-84.4015342,15z/data=!3m1!4b1?entry=ttu) and [Gas stations](https://www.google.com/maps/search/gas+station/@33.7809803,-84.4015342,15.5z?entry=ttu) on Google Map and use the bus route map to connect the hints:
 
 - 🟣 G: Gas Station
-- 🟢 S: SubWay
+- 🟢 S: Subway Restaurants
 - 🔴 P: Atwood's Pizza
 - 🔵 Ph: Where discord photo was taken
 
@@ -1245,22 +1243,21 @@ Time to connect the dots. We search for Subway and Gas stations on Google Map an
   <img src="/images/writeups/L3akCTF2024/gameplay_4_map.png" width="70%"/>
 </p>
 
-Looking to the different options, we tried all the apartments at the right side of the map, we focused too much on the Discord image with the following quote: _"here's a hint, I live relatively close to here 🤫"_, so we spent so much time there with no success.
+Looking to the different options, we tried all the apartments at the right side of the map, due to the hint on Discord that quotes: _"here's a hint, I live relatively close to here 🤫"_ refering to the Coda building, so we spent so much time there with no success.
 
 
-Ten minutes before the CTF finished, I decided to forget about the discord image "near the Coda building" and looked to the top of the map, the green bus line. Since it says _"There's a gas station across from my place if you need to refuel after your long drive 👍"_ and _"if we get hungry, we can go to the Subway down the street"_, I selected the building in front of the gas station on the **Green Bus campus line** and we got the correct apartment:
+Ten minutes before the CTF finished, I decided to step away from that "near the Coda building" hint and looked to the top of the map, the Green route bus. Since it says _"There's a gas station across from my place if you need to refuel after your long drive 👍"_ and _"if we get hungry, we can go to the Subway down the street"_, I selected the building in front of the gas station on the **Green Bus campus line** and we got the correct apartment:
 
 <p align="center">
   <img src="/images/writeups/L3akCTF2024/rich_map.png" width="70%"/>
 </p>
 
-Building:
+Building, [Google Maps flag location](https://www.google.es/maps/place/The+Local+on+14th/@33.7857855,-84.403718,17.78z/data=!4m9!1m2!2m1!1sgas+station!3m5!1s0x88f504f400f6f29d:0x260e8e6779f8925e!8m2!3d33.7865179!4d-84.4023624!16s%2Fg%2F11c459zxtd?hl=es&entry=ttu): 
 
 <p align="center">
   <img src="/images/writeups/L3akCTF2024/gameplay_4_flag.png" width="70%"/>
 </p>
 
-[Google Map flag appartment](https://www.google.es/maps/place/The+Local+on+14th/@33.7857855,-84.403718,17.78z/data=!4m9!1m2!2m1!1sgas+station!3m5!1s0x88f504f400f6f29d:0x260e8e6779f8925e!8m2!3d33.7865179!4d-84.4023624!16s%2Fg%2F11c459zxtd?hl=es&entry=ttu)
 
 ``` L3AK{thelocalon14th} ```
 
