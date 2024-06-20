@@ -8,12 +8,17 @@ favicon: /images/favicon.ico
 ---
 
 <p class="vera">VoyagerRFv2</p>
+An upgraded version of the VoyagerRF (ESP32 WiFi Devboard for Flipper Zero) with GPS.
 
+<br>
 
 <div display="grid" align="center">
   <div class="lightgallery">
     <a href="/images/flipper/v2/black_0.png" data-sub-html="VoyagerRFv2 black version">
-      <img src="/images/flipper/v2/black_0.png" class="main" width="70%"/>
+      <img src="/images/flipper/v2/black_0.png" class="main" width="45%"/>
+    </a>
+    <a href="/images/flipper/v2/white_4.png" data-sub-html="VoyagerRFv2 white version with front cover">
+      <img src="/images/flipper/v2/white_4.png" class="main" width="45%"/>
     </a>
 
   </div>

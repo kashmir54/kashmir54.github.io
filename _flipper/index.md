@@ -31,18 +31,36 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 <div class="grid-two">
 
+
+<a class="box" href="/flipper/voyagerrf_micro">
+  <div class="box-two">
+    <p class="rodden">VoyagerRF Micro</p>
+    <p>Micro WiFi DevBoard with ESP32-C3 with Marauder firmware, GPS, antenna, and MicroSD socket.</p>
+    <img class="main" src="/images/flipper/micro/thumb_micro.JPG">
+  </div>
+</a>
+
 <a class="box" href="/flipper/voyagerrf_v2">
   <div class="box-two">
     <p class="rodden">VoyagerRFv2</p>
-    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, GPS, antenna, and MicroSD Card socket.</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, GPS, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
     <img class="main" src="/images/flipper/v2/thumbs.png">
+  </div>
+</a>
+
+<a class="box" href="/flipper/newhorizonsrf">
+  <div class="box-two">
+    <p class="rodden">NewHorizonsRF</p>
+    <p>UHF RFID Experimental DevBoard based on YRM1003 module for Flipper Zero.</p>
+    <span></span>
+    <img class="main" src="/images/flipper/newhorizons/thumbs.JPG">
   </div>
 </a>
 
 <a class="box" href="/flipper/wifi">
   <div class="box-two">
     <p class="rodden">VoyagerRFv1</p>
-    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, proper antenna, and MicroSD Card socket.</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
     <img class="main" src="/images/flipper/voyager_white_1.jpg">
   </div>
 </a>
@@ -55,39 +73,27 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="/flipper/nrf24_board#nrf24">
-  <div class="box-two">
-    <p class="rodden">Pack NRF24</p>
-    <p>Connect an NRF24 to explore wireless devices.</p>
-    <img class="main" src="/images/flipper/nrf24.jpg">
-  </div>
-</a>
-
-<a class="box" href="/flipper/nrf24_board#cc1101">
-  <div class="box-two">
-    <p class="rodden">Pack CC1101</p>
-    <p>Connect an external CC1101 to increase SubGHz range.</p>
-    <img class="main" src="/images/flipper/cc1101_1.jpg">
-  </div>
-</a>
-
-<a class="box" href="/flipper/nrf24_board">
-  <div class="box-two">
-    <p class="rodden">Standalone PCB</p>
-    <p>Plug-and-play PCB for those who already own a NRF24/CC1101 chip.</p>
-    <img class="main" src="/images/flipper/pcb_v1_1.jpg">
-  </div>
-</a>
-
-<a class="box" href="/flipper/nrf24_board#other-stuff">
-  <div class="box-two">
-    <p class="rodden">USB-C Keychain</p>
-    <p>Avoid carrying a spare USB cable on your pocket.</p>
-    <img class="main" src="/images/flipper/usbc.jpeg">
-  </div>
-</a>
 
 </div>
+
+<br>
+
+---
+
+<br>
+
+## Board comparison
+
+Here you have a set of features and the different board to have all information
+
+| Board          | ESP32C3 + SD Card Socket(Marauder)       |   GPS (Marauder)  |  NeoPixel LED (Marauder) | CC1101 / nRF24 Socket | UHF Reader  | 
+| -----------    | --------------------     |  -----------      |  -------------- | --------------------  | ------------------- |
+| VoyagerRFv2    |             ✅     |              ✅         |      ✅         |      ✅       |      ❌     |
+| VoyagerRFv1    |             ✅     |              ✅         |      ❌         |      ✅       |      ❌     |
+| VoyagerRF Micro|             ✅     |              ✅         |      ✅         |      ❌       |      ❌     |
+| New Horizons   |             ❌     |              ❌         |      ❌         |      ❌       |      ✅     |
+
+
 
 <br>
 

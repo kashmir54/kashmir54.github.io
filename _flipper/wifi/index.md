@@ -10,6 +10,9 @@ favicon: /images/favicon.ico
 
 <p class="vera">VoyagerRF</p>
 
+A WiFi Devboard based on ESP32 for Flipper Zero.
+
+<br>
 <div display="grid" align="center">
   <img src="/images/flipper/voyager_white_1.jpg" class="main" width="40%"/>
   <img src="/images/flipper/voyager_black_0.jpg" class="main" width="40%"/>
@@ -32,11 +35,28 @@ favicon: /images/favicon.ico
 
 <br>
 
-<div class="note">
-
-<b>NOTE: A new version of the board was released. Check out the <a href="https://kashmir54.github.io/flipper/voyagerrf_v2/">VoyagerRFv2 post</a>.</b>
-
+<div class="grid-post-big note">
+    <div>
+      <a class="blog" href="/flipper/voyagerrf_v2">
+      <img class="blog-thumb" src="/images/flipper/v2/thumbs.png"></a>
+    </div>
+    <div>
+      <a class="blog" href="/flipper/voyagerrf_v2">
+      <b><p>NOTE: A new version of the board was released. Featuring:</p>
+        <ul>
+          <li>WiFi</li>
+          <li>Bluetooth</li>
+          <li>GPS (new!)</li>
+          <li>NeoPixel LED (new!)</li>
+          <li>Front cover (new!)</li>
+        </ul>
+        <p>Check out the <a href="https://kashmir54.github.io/flipper/voyagerrf_v2/">VoyagerRFv2 post</a>.</p>
+      </b>
+      </a>
+    </div>
 </div>
+
+
 
 <br>
 
