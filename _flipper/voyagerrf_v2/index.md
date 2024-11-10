@@ -44,11 +44,12 @@ An upgraded version of the VoyagerRF (ESP32 WiFi Devboard for Flipper Zero) with
 ## Related tools
 
 <div class="grid-one">
-  <a class="box" href="https://kashmir54.github.io/voyagerrf/v2.html">
-    <div class="main-box">
-      <div>
-        <p>Update your VoyagerRFv2 board here</p>
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/index.html">
+    <div class="main-box" >
+      <div style="padding-left: 10%; padding-right: 10%;">
+        <p>Update or switch your firmware on the VoyagerRFv2 board easily! (Marauder / Ghost_ESP)</p>
         <img class="micro-icon" src="/images/flipper/pixel.png">
+        <p>Click here!</p>
       </div>
     </div>
   </a>
@@ -69,6 +70,7 @@ I was thinking about getting some upgrades, mainly with a better form factor, a 
 
 Let's recap the new features of this v2 version:
 
+- ⚡️ **Ready for Ghost_ESP Firmware:** Now the VoyagerRFv2 board supports Ghost_ESP, you can use the [Web Flasher](https://kashmir54.github.io/voyagerrf/) to easily change/update your firmware.
 - ⚡️ **New GPS module and antenna:** The ATGM336H GPS module is connected to the ESP32C3, which allows the Marauder firmware to collect GeoPositioning information on wardriving mode. This mode saves the location and WiFi SSID (among other data) in the VoyagerRF's MicroSD card with a certain file formatthat can be uploaded on websites such as [wigle.net](https://wigle.net/).
 - ⚡️ **New NeoPixel status LED:** This RGB LED will indicate the status of the Marauder firmware. Blue for sniffing and red for attack mode. You can also set manually the HEX code for the LED or flex it with the raimbow mode.
 - ⚡️ **New Even more compact design**, removing the side cable and making it smaller and more portable.
@@ -76,12 +78,12 @@ Let's recap the new features of this v2 version:
 
 Inherited features from previous VoyagerRFv1:
 
-- ✅ ESP32-C3: A low-consumption **WiFi and Bluetooth** chip with the latest Marauder firmware. This chip will allow you to perform all WiFi and Bluetooth tools deployed on marauder (including deauths, evilportal, sour apple, ble spam, etc). Ready to plug and play and control it with the [ESP32 WiFi Marauder](https://github.com/0xchocolate/flipperzero-wifi-marauder/releases) GPIO app.
+- ✅ ESP32-C3: A low-consumption **WiFi and Bluetooth** chip with the latest Marauder firmware. This chip will allow you to perform all WiFi and Bluetooth tools deployed on marauder (including deauths, evilportal, sour apple, ble spam, etc). Ready to plug and play and control it with the [ESP32 WiFi Marauder](https://github.com/0xchocolate/flipperzero-wifi-marauder/releases) and [Ghost ESP](https://github.com/Spooks4576/ghost_esp_app) GPIO apps.
 - ✅ MicroSD card slot to save the output from the Marauder app (already configured in the firmware) and different configuration files (for evilportal, for example).
 - ✅ 3dBi Omnidirectional WiFi antenna (2.4GHz) mounted into the board's SMA connector. Adds a great range improvement against the original devboard (PCB antenna).
 - ✅ NRF24/CC1101 socket with decoupling capacitors for noise reduction. Compatible with [External CC1101 configuration](https://github.com/quen0n/flipperzero-ext-cc1101) and [NRF24 Sniffer/MouseJacker](https://github.com/UberGuidoZ/Flipper/blob/main/GPIO/ReadMe.md#nrf24l01--mousejack-pinout---8-pin) (see chip compatibility since not all chips have the same pinout).
 
-Remember that the VoyagerRFv2 could be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/) following the steps in the website.
+Remember that the VoyagerRFv2 could be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/) following the steps in the website. Also, you can change from Marauder to Ghost_ESP easily.
 
 I have units in stock. If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com). Check out the [last section](#bundles-and-boards) to see bundles and prices.
 
@@ -154,7 +156,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRFv2 board with latest Marauder Firmware preinstalled
+- VoyagerRFv2 board with latest Marauder Firmware preinstalled. If you want Ghost_ESP instead, let me know.
 - Back board PLA case + 2xM1.4 Screws and nuts 
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -180,7 +182,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRFv2 board with latest Marauder Firmware preinstalled
+- VoyagerRFv2 board with latest Marauder Firmware preinstalled. If you want Ghost_ESP instead, let me know.
 - Back board PLA case + 2xM1.4 Screws and nuts 
 - 3dBi Omni Antenna (2.4GHz)
 
@@ -233,16 +235,16 @@ You can download the STL for the cases and the base here:
 
 | Part     | File       |
 | ----------- | ----------- |
-| Front | [v2.2-FrontCase.stl](https://kashmir54.github.io/assets/files/cases/v2.2-FrontCase.stl)      |
-| Back  | [v2.2-BackCase.stl](https://kashmir54.github.io/assets/files/cases/v2.2-BackCase.stl)      |
-| Base  | [v2.2-Base.stl](https://kashmir54.github.io/assets/files/cases/v2.2-Base.stl)      |
+| Front | [v2_Top_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Top_Case.stl)      |
+| Back  | [v2_Bot_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Bot_Case.stl)      |
+| Base  | [v2_Base.stl](https://kashmir54.github.io/assets/files/cases/v2_Base.stl)      |
 
 <br>
 
 To mount it you will need:
 
-- 2x M1.4 or M1.6 screws (10mm or 12mm long)
-- 2x M1.4 or M1.6 nuts
+- 2x M1.4 screws (10mm or 12mm long)
+- 2x M1.4 Brass Insert Nuts
 
 <br>
 
@@ -278,7 +280,7 @@ You can use the [tutorials for the VoyagerRFv1](https://kashmir54.github.io/flip
 <br>
 
 
-## Wardriving
+## Wardriving with Marauder
 
 For wardriving, the best workflow is to be on outdoors with a clear view of the sky, and enter the ESP32 WiFi Marauder app. The GPS needs time to pick up satellites and it takes some time to pick them up. Time depends on the atmosphere, the staellite constelation and other factors, from experience it takes from 30 seconds up to 2 minutes with clear sky outdoors. Within buildings, you will find issues due to the bouncing pulses. 
 

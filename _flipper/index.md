@@ -35,7 +35,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 <a class="box" href="/flipper/voyagerrf_micro">
   <div class="box-two">
     <p class="rodden">VoyagerRF Micro</p>
-    <p>Micro WiFi DevBoard with ESP32-C3 with Marauder firmware, GPS, antenna, and MicroSD socket.</p>
+    <p>Micro WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket.</p>
     <img class="main" src="/images/flipper/micro/thumb_micro.JPG">
   </div>
 </a>
@@ -43,7 +43,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 <a class="box" href="/flipper/voyagerrf_v2">
   <div class="box-two">
     <p class="rodden">VoyagerRFv2</p>
-    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, GPS, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
     <img class="main" src="/images/flipper/v2/thumbs.png">
   </div>
 </a>
@@ -60,7 +60,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 <a class="box" href="/flipper/wifi">
   <div class="box-two">
     <p class="rodden">VoyagerRFv1</p>
-    <p>WiFi DevBoard with ESP32-C3 with Marauder firmware, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
     <img class="main" src="/images/flipper/voyager_white_1.jpg">
   </div>
 </a>
@@ -86,7 +86,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 Here you have a set of features and the different board to have all information
 
-| Board          | ESP32C3 + SD Card Socket(Marauder)       |   GPS (Marauder)  |  NeoPixel LED (Marauder) | CC1101 / nRF24 Socket | UHF Reader  | 
+| Board          | ESP32C3 + SD Card Socket       |   GPS (Marauder/Ghost_ESP)  |  NeoPixel LED (Marauder/Ghost_ESP) | CC1101 / nRF24 Socket | UHF Reader  | 
 | -----------    | --------------------     |  -----------      |  -------------- | --------------------  | ------------------- |
 | VoyagerRFv2    |             ✅     |              ✅         |      ✅         |      ✅       |      ❌     |
 | VoyagerRFv1    |             ✅     |              ✅         |      ❌         |      ✅       |      ❌     |

@@ -42,11 +42,12 @@ A small form factor ESP32 WiFi Devboard for Flipper Zero with GPS.
 ## Related tools
 
 <div class="grid-one">
-  <a class="box" href="https://kashmir54.github.io/voyagerrf/v2.html">
-    <div class="main-box">
-      <div>
-        <p>Update your VoyagerRF Micro board here</p>
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/index.html">
+    <div class="main-box" >
+      <div style="padding-left: 10%; padding-right: 10%;">
+        <p>Update or switch your firmware on the VoyagerRF Micro board easily! (Marauder / Ghost_ESP)</p>
         <img class="micro-icon" src="/images/flipper/pixel.png">
+        <p>Click here!</p>
       </div>
     </div>
   </a>
@@ -61,10 +62,11 @@ A small form factor ESP32 WiFi Devboard for Flipper Zero with GPS.
 
 ## Intro
 
-From previous [VoyagerRF](https://kashmir54.github.io/flipper/wifi/) and [VoyagerRFv2](https://kashmir54.github.io/flipper/voyagerrf_v2/) I realized that I wanted something smaller since many times I won't need the nRF24 nor the CC1101 attachment. So, that's why I crafted the VoyagerRF Micro, a compact horizontally mounted ESP32-C3 based WiFi/BLE Devboard that supports [Marauder firmware](https://github.com/justcallmekoko/ESP32Marauder/) developed by [justcallmekoko](https://github.com/justcallmekoko). It supports several feaures such as EvilPortal, Wardriving, Bluetooth tools, WiFi tools and the NeoPixel RGB LED.
+From previous [VoyagerRF](https://kashmir54.github.io/flipper/wifi/) and [VoyagerRFv2](https://kashmir54.github.io/flipper/voyagerrf_v2/) I realized that I wanted something smaller since many times I won't need the nRF24 nor the CC1101 attachment. So, that's why I crafted the VoyagerRF Micro, a compact horizontally mounted ESP32-C3 based WiFi/BLE Devboard that supports [Marauder firmware](https://github.com/justcallmekoko/ESP32Marauder/) developed by [justcallmekoko](https://github.com/justcallmekoko) and [Ghost_ESP](https://github.com/Spooks4576/Ghost_ESP) by [Spooks4576](https://github.com/Spooks4576). It supports several feaures such as EvilPortal, Wardriving, Bluetooth tools, WiFi tools and the NeoPixel RGB LED.
 
 Let's check the new features:
 
+- ⚡️ **Ready for Ghost_ESP Firmware:** Now the VoyagerRFv2 board supports Ghost_ESP, you can use the [Web Flasher](https://kashmir54.github.io/voyagerrf/) to easily change/update your firmware.
 - ⚡️ **New form factor:** The new PLA antenna/complete enclosure and the horizontal mount makes this devboard really compact, so it can fit into a pocket while connected to the flipper, making it easy to carry, specially on wardriving.
 - ❌ **Removed CC1101/nRF24 Socket:** For the sake of being compact, I decided to remove the CC1101 and nRF24 since I use those in certain tasks, but normally I don't need them.
 

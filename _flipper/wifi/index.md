@@ -24,10 +24,11 @@ A WiFi Devboard based on ESP32 for Flipper Zero.
 
 <div class="grid-one">
   <a class="box" href="https://kashmir54.github.io/voyagerrf/index.html">
-    <div class="main-box">
-      <div>
-        <p>Update your VoyagerRF board here</p>
+    <div class="main-box" >
+      <div style="padding-left: 10%; padding-right: 10%;">
+        <p>Update or switch your firmware on the VoyagerRF board easily! (Marauder / Ghost_ESP)</p>
         <img class="micro-icon" src="/images/flipper/pixel.png">
+        <p>Click here!</p>
       </div>
     </div>
   </a>
@@ -46,6 +47,7 @@ A WiFi Devboard based on ESP32 for Flipper Zero.
         <ul>
           <li>WiFi</li>
           <li>Bluetooth</li>
+          <li>Supports Marauder/Ghost_ESP</li>
           <li>GPS (new!)</li>
           <li>NeoPixel LED (new!)</li>
           <li>Front cover (new!)</li>
@@ -91,9 +93,9 @@ A WiFi Devboard based on ESP32 for Flipper Zero.
 
 After working on the NRF24 board and checking the range improvement of the external CC1101 with the antenna, I wondered if I can also enhance the WiFi dev module in terms of range, size, and functionality. After hours of design, programming, and research, I produced the VoyagerRF, a multipurpose board with several interesting features such as:
 
-- ESP32-C3: A low-consumption WiFi and Bluetooth chip with the latest Marauder firmware. This chip will allow you to perform all WiFi and Bluetooth tools deployed on marauder (including evilportal, sour apple, etc). Ready to plug and play and control it with the ESP32 WiFi Marauder GPIO app.
+- ESP32-C3: A low-consumption WiFi and Bluetooth chip with the latest Marauder/Ghost_ESP firmware. This chip will allow you to perform all WiFi and Bluetooth tools deployed on Marauder/Ghost_ESP (including evilportal, sour apple, etc). Ready to plug and play and control it with the ESP32 WiFi Marauder GPIO app.
 - 3dBi Omnidirectional WiFi antenna (2.4GHz) mounted into the board and connected to the ESP32-C3 for great range improvement against the original devboard.
-- MicroSD card slot to save the output from the Marauder app (already configured in the firmware) and different configuration files (for evilportal, for example).
+- MicroSD card slot to save the output from the Marauder/Ghost_ESP app (already configured in the firmware) and different configuration files (for evilportal, for example).
 - NRF24/CC1101 socket with decoupling capacitors for noise reduction. Compatible with [External CC1101 configuration](https://github.com/quen0n/flipperzero-ext-cc1101) and [NRF24 Sniffer/MouseJacker](https://github.com/UberGuidoZ/Flipper/blob/main/GPIO/ReadMe.md#nrf24l01--mousejack-pinout---8-pin) (see chip compatibility since not all chips have the same pinout).
 - Compact design 
 
@@ -114,22 +116,6 @@ Here you have more photos (also in black matte!):
 
 <br>
 
-## Models
-
-Currently, I am building two models. The first one (normal) is focused on capabilities and range, and it includes an SMA connector to attach a 2.4GHz antenna. This increases the range significantly against the original dev board and any other PCB antennas. 
-The second one (mini) is focused on portability and features a flat antenna in the back connected to the ESP32C3. This increases substantially the range in comparison to the original dev board, which makes it an interesting option. Here you have some pictures for the mini board:
-
-<div display="grid" align="center">
-  <img src="/images/flipper/voyagermini_black.jpg" width="40%"/>
-  <img src="/images/flipper/voyagermini_black_back.jpg" width="40%"/>
-</div>
-
-<br>
-
----
-
-<br>
-
 # Bundles and Boards
 
 If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com) on my email kashmir_54@hotmail.com and I will get back to you!
@@ -140,7 +126,7 @@ Available in black or white. Antennas can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with latest Marauder Firmware preinstalled
+- VoyagerRF board with latest Marauder/Ghost_ESP Firmware preinstalled
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
@@ -161,7 +147,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 
 Includes:
 
-- VoyagerRF board with latest Marauder Firmware preinstalled
+- VoyagerRF board with latest Marauder/Ghost_ESP Firmware preinstalled
 - SMA Connector for ESP32C3 soldered into the PCB
 - 3dBi Omni Antenna (2.4GHz)
 
@@ -406,78 +392,19 @@ Now you can check the version in the reboot option in the ESP32 WiFi Marauder ap
 
 <br>
 
-## Flashing Marauder on VoyagerRF using micro SD card
+## Flashing Marauder on Xiao-ESP32-C3 (Outdated)
 
-Since current update from source might be hard to compile and manage with the new dependencies, I have prepared the bin file to update from the SD on marauder firmware. If you got a VoyagerRF, you have Marauder firmware preinstalled, so you can perform this update.
+<div class="warning">
 
-Here you have the video:
+<b>WARNING: You better use the <a href="https://kashmir54.github.io/voyagerrf/index.html">Web Flasher</a> I left this tutorial for anybody interested on building the environment.</b>
 
-<div style="text-align: center;">
-<iframe width="560" height="355" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/JZKtMV9_qtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
-
-And these are the steps to update:
-
-**Step 1.** Download the desired version of marauder from the following options:
-
-| Version     | File       |
-| ----------- | ----------- |
-| [v0.10.7](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.10.7)   | [voyagerrf_marauder_v0_10_7.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_10_7.bin)      |
-| [v0.11.0-rc1](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.11.0-RC1)   | [voyagerrf_marauder_v0_11_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0.bin)      |
-| [v0.11.0-rc2](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.11.0-RC2)   | [voyagerrf_marauder_v0_11_0_rc2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc2.bin)      |
-| [v0.11.0-rc3](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.11.0-RC3)   | [voyagerrf_marauder_v0_11_0_rc3.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_11_0_rc3.bin)      |
-| [v0.12.0](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.12.0)  | [voyagerrf_marauder_v0_12_0.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_12_0.bin)      |
-| [v0.13.1](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.1)  | [voyagerrf_marauder_v0_13_1.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_1.bin)      |
-| [v0.13.2](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.2)  | [voyagerrf_marauder_v0_13_2.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_2.bin)      |
-| [v0.13.4](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.4)  | [voyagerrf_marauder_v0_13_4.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_4.bin)      |
-| [v0.13.5](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.5)  | [voyagerrf_marauder_v0_13_5.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_5.bin)      |
-| [v0.13.6](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.6)  | [voyagerrf_marauder_v0_13_6.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_6.bin)      |
-| [v0.13.7](https://github.com/justcallmekoko/ESP32Marauder/releases/tag/v0.13.7)  | [voyagerrf_marauder_v0_13_7.bin](https://kashmir54.github.io/assets/files/voyagerrf_marauder_v0_13_7.bin)      |
-
-
-**Step 2.** Rename the file to **update.bin** and move it to your micro SD card (the one that will go to the VoyagerRF).
-
-<p align="center">
-  <img src="/images/flipper/update/file_sd.png" width="70%"/>
-</p>
-
-**Step 3.** Insert the micro SD card in the VoyagerRF and enter into the companion app (ESP32 WiFi Marauder app) and go to _Update_ option and select the sd option, hit enter, then if you have renamed the file correctly, the update will start:
-
-<p align="center">
-  <img src="/images/flipper/update/1_0_update.png" width="55%"/>
-</p>
-
-Updating...
-
-<p align="center">
-  <img src="/images/flipper/update/1_1_update.png" width="55%"/>
-</p>
-
-Reboot the Marauder and you can see the new version:
-
-<p align="center">
-  <img src="/images/flipper/update/1_2_update.png" width="55%"/>
-</p>
-
-And the evilportal command (if you got the v0.11.0+) ready to use:
-
-<p align="center">
-  <img src="/images/flipper/update/1_3_update.png" width="55%"/>
-</p>
-
-That's it, now we have to wait until companion app gets updated.
-
-<br>
-
-## Flashing Marauder on Xiao-ESP32-C3
 
 Are you looking to explore further with the ESP32-C3? Then, let me share with you the flashing process and the different steps needed to shape the Arduino IDE environment.
 
 <div class="warning">
 
-<b>WARNING:</b> This tutorial is valid for Marauder v0.10.7 or before, version v0.11.0 requires tricky configurations that won't be explained in this page. If you already have marauder firmware, use the [update from micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card) option, it will be painless. If you installed evilportal or other firmware and you don't have the possibility to update from the micro sd card, I suggest you install this v0.10.0 version and then update from the sd card.
-
-If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your computer or to a power source, make sure to unplug the VoyagerRF from your flipper in order to avoid malfunctions or data corruption on your Flipper's micro SD card.
+<b>WARNING:</b> This tutorial is valid for Marauder v0.10.7 or before, version v0.11.0 requires tricky configurations that won't be explained in this page. If you are going to flash the VoyagerRF's ESP32 or connect its USBC to your computer or to a power source, make sure to unplug the VoyagerRF from your flipper in order to avoid malfunctions or data corruption on your Flipper's micro SD card.
 
 </div>
 
@@ -627,173 +554,6 @@ The rest of the options are as follow:
 </p>
 
 
-## Flashing EvilPortal on Xiao-ESP32-C3
-
-Many people have requested a guide for flashing ESP32C3 with new trending app, [EvilPortal](https://github.com/bigbrodude6119/flipper-zero-evil-portal). Following these steps you will achieve it.
-
-<div class="warning">
-
-<b>WARNING:</b> Marauder firmware (v0.11.0+) and Flipper's Marauder Companion app (v0.6.0+) already includes the evilportal within, so there is no need to have this Evilportal firmware. If you flash the VoyagerRF board with this standalone version you won't be able to use marauder until you flash it again. This steps were valid on version 0.0.2. Tutorial could get old as the version evolve.
-
-</div>
-
-**Step 1.** Install [Arduino IDE](https://www.arduino.cc/en/software).
-
-
-**Step 2.** Download [latests evilportal release](https://github.com/bigbrodude6119/flipper-zero-evil-portal/releases/latest) specifically, we will need EvilPortal.ino. You might want to download evil_portal_sd_folder.zip and unleashed-.evil_portal.fap.zip since you need them for seting up your Flipper:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/evilportal_src.png" width="90%"/>
-</p>
-
-
-**Step 3.** Open EvilPortal.ino with ArduinoIDE:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/open_ino_2.png" width="80%"/>
-</p>
-
-
-**Step 4.** Set up the libraries for EvilPortal:
-
-We will install the firmware from the source code, therefore, we will need the libraries used in the EvilPortal. To do it, download the libraries as a zip as displayed in the following image:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/lib.png" width="90%"/>
-</p>
-
-You gotta do it over all the following libraries:
-
-- [AsyncTCP](https://github.com/me-no-dev/AsyncTCP)
-- [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
-
-Then to add the libraries go to the following menu and select the downloaded ZIPs one by one.
-
-<p align="center">
-  <img src="/images/flipper/evilportal/install_lib.png" width="70%"/>
-</p>
-
-<p align="center">
-  <img src="/images/flipper/evilportal/add_lib.png" width="70%"/>
-</p>
-
-**Step 5.** Install _esp32 by Espressif Systems_ from the Boards Manager:
-
-Currently, I found the ESP32 stable at version 2.0.9. Go to boards, search for esp32 and install version 2.0.9:
-
-<p align="center">
-  <img src="/images/flipper/esp32.png" width="50%"/>
-</p>
-
-**Step 6** Modify AsyncWebSocket.cpp:
-
-There is a bug in the ESPAsyncWebServer library for the ESP32C3, mainteiner has not fixed it, so we have to do it manually. 
-
-Go to the folder where the file is, it should be something like this one:
-
-<div class="note">
-
-<b>NOTE:</b> C:\Users\youruser\Documents\Arduino\libraries\ESPAsyncWebServer-master\src
-
-</div>
-
-Then open the file and edit the following line:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/edit.png" width="70%"/>
-</p>
-
-<p align="center">
-  <img src="/images/flipper/evilportal/line.png" width="70%"/>
-</p>
-
-Replace it with the following typed return statement as shown in the following piece of code: _return IPAddress((uint32_t)0);_
-
-```c
-IPAddress AsyncWebSocketClient::remoteIP() {
-    if(!_client) {
-        return IPAddress((uint32_t)0);  //Before: return IPAddress(0U);
-    }
-    return _client->remoteIP();
-}
-```
-
-Code and library wise you are all set, now move into board selection.
-
-
-**Step 7** Set the board (XIAO-ESP32-C3)
-
-Connect your VoyagerRF board (remember to disconnect it from the Flipper). Go to the boards menu and select the proper model (XIAO-ESP32-C3):
-
-<p align="center">
-  <img src="/images/flipper/evilportal/board.png" width="80%"/>
-</p>
-
-Go over port and select the board that poped up when connected (don't mind the fingerprint, it will be a little bit random):
-
-<p align="center">
-  <img src="/images/flipper/evilportal/port.png" width="70%"/>
-</p>
-
-The rest of the options are as follow:
-
-| Setting     | Value       |
-| ----------- | ----------- |
-| USB CDC On Boot (important)   | Disabled      |
-| CPU Frequency         | 160MHz (WiFi) |
-| Core Debug Level      | None          |
-| Erase All Flash...    | Disabled      |
-| Flash Frequency       | 80 MHz        |
-| Flash Mode            | QIO           |
-| Flash Size            | 4MB (32Mb)    |
-| Partition Scheme      | Minimal SPIFFS|
-| Upload Speed          | 921600        |
-
-
-If everything is successful, you should see the following messages:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/ok.png" width="80%"/>
-</p>
-
-Now we can set up the rest of the environment.
-
-
-**Step 8** Load APP (.fap) and set up data to your Flipper:
-
-Connect your flipper, use the qFlipper app or other file explorer, then, get the unleashed-evil_portal.fap.zip we downloaded from the repo, unzip it, and drop it to the apps/gpio folder as shown in the image:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/app.png" width="70%"/>
-</p>
-
-Do the same with the folder evil_portal_sd_folder.zip, unzip it, and drop the complete folder 
-
-<p align="center">
-  <img src="/images/flipper/evilportal/evil_folder.png" width="70%"/>
-</p>
-
-Within that folder you should have two files, ap.config.txt, where you have to place the AP name and the index.html, which is the page that is going to load when the Captive Portal is displayed in the phone.
-
-And that's it, you are now able to plug the VoyagerRF and show up with the captive portal when clients connect. You can also save the logs to the flipper sd card with no issue:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/set_up.jpg" width="80%"/>
-</p>
-
-We connect to the Wifi Network and the captive portal shows up:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/captive_portal.jpg" width="80%"/>
-</p>
-
-Inseting the credentials and saving them to the log file:
-
-<p align="center">
-  <img src="/images/flipper/evilportal/logs.png" width="50%"/>
-</p>
-
-
 # Troubleshooting
 
 - If the compilation output errors with duplicates variables and headers:
@@ -819,7 +579,7 @@ Using a Samsung MicroSD card will cause Marauder not to boot, as stated on the [
     There is a bug on the Marauder v0.10.4 firmware or companion app. If there is no SD card connected, when booting (entering the ESP32 WiFi Marauder app), the ESP32 will be bugged, you can hit the reset button while being in the app and you can use the module as normal. Everytime you get into the app with no Micro SD card connected to the VoyagerRF, you will have to hit the reset button. I'm trying to work this out.
 
 <p align="center">
-  <img src="/images/flipper/reset_button.png" width="60%"/>
+  <img src="/images/flipper/reset_button.png" width="30%"/>
 </p>
 
 - The micro SD card is connected to the VoyagerRF, but no pcaps are being saved:
