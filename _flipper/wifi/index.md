@@ -76,9 +76,6 @@ A WiFi Devboard based on ESP32 for Flipper Zero.
 - [Tutorials](#tutorials)
   - [Setup Evilportal](#rogueap--evilportal)
   - [Flashing Marauder on VoyagerRF using web interface](#flashing-marauder-on-voyagerrf-using-web-interface)
-  - [Flashing Marauder on VoyagerRF using micro SD card](#flashing-marauder-on-voyagerrf-using-micro-sd-card)
-  - [Flashing Marauder on XIAO-ESP32-C3](#flashing-marauder-on-xiao-esp32-c3)
-  - [Flashing EvilPortal on XIAO-ESP32-C3](#flashing-evilportal-on-xiao-esp32-c3)
 - [Troubleshooting](#troubleshooting)
 
 

@@ -31,12 +31,11 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 <div class="grid-two">
 
-
-<a class="box" href="/flipper/voyagerrf_micro">
+<a class="box" href="/flipper/voyagerrf_pro">
   <div class="box-two">
-    <p class="rodden">VoyagerRF Micro</p>
-    <p>Micro WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket.</p>
-    <img class="main" src="/images/flipper/micro/thumb_micro.JPG">
+    <p class="rodden">VoyagerRF Pro</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket and nRF24.</p>
+    <img class="main" src="/images/flipper/pro/thumbs.png">
   </div>
 </a>
 
@@ -45,6 +44,30 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
     <p class="rodden">VoyagerRFv2</p>
     <p>WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
     <img class="main" src="/images/flipper/v2/thumbs.png">
+  </div>
+</a>
+
+<a class="box" href="/flipper/frontiersrf">
+  <div class="box-two">
+    <p class="rodden">FrontiersRF</p>
+    <p>A powerful 433MHz and 868/900MHz devboard for enhanced RX/TX on SubGHz app.</p>
+    <img class="main" src="/images/flipper/frontiersrf/thumbs.JPG">
+  </div>
+</a>
+
+<a class="box" href="/flipper/starliner">
+  <div class="box-two">
+    <p class="rodden">StarLinerIR</p>
+    <p>An infrared devboard with enhanced IR LEDs to create a beam and improve original IR reach.</p>
+    <img class="main" src="/images/flipper/starliner/thumbs.JPG">
+  </div>
+</a>
+
+<a class="box" href="/flipper/voyagerrf_micro">
+  <div class="box-two">
+    <p class="rodden">VoyagerRF Micro</p>
+    <p>Micro WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket.</p>
+    <img class="main" src="/images/flipper/micro/thumb_micro.JPG">
   </div>
 </a>
 

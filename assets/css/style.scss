@@ -102,6 +102,10 @@ div.box-two{
   text-align: center;
 }
 
+li:not(:last-child) { 
+   margin-bottom: 10px;  
+}
+
 div.box-two:hover{
   border-color: #cd7901;
 }

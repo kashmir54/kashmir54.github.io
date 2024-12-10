@@ -14,11 +14,11 @@ An upgraded version of the VoyagerRF (ESP32 WiFi Devboard for Flipper Zero) with
 
 <div display="grid" align="center">
   <div class="lightgallery">
-    <a href="/images/flipper/v2/black_0.png" data-sub-html="VoyagerRFv2 black version">
-      <img src="/images/flipper/v2/black_0.png" class="main" width="45%"/>
+    <a href="/images/flipper/v2/new/black_0.jpg" data-sub-html="VoyagerRFv2 black version">
+      <img src="/images/flipper/v2/new/black_0.jpg" class="main" width="45%"/>
     </a>
-    <a href="/images/flipper/v2/white_4.png" data-sub-html="VoyagerRFv2 white version with front cover">
-      <img src="/images/flipper/v2/white_4.png" class="main" width="45%"/>
+    <a href="/images/flipper/v2/new/white_2.jpg" data-sub-html="VoyagerRFv2 white version with front cover">
+      <img src="/images/flipper/v2/new/white_2.jpg" class="main" width="45%"/>
     </a>
 
   </div>
@@ -44,7 +44,7 @@ An upgraded version of the VoyagerRF (ESP32 WiFi Devboard for Flipper Zero) with
 ## Related tools
 
 <div class="grid-one">
-  <a class="box" href="https://kashmir54.github.io/voyagerrf/index.html">
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/v2.html">
     <div class="main-box" >
       <div style="padding-left: 10%; padding-right: 10%;">
         <p>Update or switch your firmware on the VoyagerRFv2 board easily! (Marauder / Ghost_ESP)</p>
@@ -83,7 +83,7 @@ Inherited features from previous VoyagerRFv1:
 - ✅ 3dBi Omnidirectional WiFi antenna (2.4GHz) mounted into the board's SMA connector. Adds a great range improvement against the original devboard (PCB antenna).
 - ✅ NRF24/CC1101 socket with decoupling capacitors for noise reduction. Compatible with [External CC1101 configuration](https://github.com/quen0n/flipperzero-ext-cc1101) and [NRF24 Sniffer/MouseJacker](https://github.com/UberGuidoZ/Flipper/blob/main/GPIO/ReadMe.md#nrf24l01--mousejack-pinout---8-pin) (see chip compatibility since not all chips have the same pinout).
 
-Remember that the VoyagerRFv2 could be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/) following the steps in the website. Also, you can change from Marauder to Ghost_ESP easily.
+Remember that the VoyagerRFv2 could be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/v2.html) following the steps in the website. Also, you can change from Marauder to Ghost_ESP easily.
 
 I have units in stock. If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com). Check out the [last section](#bundles-and-boards) to see bundles and prices.
 
@@ -92,23 +92,23 @@ Here you have more photos with some of the other accessories (CC1101 and nRF24):
 Front:
 <div display="grid" align="center">
   <div class="lightgallery">
-    <a href="/images/flipper/v2/white_0.png" data-sub-html="VoyagerRFv2 white version">
-      <img src="/images/flipper/v2/white_0.png" width="45%"/>
+    <a href="/images/flipper/v2/new/white_0.jpg" data-sub-html="VoyagerRFv2 white version">
+      <img src="/images/flipper/v2/new/white_0.jpg" width="45%"/>
     </a>
-    <a href="/images/flipper/v2/black_0.png" data-sub-html="VoyagerRFv2 black version">
-      <img src="/images/flipper/v2/black_0.png" width="45%"/>
+    <a href="/images/flipper/v2/new/black_0.jpg" data-sub-html="VoyagerRFv2 black version">
+      <img src="/images/flipper/v2/new/black_0.jpg" width="45%"/>
     </a>
   </div>
 </div>
 <br>
-Back:
+Back with translucent case:
 <div display="grid" align="center">
   <div class="lightgallery">
-    <a href="/images/flipper/v2/white_5.png" data-sub-html="Back of the VoyagerRFv2 white version">
-      <img src="/images/flipper/v2/white_5.png" width="45%"/>
+    <a href="/images/flipper/v2/new/white_1.jpg" data-sub-html="Back of the VoyagerRFv2 white version">
+      <img src="/images/flipper/v2/new/white_1.jpg" width="45%"/>
     </a>
-    <a href="/images/flipper/v2/black_5.png" data-sub-html="Back of the VoyagerRFv2 black version">
-      <img src="/images/flipper/v2/black_5.png" width="45%"/>
+    <a href="/images/flipper/v2/new/black_1.jpg" data-sub-html="Back of the VoyagerRFv2 black version">
+      <img src="/images/flipper/v2/new/black_1.jpg" width="45%"/>
     </a>
   </div>
 </div>
@@ -146,7 +146,7 @@ With CC1101 connected:
 
 # Bundles and Boards
 
-If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com) on my email kashmir_54@hotmail.com and I will get back to you!
+If you are interested in getting the board and other accessories cheaper, you can [contact me](mailto:kashmir_54@hotmail.com) on my email kashmir_54@hotmail.com and I will get back to you!
 
 <br>
 
@@ -157,10 +157,10 @@ Available in black or white. Antennas can be black or white, as you prefer.
 Includes:
 
 - VoyagerRFv2 board with latest Marauder Firmware preinstalled. If you want Ghost_ESP instead, let me know.
-- Back board PLA case + 2xM1.4 Screws and nuts 
+- Front + back + base PLA+/PETG case (let me know the color on the email! black, white, translucent, lime green, light orange)
 - 3dBi Omni Antenna (2.4GHz)
 - 3dBi Helical Antenna (433Mhz) 
-- Ebyte CC1101 module
+- Ebyte E07-M1101D-SMA (CC1101) module
 - Ebyte ML01DP5 (NRF24) module
 
 <div display="grid" align="center">
@@ -183,7 +183,7 @@ Available in black or white. The antenna can be black or white, as you prefer.
 Includes:
 
 - VoyagerRFv2 board with latest Marauder Firmware preinstalled. If you want Ghost_ESP instead, let me know.
-- Back board PLA case + 2xM1.4 Screws and nuts 
+- Front + back + base PLA+/PETG case (let me know the color on the email! black, white, translucent, lime green, light orange)
 - 3dBi Omni Antenna (2.4GHz)
 
 <div display="grid" align="center">
@@ -193,30 +193,19 @@ Includes:
 
 <br>
 
-## VoyagerRFv2 front case and base / 4€
+## Extra front, back case and base / +7€
 
-Available in black or white (PLA). The front case has a small window to dim NeoPixel's light. Also, it has two sticks that allows the user to press the Boot and Reset buttons on the ESP32C3 chip. The base comes with a foam to insert the pins and keep the board tight to the base. The screws are included with the VoyagerRF v2 and can be use with only the back case or with both. 
+Available in black, white, lime green, light orange (PLA+) or translucent (PETG). The front case in solid colors has a small window to dim NeoPixel's light, the translucent doesn't have the window for better look. Also, it has two sticks that allows the user to press the Boot and Reset buttons on the ESP32C3 chip. The base comes with a foam to insert the pins and keep the board tight to the base. The screws are included with the VoyagerRF v2 and can be use with only the back case or with both. 
 
 Includes:
 
-- Front board PLA case
+- Front + back case
 - Standing base with high density foam
 
 <div display="grid" align="center">
   <div class="lightgallery">
-    <a href="/images/flipper/v2/white_4.png" data-sub-html="White front cover on VoyagerRFv2">
-      <img src="/images/flipper/v2/white_4.png" width="45%"/>
-    </a>
-    <a href="/images/flipper/v2/black_4.png" data-sub-html="Black front cover on VoyagerRFv2">
-      <img src="/images/flipper/v2/black_4.png" width="45%"/>
-    </a>
-  </div>
-</div>
-
-<div display="grid" align="center">
-  <div class="lightgallery">
-    <a href="/images/flipper/v2/base.png" data-sub-html="VoyagerRFv2 with front cases and base stands">
-      <img src="/images/flipper/v2/base.png" width="75%"/>
+    <a href="/images/flipper/v2/new/v2_case.jpg" data-sub-html="Translucent cover on white VoyagerRFv2">
+      <img src="/images/flipper/v2/new/v2_case.jpg" width="75%"/>
     </a>
   </div>
 </div>
