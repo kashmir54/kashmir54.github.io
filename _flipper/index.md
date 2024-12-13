@@ -35,7 +35,7 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   <div class="box-two">
     <p class="rodden">VoyagerRF Pro</p>
     <p>WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket and nRF24.</p>
-    <img class="main" src="/images/flipper/pro/thumbs.png">
+    <img class="main" src="/images/flipper/pro/thumbs.jpg">
   </div>
 </a>
 
@@ -63,14 +63,6 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="/flipper/voyagerrf_micro">
-  <div class="box-two">
-    <p class="rodden">VoyagerRF Micro</p>
-    <p>Micro WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket.</p>
-    <img class="main" src="/images/flipper/micro/thumb_micro.JPG">
-  </div>
-</a>
-
 <a class="box" href="/flipper/newhorizonsrf">
   <div class="box-two">
     <p class="rodden">NewHorizonsRF</p>
@@ -79,6 +71,17 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
     <img class="main" src="/images/flipper/newhorizons/thumbs.JPG">
   </div>
 </a>
+
+
+<a class="box" href="/flipper/voyagerrf_micro">
+  <div class="box-two">
+    <p class="rodden">VoyagerRF Micro</p>
+    <p>Micro WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket.</p>
+    <img class="main" src="/images/flipper/micro/thumb_micro.JPG">
+  </div>
+</a>
+
+
 
 <a class="box" href="/flipper/wifi">
   <div class="box-two">
@@ -109,12 +112,27 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
 
 Here you have a set of features and the different board to have all information
 
-| Board          | ESP32C3 + SD Card Socket       |   GPS (Marauder/Ghost_ESP)  |  NeoPixel LED (Marauder/Ghost_ESP) | CC1101 / nRF24 Socket | UHF Reader  | 
-| -----------    | --------------------     |  -----------      |  -------------- | --------------------  | ------------------- |
-| VoyagerRFv2    |             ✅     |              ✅         |      ✅         |      ✅       |      ❌     |
-| VoyagerRFv1    |             ✅     |              ✅         |      ❌         |      ✅       |      ❌     |
-| VoyagerRF Micro|             ✅     |              ✅         |      ✅         |      ❌       |      ❌     |
-| New Horizons   |             ❌     |              ❌         |      ❌         |      ❌       |      ✅     |
+| Board                                      | ESP32C3      |   GPS*       |  Neo LED*    |  SubGHz     | nRF24  | UHF  | Infrared    |
+| -----------                                | -------       |  ----------  |  ------------|  --------   | ------ | ----------- | ----------- | 
+| [VoyagerRFv2](/flipper/voyagerrf_v2)       |        ✅     |     ✅       |      ✅      |      ✅    |   ✅   |      ❌     |      ❌     |
+| [VoyagerRF Pro](/flipper/voyagerrf_pro)    |        ✅     |     ✅       |      ✅      |      ❌    |   ⚡️   |      ❌     |      ❌     |
+| [FrontiersRF](/flipper/frontiersrf)        |        ❌     |     ❌       |      ❌      |      ⚡️    |   ❌   |      ❌     |      ❌     |
+| [StarLinerIR](/flipper/starliner)          |        ❌     |     ❌       |      ❌      |      ❌    |   ❌   |      ❌     |      ✅     |
+| [New Horizons](/flipper/newhorizonsrf)     |        ❌     |     ❌       |      ❌      |      ❌    |   ❌   |      ✅     |      ❌     |
+| [VoyagerRFv1](/flipper/wifi)               |        ✅     |     ❌       |      ❌      |      ✅    |   ✅   |      ❌     |      ❌     |
+| [VoyagerRF Micro](/flipper/voyagerrf_micro)|        ✅     |     ✅       |      ✅      |      ❌    |   ❌   |      ❌     |      ❌     |
+
+\* GPS and NeoPixel LED connected to the ESP32C3 (Wardriving and board status)
+
+ESP32C3 has WiFi 2.4GHz and Bluetooth 5.0
+
+Table legend:
+
+✅ - Yes
+
+⚡️ - Yes, improved
+
+❌ - No
 
 
 
