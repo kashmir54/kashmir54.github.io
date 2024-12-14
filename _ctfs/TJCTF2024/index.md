@@ -311,7 +311,7 @@ return f'Key \{tjctf\{.+\} not found!', 500
 
 <p align="center">
   <img src="/images/writeups/TJCTF2024/3_0_add.png" width="65%"/>
-</p>{{''.__class__.__mro__[1].__subclasses__()[336]('ls',shell=True,stdout=-1).communicate()[0].decode('utf-8')}}
+</p>
 
 
 <p align="center">

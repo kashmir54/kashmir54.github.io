@@ -224,9 +224,9 @@ You can download the STL for the cases and the base here:
 
 | Part     | File       |
 | ----------- | ----------- |
-| Front | [v2_Top_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Top_Case.stl)      |
-| Back  | [v2_Bot_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Bot_Case.stl)      |
-| Base  | [v2_Base.stl](https://kashmir54.github.io/assets/files/cases/v2_Base.stl)      |
+| Front | [v2_Front_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Front_Case.stl)      |
+| Back  | [v2_Back_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Back_Case.stl)      |
+| Tight Base  | [v2_TightBase.stl](https://kashmir54.github.io/assets/files/cases/v2_TightBase.stl)      |
 
 <br>
 

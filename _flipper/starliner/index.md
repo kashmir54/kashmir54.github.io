@@ -97,10 +97,10 @@ Includes:
 
 <div display="grid" align="center">
   <div class="lightgallery">
-    <a href="/images/flipper/starliner/star_case_0.JPG" data-sub-html="">
+    <a href="/images/flipper/starliner/star_case_0.JPG" data-sub-html="White StarLinerIR">
       <img src="/images/flipper/starliner/star_case_0.JPG" width="45%"/>
     </a>
-    <a href="/images/flipper/starliner/star_case_1.JPG" data-sub-html="Black front cover on VoyagerRFv2">
+    <a href="/images/flipper/starliner/star_case_1.JPG" data-sub-html="Black StarLinerIR">
       <img src="/images/flipper/starliner/star_case_1.JPG" width="45%"/>
     </a>
   </div>
@@ -130,14 +130,17 @@ Includes:
 
 You can download the STL for the cases and the base here:
 
-TBA soon!
+| Part     | File       |
+| ----------- | ----------- |
+| Front Case | [StarLiner_Case.stl](https://kashmir54.github.io/assets/files/cases/StarLiner_Case.stl)      |
+| Base  | [StarLiner_Base.stl](https://kashmir54.github.io/assets/files/cases/StarLiner_Base.stl)      |
 
 <br>
 
 To mount it you will need:
 
-- 4x M1.4 screws (3mm long)
-- 4x M1.4 Brass Insert Nuts
+- 2x M1.4 screws (10mm or 12mm long)
+- 2x M1.4 Brass Insert Nuts
 
 <br>
 

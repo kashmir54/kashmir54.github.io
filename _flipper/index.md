@@ -122,7 +122,7 @@ Here you have a set of features and the different board to have all information
 | [VoyagerRFv1](/flipper/wifi)               |        ✅     |     ❌       |      ❌      |      ✅    |   ✅   |      ❌     |      ❌     |
 | [VoyagerRF Micro](/flipper/voyagerrf_micro)|        ✅     |     ✅       |      ✅      |      ❌    |   ❌   |      ❌     |      ❌     |
 
-\* GPS and NeoPixel LED connected to the ESP32C3 (Wardriving and board status)
+* GPS and NeoPixel LED connected to the ESP32C3 (Wardriving and board status)
 
 ESP32C3 has WiFi 2.4GHz and Bluetooth 5.0
 

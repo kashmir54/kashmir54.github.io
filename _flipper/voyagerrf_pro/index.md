@@ -60,7 +60,7 @@ A new version of the VoyagerRF (ESP32 WiFi/BLE Devboard for Flipper Zero) with G
 
 ## Intro
 
-During the developement of the [VoyagerRFv1](https://kashmir54.github.io/flipper/wifi/) and [VoyagerRFv2](https://kashmir54.github.io/flipper/voyagerrf_v2/) I focused on flexibility, so I can use nRF24 or CC1101 whenever I needed. Using more and more the Flipper, I realized that I used much more the nRF24 instead of the CC1101 because of the jobs I do, so I wanted to upgrade that nRF24 part and let go the CC1101. That's why I developed the VoyagerRF Pro, a board focused on the 2.4GHz, WiFi, BLE and propietary protocols with an upgraded. The board is compatible with all firmwares: Unleashed, Roguemaster, Official, Momentum, etc.
+During the developement of the [VoyagerRFv1](https://kashmir54.github.io/flipper/wifi/) and [VoyagerRFv2](https://kashmir54.github.io/flipper/voyagerrf_v2/) I focused on flexibility, so I can use nRF24 or CC1101 whenever I needed. Using more and more the Flipper, I realized that I used much more the nRF24 instead of the CC1101 because of the jobs I do, so I wanted to upgrade that nRF24 part and let go the CC1101. That's why I developed the VoyagerRF Pro, a board focused on the 2.4GHz, WiFi, BLE 5.0 and propietary protocols with an upgraded nRF24 module, the [E01-2G4M27SX chip](https://www.cdebyte.com/products/E01-2G4M27SX). The board is compatible with all firmwares: Unleashed, Momentum, Roguemaster, Official, etc.
 
 Main features of this VoyagerRF Pro version:
 
@@ -119,13 +119,13 @@ If you are interested in getting the board and other accessories, you can [conta
 
 ## VoyagerRF Pro / 70€
 
-PCB available in black or white and 3D pieces in black, white, lime green and light orange. Antennas can be black or white, as you prefer.
+PCB available in black or white and 3D pieces in black, white, translucent, lime green and light orange. Antennas can be black or white, as you prefer.
 
 Includes:
 
 - 1 x VoyagerRF Pro board with latest Marauder Firmware preinstalled. If you want Ghost_ESP instead, let me know.
 - 2 x 3dBi Omni Antenna (2.4GHz) Length: 11cm (4.33inch)
-- 3D PLA+/PETG back + front frame + pin cases with rugged finish. Choose your color on the email (white, black, translucen, lime green, light orange!
+- 3D PLA+/PETG back + front frame + pin cases with rugged finish. Choose your color on the email (white, black, translucent, lime green, light orange!
 
 There you have both colors to compare (in the photo the front frame has been removed):
 
@@ -205,9 +205,8 @@ You can download the STL for the cases and the base here:
 
 | Part     | File       |
 | ----------- | ----------- |
-| Front frame| [v2_Top_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Top_Case.stl)      |
-| Back  | [v2_Bot_Case.stl](https://kashmir54.github.io/assets/files/cases/v2_Bot_Case.stl)      |
-| Base  | [v2_Base.stl](https://kashmir54.github.io/assets/files/cases/v2_Base.stl)      |
+| Back  | [Pro_Back.stl](https://kashmir54.github.io/assets/files/cases/Pro_Back.stl)      |
+| Base  | [Pro_Base.stl](https://kashmir54.github.io/assets/files/cases/Pro_Base.stl)      |
 
 <br>
 
@@ -220,11 +219,8 @@ To mount it you will need:
 
 <div display="grid" align="center">
   <div class="lightgallery">
-    <a href="/images/flipper/v2/front.png" data-sub-html="Front cover for VoyagerRFv2">
-      <img src="/images/flipper/v2/front.png" width="45%"/>
-    </a>
-    <a href="/images/flipper/v2/back.png" data-sub-html="Back cover for VoyagerRFv2">
-      <img src="/images/flipper/v2/back.png" width="45%"/>
+    <a href="/images/flipper/pro/pro_back.png" data-sub-html="Back cover for VoyagerRF Pro">
+      <img src="/images/flipper/pro/pro_back.png" width="55%"/>
     </a>
   </div>
 </div>
