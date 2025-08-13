@@ -23,7 +23,7 @@ A WiFi Devboard based on ESP32 for Flipper Zero.
 ## Related tools
 
 <div class="grid-one">
-  <a class="box" href="https://kashmir54.github.io/voyagerrf/index.html">
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/v1.html">
     <div class="main-box" >
       <div style="padding-left: 10%; padding-right: 10%;">
         <p>Update or switch your firmware on the VoyagerRF board easily! (Marauder / Ghost_ESP)</p>

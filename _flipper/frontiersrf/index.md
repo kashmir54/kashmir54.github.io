@@ -30,8 +30,7 @@ An enhanced devboard for both SubGHz ISM bands: 425~450.5MHz and 855~925MHz with
 
 - [Intro](#intro)
 - [Modes of operation](#modes-of-operation) 
-- [Bundles and Boards](#bundles-and-boards) (Comming soon)
-
+- [Bundles and Boards](#bundles-and-boards)
 
 <br>
 

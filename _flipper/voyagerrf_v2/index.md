@@ -44,7 +44,7 @@ An upgraded version of the VoyagerRF (ESP32 WiFi Devboard for Flipper Zero) with
 ## Related tools
 
 <div class="grid-one">
-  <a class="box" href="https://kashmir54.github.io/voyagerrf/v2.html">
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/">
     <div class="main-box" >
       <div style="padding-left: 10%; padding-right: 10%;">
         <p>Update or switch your firmware on the VoyagerRFv2 board easily! (Marauder / Ghost_ESP)</p>
@@ -83,7 +83,7 @@ Inherited features from previous VoyagerRFv1:
 - ✅ 3dBi Omnidirectional WiFi antenna (2.4GHz) mounted into the board's SMA connector. Adds a great range improvement against the original devboard (PCB antenna).
 - ✅ NRF24/CC1101 socket with decoupling capacitors for noise reduction. Compatible with [External CC1101 configuration](https://github.com/quen0n/flipperzero-ext-cc1101) and [NRF24 Sniffer/MouseJacker](https://github.com/UberGuidoZ/Flipper/blob/main/GPIO/ReadMe.md#nrf24l01--mousejack-pinout---8-pin) (see chip compatibility since not all chips have the same pinout).
 
-Remember that the VoyagerRFv2 could be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/v2.html) following the steps in the website. Also, you can change from Marauder to Ghost_ESP easily.
+Remember that the VoyagerRFv2 could be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/) following the steps in the website. Also, you can change from Marauder to Ghost_ESP easily.
 
 I have units in stock. If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com). Check out the [last section](#bundles-and-boards) to see bundles and prices.
 

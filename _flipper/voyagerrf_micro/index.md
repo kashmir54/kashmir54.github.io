@@ -42,7 +42,7 @@ A small form factor ESP32 WiFi Devboard for Flipper Zero with GPS.
 ## Related tools
 
 <div class="grid-one">
-  <a class="box" href="https://kashmir54.github.io/voyagerrf/v2.html">
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/">
     <div class="main-box" >
       <div style="padding-left: 10%; padding-right: 10%;">
         <p>Update or switch your firmware on the VoyagerRF Micro board easily! (Marauder / Ghost_ESP)</p>
@@ -79,7 +79,7 @@ And the features inherited from previous versions:
 - ✅ **MicroSD card slot:** You can opt to save everything on Flipper's SD Card, but I prefer to have a spare SD card to save the output from the Marauder app (already configured in the firmware) and to store different configuration files (for evilportal, for example).
 - ✅ **3dBi Omnidirectional Mini WiFi antenna** (2.4GHz) mounted into the board's SMA connector. Adds a great range improvement against the original devboard (PCB antenna). I might look small, but the range is outstanding.
 
-Remember that the VoyagerRF Micro can be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/v2.html) following the steps in the website. It's so easy, just connect the board via USB to your PC with Google Chrome browser, click 3 buttons and you are ready to go!
+Remember that the VoyagerRF Micro can be also updated via the [Web Flasher](https://kashmir54.github.io/voyagerrf/) following the steps in the website. It's so easy, just connect the board via USB to your PC with Google Chrome browser, click 3 buttons and you are ready to go!
 
 If you are reading this, it is because I have units 🟢 **in stock**. If you are interested in getting the board and other accessories, you can [contact me](mailto:kashmir_54@hotmail.com). Check out the [bundles and boards](#bundles-and-boards) to see the prices.
 
@@ -291,7 +291,7 @@ Hit the reset button (the one in the bottom of the board).
   <img src="/images/flipper/micro/reset.png" width="60%"/>
 </p>
 
-Last option, go to the [Web Flasher](https://kashmir54.github.io/voyagerrf/v2.html) and reinstall the firmware, just it case it got corrupted.
+Last option, go to the [Web Flasher](https://kashmir54.github.io/voyagerrf/) and reinstall the firmware, just it case it got corrupted.
 
 
 - The Micro SD card is connected to the VoyagerRF, but no pcaps are being saved:
