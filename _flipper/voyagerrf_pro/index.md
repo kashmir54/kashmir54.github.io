@@ -40,7 +40,7 @@ A new version of the VoyagerRF (ESP32 WiFi/BLE Devboard for Flipper Zero) with G
 ## Related tools
 
 <div class="grid-one">
-  <a class="box" href="https://kashmir54.github.io/voyagerrf/v2.html">
+  <a class="box" href="https://kashmir54.github.io/voyagerrf/">
     <div class="main-box" >
       <div style="padding-left: 10%; padding-right: 10%;">
         <p>Update or switch your firmware on the VoyagerRF Pro board easily! (Marauder / Ghost_ESP)</p>
@@ -205,9 +205,10 @@ You can download the STL for the cases and the base here:
 
 | Part     | File       |
 | ----------- | ----------- |
-| Back  | [Pro_Back.stl](https://kashmir54.github.io/assets/files/cases/Pro_Back.stl)      |
-| Base  | [Pro_Base.stl](https://kashmir54.github.io/assets/files/cases/Pro_Base.stl)      |
-
+| Back  | [Pro_Back.stl](https://kashmir54.github.io/assets/files/cases/VoyagerRF_Pro_Bot.stl)      |
+| Base  | [Pro_Base.stl](https://kashmir54.github.io/assets/files/cases/VoyagerRF_Pro_Case.stl)      |
+| Front frame  | [Pro_Back.stl](https://kashmir54.github.io/assets/files/cases/VoyagerRF_Pro_Frame.stl)      |
+| Front cover  | [Pro_Base.stl](https://kashmir54.github.io/assets/files/cases/VoyagerRF_Pro_Top_Window.stl)      |
 <br>
 
 To mount it you will need:
