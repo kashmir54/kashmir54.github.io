@@ -39,14 +39,6 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
-<a class="box" href="/flipper/voyagerrf_v2">
-  <div class="box-two">
-    <p class="rodden">VoyagerRFv2</p>
-    <p>WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
-    <img class="main" src="/images/flipper/v2/thumbs.png">
-  </div>
-</a>
-
 <a class="box" href="/flipper/frontiersrf">
   <div class="box-two">
     <p class="rodden">FrontiersRF</p>
@@ -72,6 +64,13 @@ If you are interested on any item or bundle, contact me through [email](mailto:k
   </div>
 </a>
 
+<a class="box" href="/flipper/voyagerrf_v2">
+  <div class="box-two">
+    <p class="rodden">VoyagerRFv2</p>
+    <p>WiFi DevBoard with ESP32-C3 with Marauder/Ghost_ESP firmware, GPS, antenna, and MicroSD socket + CC1101/nRF24 socket.</p>
+    <img class="main" src="/images/flipper/v2/thumbs.png">
+  </div>
+</a>
 
 <a class="box" href="/flipper/voyagerrf_micro">
   <div class="box-two">

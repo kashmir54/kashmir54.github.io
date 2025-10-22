@@ -57,6 +57,32 @@ An upgraded version of the VoyagerRF (ESP32 WiFi Devboard for Flipper Zero) with
 
 <br>
 
+<div class="grid-post-big note">
+    <div>
+      <a class="blog" href="/flipper/voyagerrf_pro">
+      <img class="blog-thumb" src="/images/flipper/pro/thumbs.jpg"></a>
+    </div>
+    <div>
+      <a class="blog" href="/flipper/voyagerrf_pro">
+      <b><p>VoyagerRFv2 is discontinued, current version is VoyagerRFPro, featuring:</p>
+        <ul>
+          <li>WiFi 2.4GHz</li>
+          <li>Bluetooth</li>
+          <li>Marauder</li>
+          <li>GPS</li>
+          <li>NeoPixel LED</li>
+          <li>Front cover</li>
+          <li>High power nRF24 (new!)</li>
+          <li>Slick dual antenna look</li>
+        </ul>
+        <p>Check out the <a href="https://kashmir54.github.io/flipper/voyagerrf_pro/">VoyagerRFPro post</a>.</p>
+      </b>
+      </a>
+    </div>
+</div>
+
+<br>
+
 ---
 
 <br>

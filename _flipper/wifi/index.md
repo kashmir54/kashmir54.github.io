@@ -38,21 +38,22 @@ A WiFi Devboard based on ESP32 for Flipper Zero.
 
 <div class="grid-post-big note">
     <div>
-      <a class="blog" href="/flipper/voyagerrf_v2">
-      <img class="blog-thumb" src="/images/flipper/v2/thumbs.png"></a>
+      <a class="blog" href="/flipper/voyagerrf_pro">
+      <img class="blog-thumb" src="/images/flipper/pro/thumbs.jpg"></a>
     </div>
     <div>
-      <a class="blog" href="/flipper/voyagerrf_v2">
-      <b><p>NOTE: A new version of the board was released. Featuring:</p>
+      <a class="blog" href="/flipper/voyagerrf_pro">
+      <b><p>VoyagerRFv1 is discontinued, current version is VoyagerRFPro, featuring:</p>
         <ul>
-          <li>WiFi</li>
+          <li>WiFi 2.4GHz</li>
           <li>Bluetooth</li>
-          <li>Supports Marauder/Ghost_ESP</li>
+          <li>Marauder</li>
+          <li>High power nRF24 (new!)</li>
           <li>GPS (new!)</li>
           <li>NeoPixel LED (new!)</li>
           <li>Front cover (new!)</li>
         </ul>
-        <p>Check out the <a href="https://kashmir54.github.io/flipper/voyagerrf_v2/">VoyagerRFv2 post</a>.</p>
+        <p>Check out the <a href="https://kashmir54.github.io/flipper/voyagerrf_pro/">VoyagerRFPro post</a>.</p>
       </b>
       </a>
     </div>
