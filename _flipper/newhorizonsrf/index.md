@@ -112,7 +112,7 @@ If you are interested in getting the board or the complete module, you can [cont
 
 ## NewHorizonsRF board / 18€
 
-Available in black or white. This version ONLY comes with the board, the screws and the cable, **NO YRM1003 module is included** and you should purchase it separatelly on Aliexpress or similar. [Link to the YRM1003 on Aliexpress](aliexpress.com/item/1005005296512846.html?spm=a2g0o.order_list.order_list_main.36.26e1194dPECFvi&gatewayAdapt=glo2esp). The option to fit into the current board is: **2dbi 35x40mm** any bigger or smaller won't fit so be careful!
+Available in black or white. This version ONLY comes with the board, the screws and the cable, **NO YRM1003 module is included** and you should purchase it separatelly on Aliexpress or similar. [Link to the YRM1003 on Aliexpress](https://aliexpress.com/item/1005005296512846.html?spm=a2g0o.order_list.order_list_main.36.26e1194dPECFvi&gatewayAdapt=glo2esp). The option to fit into the current board is: **2dbi 35x40mm** any bigger or smaller won't fit so be careful!
 
 Includes:
 
